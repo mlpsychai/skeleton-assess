@@ -1,0 +1,73 @@
+{
+  "instrument_name": "Sample-Likert",
+  "instrument_full_name": "Sample Likert Assessment",
+  "num_items": 10,
+  "response_type": "likert",
+  "response_format": "0-3 Likert scale",
+  "response_options": {
+    "min_value": 0,
+    "max_value": 3,
+    "labels": ["Not at all", "A little", "Moderately", "Extremely"]
+  },
+
+  "files": {
+    "mapping": "example_data/sample_likert_mapping.json",
+    "scales": "example_data/sample_scales.json",
+    "tscore_tables": "example_data/sample_tscore_tables.json"
+  },
+
+  "interpretive_cutoffs": [
+    {"label": "Within Normal Limits", "max_t": 59},
+    {"label": "Slightly Elevated", "min_t": 60, "max_t": 64},
+    {"label": "Moderately Elevated", "min_t": 65, "max_t": 79},
+    {"label": "Clinically Significant", "min_t": 80}
+  ],
+
+  "safety_scales": [],
+  "max_missing_threshold": 0.10,
+
+  "categories": [
+    {
+      "key": "validity",
+      "title": "Protocol Validity",
+      "scales": ["VAL"],
+      "worksheet": "01_Validity.md",
+      "is_validity": true
+    },
+    {
+      "key": "clinical",
+      "title": "Clinical Scales",
+      "scales": ["ANX", "DEP", "SOM", "SOC"],
+      "worksheet": "02_Clinical.md"
+    }
+  ],
+
+  "formatting": {
+    "font": "Times New Roman",
+    "base_font_size": 12,
+    "text_color": "#000",
+    "chart_colors": {
+      "Clinical Scales": "#1A5276"
+    },
+    "validity_chart_colors": {
+      "Validity": "#555555"
+    },
+    "domain_definitions": {},
+    "chart": {
+      "y_min": 25,
+      "y_max": 95,
+      "y_interval": 10,
+      "reference_lines": [
+        {"value": 60, "label": "Slight Elevation"},
+        {"value": 65, "label": "Moderate Elevation"}
+      ],
+      "line_styles": {}
+    }
+  },
+
+  "validity_subcategories": {
+    "Validity": ["VAL"]
+  },
+
+  "disclaimer_text": "This is a sample instrument for demonstration purposes only."
+}

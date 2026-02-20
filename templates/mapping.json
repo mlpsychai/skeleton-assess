@@ -1,0 +1,3970 @@
+{
+  "scales": {
+    "F": {
+      "scale_name": "Infrequent Responses",
+      "items": [
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 30,
+          "keyed": "True"
+        },
+        {
+          "item": 46,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "False"
+        },
+        {
+          "item": 67,
+          "keyed": "True"
+        },
+        {
+          "item": 71,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 78,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "False"
+        },
+        {
+          "item": 100,
+          "keyed": "True"
+        },
+        {
+          "item": 102,
+          "keyed": "False"
+        },
+        {
+          "item": 117,
+          "keyed": "True"
+        },
+        {
+          "item": 120,
+          "keyed": "True"
+        },
+        {
+          "item": 130,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "True"
+        },
+        {
+          "item": 145,
+          "keyed": "True"
+        },
+        {
+          "item": 146,
+          "keyed": "True"
+        },
+        {
+          "item": 164,
+          "keyed": "True"
+        },
+        {
+          "item": 179,
+          "keyed": "True"
+        },
+        {
+          "item": 203,
+          "keyed": "True"
+        },
+        {
+          "item": 218,
+          "keyed": "True"
+        },
+        {
+          "item": 224,
+          "keyed": "True"
+        },
+        {
+          "item": 231,
+          "keyed": "True"
+        },
+        {
+          "item": 241,
+          "keyed": "True"
+        },
+        {
+          "item": 253,
+          "keyed": "True"
+        },
+        {
+          "item": 264,
+          "keyed": "True"
+        },
+        {
+          "item": 275,
+          "keyed": "True"
+        },
+        {
+          "item": 277,
+          "keyed": "True"
+        },
+        {
+          "item": 280,
+          "keyed": "True"
+        },
+        {
+          "item": 294,
+          "keyed": "True"
+        },
+        {
+          "item": 296,
+          "keyed": "True"
+        },
+        {
+          "item": 301,
+          "keyed": "True"
+        },
+        {
+          "item": 310,
+          "keyed": "True"
+        },
+        {
+          "item": 312,
+          "keyed": "True"
+        },
+        {
+          "item": 332,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 35
+    },
+    "Fp": {
+      "scale_name": "Infrequent Psychopathology Responses",
+      "items": [
+        {
+          "item": 41,
+          "keyed": "True"
+        },
+        {
+          "item": 86,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 124,
+          "keyed": "True"
+        },
+        {
+          "item": 129,
+          "keyed": "True"
+        },
+        {
+          "item": 149,
+          "keyed": "True"
+        },
+        {
+          "item": 150,
+          "keyed": "True"
+        },
+        {
+          "item": 157,
+          "keyed": "False"
+        },
+        {
+          "item": 165,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 191,
+          "keyed": "True"
+        },
+        {
+          "item": 208,
+          "keyed": "True"
+        },
+        {
+          "item": 221,
+          "keyed": "False"
+        },
+        {
+          "item": 245,
+          "keyed": "True"
+        },
+        {
+          "item": 255,
+          "keyed": "True"
+        },
+        {
+          "item": 270,
+          "keyed": "True"
+        },
+        {
+          "item": 273,
+          "keyed": "True"
+        },
+        {
+          "item": 283,
+          "keyed": "False"
+        },
+        {
+          "item": 314,
+          "keyed": "True"
+        },
+        {
+          "item": 317,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 21
+    },
+    "Fs": {
+      "scale_name": "Infrequent Somatic Responses",
+      "items": [
+        {
+          "item": 2,
+          "keyed": "False"
+        },
+        {
+          "item": 15,
+          "keyed": "True"
+        },
+        {
+          "item": 33,
+          "keyed": "True"
+        },
+        {
+          "item": 43,
+          "keyed": "True"
+        },
+        {
+          "item": 122,
+          "keyed": "True"
+        },
+        {
+          "item": 133,
+          "keyed": "True"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 143,
+          "keyed": "True"
+        },
+        {
+          "item": 159,
+          "keyed": "True"
+        },
+        {
+          "item": 176,
+          "keyed": "True"
+        },
+        {
+          "item": 186,
+          "keyed": "False"
+        },
+        {
+          "item": 199,
+          "keyed": "True"
+        },
+        {
+          "item": 216,
+          "keyed": "True"
+        },
+        {
+          "item": 244,
+          "keyed": "True"
+        },
+        {
+          "item": 272,
+          "keyed": "False"
+        },
+        {
+          "item": 308,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 16
+    },
+    "FBS": {
+      "scale_name": "Symptom Validity Scale",
+      "items": [
+        {
+          "item": 15,
+          "keyed": "True"
+        },
+        {
+          "item": 43,
+          "keyed": "True"
+        },
+        {
+          "item": 55,
+          "keyed": "False"
+        },
+        {
+          "item": 76,
+          "keyed": "True"
+        },
+        {
+          "item": 77,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 88,
+          "keyed": "False"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 99,
+          "keyed": "False"
+        },
+        {
+          "item": 101,
+          "keyed": "True"
+        },
+        {
+          "item": 133,
+          "keyed": "True"
+        },
+        {
+          "item": 141,
+          "keyed": "False"
+        },
+        {
+          "item": 156,
+          "keyed": "False"
+        },
+        {
+          "item": 162,
+          "keyed": "False"
+        },
+        {
+          "item": 171,
+          "keyed": "False"
+        },
+        {
+          "item": 187,
+          "keyed": "True"
+        },
+        {
+          "item": 189,
+          "keyed": "False"
+        },
+        {
+          "item": 193,
+          "keyed": "False"
+        },
+        {
+          "item": 200,
+          "keyed": "True"
+        },
+        {
+          "item": 202,
+          "keyed": "False"
+        },
+        {
+          "item": 211,
+          "keyed": "True"
+        },
+        {
+          "item": 230,
+          "keyed": "True"
+        },
+        {
+          "item": 234,
+          "keyed": "False"
+        },
+        {
+          "item": 247,
+          "keyed": "True"
+        },
+        {
+          "item": 260,
+          "keyed": "True"
+        },
+        {
+          "item": 265,
+          "keyed": "True"
+        },
+        {
+          "item": 282,
+          "keyed": "False"
+        },
+        {
+          "item": 292,
+          "keyed": "True"
+        },
+        {
+          "item": 293,
+          "keyed": "False"
+        },
+        {
+          "item": 315,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 30
+    },
+    "RBS": {
+      "scale_name": "Response Bias Scale",
+      "items": [
+        {
+          "item": 6,
+          "keyed": "True"
+        },
+        {
+          "item": 7,
+          "keyed": "False"
+        },
+        {
+          "item": 21,
+          "keyed": "False"
+        },
+        {
+          "item": 24,
+          "keyed": "True"
+        },
+        {
+          "item": 28,
+          "keyed": "True"
+        },
+        {
+          "item": 31,
+          "keyed": "True"
+        },
+        {
+          "item": 53,
+          "keyed": "False"
+        },
+        {
+          "item": 59,
+          "keyed": "False"
+        },
+        {
+          "item": 68,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 101,
+          "keyed": "True"
+        },
+        {
+          "item": 110,
+          "keyed": "True"
+        },
+        {
+          "item": 120,
+          "keyed": "True"
+        },
+        {
+          "item": 125,
+          "keyed": "False"
+        },
+        {
+          "item": 131,
+          "keyed": "False"
+        },
+        {
+          "item": 132,
+          "keyed": "True"
+        },
+        {
+          "item": 136,
+          "keyed": "True"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "False"
+        },
+        {
+          "item": 159,
+          "keyed": "True"
+        },
+        {
+          "item": 219,
+          "keyed": "False"
+        },
+        {
+          "item": 242,
+          "keyed": "True"
+        },
+        {
+          "item": 245,
+          "keyed": "True"
+        },
+        {
+          "item": 268,
+          "keyed": "True"
+        },
+        {
+          "item": 273,
+          "keyed": "True"
+        },
+        {
+          "item": 325,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 28
+    },
+    "L": {
+      "scale_name": "Uncommon Virtues",
+      "items": [
+        {
+          "item": 21,
+          "keyed": "False"
+        },
+        {
+          "item": 34,
+          "keyed": "False"
+        },
+        {
+          "item": 39,
+          "keyed": "False"
+        },
+        {
+          "item": 49,
+          "keyed": "False"
+        },
+        {
+          "item": 66,
+          "keyed": "False"
+        },
+        {
+          "item": 70,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "False"
+        },
+        {
+          "item": 84,
+          "keyed": "False"
+        },
+        {
+          "item": 96,
+          "keyed": "False"
+        },
+        {
+          "item": 131,
+          "keyed": "False"
+        },
+        {
+          "item": 156,
+          "keyed": "False"
+        },
+        {
+          "item": 205,
+          "keyed": "False"
+        },
+        {
+          "item": 223,
+          "keyed": "False"
+        },
+        {
+          "item": 268,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 14
+    },
+    "K": {
+      "scale_name": "Adjustment Validity",
+      "items": [
+        {
+          "item": 32,
+          "keyed": "False"
+        },
+        {
+          "item": 72,
+          "keyed": "False"
+        },
+        {
+          "item": 99,
+          "keyed": "False"
+        },
+        {
+          "item": 163,
+          "keyed": "False"
+        },
+        {
+          "item": 171,
+          "keyed": "False"
+        },
+        {
+          "item": 187,
+          "keyed": "False"
+        },
+        {
+          "item": 202,
+          "keyed": "False"
+        },
+        {
+          "item": 234,
+          "keyed": "False"
+        },
+        {
+          "item": 263,
+          "keyed": "False"
+        },
+        {
+          "item": 271,
+          "keyed": "False"
+        },
+        {
+          "item": 306,
+          "keyed": "False"
+        },
+        {
+          "item": 309,
+          "keyed": "False"
+        },
+        {
+          "item": 322,
+          "keyed": "False"
+        },
+        {
+          "item": 335,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 14
+    },
+    "EID": {
+      "scale_name": "Emotional/Internalizing Dysfunction",
+      "items": [
+        {
+          "item": 6,
+          "keyed": "True"
+        },
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 20,
+          "keyed": "False"
+        },
+        {
+          "item": 22,
+          "keyed": "True"
+        },
+        {
+          "item": 30,
+          "keyed": "True"
+        },
+        {
+          "item": 35,
+          "keyed": "True"
+        },
+        {
+          "item": 48,
+          "keyed": "True"
+        },
+        {
+          "item": 57,
+          "keyed": "False"
+        },
+        {
+          "item": 62,
+          "keyed": "False"
+        },
+        {
+          "item": 73,
+          "keyed": "False"
+        },
+        {
+          "item": 78,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "False"
+        },
+        {
+          "item": 89,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "True"
+        },
+        {
+          "item": 102,
+          "keyed": "False"
+        },
+        {
+          "item": 105,
+          "keyed": "False"
+        },
+        {
+          "item": 114,
+          "keyed": "True"
+        },
+        {
+          "item": 119,
+          "keyed": "True"
+        },
+        {
+          "item": 120,
+          "keyed": "True"
+        },
+        {
+          "item": 128,
+          "keyed": "True"
+        },
+        {
+          "item": 140,
+          "keyed": "False"
+        },
+        {
+          "item": 158,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 169,
+          "keyed": "True"
+        },
+        {
+          "item": 172,
+          "keyed": "True"
+        },
+        {
+          "item": 187,
+          "keyed": "True"
+        },
+        {
+          "item": 202,
+          "keyed": "False"
+        },
+        {
+          "item": 204,
+          "keyed": "True"
+        },
+        {
+          "item": 217,
+          "keyed": "False"
+        },
+        {
+          "item": 222,
+          "keyed": "False"
+        },
+        {
+          "item": 228,
+          "keyed": "True"
+        },
+        {
+          "item": 229,
+          "keyed": "True"
+        },
+        {
+          "item": 234,
+          "keyed": "False"
+        },
+        {
+          "item": 246,
+          "keyed": "False"
+        },
+        {
+          "item": 250,
+          "keyed": "True"
+        },
+        {
+          "item": 252,
+          "keyed": "True"
+        },
+        {
+          "item": 260,
+          "keyed": "True"
+        },
+        {
+          "item": 282,
+          "keyed": "False"
+        },
+        {
+          "item": 288,
+          "keyed": "True"
+        },
+        {
+          "item": 293,
+          "keyed": "False"
+        },
+        {
+          "item": 322,
+          "keyed": "True"
+        },
+        {
+          "item": 331,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 42
+    },
+    "THD": {
+      "scale_name": "Thought Dysfunction",
+      "items": [
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 46,
+          "keyed": "True"
+        },
+        {
+          "item": 71,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "False"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 109,
+          "keyed": "True"
+        },
+        {
+          "item": 122,
+          "keyed": "True"
+        },
+        {
+          "item": 129,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "True"
+        },
+        {
+          "item": 148,
+          "keyed": "True"
+        },
+        {
+          "item": 150,
+          "keyed": "True"
+        },
+        {
+          "item": 165,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 179,
+          "keyed": "True"
+        },
+        {
+          "item": 199,
+          "keyed": "True"
+        },
+        {
+          "item": 203,
+          "keyed": "True"
+        },
+        {
+          "item": 212,
+          "keyed": "False"
+        },
+        {
+          "item": 216,
+          "keyed": "True"
+        },
+        {
+          "item": 241,
+          "keyed": "True"
+        },
+        {
+          "item": 245,
+          "keyed": "True"
+        },
+        {
+          "item": 264,
+          "keyed": "True"
+        },
+        {
+          "item": 270,
+          "keyed": "True"
+        },
+        {
+          "item": 273,
+          "keyed": "True"
+        },
+        {
+          "item": 294,
+          "keyed": "True"
+        },
+        {
+          "item": 311,
+          "keyed": "True"
+        },
+        {
+          "item": 330,
+          "keyed": "True"
+        },
+        {
+          "item": 332,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 27
+    },
+    "BXD": {
+      "scale_name": "Behavioral/Externalizing Dysfunction",
+      "items": [
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 34,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 49,
+          "keyed": "True"
+        },
+        {
+          "item": 61,
+          "keyed": "False"
+        },
+        {
+          "item": 66,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 96,
+          "keyed": "True"
+        },
+        {
+          "item": 131,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "True"
+        },
+        {
+          "item": 190,
+          "keyed": "False"
+        },
+        {
+          "item": 205,
+          "keyed": "True"
+        },
+        {
+          "item": 231,
+          "keyed": "True"
+        },
+        {
+          "item": 233,
+          "keyed": "True"
+        },
+        {
+          "item": 237,
+          "keyed": "False"
+        },
+        {
+          "item": 253,
+          "keyed": "True"
+        },
+        {
+          "item": 259,
+          "keyed": "True"
+        },
+        {
+          "item": 266,
+          "keyed": "True"
+        },
+        {
+          "item": 312,
+          "keyed": "True"
+        },
+        {
+          "item": 316,
+          "keyed": "True"
+        },
+        {
+          "item": 319,
+          "keyed": "True"
+        },
+        {
+          "item": 320,
+          "keyed": "True"
+        },
+        {
+          "item": 329,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 24
+    },
+    "RCd": {
+      "scale_name": "Demoralization",
+      "items": [
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 22,
+          "keyed": "True"
+        },
+        {
+          "item": 30,
+          "keyed": "True"
+        },
+        {
+          "item": 48,
+          "keyed": "True"
+        },
+        {
+          "item": 89,
+          "keyed": "True"
+        },
+        {
+          "item": 105,
+          "keyed": "False"
+        },
+        {
+          "item": 144,
+          "keyed": "True"
+        },
+        {
+          "item": 152,
+          "keyed": "True"
+        },
+        {
+          "item": 158,
+          "keyed": "True"
+        },
+        {
+          "item": 172,
+          "keyed": "True"
+        },
+        {
+          "item": 187,
+          "keyed": "True"
+        },
+        {
+          "item": 204,
+          "keyed": "True"
+        },
+        {
+          "item": 217,
+          "keyed": "False"
+        },
+        {
+          "item": 229,
+          "keyed": "True"
+        },
+        {
+          "item": 260,
+          "keyed": "True"
+        },
+        {
+          "item": 288,
+          "keyed": "True"
+        },
+        {
+          "item": 331,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 17
+    },
+    "RC1": {
+      "scale_name": "Somatic Complaints",
+      "items": [
+        {
+          "item": 15,
+          "keyed": "True"
+        },
+        {
+          "item": 43,
+          "keyed": "True"
+        },
+        {
+          "item": 65,
+          "keyed": "False"
+        },
+        {
+          "item": 69,
+          "keyed": "False"
+        },
+        {
+          "item": 76,
+          "keyed": "True"
+        },
+        {
+          "item": 88,
+          "keyed": "False"
+        },
+        {
+          "item": 101,
+          "keyed": "True"
+        },
+        {
+          "item": 113,
+          "keyed": "False"
+        },
+        {
+          "item": 125,
+          "keyed": "False"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 162,
+          "keyed": "False"
+        },
+        {
+          "item": 176,
+          "keyed": "True"
+        },
+        {
+          "item": 189,
+          "keyed": "False"
+        },
+        {
+          "item": 211,
+          "keyed": "True"
+        },
+        {
+          "item": 227,
+          "keyed": "False"
+        },
+        {
+          "item": 230,
+          "keyed": "True"
+        },
+        {
+          "item": 265,
+          "keyed": "False"
+        },
+        {
+          "item": 277,
+          "keyed": "True"
+        },
+        {
+          "item": 301,
+          "keyed": "True"
+        },
+        {
+          "item": 313,
+          "keyed": "False"
+        },
+        {
+          "item": 328,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 21
+    },
+    "RC2": {
+      "scale_name": "Low Positive Emotions",
+      "items": [
+        {
+          "item": 1,
+          "keyed": "False"
+        },
+        {
+          "item": 20,
+          "keyed": "False"
+        },
+        {
+          "item": 47,
+          "keyed": "False"
+        },
+        {
+          "item": 62,
+          "keyed": "False"
+        },
+        {
+          "item": 78,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "False"
+        },
+        {
+          "item": 102,
+          "keyed": "False"
+        },
+        {
+          "item": 140,
+          "keyed": "False"
+        },
+        {
+          "item": 195,
+          "keyed": "False"
+        },
+        {
+          "item": 222,
+          "keyed": "False"
+        },
+        {
+          "item": 246,
+          "keyed": "False"
+        },
+        {
+          "item": 282,
+          "keyed": "False"
+        },
+        {
+          "item": 302,
+          "keyed": "False"
+        },
+        {
+          "item": 323,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 14
+    },
+    "RC4": {
+      "scale_name": "Antisocial Behavior",
+      "items": [
+        {
+          "item": 19,
+          "keyed": "False"
+        },
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 34,
+          "keyed": "True"
+        },
+        {
+          "item": 66,
+          "keyed": "True"
+        },
+        {
+          "item": 96,
+          "keyed": "True"
+        },
+        {
+          "item": 141,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "True"
+        },
+        {
+          "item": 190,
+          "keyed": "False"
+        },
+        {
+          "item": 205,
+          "keyed": "True"
+        },
+        {
+          "item": 223,
+          "keyed": "True"
+        },
+        {
+          "item": 266,
+          "keyed": "True"
+        },
+        {
+          "item": 297,
+          "keyed": "True"
+        },
+        {
+          "item": 320,
+          "keyed": "True"
+        },
+        {
+          "item": 329,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 14
+    },
+    "RC6": {
+      "scale_name": "Ideas of Persecution",
+      "items": [
+        {
+          "item": 71,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 109,
+          "keyed": "True"
+        },
+        {
+          "item": 148,
+          "keyed": "True"
+        },
+        {
+          "item": 165,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 179,
+          "keyed": "True"
+        },
+        {
+          "item": 194,
+          "keyed": "True"
+        },
+        {
+          "item": 212,
+          "keyed": "False"
+        },
+        {
+          "item": 233,
+          "keyed": "True"
+        },
+        {
+          "item": 241,
+          "keyed": "True"
+        },
+        {
+          "item": 254,
+          "keyed": "True"
+        },
+        {
+          "item": 264,
+          "keyed": "True"
+        },
+        {
+          "item": 310,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 14
+    },
+    "RC7": {
+      "scale_name": "Dysfunctional Negative Emotions",
+      "items": [
+        {
+          "item": 9,
+          "keyed": "True"
+        },
+        {
+          "item": 42,
+          "keyed": "True"
+        },
+        {
+          "item": 63,
+          "keyed": "True"
+        },
+        {
+          "item": 77,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "True"
+        },
+        {
+          "item": 115,
+          "keyed": "True"
+        },
+        {
+          "item": 119,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 206,
+          "keyed": "True"
+        },
+        {
+          "item": 228,
+          "keyed": "True"
+        },
+        {
+          "item": 250,
+          "keyed": "True"
+        },
+        {
+          "item": 261,
+          "keyed": "True"
+        },
+        {
+          "item": 263,
+          "keyed": "True"
+        },
+        {
+          "item": 271,
+          "keyed": "True"
+        },
+        {
+          "item": 275,
+          "keyed": "True"
+        },
+        {
+          "item": 289,
+          "keyed": "True"
+        },
+        {
+          "item": 303,
+          "keyed": "True"
+        },
+        {
+          "item": 318,
+          "keyed": "True"
+        },
+        {
+          "item": 322,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 19
+    },
+    "RC8": {
+      "scale_name": "Aberrant Experiences",
+      "items": [
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 36,
+          "keyed": "True"
+        },
+        {
+          "item": 46,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "False"
+        },
+        {
+          "item": 110,
+          "keyed": "True"
+        },
+        {
+          "item": 122,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "True"
+        },
+        {
+          "item": 159,
+          "keyed": "True"
+        },
+        {
+          "item": 161,
+          "keyed": "True"
+        },
+        {
+          "item": 199,
+          "keyed": "True"
+        },
+        {
+          "item": 240,
+          "keyed": "True"
+        },
+        {
+          "item": 245,
+          "keyed": "True"
+        },
+        {
+          "item": 257,
+          "keyed": "True"
+        },
+        {
+          "item": 270,
+          "keyed": "True"
+        },
+        {
+          "item": 273,
+          "keyed": "True"
+        },
+        {
+          "item": 294,
+          "keyed": "True"
+        },
+        {
+          "item": 311,
+          "keyed": "True"
+        },
+        {
+          "item": 330,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 18
+    },
+    "RC9": {
+      "scale_name": "Hypomanic Activation",
+      "items": [
+        {
+          "item": 3,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 61,
+          "keyed": "False"
+        },
+        {
+          "item": 72,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 131,
+          "keyed": "True"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 166,
+          "keyed": "True"
+        },
+        {
+          "item": 181,
+          "keyed": "True"
+        },
+        {
+          "item": 207,
+          "keyed": "True"
+        },
+        {
+          "item": 219,
+          "keyed": "True"
+        },
+        {
+          "item": 259,
+          "keyed": "True"
+        },
+        {
+          "item": 267,
+          "keyed": "True"
+        },
+        {
+          "item": 285,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 15
+    },
+    "MLS": {
+      "scale_name": "Malaise",
+      "items": [
+        {
+          "item": 18,
+          "keyed": "True"
+        },
+        {
+          "item": 163,
+          "keyed": "False"
+        },
+        {
+          "item": 174,
+          "keyed": "False"
+        },
+        {
+          "item": 202,
+          "keyed": "False"
+        },
+        {
+          "item": 247,
+          "keyed": "True"
+        },
+        {
+          "item": 262,
+          "keyed": "False"
+        },
+        {
+          "item": 333,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 7
+    },
+    "NUC": {
+      "scale_name": "Neurological Complaints",
+      "items": [
+        {
+          "item": 69,
+          "keyed": "False"
+        },
+        {
+          "item": 113,
+          "keyed": "False"
+        },
+        {
+          "item": 122,
+          "keyed": "True"
+        },
+        {
+          "item": 125,
+          "keyed": "False"
+        },
+        {
+          "item": 162,
+          "keyed": "False"
+        },
+        {
+          "item": 186,
+          "keyed": "False"
+        },
+        {
+          "item": 227,
+          "keyed": "False"
+        },
+        {
+          "item": 277,
+          "keyed": "True"
+        },
+        {
+          "item": 301,
+          "keyed": "True"
+        },
+        {
+          "item": 313,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 10
+    },
+    "EAT": {
+      "scale_name": "Eating Concerns",
+      "items": [
+        {
+          "item": 51,
+          "keyed": "True"
+        },
+        {
+          "item": 100,
+          "keyed": "True"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 130,
+          "keyed": "True"
+        },
+        {
+          "item": 209,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 5
+    },
+    "COG": {
+      "scale_name": "Cognitive Complaints",
+      "items": [
+        {
+          "item": 6,
+          "keyed": "True"
+        },
+        {
+          "item": 25,
+          "keyed": "True"
+        },
+        {
+          "item": 31,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "False"
+        },
+        {
+          "item": 117,
+          "keyed": "True"
+        },
+        {
+          "item": 136,
+          "keyed": "True"
+        },
+        {
+          "item": 173,
+          "keyed": "True"
+        },
+        {
+          "item": 200,
+          "keyed": "True"
+        },
+        {
+          "item": 279,
+          "keyed": "True"
+        },
+        {
+          "item": 281,
+          "keyed": "True"
+        },
+        {
+          "item": 306,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 11
+    },
+    "SUI": {
+      "scale_name": "Suicidal/Death Ideation",
+      "items": [
+        {
+          "item": 38,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 120,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 149,
+          "keyed": "True"
+        },
+        {
+          "item": 164,
+          "keyed": "True"
+        },
+        {
+          "item": 251,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "HLP": {
+      "scale_name": "Helplessness/Hopelessness",
+      "items": [
+        {
+          "item": 118,
+          "keyed": "True"
+        },
+        {
+          "item": 169,
+          "keyed": "True"
+        },
+        {
+          "item": 214,
+          "keyed": "True"
+        },
+        {
+          "item": 224,
+          "keyed": "True"
+        },
+        {
+          "item": 238,
+          "keyed": "True"
+        },
+        {
+          "item": 282,
+          "keyed": "False"
+        },
+        {
+          "item": 296,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "SFD": {
+      "scale_name": "Self-Doubt",
+      "items": [
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 48,
+          "keyed": "True"
+        },
+        {
+          "item": 89,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        },
+        {
+          "item": 229,
+          "keyed": "True"
+        },
+        {
+          "item": 249,
+          "keyed": "True"
+        },
+        {
+          "item": 288,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "NFC": {
+      "scale_name": "Inefficacy",
+      "items": [
+        {
+          "item": 27,
+          "keyed": "True"
+        },
+        {
+          "item": 68,
+          "keyed": "True"
+        },
+        {
+          "item": 108,
+          "keyed": "True"
+        },
+        {
+          "item": 144,
+          "keyed": "True"
+        },
+        {
+          "item": 152,
+          "keyed": "True"
+        },
+        {
+          "item": 198,
+          "keyed": "True"
+        },
+        {
+          "item": 274,
+          "keyed": "True"
+        },
+        {
+          "item": 299,
+          "keyed": "True"
+        },
+        {
+          "item": 324,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "STR": {
+      "scale_name": "Stress",
+      "items": [
+        {
+          "item": 8,
+          "keyed": "True"
+        },
+        {
+          "item": 73,
+          "keyed": "False"
+        },
+        {
+          "item": 112,
+          "keyed": "True"
+        },
+        {
+          "item": 128,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 234,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 6
+    },
+    "WRY": {
+      "scale_name": "Worry",
+      "items": [
+        {
+          "item": 29,
+          "keyed": "True"
+        },
+        {
+          "item": 98,
+          "keyed": "True"
+        },
+        {
+          "item": 123,
+          "keyed": "True"
+        },
+        {
+          "item": 232,
+          "keyed": "True"
+        },
+        {
+          "item": 286,
+          "keyed": "True"
+        },
+        {
+          "item": 309,
+          "keyed": "True"
+        },
+        {
+          "item": 335,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "CMP": {
+      "scale_name": "Compulsivity",
+      "items": [
+        {
+          "item": 14,
+          "keyed": "True"
+        },
+        {
+          "item": 42,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 56,
+          "keyed": "True"
+        },
+        {
+          "item": 106,
+          "keyed": "True"
+        },
+        {
+          "item": 170,
+          "keyed": "True"
+        },
+        {
+          "item": 236,
+          "keyed": "True"
+        },
+        {
+          "item": 261,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 8
+    },
+    "ARX": {
+      "scale_name": "Anxiety-Related Experiences",
+      "items": [
+        {
+          "item": 26,
+          "keyed": "True"
+        },
+        {
+          "item": 54,
+          "keyed": "True"
+        },
+        {
+          "item": 75,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 143,
+          "keyed": "True"
+        },
+        {
+          "item": 146,
+          "keyed": "True"
+        },
+        {
+          "item": 220,
+          "keyed": "True"
+        },
+        {
+          "item": 226,
+          "keyed": "True"
+        },
+        {
+          "item": 228,
+          "keyed": "True"
+        },
+        {
+          "item": 235,
+          "keyed": "True"
+        },
+        {
+          "item": 244,
+          "keyed": "True"
+        },
+        {
+          "item": 252,
+          "keyed": "True"
+        },
+        {
+          "item": 275,
+          "keyed": "True"
+        },
+        {
+          "item": 287,
+          "keyed": "True"
+        },
+        {
+          "item": 289,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 15
+    },
+    "ANP": {
+      "scale_name": "Anger Proneness",
+      "items": [
+        {
+          "item": 9,
+          "keyed": "True"
+        },
+        {
+          "item": 40,
+          "keyed": "False"
+        },
+        {
+          "item": 119,
+          "keyed": "True"
+        },
+        {
+          "item": 134,
+          "keyed": "False"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 160,
+          "keyed": "True"
+        },
+        {
+          "item": 248,
+          "keyed": "True"
+        },
+        {
+          "item": 290,
+          "keyed": "True"
+        },
+        {
+          "item": 293,
+          "keyed": "False"
+        },
+        {
+          "item": 303,
+          "keyed": "True"
+        },
+        {
+          "item": 318,
+          "keyed": "True"
+        },
+        {
+          "item": 334,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 12
+    },
+    "BRF": {
+      "scale_name": "Behavior-Restricting Fears",
+      "items": [
+        {
+          "item": 13,
+          "keyed": "True"
+        },
+        {
+          "item": 50,
+          "keyed": "True"
+        },
+        {
+          "item": 135,
+          "keyed": "True"
+        },
+        {
+          "item": 151,
+          "keyed": "True"
+        },
+        {
+          "item": 208,
+          "keyed": "True"
+        },
+        {
+          "item": 305,
+          "keyed": "True"
+        },
+        {
+          "item": 317,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "FML": {
+      "scale_name": "Family Problems",
+      "items": [
+        {
+          "item": 19,
+          "keyed": "False"
+        },
+        {
+          "item": 58,
+          "keyed": "True"
+        },
+        {
+          "item": 80,
+          "keyed": "False"
+        },
+        {
+          "item": 103,
+          "keyed": "True"
+        },
+        {
+          "item": 138,
+          "keyed": "True"
+        },
+        {
+          "item": 145,
+          "keyed": "True"
+        },
+        {
+          "item": 180,
+          "keyed": "True"
+        },
+        {
+          "item": 215,
+          "keyed": "True"
+        },
+        {
+          "item": 269,
+          "keyed": "False"
+        },
+        {
+          "item": 280,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "JCP": {
+      "scale_name": "Juvenile Conduct Problems",
+      "items": [
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 66,
+          "keyed": "True"
+        },
+        {
+          "item": 96,
+          "keyed": "True"
+        },
+        {
+          "item": 205,
+          "keyed": "True"
+        },
+        {
+          "item": 223,
+          "keyed": "True"
+        },
+        {
+          "item": 253,
+          "keyed": "True"
+        },
+        {
+          "item": 320,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "SUB": {
+      "scale_name": "Substance Abuse",
+      "items": [
+        {
+          "item": 34,
+          "keyed": "True"
+        },
+        {
+          "item": 49,
+          "keyed": "True"
+        },
+        {
+          "item": 127,
+          "keyed": "True"
+        },
+        {
+          "item": 141,
+          "keyed": "True"
+        },
+        {
+          "item": 192,
+          "keyed": "True"
+        },
+        {
+          "item": 266,
+          "keyed": "True"
+        },
+        {
+          "item": 297,
+          "keyed": "True"
+        },
+        {
+          "item": 312,
+          "keyed": "True"
+        },
+        {
+          "item": 319,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "IMP": {
+      "scale_name": "Impulsivity",
+      "items": [
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 61,
+          "keyed": "False"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 237,
+          "keyed": "False"
+        },
+        {
+          "item": 259,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 6
+    },
+    "ACT": {
+      "scale_name": "Activation",
+      "items": [
+        {
+          "item": 72,
+          "keyed": "True"
+        },
+        {
+          "item": 81,
+          "keyed": "True"
+        },
+        {
+          "item": 166,
+          "keyed": "True"
+        },
+        {
+          "item": 181,
+          "keyed": "True"
+        },
+        {
+          "item": 207,
+          "keyed": "True"
+        },
+        {
+          "item": 219,
+          "keyed": "True"
+        },
+        {
+          "item": 267,
+          "keyed": "True"
+        },
+        {
+          "item": 285,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 8
+    },
+    "AGG": {
+      "scale_name": "Aggression",
+      "items": [
+        {
+          "item": 23,
+          "keyed": "True"
+        },
+        {
+          "item": 28,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 231,
+          "keyed": "True"
+        },
+        {
+          "item": 316,
+          "keyed": "True"
+        },
+        {
+          "item": 329,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 6
+    },
+    "CYN": {
+      "scale_name": "Cynicism",
+      "items": [
+        {
+          "item": 10,
+          "keyed": "True"
+        },
+        {
+          "item": 32,
+          "keyed": "True"
+        },
+        {
+          "item": 55,
+          "keyed": "True"
+        },
+        {
+          "item": 87,
+          "keyed": "True"
+        },
+        {
+          "item": 99,
+          "keyed": "True"
+        },
+        {
+          "item": 121,
+          "keyed": "True"
+        },
+        {
+          "item": 142,
+          "keyed": "True"
+        },
+        {
+          "item": 171,
+          "keyed": "True"
+        },
+        {
+          "item": 185,
+          "keyed": "True"
+        },
+        {
+          "item": 213,
+          "keyed": "True"
+        },
+        {
+          "item": 256,
+          "keyed": "True"
+        },
+        {
+          "item": 258,
+          "keyed": "True"
+        },
+        {
+          "item": 304,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 13
+    },
+    "SFI": {
+      "scale_name": "Self-Importance",
+      "items": [
+        {
+          "item": 4,
+          "keyed": "True"
+        },
+        {
+          "item": 11,
+          "keyed": "True"
+        },
+        {
+          "item": 47,
+          "keyed": "True"
+        },
+        {
+          "item": 62,
+          "keyed": "True"
+        },
+        {
+          "item": 91,
+          "keyed": "False"
+        },
+        {
+          "item": 182,
+          "keyed": "True"
+        },
+        {
+          "item": 188,
+          "keyed": "True"
+        },
+        {
+          "item": 239,
+          "keyed": "True"
+        },
+        {
+          "item": 284,
+          "keyed": "True"
+        },
+        {
+          "item": 326,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "DOM": {
+      "scale_name": "Dominance",
+      "items": [
+        {
+          "item": 24,
+          "keyed": "False"
+        },
+        {
+          "item": 60,
+          "keyed": "True"
+        },
+        {
+          "item": 104,
+          "keyed": "True"
+        },
+        {
+          "item": 147,
+          "keyed": "True"
+        },
+        {
+          "item": 197,
+          "keyed": "True"
+        },
+        {
+          "item": 276,
+          "keyed": "True"
+        },
+        {
+          "item": 300,
+          "keyed": "False"
+        },
+        {
+          "item": 302,
+          "keyed": "True"
+        },
+        {
+          "item": 327,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "DSF": {
+      "scale_name": "Disaffiliativeness",
+      "items": [
+        {
+          "item": 5,
+          "keyed": "True"
+        },
+        {
+          "item": 67,
+          "keyed": "True"
+        },
+        {
+          "item": 97,
+          "keyed": "True"
+        },
+        {
+          "item": 175,
+          "keyed": "True"
+        },
+        {
+          "item": 196,
+          "keyed": "True"
+        },
+        {
+          "item": 291,
+          "keyed": "True"
+        },
+        {
+          "item": 307,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "SAV": {
+      "scale_name": "Social Avoidance",
+      "items": [
+        {
+          "item": 20,
+          "keyed": "False"
+        },
+        {
+          "item": 37,
+          "keyed": "False"
+        },
+        {
+          "item": 57,
+          "keyed": "False"
+        },
+        {
+          "item": 94,
+          "keyed": "False"
+        },
+        {
+          "item": 107,
+          "keyed": "False"
+        },
+        {
+          "item": 153,
+          "keyed": "False"
+        },
+        {
+          "item": 201,
+          "keyed": "False"
+        },
+        {
+          "item": 222,
+          "keyed": "False"
+        },
+        {
+          "item": 278,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "SHY": {
+      "scale_name": "Shyness",
+      "items": [
+        {
+          "item": 35,
+          "keyed": "True"
+        },
+        {
+          "item": 44,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "True"
+        },
+        {
+          "item": 114,
+          "keyed": "True"
+        },
+        {
+          "item": 177,
+          "keyed": "True"
+        },
+        {
+          "item": 225,
+          "keyed": "True"
+        },
+        {
+          "item": 295,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 7
+    },
+    "AGGR": {
+      "scale_name": "Aggressiveness",
+      "items": [
+        {
+          "item": 24,
+          "keyed": "False"
+        },
+        {
+          "item": 28,
+          "keyed": "True"
+        },
+        {
+          "item": 60,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 104,
+          "keyed": "True"
+        },
+        {
+          "item": 147,
+          "keyed": "True"
+        },
+        {
+          "item": 197,
+          "keyed": "True"
+        },
+        {
+          "item": 198,
+          "keyed": "False"
+        },
+        {
+          "item": 231,
+          "keyed": "True"
+        },
+        {
+          "item": 276,
+          "keyed": "True"
+        },
+        {
+          "item": 302,
+          "keyed": "True"
+        },
+        {
+          "item": 316,
+          "keyed": "True"
+        },
+        {
+          "item": 321,
+          "keyed": "True"
+        },
+        {
+          "item": 327,
+          "keyed": "True"
+        },
+        {
+          "item": 329,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 15
+    },
+    "PSYC": {
+      "scale_name": "Psychoticism",
+      "items": [
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 71,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "False"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 129,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 199,
+          "keyed": "True"
+        },
+        {
+          "item": 203,
+          "keyed": "True"
+        },
+        {
+          "item": 216,
+          "keyed": "True"
+        },
+        {
+          "item": 240,
+          "keyed": "True"
+        },
+        {
+          "item": 241,
+          "keyed": "True"
+        },
+        {
+          "item": 245,
+          "keyed": "True"
+        },
+        {
+          "item": 264,
+          "keyed": "True"
+        },
+        {
+          "item": 270,
+          "keyed": "True"
+        },
+        {
+          "item": 273,
+          "keyed": "True"
+        },
+        {
+          "item": 294,
+          "keyed": "True"
+        },
+        {
+          "item": 311,
+          "keyed": "True"
+        },
+        {
+          "item": 330,
+          "keyed": "True"
+        },
+        {
+          "item": 332,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 20
+    },
+    "DISC": {
+      "scale_name": "Disconstraint",
+      "items": [
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 34,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 49,
+          "keyed": "True"
+        },
+        {
+          "item": 61,
+          "keyed": "False"
+        },
+        {
+          "item": 66,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 141,
+          "keyed": "True"
+        },
+        {
+          "item": 190,
+          "keyed": "False"
+        },
+        {
+          "item": 205,
+          "keyed": "True"
+        },
+        {
+          "item": 223,
+          "keyed": "True"
+        },
+        {
+          "item": 237,
+          "keyed": "False"
+        },
+        {
+          "item": 253,
+          "keyed": "True"
+        },
+        {
+          "item": 259,
+          "keyed": "True"
+        },
+        {
+          "item": 266,
+          "keyed": "True"
+        },
+        {
+          "item": 297,
+          "keyed": "True"
+        },
+        {
+          "item": 319,
+          "keyed": "True"
+        },
+        {
+          "item": 320,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 18
+    },
+    "NEGE": {
+      "scale_name": "Negative Emotionality/Neuroticism",
+      "items": [
+        {
+          "item": 26,
+          "keyed": "True"
+        },
+        {
+          "item": 73,
+          "keyed": "False"
+        },
+        {
+          "item": 75,
+          "keyed": "True"
+        },
+        {
+          "item": 98,
+          "keyed": "True"
+        },
+        {
+          "item": 115,
+          "keyed": "True"
+        },
+        {
+          "item": 123,
+          "keyed": "True"
+        },
+        {
+          "item": 146,
+          "keyed": "True"
+        },
+        {
+          "item": 206,
+          "keyed": "True"
+        },
+        {
+          "item": 228,
+          "keyed": "True"
+        },
+        {
+          "item": 232,
+          "keyed": "True"
+        },
+        {
+          "item": 252,
+          "keyed": "True"
+        },
+        {
+          "item": 263,
+          "keyed": "True"
+        },
+        {
+          "item": 286,
+          "keyed": "True"
+        },
+        {
+          "item": 293,
+          "keyed": "False"
+        },
+        {
+          "item": 335,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 15
+    },
+    "INTR": {
+      "scale_name": "Introversion/Low Positive Emotionality",
+      "items": [
+        {
+          "item": 1,
+          "keyed": "False"
+        },
+        {
+          "item": 7,
+          "keyed": "False"
+        },
+        {
+          "item": 20,
+          "keyed": "False"
+        },
+        {
+          "item": 37,
+          "keyed": "False"
+        },
+        {
+          "item": 53,
+          "keyed": "False"
+        },
+        {
+          "item": 57,
+          "keyed": "False"
+        },
+        {
+          "item": 78,
+          "keyed": "True"
+        },
+        {
+          "item": 107,
+          "keyed": "False"
+        },
+        {
+          "item": 140,
+          "keyed": "False"
+        },
+        {
+          "item": 153,
+          "keyed": "False"
+        },
+        {
+          "item": 195,
+          "keyed": "False"
+        },
+        {
+          "item": 201,
+          "keyed": "False"
+        },
+        {
+          "item": 222,
+          "keyed": "False"
+        },
+        {
+          "item": 278,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 14
+    },
+    "CRIN": {
+      "scale_name": "Combined Response Inconsistency",
+      "scale_type": "item_pairs",
+      "base_score": 0,
+      "item_count": 86,
+      "discordant_pairs": [
+        {
+          "item1": 6,
+          "key1": "F",
+          "item2": 136,
+          "key2": "T"
+        },
+        {
+          "item1": 5,
+          "key1": "F",
+          "item2": 307,
+          "key2": "T"
+        },
+        {
+          "item1": 5,
+          "key1": "T",
+          "item2": 307,
+          "key2": "F"
+        },
+        {
+          "item1": 3,
+          "key1": "F",
+          "item2": 259,
+          "key2": "T"
+        },
+        {
+          "item1": 20,
+          "key1": "T",
+          "item2": 94,
+          "key2": "F"
+        },
+        {
+          "item1": 17,
+          "key1": "T",
+          "item2": 288,
+          "key2": "F"
+        },
+        {
+          "item1": 14,
+          "key1": "F",
+          "item2": 236,
+          "key2": "T"
+        },
+        {
+          "item1": 9,
+          "key1": "T",
+          "item2": 119,
+          "key2": "F"
+        },
+        {
+          "item1": 26,
+          "key1": "T",
+          "item2": 228,
+          "key2": "F"
+        },
+        {
+          "item1": 26,
+          "key1": "F",
+          "item2": 228,
+          "key2": "T"
+        },
+        {
+          "item1": 25,
+          "key1": "T",
+          "item2": 281,
+          "key2": "F"
+        },
+        {
+          "item1": 25,
+          "key1": "F",
+          "item2": 281,
+          "key2": "T"
+        },
+        {
+          "item1": 44,
+          "key1": "F",
+          "item2": 177,
+          "key2": "T"
+        },
+        {
+          "item1": 44,
+          "key1": "T",
+          "item2": 177,
+          "key2": "F"
+        },
+        {
+          "item1": 37,
+          "key1": "T",
+          "item2": 201,
+          "key2": "F"
+        },
+        {
+          "item1": 35,
+          "key1": "T",
+          "item2": 114,
+          "key2": "F"
+        },
+        {
+          "item1": 64,
+          "key1": "F",
+          "item2": 74,
+          "key2": "T"
+        },
+        {
+          "item1": 55,
+          "key1": "T",
+          "item2": 99,
+          "key2": "F"
+        },
+        {
+          "item1": 51,
+          "key1": "T",
+          "item2": 111,
+          "key2": "F"
+        },
+        {
+          "item1": 47,
+          "key1": "T",
+          "item2": 62,
+          "key2": "F"
+        },
+        {
+          "item1": 78,
+          "key1": "T",
+          "item2": 172,
+          "key2": "F"
+        },
+        {
+          "item1": 78,
+          "key1": "F",
+          "item2": 172,
+          "key2": "T"
+        },
+        {
+          "item1": 76,
+          "key1": "F",
+          "item2": 230,
+          "key2": "T"
+        },
+        {
+          "item1": 66,
+          "key1": "F",
+          "item2": 223,
+          "key2": "T"
+        },
+        {
+          "item1": 93,
+          "key1": "F",
+          "item2": 164,
+          "key2": "T"
+        },
+        {
+          "item1": 89,
+          "key1": "F",
+          "item2": 229,
+          "key2": "T"
+        },
+        {
+          "item1": 88,
+          "key1": "F",
+          "item2": 265,
+          "key2": "T"
+        },
+        {
+          "item1": 79,
+          "key1": "T",
+          "item2": 289,
+          "key2": "F"
+        },
+        {
+          "item1": 108,
+          "key1": "T",
+          "item2": 152,
+          "key2": "F"
+        },
+        {
+          "item1": 100,
+          "key1": "T",
+          "item2": 130,
+          "key2": "F"
+        },
+        {
+          "item1": 98,
+          "key1": "F",
+          "item2": 275,
+          "key2": "T"
+        },
+        {
+          "item1": 97,
+          "key1": "F",
+          "item2": 196,
+          "key2": "T"
+        },
+        {
+          "item1": 134,
+          "key1": "F",
+          "item2": 293,
+          "key2": "T"
+        },
+        {
+          "item1": 128,
+          "key1": "T",
+          "item2": 187,
+          "key2": "F"
+        },
+        {
+          "item1": 123,
+          "key1": "T",
+          "item2": 335,
+          "key2": "F"
+        },
+        {
+          "item1": 108,
+          "key1": "F",
+          "item2": 152,
+          "key2": "T"
+        },
+        {
+          "item1": 169,
+          "key1": "F",
+          "item2": 224,
+          "key2": "T"
+        },
+        {
+          "item1": 166,
+          "key1": "T",
+          "item2": 207,
+          "key2": "F"
+        },
+        {
+          "item1": 139,
+          "key1": "T",
+          "item2": 273,
+          "key2": "F"
+        },
+        {
+          "item1": 158,
+          "key1": "T",
+          "item2": 260,
+          "key2": "F"
+        },
+        {
+          "item1": 175,
+          "key1": "T",
+          "item2": 291,
+          "key2": "F"
+        },
+        {
+          "item1": 175,
+          "key1": "F",
+          "item2": 291,
+          "key2": "T"
+        },
+        {
+          "item1": 173,
+          "key1": "T",
+          "item2": 200,
+          "key2": "F"
+        },
+        {
+          "item1": 173,
+          "key1": "F",
+          "item2": 200,
+          "key2": "T"
+        },
+        {
+          "item1": 246,
+          "key1": "F",
+          "item2": 282,
+          "key2": "T"
+        },
+        {
+          "item1": 241,
+          "key1": "F",
+          "item2": 264,
+          "key2": "T"
+        },
+        {
+          "item1": 239,
+          "key1": "F",
+          "item2": 302,
+          "key2": "T"
+        },
+        {
+          "item1": 220,
+          "key1": "T",
+          "item2": 287,
+          "key2": "F"
+        },
+        {
+          "item1": 290,
+          "key1": "T",
+          "item2": 318,
+          "key2": "F"
+        },
+        {
+          "item1": 274,
+          "key1": "F",
+          "item2": 299,
+          "key2": "T"
+        },
+        {
+          "item1": 263,
+          "key1": "F",
+          "item2": 286,
+          "key2": "T"
+        },
+        {
+          "item1": 271,
+          "key1": "F",
+          "item2": 303,
+          "key2": "T"
+        },
+        {
+          "item1": 316,
+          "key1": "F",
+          "item2": 329,
+          "key2": "T"
+        }
+      ],
+      "keyed_true_true": [
+        {
+          "item1": 30,
+          "item2": 217
+        },
+        {
+          "item1": 20,
+          "item2": 44
+        },
+        {
+          "item1": 19,
+          "item2": 145
+        },
+        {
+          "item1": 8,
+          "item2": 198
+        },
+        {
+          "item1": 17,
+          "item2": 105
+        },
+        {
+          "item1": 73,
+          "item2": 75
+        },
+        {
+          "item1": 62,
+          "item2": 249
+        },
+        {
+          "item1": 57,
+          "item2": 67
+        },
+        {
+          "item1": 40,
+          "item2": 290
+        },
+        {
+          "item1": 48,
+          "item2": 182
+        },
+        {
+          "item1": 134,
+          "item2": 160
+        },
+        {
+          "item1": 128,
+          "item2": 234
+        },
+        {
+          "item1": 83,
+          "item2": 120
+        },
+        {
+          "item1": 101,
+          "item2": 189
+        },
+        {
+          "item1": 107,
+          "item2": 278
+        },
+        {
+          "item1": 239,
+          "item2": 300
+        },
+        {
+          "item1": 190,
+          "item2": 320
+        },
+        {
+          "item1": 212,
+          "item2": 264
+        },
+        {
+          "item1": 163,
+          "item2": 247
+        },
+        {
+          "item1": 169,
+          "item2": 282
+        }
+      ],
+      "keyed_false_false": [
+        {
+          "item1": 19,
+          "item2": 58
+        },
+        {
+          "item1": 17,
+          "item2": 105
+        },
+        {
+          "item1": 44,
+          "item2": 94
+        },
+        {
+          "item1": 8,
+          "item2": 128
+        },
+        {
+          "item1": 9,
+          "item2": 40
+        },
+        {
+          "item1": 1,
+          "item2": 22
+        },
+        {
+          "item1": 108,
+          "item2": 246
+        },
+        {
+          "item1": 119,
+          "item2": 134
+        },
+        {
+          "item1": 59,
+          "item2": 306
+        },
+        {
+          "item1": 83,
+          "item2": 158
+        },
+        {
+          "item1": 102,
+          "item2": 288
+        },
+        {
+          "item1": 163,
+          "item2": 247
+        },
+        {
+          "item1": 201,
+          "item2": 278
+        }
+      ],
+      "items": []
+    },
+    "VRIN": {
+      "scale_name": "Variable Response Inconsistency",
+      "scale_type": "item_pairs",
+      "base_score": 0,
+      "item_count": 53,
+      "discordant_pairs": [
+        {
+          "item1": 6,
+          "key1": "F",
+          "item2": 136,
+          "key2": "T"
+        },
+        {
+          "item1": 5,
+          "key1": "F",
+          "item2": 307,
+          "key2": "T"
+        },
+        {
+          "item1": 3,
+          "key1": "F",
+          "item2": 259,
+          "key2": "T"
+        },
+        {
+          "item1": 5,
+          "key1": "T",
+          "item2": 307,
+          "key2": "F"
+        },
+        {
+          "item1": 20,
+          "key1": "T",
+          "item2": 94,
+          "key2": "F"
+        },
+        {
+          "item1": 17,
+          "key1": "T",
+          "item2": 288,
+          "key2": "F"
+        },
+        {
+          "item1": 14,
+          "key1": "F",
+          "item2": 236,
+          "key2": "T"
+        },
+        {
+          "item1": 9,
+          "key1": "T",
+          "item2": 119,
+          "key2": "F"
+        },
+        {
+          "item1": 26,
+          "key1": "T",
+          "item2": 228,
+          "key2": "F"
+        },
+        {
+          "item1": 26,
+          "key1": "F",
+          "item2": 228,
+          "key2": "T"
+        },
+        {
+          "item1": 25,
+          "key1": "T",
+          "item2": 281,
+          "key2": "F"
+        },
+        {
+          "item1": 25,
+          "key1": "F",
+          "item2": 281,
+          "key2": "T"
+        },
+        {
+          "item1": 44,
+          "key1": "F",
+          "item2": 177,
+          "key2": "T"
+        },
+        {
+          "item1": 44,
+          "key1": "T",
+          "item2": 177,
+          "key2": "F"
+        },
+        {
+          "item1": 37,
+          "key1": "T",
+          "item2": 201,
+          "key2": "F"
+        },
+        {
+          "item1": 35,
+          "key1": "T",
+          "item2": 114,
+          "key2": "F"
+        },
+        {
+          "item1": 64,
+          "key1": "F",
+          "item2": 74,
+          "key2": "T"
+        },
+        {
+          "item1": 55,
+          "key1": "T",
+          "item2": 99,
+          "key2": "F"
+        },
+        {
+          "item1": 47,
+          "key1": "T",
+          "item2": 62,
+          "key2": "F"
+        },
+        {
+          "item1": 51,
+          "key1": "T",
+          "item2": 111,
+          "key2": "F"
+        },
+        {
+          "item1": 78,
+          "key1": "T",
+          "item2": 172,
+          "key2": "F"
+        },
+        {
+          "item1": 76,
+          "key1": "F",
+          "item2": 230,
+          "key2": "T"
+        },
+        {
+          "item1": 78,
+          "key1": "F",
+          "item2": 172,
+          "key2": "T"
+        },
+        {
+          "item1": 66,
+          "key1": "F",
+          "item2": 223,
+          "key2": "T"
+        },
+        {
+          "item1": 93,
+          "key1": "F",
+          "item2": 164,
+          "key2": "T"
+        },
+        {
+          "item1": 89,
+          "key1": "F",
+          "item2": 229,
+          "key2": "T"
+        },
+        {
+          "item1": 79,
+          "key1": "T",
+          "item2": 289,
+          "key2": "F"
+        },
+        {
+          "item1": 88,
+          "key1": "F",
+          "item2": 265,
+          "key2": "T"
+        },
+        {
+          "item1": 108,
+          "key1": "T",
+          "item2": 152,
+          "key2": "F"
+        },
+        {
+          "item1": 98,
+          "key1": "F",
+          "item2": 275,
+          "key2": "T"
+        },
+        {
+          "item1": 100,
+          "key1": "T",
+          "item2": 130,
+          "key2": "F"
+        },
+        {
+          "item1": 97,
+          "key1": "F",
+          "item2": 196,
+          "key2": "T"
+        },
+        {
+          "item1": 134,
+          "key1": "F",
+          "item2": 293,
+          "key2": "T"
+        },
+        {
+          "item1": 128,
+          "key1": "T",
+          "item2": 187,
+          "key2": "F"
+        },
+        {
+          "item1": 123,
+          "key1": "T",
+          "item2": 335,
+          "key2": "F"
+        },
+        {
+          "item1": 108,
+          "key1": "F",
+          "item2": 152,
+          "key2": "T"
+        },
+        {
+          "item1": 169,
+          "key1": "F",
+          "item2": 224,
+          "key2": "T"
+        },
+        {
+          "item1": 158,
+          "key1": "T",
+          "item2": 260,
+          "key2": "F"
+        },
+        {
+          "item1": 166,
+          "key1": "T",
+          "item2": 207,
+          "key2": "F"
+        },
+        {
+          "item1": 139,
+          "key1": "T",
+          "item2": 273,
+          "key2": "F"
+        },
+        {
+          "item1": 175,
+          "key1": "T",
+          "item2": 291,
+          "key2": "F"
+        },
+        {
+          "item1": 175,
+          "key1": "F",
+          "item2": 291,
+          "key2": "T"
+        },
+        {
+          "item1": 173,
+          "key1": "T",
+          "item2": 200,
+          "key2": "F"
+        },
+        {
+          "item1": 173,
+          "key1": "F",
+          "item2": 200,
+          "key2": "T"
+        },
+        {
+          "item1": 246,
+          "key1": "F",
+          "item2": 282,
+          "key2": "T"
+        },
+        {
+          "item1": 241,
+          "key1": "F",
+          "item2": 264,
+          "key2": "T"
+        },
+        {
+          "item1": 239,
+          "key1": "F",
+          "item2": 302,
+          "key2": "T"
+        },
+        {
+          "item1": 220,
+          "key1": "T",
+          "item2": 287,
+          "key2": "F"
+        },
+        {
+          "item1": 290,
+          "key1": "T",
+          "item2": 318,
+          "key2": "F"
+        },
+        {
+          "item1": 274,
+          "key1": "F",
+          "item2": 299,
+          "key2": "T"
+        },
+        {
+          "item1": 271,
+          "key1": "F",
+          "item2": 303,
+          "key2": "T"
+        },
+        {
+          "item1": 263,
+          "key1": "F",
+          "item2": 286,
+          "key2": "T"
+        },
+        {
+          "item1": 316,
+          "key1": "F",
+          "item2": 329,
+          "key2": "T"
+        }
+      ],
+      "keyed_true_true": [],
+      "keyed_false_false": [],
+      "items": []
+    },
+    "TRIN": {
+      "scale_name": "True Response Inconsistency",
+      "scale_type": "item_pairs",
+      "base_score": 13,
+      "item_count": 33,
+      "discordant_pairs": [],
+      "keyed_true_true": [
+        {
+          "item1": 8,
+          "item2": 198
+        },
+        {
+          "item1": 17,
+          "item2": 105
+        },
+        {
+          "item1": 19,
+          "item2": 145
+        },
+        {
+          "item1": 40,
+          "item2": 290
+        },
+        {
+          "item1": 20,
+          "item2": 44
+        },
+        {
+          "item1": 48,
+          "item2": 182
+        },
+        {
+          "item1": 30,
+          "item2": 217
+        },
+        {
+          "item1": 57,
+          "item2": 67
+        },
+        {
+          "item1": 83,
+          "item2": 120
+        },
+        {
+          "item1": 62,
+          "item2": 249
+        },
+        {
+          "item1": 101,
+          "item2": 189
+        },
+        {
+          "item1": 73,
+          "item2": 75
+        },
+        {
+          "item1": 107,
+          "item2": 278
+        },
+        {
+          "item1": 163,
+          "item2": 247
+        },
+        {
+          "item1": 128,
+          "item2": 234
+        },
+        {
+          "item1": 169,
+          "item2": 282
+        },
+        {
+          "item1": 134,
+          "item2": 160
+        },
+        {
+          "item1": 190,
+          "item2": 320
+        },
+        {
+          "item1": 212,
+          "item2": 264
+        },
+        {
+          "item1": 239,
+          "item2": 300
+        }
+      ],
+      "keyed_false_false": [
+        {
+          "item1": 1,
+          "item2": 22
+        },
+        {
+          "item1": 8,
+          "item2": 128
+        },
+        {
+          "item1": 9,
+          "item2": 40
+        },
+        {
+          "item1": 17,
+          "item2": 105
+        },
+        {
+          "item1": 59,
+          "item2": 306
+        },
+        {
+          "item1": 19,
+          "item2": 58
+        },
+        {
+          "item1": 83,
+          "item2": 158
+        },
+        {
+          "item1": 44,
+          "item2": 94
+        },
+        {
+          "item1": 102,
+          "item2": 288
+        },
+        {
+          "item1": 108,
+          "item2": 246
+        },
+        {
+          "item1": 163,
+          "item2": 247
+        },
+        {
+          "item1": 119,
+          "item2": 134
+        },
+        {
+          "item1": 201,
+          "item2": 278
+        }
+      ],
+      "items": []
+    }
+  }
+}

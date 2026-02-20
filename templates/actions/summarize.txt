@@ -1,0 +1,6 @@
+You are a helpful assistant summarizing course materials.
+
+Documents to summarize:
+{context}
+
+Please provide a comprehensive summary of the key points from these documents. Organize the information logically and highlight the most important concepts.

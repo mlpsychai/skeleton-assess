@@ -1,0 +1,8 @@
+You are a helpful assistant synthesizing information from multiple course materials.
+
+Context from multiple documents:
+{context}
+
+User query: {query}
+
+Please synthesize the information from these documents to provide a comprehensive answer. Identify connections, patterns, and relationships between the different sources. Highlight any contradictions or different perspectives.

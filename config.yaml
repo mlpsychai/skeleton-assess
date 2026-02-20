@@ -1,0 +1,12 @@
+course_name: "psychometric"
+collection_name: psychometric_documents
+data_dir: ./data
+chroma_db_dir: ./chroma_db
+weeks: {}
+
+# RAG query settings
+rag_settings:
+  top_k_category: 15
+  top_k_integration: 20
+  top_k_treatment: 20
+  top_k_summary: 10

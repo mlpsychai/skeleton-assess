@@ -1,0 +1,336 @@
+{
+  "instrument": "MMPI-3",
+  "total_scales": 52,
+  "total_items": 335,
+  "source": "Sellbom, M., Wygant, D. B., Tarescavage, A. M., & Ben-Porath, Y. S. (2022). Using the MMPI-3 in Forensic Psychological Assessments. In C. Garofalo & J. J. Sijtsema (Eds.), Clinical Forensic Psychology. Springer.",
+  "scale_categories": [
+    {
+      "category": "Validity Scales",
+      "description": "Measure various forms of response styles that, when excessively present, could invalidate an MMPI-3 test protocol or indicate the need to qualify the interpretation.",
+      "subcategories": [
+        {
+          "subcategory": "Non-Content-Based Responding",
+          "description": "Unintentional or intentional responding that manifests as unscorable, random/inconsistent/careless, or indiscriminant fixed (acquiescent or counter-acquiescent) responding.",
+          "scales": [
+            {
+              "scale_name": "Combined Response Inconsistency",
+              "abbreviation": "CRIN",
+              "description": "Combination of random and fixed indiscriminant responding"
+            },
+            {
+              "scale_name": "Variable Response Inconsistency",
+              "abbreviation": "VRIN",
+              "description": "Inconsistent responding"
+            },
+            {
+              "scale_name": "True Response Inconsistency",
+              "abbreviation": "TRIN",
+              "description": "Indiscriminant fixed responding"
+            }
+          ]
+        },
+        {
+          "subcategory": "Over-Reporting",
+          "description": "Measure intentional or unintentional exaggeration or fabrication of psychopathology symptoms as well as non-credible somatic and cognitive complaints.",
+          "scales": [
+            {
+              "scale_name": "Infrequent Responses",
+              "abbreviation": "F",
+              "description": "Over-reporting validity scale based on rare responses in the general population"
+            },
+            {
+              "scale_name": "Infrequent Psychopathology Responses",
+              "abbreviation": "Fp",
+              "description": "Over-reporting validity scale based on rare responses in general and psychiatric populations"
+            },
+            {
+              "scale_name": "Infrequent Somatic Responses",
+              "abbreviation": "Fs",
+              "description": "Over-reporting validity scale based on rare somatic complaints in general and medical patient populations"
+            },
+            {
+              "scale_name": "Symptom Validity",
+              "abbreviation": "FBS",
+              "description": "Over-reporting validity scale based on non-credible somatic and cognitive complaints"
+            },
+            {
+              "scale_name": "Response Bias Scale",
+              "abbreviation": "RBS",
+              "description": "Over-reporting validity scale associated with failure on performance validity tests"
+            }
+          ]
+        },
+        {
+          "subcategory": "Under-Reporting",
+          "description": "Assess overly virtuous responding (or positive impression management) and a possibly non-credible avowal of good psychological adjustment and resilience.",
+          "scales": [
+            {
+              "scale_name": "Unlikely Virtues",
+              "abbreviation": "L",
+              "description": "Under-reporting validity scale based on rarely claimed moral attributes or activities"
+            },
+            {
+              "scale_name": "Adjustment Validity",
+              "abbreviation": "K",
+              "description": "Under-reporting validity scale describing an avowal of good psychological adjustment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Higher-Order Scales",
+      "description": "Operationalize broadband psychopathology spectra of internalizing, thought disorder, and externalizing. They map onto broader level dimensions identified in a wide range of psychopathology research. At the top of the interpretive hierarchy, they reflect general and pervasive dysfunction in their respective areas.",
+      "scales": [
+        {
+          "scale_name": "Emotional/Internalizing Dysfunction",
+          "abbreviation": "EID",
+          "description": "Pervasive problems associated with mood and affect"
+        },
+        {
+          "scale_name": "Thought Dysfunction",
+          "abbreviation": "THD",
+          "description": "Pervasive problems with disordered thinking"
+        },
+        {
+          "scale_name": "Behavioral/Externalizing Dysfunction",
+          "abbreviation": "BXD",
+          "description": "Pervasive problems with under-controlled or acting out behavior"
+        }
+      ]
+    },
+    {
+      "category": "Restructured Clinical Scales",
+      "description": "Slightly revised and shortened versions of their MMPI-2 and MMPI-2-RF counterparts. Unlike the original MMPI/MMPI-2 Clinical Scales, the RC Scales reflect transdiagnostic, dimensional psychological constructs rather than psychiatric syndromes.",
+      "scales": [
+        {
+          "scale_name": "Demoralization",
+          "abbreviation": "RCd",
+          "description": "General emotional distress; unhappiness and dissatisfaction"
+        },
+        {
+          "scale_name": "Somatic Complaints",
+          "abbreviation": "RC1",
+          "description": "Pre-occupation with various types of health complaints"
+        },
+        {
+          "scale_name": "Low Positive Emotions",
+          "abbreviation": "RC2",
+          "description": "Attenuated positive emotional experiences; significant anhedonia; disengagement"
+        },
+        {
+          "scale_name": "Antisocial Behavior",
+          "abbreviation": "RC4",
+          "description": "Antisocial proclivities, impulsivity, recklessness, and irresponsible behavior"
+        },
+        {
+          "scale_name": "Ideas of Persecution",
+          "abbreviation": "RC6",
+          "description": "Self-referential beliefs that others pose a threat; persecutory delusions"
+        },
+        {
+          "scale_name": "Dysfunctional Negative Emotions",
+          "abbreviation": "RC7",
+          "description": "Dysfunctional anxiety, anger, irritability, fear, guilt"
+        },
+        {
+          "scale_name": "Aberrant Experiences",
+          "abbreviation": "RC8",
+          "description": "Unusual thoughts or perceptions; dissociation"
+        },
+        {
+          "scale_name": "Hypomanic Activation",
+          "abbreviation": "RC9",
+          "description": "Excessive activation, drive, aggression, and grandiosity"
+        }
+      ]
+    },
+    {
+      "category": "Specific Problems Scales",
+      "description": "The most narrowband symptom and trait measures on the instrument, organized into four thematic domains.",
+      "domains": [
+        {
+          "domain": "Somatic/Cognitive",
+          "scales": [
+            {
+              "scale_name": "Malaise",
+              "abbreviation": "MLS",
+              "description": "Overall feeling of physical debilitation and poor health"
+            },
+            {
+              "scale_name": "Neurological Complaints",
+              "abbreviation": "NUC",
+              "description": "Complaints about faintness, weakness, bodily sensations, loss of balance, etc."
+            },
+            {
+              "scale_name": "Eating Concerns",
+              "abbreviation": "EAT",
+              "description": "Difficulties with restrictive eating, binge-eating, and purging behaviors"
+            },
+            {
+              "scale_name": "Cognitive Complaints",
+              "abbreviation": "COG",
+              "description": "Complaints about memory and difficulties concentrating"
+            }
+          ]
+        },
+        {
+          "domain": "Internalizing",
+          "scales": [
+            {
+              "scale_name": "Suicidal/Death Ideation",
+              "abbreviation": "SUI",
+              "description": "Suicidal ideation and reports of suicide attempts; preoccupation with death"
+            },
+            {
+              "scale_name": "Helplessness/Hopelessness",
+              "abbreviation": "HLP",
+              "description": "Belief that problems cannot be solved or goals be reached"
+            },
+            {
+              "scale_name": "Self-Doubt",
+              "abbreviation": "SFD",
+              "description": "Lacking in confidence, feelings of worthlessness"
+            },
+            {
+              "scale_name": "Inefficacy",
+              "abbreviation": "NFC",
+              "description": "Perception that one is inefficacious; indecisiveness"
+            },
+            {
+              "scale_name": "Stress",
+              "abbreviation": "STR",
+              "description": "Poor stress tolerance; nervousness; difficulty with time pressure"
+            },
+            {
+              "scale_name": "Worry",
+              "abbreviation": "WRY",
+              "description": "Excessive worry and preoccupation; anxious apprehension"
+            },
+            {
+              "scale_name": "Compulsivity",
+              "abbreviation": "CMP",
+              "description": "Engagement in compulsive or ritualistic behaviors"
+            },
+            {
+              "scale_name": "Anxiety-Related Experiences",
+              "abbreviation": "AXR",
+              "description": "Intense anxiety; frights; panic; frequent nightmares"
+            },
+            {
+              "scale_name": "Anger Proneness",
+              "abbreviation": "ANP",
+              "description": "Poor anger control; frustration intolerance; impatient with others"
+            },
+            {
+              "scale_name": "Behavior-Restricting Fears",
+              "abbreviation": "BRF",
+              "description": "Fears that considerably inhibit everyday activities"
+            }
+          ]
+        },
+        {
+          "domain": "Externalizing",
+          "scales": [
+            {
+              "scale_name": "Family Problems",
+              "abbreviation": "FML",
+              "description": "Problematic family relationships; familial alienation"
+            },
+            {
+              "scale_name": "Juvenile Conduct Problems",
+              "abbreviation": "JCP",
+              "description": "Significant problems at school and at home; stealing as a youth"
+            },
+            {
+              "scale_name": "Substance Abuse",
+              "abbreviation": "SUB",
+              "description": "Abuse of alcohol and drugs currently and/or in the past"
+            },
+            {
+              "scale_name": "Impulsivity",
+              "abbreviation": "IMP",
+              "description": "Poor impulse control and lack of planfulness"
+            },
+            {
+              "scale_name": "Activation",
+              "abbreviation": "ACT",
+              "description": "Increased excitation and energy level; euphoria; racing thoughts"
+            },
+            {
+              "scale_name": "Aggression",
+              "abbreviation": "AGG",
+              "description": "Aggressive behavior of both physical and verbal nature"
+            }
+          ]
+        },
+        {
+          "domain": "Interpersonal",
+          "scales": [
+            {
+              "scale_name": "Cynicism",
+              "abbreviation": "CYN",
+              "description": "Non self-referential beliefs expressing a generally low opinion and mistrust of others"
+            },
+            {
+              "scale_name": "Self-Importance",
+              "abbreviation": "SFI",
+              "description": "Ideation regarding special qualities and abilities"
+            },
+            {
+              "scale_name": "Dominance",
+              "abbreviation": "DOM",
+              "description": "Being domineering and assertive in relationships with others"
+            },
+            {
+              "scale_name": "Disaffiliativeness",
+              "abbreviation": "DSF",
+              "description": "Misanthropic attitudes about people; disliking being around others"
+            },
+            {
+              "scale_name": "Social Avoidance",
+              "abbreviation": "SAV",
+              "description": "Eschewing or not deriving pleasure from social events"
+            },
+            {
+              "scale_name": "Shyness",
+              "abbreviation": "SHY",
+              "description": "Prone to feel inhibited and anxious around others; bashful"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Personality Psychopathology Five (PSY-5) Scales",
+      "description": "Revised versions of their MMPI-2 and MMPI-2-RF counterparts. Represent dimensional personality traits with an abnormal range. They correspond well to a dimensional alternative to the categorical personality disorder framework and align well with the trait domains included in the Alternative Model for Personality Disorders (AMPD) in Section III of the DSM-5.",
+      "scales": [
+        {
+          "scale_name": "Aggressiveness",
+          "abbreviation": "AGGR",
+          "description": "Proactive, goal-directed aggression; assertiveness; grandiosity"
+        },
+        {
+          "scale_name": "Psychoticism",
+          "abbreviation": "PSYC",
+          "description": "Proclivities toward poor reality testing"
+        },
+        {
+          "scale_name": "Disconstraint",
+          "abbreviation": "DISC",
+          "description": "Disinhibited behavior; impulsivity; sensation seeking; risk taking"
+        },
+        {
+          "scale_name": "Negative Emotionality/Neuroticism",
+          "abbreviation": "NEGE",
+          "description": "Temperamental proclivity for anxiety, insecurity, worry, anger, and fear"
+        },
+        {
+          "scale_name": "Introversion/Low Positive Emotionality",
+          "abbreviation": "INTR",
+          "description": "Temperamental proclivity for anhedonia and social disengagement"
+        }
+      ]
+    }
+  ]
+}

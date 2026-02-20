@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skeleton Assess — Score Processor</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         max-width: 1280px; margin: 40px auto; padding: 0 20px; color: #222; background: #fafafa; }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 24px; }
+  label { display: block; font-weight: 600; margin-top: 16px; margin-bottom: 4px; font-size: 0.9rem; }
+  input[type="text"], input[type="file"] { width: 100%; padding: 8px 10px; border: 1px solid #ccc;
+         border-radius: 4px; font-size: 0.9rem; }
+  .radio-group { display: flex; gap: 16px; margin-top: 4px; }
+  .radio-group label { font-weight: 400; display: flex; align-items: center; gap: 4px; margin-top: 0; }
+  .checkbox-row { margin-top: 16px; display: flex; align-items: center; gap: 6px; }
+  .checkbox-row label { margin: 0; font-weight: 400; }
+  .client-info-section { margin-top: 8px; padding: 12px; background: #f0f0f0; border-radius: 4px; }
+  button[type="submit"] { margin-top: 24px; padding: 10px 24px; background: #2563eb; color: #fff;
+         border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+  button[type="submit"]:hover { background: #1d4ed8; }
+  button[type="submit"]:disabled { background: #93b4f5; cursor: not-allowed; }
+  #result { margin-top: 24px; padding: 14px; border-radius: 4px; display: none; }
+  #result.success { display: block; background: #dcfce7; border: 1px solid #86efac; color: #166534; }
+  #result.error   { display: block; background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; }
+  #result a { color: inherit; font-weight: 600; }
+  .spinner { display: none; margin-top: 20px; text-align: center; color: #555; }
+  .spinner.visible { display: block; }
+  .spinner::before { content: ""; display: inline-block; width: 18px; height: 18px;
+         border: 3px solid #999; border-top-color: transparent; border-radius: 50%;
+         animation: spin 0.7s linear infinite; vertical-align: middle; margin-right: 8px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hint { font-size: 0.8rem; color: #888; margin-top: 2px; }
+  .section-toggle { margin-bottom: 20px; }
+  .section-toggle button { padding: 8px 16px; background: #059669; color: #fff;
+         border: none; border-radius: 4px; font-size: 0.9rem; cursor: pointer; }
+  .section-toggle button:hover { background: #047857; }
+  .instrument-panel { display: none; margin-bottom: 24px; padding: 16px; background: #f0fdf4;
+         border: 1px solid #86efac; border-radius: 6px; }
+  .instrument-panel h2 { font-size: 1.1rem; margin-bottom: 12px; }
+  .instrument-panel input[type="text"],
+  .instrument-panel input[type="number"],
+  .instrument-panel select,
+  .instrument-panel textarea { width: 100%; padding: 8px 10px; border: 1px solid #ccc;
+         border-radius: 4px; font-size: 0.9rem; }
+  .instrument-panel textarea { resize: vertical; min-height: 60px; }
+  .instrument-panel .field-row { display: flex; gap: 12px; }
+  .instrument-panel .field-row > div { flex: 1; }
+  .instrument-panel button.save-btn { margin-top: 16px; padding: 8px 20px; background: #2563eb;
+         color: #fff; border: none; border-radius: 4px; font-size: 0.9rem; cursor: pointer; }
+  .instrument-panel button.save-btn:hover { background: #1d4ed8; }
+  .instrument-panel button.save-btn:disabled { background: #93b4f5; cursor: not-allowed; }
+  #instrumentResult { margin-top: 12px; padding: 10px; border-radius: 4px; display: none; font-size: 0.9rem; }
+  #instrumentResult.success { display: block; background: #dcfce7; border: 1px solid #86efac; color: #166534; }
+  #instrumentResult.error { display: block; background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; }
+  hr.divider { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+</style>
+</head>
+<body>
+
+<h1>Skeleton Assess</h1>
+<p class="subtitle">Score Processing Front End</p>
+
+<!-- New Instrument Config Section -->
+<div class="section-toggle">
+  <button type="button" id="toggleInstrumentBtn">New Instrument Config</button>
+</div>
+
+<div class="instrument-panel" id="instrumentPanel">
+  <h2>Create Instrument Configuration</h2>
+
+  <div class="field-row">
+    <div>
+      <label for="ic_config_name">Config Name *</label>
+      <input type="text" id="ic_config_name" placeholder="e.g. pai_335">
+      <p class="hint">Used as filename: {name}_config.json</p>
+    </div>
+    <div>
+      <label for="ic_num_items">Number of Items *</label>
+      <input type="number" id="ic_num_items" min="1" placeholder="e.g. 335">
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div>
+      <label for="ic_instrument_name">Instrument Name (short) *</label>
+      <input type="text" id="ic_instrument_name" placeholder="e.g. PAI">
+    </div>
+    <div>
+      <label for="ic_instrument_full_name">Instrument Full Name</label>
+      <input type="text" id="ic_instrument_full_name" placeholder="e.g. Personality Assessment Inventory">
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div>
+      <label for="ic_response_type">Response Type</label>
+      <select id="ic_response_type">
+        <option value="boolean" selected>Boolean (True/False)</option>
+        <option value="likert">Likert Scale</option>
+      </select>
+    </div>
+    <div>
+      <label for="ic_max_missing">Max Missing Threshold</label>
+      <input type="number" id="ic_max_missing" step="0.01" min="0" max="1" value="0.10">
+      <p class="hint">Proportion allowed missing (0.10 = 10%)</p>
+    </div>
+  </div>
+
+  <div id="booleanOptions">
+    <div class="field-row">
+      <div>
+        <label for="ic_true_values">True Values</label>
+        <input type="text" id="ic_true_values" value="True, 1, Yes, T">
+        <p class="hint">Comma-separated</p>
+      </div>
+      <div>
+        <label for="ic_false_values">False Values</label>
+        <input type="text" id="ic_false_values" value="False, 0, No, F">
+        <p class="hint">Comma-separated</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="likertOptions" style="display:none;">
+    <div class="field-row">
+      <div>
+        <label for="ic_likert_min">Min Value</label>
+        <input type="number" id="ic_likert_min" value="0">
+      </div>
+      <div>
+        <label for="ic_likert_max">Max Value</label>
+        <input type="number" id="ic_likert_max" value="3">
+      </div>
+    </div>
+  </div>
+
+  <label for="ic_reference">Instrument Reference</label>
+  <input type="text" id="ic_reference" placeholder="e.g. Morey, L.C. (1991)...">
+
+  <label for="ic_description">Instrument Description</label>
+  <textarea id="ic_description" placeholder="Brief description of the instrument..."></textarea>
+
+  <label for="ic_norms">Norms</label>
+  <input type="text" id="ic_norms" placeholder="e.g. Community adults, Clinical sample">
+
+  <label for="ic_disclaimer">Disclaimer Text</label>
+  <textarea id="ic_disclaimer" placeholder="Leave blank to use the default disclaimer"></textarea>
+
+  <button type="button" class="save-btn" id="saveInstrumentBtn">Save Instrument Config</button>
+  <div id="instrumentResult"></div>
+</div>
+
+<hr class="divider">
+
+<!-- Score Processing Form -->
+<form id="scoreForm" enctype="multipart/form-data">
+
+  <label for="score_file">Score CSV File *</label>
+  <input type="file" id="score_file" name="score_file" accept=".csv" required>
+
+  <label for="instrument_config">Instrument Config Path</label>
+  <input type="text" id="instrument_config" name="instrument_config" placeholder="instrument_config.json">
+  <p class="hint">Leave blank for default (instrument_config.json)</p>
+
+  <label>Report Format</label>
+  <div class="radio-group">
+    <label><input type="radio" name="format" value="html" checked> HTML</label>
+    <label><input type="radio" name="format" value="docx"> DOCX</label>
+    <label><input type="radio" name="format" value="both"> Both</label>
+  </div>
+
+  <div class="checkbox-row">
+    <input type="checkbox" id="interpretive" name="interpretive">
+    <label for="interpretive">Generate interpretive report (requires ingested worksheets)</label>
+  </div>
+
+  <div id="clientInfoSection" class="client-info-section" style="display:none;">
+    <label for="client_info_file">Client Info JSON</label>
+    <input type="file" id="client_info_file" name="client_info_file" accept=".json">
+    <p class="hint">Optional — provides client demographics for the narrative</p>
+  </div>
+
+  <label for="output_dir">Output Directory</label>
+  <input type="text" id="output_dir" name="output_dir" placeholder="output/reports">
+  <p class="hint">Leave blank for default (output/reports)</p>
+
+  <button type="submit" id="submitBtn">Generate Report</button>
+</form>
+
+<div class="spinner" id="spinner">Processing scores…</div>
+<div id="result"></div>
+
+<script>
+  // --- Instrument Config Panel ---
+  const instrumentPanel = document.getElementById("instrumentPanel");
+  const toggleBtn = document.getElementById("toggleInstrumentBtn");
+  const responseTypeSelect = document.getElementById("ic_response_type");
+  const booleanOpts = document.getElementById("booleanOptions");
+  const likertOpts = document.getElementById("likertOptions");
+  const saveInstrumentBtn = document.getElementById("saveInstrumentBtn");
+  const instrumentResult = document.getElementById("instrumentResult");
+
+  toggleBtn.addEventListener("click", () => {
+    const open = instrumentPanel.style.display === "block";
+    instrumentPanel.style.display = open ? "none" : "block";
+    toggleBtn.textContent = open ? "New Instrument Config" : "Hide Instrument Config";
+  });
+
+  responseTypeSelect.addEventListener("change", () => {
+    const isLikert = responseTypeSelect.value === "likert";
+    booleanOpts.style.display = isLikert ? "none" : "";
+    likertOpts.style.display = isLikert ? "" : "none";
+  });
+
+  saveInstrumentBtn.addEventListener("click", async () => {
+    instrumentResult.className = "";
+    instrumentResult.style.display = "none";
+
+    const configName = document.getElementById("ic_config_name").value.trim();
+    const instrumentName = document.getElementById("ic_instrument_name").value.trim();
+    const numItems = document.getElementById("ic_num_items").value.trim();
+
+    if (!configName || !instrumentName || !numItems) {
+      instrumentResult.className = "error";
+      instrumentResult.textContent = "Config Name, Instrument Name, and Number of Items are required.";
+      return;
+    }
+
+    const body = {
+      config_name: configName,
+      instrument_name: instrumentName,
+      instrument_full_name: document.getElementById("ic_instrument_full_name").value.trim(),
+      num_items: numItems,
+      response_type: responseTypeSelect.value,
+      max_missing_threshold: document.getElementById("ic_max_missing").value,
+      true_values: document.getElementById("ic_true_values").value,
+      false_values: document.getElementById("ic_false_values").value,
+      likert_min: document.getElementById("ic_likert_min").value,
+      likert_max: document.getElementById("ic_likert_max").value,
+      instrument_reference: document.getElementById("ic_reference").value.trim(),
+      instrument_description: document.getElementById("ic_description").value.trim(),
+      norms: document.getElementById("ic_norms").value.trim(),
+      disclaimer_text: document.getElementById("ic_disclaimer").value.trim(),
+    };
+
+    saveInstrumentBtn.disabled = true;
+    try {
+      const resp = await fetch("/api/create-instrument", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const data = await resp.json();
+      if (data.success) {
+        instrumentResult.className = "success";
+        instrumentResult.innerHTML = `Saved: <strong>${data.path}</strong>`;
+        // Auto-populate the config path in the score form
+        document.getElementById("instrument_config").value = data.path;
+      } else {
+        instrumentResult.className = "error";
+        instrumentResult.textContent = `Error: ${data.error}`;
+      }
+    } catch (err) {
+      instrumentResult.className = "error";
+      instrumentResult.textContent = `Request failed: ${err.message}`;
+    } finally {
+      saveInstrumentBtn.disabled = false;
+    }
+  });
+
+  // --- Score Processing Form ---
+  const form = document.getElementById("scoreForm");
+  const interpCheckbox = document.getElementById("interpretive");
+  const clientSection = document.getElementById("clientInfoSection");
+  const spinner = document.getElementById("spinner");
+  const result = document.getElementById("result");
+  const submitBtn = document.getElementById("submitBtn");
+
+  interpCheckbox.addEventListener("change", () => {
+    clientSection.style.display = interpCheckbox.checked ? "block" : "none";
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    result.className = "";
+    result.style.display = "none";
+    result.innerHTML = "";
+    spinner.classList.add("visible");
+    submitBtn.disabled = true;
+
+    const fd = new FormData(form);
+    // Send interpretive as "true"/"false" string
+    fd.set("interpretive", interpCheckbox.checked ? "true" : "false");
+
+    try {
+      const resp = await fetch("/api/generate", { method: "POST", body: fd });
+      const data = await resp.json();
+
+      if (data.success) {
+        const links = data.files.map(f => {
+          // Convert "output/reports/foo.html" to a serveable link
+          const basename = f.split("/").pop();
+          return `<a href="/reports/${encodeURIComponent(basename)}" target="_blank">${basename}</a>`;
+        }).join("<br>");
+        result.className = "success";
+        result.innerHTML = `Report generated successfully:<br>${links}`;
+      } else {
+        result.className = "error";
+        result.textContent = `Error: ${data.error}`;
+      }
+    } catch (err) {
+      result.className = "error";
+      result.textContent = `Request failed: ${err.message}`;
+    } finally {
+      spinner.classList.remove("visible");
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

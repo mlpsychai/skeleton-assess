@@ -1,0 +1,2 @@
+test_id,test_date,examinee_id,item_1,item_2,item_3,item_4,item_5,item_6,item_7,item_8,item_9,item_10
+TEST_001,2025-01-15,EX_001,True,True,False,True,True,False,True,False,True,False

@@ -1,0 +1,45 @@
+{
+  "_comment": "TEMPLATE — Replace all values with your instrument's configuration.",
+
+  "instrument_name": "",
+  "instrument_full_name": "",
+  "instrument_reference": "",
+  "instrument_description": "",
+  "num_items": 0,
+  "response_type": "boolean",
+  "response_format": "",
+  "administration_format": "",
+  "norms": "",
+
+  "response_options": {
+    "true_values": ["True", "1", "Yes", "T"],
+    "false_values": ["False", "0", "No", "F"]
+  },
+
+  "files": {
+    "mapping": "templates/mapping.json",
+    "scales": "templates/scales.json",
+    "tscore_tables": "templates/tscore_tables.json",
+    "formatting": "templates/formatting.json"
+  },
+
+  "interpretive_cutoffs": [
+    {"label": "Within Normal Limits", "max_t": 59, "elevated": false},
+    {"label": "Slightly Elevated", "min_t": 60, "max_t": 64, "elevated": false},
+    {"label": "Moderately Elevated", "min_t": 65, "max_t": 79, "elevated": true},
+    {"label": "Clinically Significant", "min_t": 80, "elevated": true}
+  ],
+
+  "safety_scales": [],
+  "max_missing_threshold": 0.10,
+
+  "special_worksheets": {},
+
+  "categories": [],
+
+  "formatting": {},
+
+  "validity_subcategories": {},
+
+  "disclaimer_text": "IMPORTANT DISCLAIMER:\nThis report was generated for educational and research purposes only."
+}

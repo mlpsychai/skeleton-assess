@@ -1,0 +1,20 @@
+{
+  "description": "Sample scale descriptions for the 5-scale example instruments",
+  "scale_categories": [
+    {
+      "category": "Validity",
+      "scales": [
+        {"abbreviation": "VAL", "name": "Validity", "description": "Assesses response consistency"}
+      ]
+    },
+    {
+      "category": "Clinical Scales",
+      "scales": [
+        {"abbreviation": "ANX", "name": "Anxiety", "description": "Measures anxiety-related symptoms"},
+        {"abbreviation": "DEP", "name": "Depression", "description": "Measures depressive symptoms"},
+        {"abbreviation": "SOM", "name": "Somatic Complaints", "description": "Measures somatic symptom reporting"},
+        {"abbreviation": "SOC", "name": "Social Functioning", "description": "Measures social functioning difficulties"}
+      ]
+    }
+  ]
+}

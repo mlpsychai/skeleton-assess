@@ -1,0 +1,61 @@
+{
+  "description": "Sample 5-scale boolean (True/False) instrument mapping",
+  "instrument": "Sample Boolean Instrument",
+  "scales": {
+    "ANX": {
+      "scale_name": "Anxiety",
+      "abbreviation": "ANX",
+      "item_count": 5,
+      "items": [
+        {"item": 1, "keyed": "True"},
+        {"item": 3, "keyed": "True"},
+        {"item": 5, "keyed": "False"},
+        {"item": 7, "keyed": "True"},
+        {"item": 9, "keyed": "False"}
+      ]
+    },
+    "DEP": {
+      "scale_name": "Depression",
+      "abbreviation": "DEP",
+      "item_count": 5,
+      "items": [
+        {"item": 2, "keyed": "True"},
+        {"item": 4, "keyed": "True"},
+        {"item": 6, "keyed": "False"},
+        {"item": 8, "keyed": "True"},
+        {"item": 10, "keyed": "False"}
+      ]
+    },
+    "SOM": {
+      "scale_name": "Somatic Complaints",
+      "abbreviation": "SOM",
+      "item_count": 4,
+      "items": [
+        {"item": 1, "keyed": "True"},
+        {"item": 2, "keyed": "False"},
+        {"item": 6, "keyed": "True"},
+        {"item": 9, "keyed": "True"}
+      ]
+    },
+    "SOC": {
+      "scale_name": "Social Functioning",
+      "abbreviation": "SOC",
+      "item_count": 3,
+      "items": [
+        {"item": 3, "keyed": "False"},
+        {"item": 7, "keyed": "True"},
+        {"item": 10, "keyed": "True"}
+      ]
+    },
+    "VAL": {
+      "scale_name": "Validity",
+      "abbreviation": "VAL",
+      "item_count": 3,
+      "items": [
+        {"item": 4, "keyed": "True"},
+        {"item": 5, "keyed": "True"},
+        {"item": 8, "keyed": "False"}
+      ]
+    }
+  }
+}
