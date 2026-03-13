@@ -1,0 +1,388 @@
+{
+  "instrument": "PAI",
+  "total_scales": 22,
+  "total_subscales": 31,
+  "total_items": 344,
+  "source": "Morey, L. C. (2007). Personality Assessment Inventory professional manual (2nd ed.). PAR.",
+  "response_format": {
+    "type": "4-point Likert",
+    "options": [
+      {"value": 0, "label": "False"},
+      {"value": 1, "label": "Slightly True"},
+      {"value": 2, "label": "Mainly True"},
+      {"value": 3, "label": "Very True"}
+    ]
+  },
+  "scale_categories": [
+    {
+      "category": "Validity Scales",
+      "description": "Assess the degree to which the respondent's protocol is valid and interpretable, including detection of random, careless, or biased responding patterns.",
+      "scales": [
+        {
+          "scale_name": "Inconsistency",
+          "abbreviation": "ICN",
+          "num_items": "10 pairs",
+          "description": "Measures random or careless responding by comparing responses to pairs of items with similar content; high scores suggest the respondent was not attending to item content."
+        },
+        {
+          "scale_name": "Infrequency",
+          "abbreviation": "INF",
+          "num_items": 8,
+          "description": "Measures idiosyncratic or random responding by identifying endorsement of items with very low base rates; high scores suggest the respondent was not attending to item content or responding in an atypical manner."
+        },
+        {
+          "scale_name": "Negative Impression Management",
+          "abbreviation": "NIM",
+          "num_items": 9,
+          "description": "Measures exaggerated unfavorable presentation or malingering; high scores suggest the respondent may be portraying themselves in an overly negative light, exaggerating symptoms, or feigning psychopathology."
+        },
+        {
+          "scale_name": "Positive Impression Management",
+          "abbreviation": "PIM",
+          "num_items": 9,
+          "description": "Measures overly favorable self-presentation or defensiveness; high scores suggest the respondent may be attempting to present themselves in an unrealistically positive manner, minimizing problems or shortcomings."
+        }
+      ]
+    },
+    {
+      "category": "Clinical Scales",
+      "description": "Measure major clinical constructs relevant to psychological assessment and diagnosis. Most clinical scales contain three subscales that provide more specific information about the nature of the clinical presentation. Each full clinical scale comprises 24 items (except ALC and DRG, which have 12 items each).",
+      "scales": [
+        {
+          "scale_name": "Somatic Complaints",
+          "abbreviation": "SOM",
+          "num_items": 24,
+          "description": "Measures preoccupation with health matters and somatic complaints associated with somatization or conversion disorders; high scores indicate individuals who are likely to be reporting unusual physical symptoms and concerns.",
+          "subscales": [
+            {
+              "scale_name": "Conversion",
+              "abbreviation": "SOM-C",
+              "num_items": 8,
+              "description": "Measures sensory and motor symptoms suggestive of conversion disorder, such as numbness, problems with vision or hearing, and pseudoneurological complaints."
+            },
+            {
+              "scale_name": "Somatization",
+              "abbreviation": "SOM-S",
+              "num_items": 8,
+              "description": "Measures common physical symptoms and vague complaints of ill health and fatigue, typically associated with somatization disorder."
+            },
+            {
+              "scale_name": "Health Concerns",
+              "abbreviation": "SOM-H",
+              "num_items": 8,
+              "description": "Measures preoccupation with health status and physical problems, including worry about health, perceived poor health, and efforts to seek medical attention."
+            }
+          ]
+        },
+        {
+          "scale_name": "Anxiety",
+          "abbreviation": "ANX",
+          "num_items": 24,
+          "description": "Measures the phenomenology and observable signs of anxiety across cognitive, affective, and physiological domains; high scores indicate individuals experiencing significant levels of tension, worry, and nervousness.",
+          "subscales": [
+            {
+              "scale_name": "Cognitive",
+              "abbreviation": "ANX-C",
+              "num_items": 8,
+              "description": "Measures ruminative worry, cognitive interference, and preoccupation with current concerns and problems."
+            },
+            {
+              "scale_name": "Affective",
+              "abbreviation": "ANX-A",
+              "num_items": 8,
+              "description": "Measures the subjective experience of anxiety, including feelings of tension, apprehension, nervousness, and dread."
+            },
+            {
+              "scale_name": "Physiological",
+              "abbreviation": "ANX-P",
+              "num_items": 8,
+              "description": "Measures overt physical signs of anxiety, including sweaty palms, racing heart, shortness of breath, trembling, and irregular sleep."
+            }
+          ]
+        },
+        {
+          "scale_name": "Anxiety-Related Disorders",
+          "abbreviation": "ARD",
+          "num_items": 24,
+          "description": "Measures symptoms and behaviors related to specific anxiety disorders, including obsessive-compulsive features, phobic avoidance, and traumatic stress; high scores suggest the presence of anxiety-related symptomatology beyond generalized anxiety.",
+          "subscales": [
+            {
+              "scale_name": "Obsessive-Compulsive",
+              "abbreviation": "ARD-O",
+              "num_items": 8,
+              "description": "Measures intrusive thoughts, indecisiveness, rigidity, perfectionism, excessive preoccupation with details, and compulsive behaviors."
+            },
+            {
+              "scale_name": "Phobias",
+              "abbreviation": "ARD-P",
+              "num_items": 8,
+              "description": "Measures common phobic fears and avoidance behaviors, including fears of public transportation, heights, enclosed spaces, and social situations."
+            },
+            {
+              "scale_name": "Traumatic Stress",
+              "abbreviation": "ARD-T",
+              "num_items": 8,
+              "description": "Measures the experience of traumatic events and their psychological sequelae, including intrusive re-experiencing, avoidance, and hyperarousal symptoms consistent with PTSD."
+            }
+          ]
+        },
+        {
+          "scale_name": "Depression",
+          "abbreviation": "DEP",
+          "num_items": 24,
+          "description": "Measures symptoms and phenomenology of depressive disorders across cognitive, affective, and physiological domains; high scores indicate individuals experiencing sadness, worthlessness, hopelessness, and impairment in daily functioning.",
+          "subscales": [
+            {
+              "scale_name": "Cognitive",
+              "abbreviation": "DEP-C",
+              "num_items": 8,
+              "description": "Measures cognitive aspects of depression, including feelings of worthlessness, hopelessness, personal failure, indecisiveness, and difficulty concentrating."
+            },
+            {
+              "scale_name": "Affective",
+              "abbreviation": "DEP-A",
+              "num_items": 8,
+              "description": "Measures the subjective emotional experience of depression, including sadness, loss of interest in activities, anhedonia, and loss of sense of humor."
+            },
+            {
+              "scale_name": "Physiological",
+              "abbreviation": "DEP-P",
+              "num_items": 8,
+              "description": "Measures physical and vegetative signs of depression, including changes in sleep, appetite, energy level, and psychomotor activity."
+            }
+          ]
+        },
+        {
+          "scale_name": "Mania",
+          "abbreviation": "MAN",
+          "num_items": 24,
+          "description": "Measures affective, cognitive, and behavioral symptoms of mania and hypomania; high scores indicate individuals experiencing elevated mood, grandiosity, increased activity, and impaired judgment.",
+          "subscales": [
+            {
+              "scale_name": "Activity Level",
+              "abbreviation": "MAN-A",
+              "num_items": 8,
+              "description": "Measures increased psychomotor activation, disorganized overinvolvement in activities, racing thoughts, and pressure of speech."
+            },
+            {
+              "scale_name": "Grandiosity",
+              "abbreviation": "MAN-G",
+              "num_items": 8,
+              "description": "Measures inflated self-esteem, expansiveness, and a belief that one has special talents, abilities, or powers beyond those of the average person."
+            },
+            {
+              "scale_name": "Irritability",
+              "abbreviation": "MAN-I",
+              "num_items": 8,
+              "description": "Measures frustration with the demands and perceived limitations imposed by others, strained relationships, and irritable mood when goals are thwarted."
+            }
+          ]
+        },
+        {
+          "scale_name": "Paranoia",
+          "abbreviation": "PAR",
+          "num_items": 24,
+          "description": "Measures symptoms of paranoid disorders and more enduring characteristics of paranoid personality; high scores indicate suspiciousness, hostility, and a belief that one has been treated unfairly.",
+          "subscales": [
+            {
+              "scale_name": "Hypervigilance",
+              "abbreviation": "PAR-H",
+              "num_items": 8,
+              "description": "Measures suspiciousness, guardedness, and a tendency to monitor the environment closely for potential threats or slights."
+            },
+            {
+              "scale_name": "Persecution",
+              "abbreviation": "PAR-P",
+              "num_items": 8,
+              "description": "Measures a belief that one is being deliberately treated unfairly, singled out, or harmed by others; at extreme levels may involve frank persecutory delusions."
+            },
+            {
+              "scale_name": "Resentment",
+              "abbreviation": "PAR-R",
+              "num_items": 8,
+              "description": "Measures bitterness, cynicism, and a tendency to hold grudges; reflects externalization of blame and feelings of being mistreated."
+            }
+          ]
+        },
+        {
+          "scale_name": "Schizophrenia",
+          "abbreviation": "SCZ",
+          "num_items": 24,
+          "description": "Measures symptoms relevant to the broad spectrum of schizophrenic disorders, including psychotic experiences, social withdrawal, and thought disorder; high scores indicate significant disturbance in thinking, perception, and social functioning.",
+          "subscales": [
+            {
+              "scale_name": "Psychotic Experiences",
+              "abbreviation": "SCZ-P",
+              "num_items": 8,
+              "description": "Measures unusual sensory and perceptual experiences, including hallucinations, delusions of reference, and magical thinking."
+            },
+            {
+              "scale_name": "Social Detachment",
+              "abbreviation": "SCZ-S",
+              "num_items": 8,
+              "description": "Measures social isolation, discomfort in social interactions, and a preference for being alone; reflects the negative symptoms and schizoid features of the schizophrenia spectrum."
+            },
+            {
+              "scale_name": "Thought Disorder",
+              "abbreviation": "SCZ-T",
+              "num_items": 8,
+              "description": "Measures confusion, concentration difficulties, and disorganized thought processes characteristic of formal thought disorder."
+            }
+          ]
+        },
+        {
+          "scale_name": "Borderline Features",
+          "abbreviation": "BOR",
+          "num_items": 24,
+          "description": "Measures attributes indicative of borderline level of personality functioning, including unstable and fluctuating interpersonal relationships, impulsivity, affective lability, and unstable self-image.",
+          "subscales": [
+            {
+              "scale_name": "Affective Instability",
+              "abbreviation": "BOR-A",
+              "num_items": 8,
+              "description": "Measures emotional responsiveness, rapid mood shifts, and poor emotional regulation; reflects the affective lability central to borderline personality."
+            },
+            {
+              "scale_name": "Identity Problems",
+              "abbreviation": "BOR-I",
+              "num_items": 8,
+              "description": "Measures uncertainty about major life issues, feelings of emptiness, lack of purpose, and an unstable sense of self."
+            },
+            {
+              "scale_name": "Negative Relationships",
+              "abbreviation": "BOR-N",
+              "num_items": 8,
+              "description": "Measures a history of ambivalent, unstable relationships characterized by exploitation, betrayal, and conflictual interactions."
+            },
+            {
+              "scale_name": "Self-Harm",
+              "abbreviation": "BOR-S",
+              "num_items": 8,
+              "description": "Measures impulsivity and self-damaging behaviors, including reckless actions, self-harm gestures, and poor behavioral control."
+            }
+          ]
+        },
+        {
+          "scale_name": "Antisocial Features",
+          "abbreviation": "ANT",
+          "num_items": 24,
+          "description": "Measures features of antisocial personality and psychopathy, including history of illegal acts, authority problems, egocentricity, lack of empathy, and sensation seeking.",
+          "subscales": [
+            {
+              "scale_name": "Antisocial Behaviors",
+              "abbreviation": "ANT-A",
+              "num_items": 8,
+              "description": "Measures history of antisocial acts, legal difficulties, and involvement in illegal activities."
+            },
+            {
+              "scale_name": "Egocentricity",
+              "abbreviation": "ANT-E",
+              "num_items": 8,
+              "description": "Measures lack of empathy, exploitative attitudes toward others, callousness, and a focus on self-interest without regard for the impact on others."
+            },
+            {
+              "scale_name": "Stimulus-Seeking",
+              "abbreviation": "ANT-S",
+              "num_items": 8,
+              "description": "Measures a craving for excitement and novelty, proneness to boredom, recklessness, and a tendency to engage in risky behaviors for stimulation."
+            }
+          ]
+        },
+        {
+          "scale_name": "Alcohol Problems",
+          "abbreviation": "ALC",
+          "num_items": 12,
+          "description": "Measures problematic behaviors and consequences associated with alcohol use, including quantity and frequency of use, adverse consequences, features of dependence, and motivation to change drinking behavior.",
+          "subscales": null
+        },
+        {
+          "scale_name": "Drug Problems",
+          "abbreviation": "DRG",
+          "num_items": 12,
+          "description": "Measures problematic behaviors and consequences associated with drug use, including involvement with drugs, adverse consequences, features of dependence, and motivation to change drug use behavior.",
+          "subscales": null
+        }
+      ]
+    },
+    {
+      "category": "Treatment Consideration Scales",
+      "description": "Measure constructs relevant to treatment planning and the potential complications of treatment, including risk factors, environmental stressors, and treatment amenability.",
+      "scales": [
+        {
+          "scale_name": "Aggression",
+          "abbreviation": "AGG",
+          "num_items": 18,
+          "description": "Measures characteristics and attitudes related to anger, assertiveness, hostility, and aggression; high scores indicate individuals with significant anger control problems who may be at risk for aggressive behavior.",
+          "subscales": [
+            {
+              "scale_name": "Aggressive Attitude",
+              "abbreviation": "AGG-A",
+              "num_items": 6,
+              "description": "Measures hostility, poor anger control, and a readiness to express anger toward others; reflects an attitudinal disposition toward aggression."
+            },
+            {
+              "scale_name": "Verbal Aggression",
+              "abbreviation": "AGG-V",
+              "num_items": 6,
+              "description": "Measures verbal expressions of anger, including being argumentative, sarcastic, threatening, and openly confrontational."
+            },
+            {
+              "scale_name": "Physical Aggression",
+              "abbreviation": "AGG-P",
+              "num_items": 6,
+              "description": "Measures tendencies toward physical displays of anger, including property damage, physical altercations, and threats of bodily harm."
+            }
+          ]
+        },
+        {
+          "scale_name": "Suicidal Ideation",
+          "abbreviation": "SUI",
+          "num_items": 12,
+          "description": "Measures suicidal ideation ranging from hopelessness and vague thoughts of death to specific suicidal plans; high scores indicate a critical need for further evaluation of suicide risk.",
+          "subscales": null
+        },
+        {
+          "scale_name": "Stress",
+          "abbreviation": "STR",
+          "num_items": 8,
+          "description": "Measures the impact of recent stressors on major life areas, including family, health, finances, and employment; high scores indicate an individual who is currently experiencing significant life stress that may complicate treatment.",
+          "subscales": null
+        },
+        {
+          "scale_name": "Nonsupport",
+          "abbreviation": "NON",
+          "num_items": 8,
+          "description": "Measures perceived lack of social support, including the availability of close personal relationships and the quality of interpersonal interactions; high scores indicate an individual who perceives a lack of social support systems.",
+          "subscales": null
+        },
+        {
+          "scale_name": "Treatment Rejection",
+          "abbreviation": "RXR",
+          "num_items": 8,
+          "description": "Measures attributes and attitudes indicative of a lack of interest in or motivation for making personal changes; high scores indicate an individual who acknowledges few personal problems and sees little need for change, suggesting limited engagement with psychological treatment.",
+          "subscales": null
+        }
+      ]
+    },
+    {
+      "category": "Interpersonal Scales",
+      "description": "Provide information about interpersonal style along two orthogonal dimensions derived from interpersonal circumplex models: a dominant-submissive dimension and a warm-cold dimension.",
+      "scales": [
+        {
+          "scale_name": "Dominance",
+          "abbreviation": "DOM",
+          "num_items": 12,
+          "description": "Measures the degree to which a person is controlling and independent in personal relationships; high scores indicate a dominant, assertive, and controlling interpersonal style, while low scores indicate a submissive, deferential, and meek style.",
+          "subscales": null
+        },
+        {
+          "scale_name": "Warmth",
+          "abbreviation": "WRM",
+          "num_items": 12,
+          "description": "Measures the degree to which a person is supportive and empathic in personal relationships; high scores indicate a warm, outgoing, and nurturing interpersonal style, while low scores indicate a cold, rejecting, and withdrawn style.",
+          "subscales": null
+        }
+      ]
+    }
+  ]
+}

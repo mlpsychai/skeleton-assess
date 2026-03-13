@@ -23,10 +23,6 @@ SUPPORTED_EXTENSIONS = {
     ".txt": "Text File",
 }
 
-# ChromaDB settings
-DEFAULT_COLLECTION_NAME = "documents"
-DEFAULT_CHROMA_DIR = "./chroma_db"
-
 # Query settings
 DEFAULT_TOP_K = 10
 DEFAULT_TEMPERATURE = 0.7

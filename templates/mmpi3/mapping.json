@@ -554,23 +554,15 @@
       "scale_name": "Uncommon Virtues",
       "items": [
         {
-          "item": 21,
+          "item": 16,
           "keyed": "False"
         },
         {
-          "item": 34,
+          "item": 45,
           "keyed": "False"
         },
         {
-          "item": 39,
-          "keyed": "False"
-        },
-        {
-          "item": 49,
-          "keyed": "False"
-        },
-        {
-          "item": 66,
+          "item": 58,
           "keyed": "False"
         },
         {
@@ -578,19 +570,15 @@
           "keyed": "True"
         },
         {
-          "item": 82,
+          "item": 95,
           "keyed": "False"
         },
         {
-          "item": 84,
+          "item": 127,
           "keyed": "False"
         },
         {
-          "item": 96,
-          "keyed": "False"
-        },
-        {
-          "item": 131,
+          "item": 154,
           "keyed": "False"
         },
         {
@@ -598,16 +586,28 @@
           "keyed": "False"
         },
         {
-          "item": 205,
+          "item": 183,
           "keyed": "False"
         },
         {
-          "item": 223,
+          "item": 210,
+          "keyed": "False"
+        },
+        {
+          "item": 243,
           "keyed": "False"
         },
         {
           "item": 268,
           "keyed": "True"
+        },
+        {
+          "item": 298,
+          "keyed": "False"
+        },
+        {
+          "item": 325,
+          "keyed": "False"
         }
       ],
       "item_count": 14
@@ -629,7 +629,7 @@
         },
         {
           "item": 163,
-          "keyed": "False"
+          "keyed": "True"
         },
         {
           "item": 171,
@@ -641,11 +641,11 @@
         },
         {
           "item": 202,
-          "keyed": "False"
+          "keyed": "True"
         },
         {
           "item": 234,
-          "keyed": "False"
+          "keyed": "True"
         },
         {
           "item": 263,
@@ -1022,7 +1022,7 @@
           "keyed": "True"
         },
         {
-          "item": 233,
+          "item": 223,
           "keyed": "True"
         },
         {
@@ -1945,7 +1945,7 @@
       "items": [
         {
           "item": 8,
-          "keyed": "True"
+          "keyed": "False"
         },
         {
           "item": 73,
@@ -2288,8 +2288,8 @@
           "keyed": "True"
         },
         {
-          "item": 127,
-          "keyed": "True"
+          "item": 237,
+          "keyed": "False"
         },
         {
           "item": 141,
@@ -2322,24 +2322,24 @@
       "scale_name": "Impulsivity",
       "items": [
         {
+          "item": 3,
+          "keyed": "True"
+        },
+        {
           "item": 39,
           "keyed": "True"
         },
         {
-          "item": 61,
-          "keyed": "False"
+          "item": 64,
+          "keyed": "True"
         },
         {
           "item": 82,
           "keyed": "True"
         },
         {
-          "item": 155,
+          "item": 116,
           "keyed": "True"
-        },
-        {
-          "item": 237,
-          "keyed": "False"
         },
         {
           "item": 259,

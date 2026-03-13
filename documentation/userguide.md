@@ -38,12 +38,12 @@ CSV responses → Load → Validate → Calculate → Report
 The project includes two local packages (no external installation needed beyond `requirements.txt`):
 
 - **`psychometric_scoring/`** — scoring, validation, chart rendering, and report generation
-- **`rag_core/`** — document loading, ChromaDB vector storage, and RAG query orchestration
+- **`rag_core/`** — document loading, Neon Postgres (pgvector) vector storage, and RAG query orchestration
 
 ### Two Configuration Layers
 
 1. **`instrument_config.json`** — defines the instrument (scales, items, cutoffs, formatting)
-2. **`config.yaml`** — defines the RAG system (ChromaDB paths, collection names)
+2. **`config.yaml`** — defines the RAG system (query settings like top_k values)
 
 ---
 
@@ -452,50 +452,25 @@ If Playwright is not installed, DOCX reports generate without charts and include
 
 ## Setting Up RAG Interpretation
 
-RAG (Retrieval-Augmented Generation) interpretation generates clinical narrative text using your interpretation worksheets as source material.
+RAG (Retrieval-Augmented Generation) interpretation generates clinical narrative text using textbook content stored in Neon Postgres with pgvector embeddings.
 
 ### Prerequisites
 
-- Anthropic API key set as `ANTHROPIC_API_KEY` environment variable
-- Interpretation worksheet `.md` files for your instrument
-- ChromaDB for vector storage
+- `.env` file with `ANTHROPIC_API_KEY` and `DATABASE_URL` (Neon connection string)
+- The `mmpi3` schema in Neon populated with embedded textbook chunks (357 chunks from "Interpreting the MMPI-3")
 
-### Step 1: Create Interpretation Worksheets
-
-Write Markdown files with clinical interpretation guidance for each scale category. Name them to match the `worksheet` field in your config:
-
-```
-worksheets/
-├── 01_Protocol_Validity.md
-├── 02_Higher_Order_Scales.md
-├── 03_RC_Scales.md
-└── ...
-```
-
-Each worksheet should contain scale-by-scale interpretation guidance including:
-- What the scale measures
-- What elevations mean clinically
-- Relevant behavioral correlates
-- Common code type patterns
-
-### Step 2: Ingest Worksheets
+### Generate Interpretive Reports
 
 ```bash
-python main.py --ingest-worksheets ./worksheets/
-```
-
-This chunks the worksheets, embeds them, and stores them in ChromaDB.
-
-### Step 3: Generate Interpretive Reports
-
-```bash
-python main.py --score-file test.csv --interpretive --format html
+python main.py --instrument-config configs/mmpi_335_config.json \
+  --score-file test.csv --interpretive --format html
 ```
 
 With client demographics:
 
 ```bash
-python main.py --score-file test.csv --interpretive --client-info client.json --format html
+python main.py --instrument-config configs/mmpi_335_config.json \
+  --score-file test.csv --interpretive --client-info client.json --format html
 ```
 
 ### Caching Narratives
@@ -634,17 +609,9 @@ playwright install chromium
 
 The DOCX report will still generate without charts and include a note about it.
 
-### "No documents in collection" error
+### "No interpretation data found in Neon database" error
 
-You need to ingest documents before querying. Run:
-```bash
-python main.py --ingest
-```
-
-For interpretive reports, also run:
-```bash
-python main.py --ingest-worksheets ./worksheets/
-```
+The `mmpi3` schema in Neon has no chunks. Ensure the textbook has been ingested into the `mmpi3.chunks` table with pgvector embeddings.
 
 ### Validation fails with "Protocol is invalid"
 
@@ -661,10 +628,9 @@ Item columns must be numbered sequentially starting from `item_1` up to `item_N`
 
 ### RAG narratives are generic or off-topic
 
-- Ensure your interpretation worksheets contain detailed, scale-specific clinical content
-- Verify worksheets are properly ingested (`--ingest-worksheets`)
-- Check that worksheet filenames match the `worksheet` field in your config categories
-- Try increasing `--top-k` for broader retrieval context
+- Ensure the Neon `mmpi3.chunks` table contains relevant clinical content with embeddings
+- Check that `DATABASE_URL` in `.env` points to the correct Neon instance
+- Try adjusting `top_k_category` / `top_k_integration` values in `config.yaml`
 
 ### Import errors for `rag_core`
 

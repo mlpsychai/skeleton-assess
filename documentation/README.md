@@ -11,7 +11,7 @@ A fully instrument-agnostic Python package for psychometric assessment scoring, 
 - **Likert-scale instruments** (weighted scoring) — e.g., PAI, NEO-PI-3, BDI-II
 - **Interactive HTML reports** with ECharts profile graphs
 - **Formatted DOCX reports** with embedded PNG charts (via Playwright)
-- **RAG-based interpretive narratives** using ChromaDB + Anthropic Claude API
+- **RAG-based interpretive narratives** using Neon Postgres (pgvector) + Anthropic Claude API
 
 ## Quick Start
 
@@ -45,17 +45,14 @@ python main.py --score-file data/scores/test_001.csv --format both
 python main.py --instrument-config my_instrument.json --score-file test.csv --format html
 ```
 
-### 4. Generate interpretive reports (requires Anthropic API key)
+### 4. Generate interpretive reports (requires Anthropic API key + Neon DB)
 
 ```bash
-# Set API key
-export ANTHROPIC_API_KEY=your_key_here
-
-# Ingest interpretation worksheets
-python main.py --ingest-worksheets ./worksheets/
+# Ensure .env has ANTHROPIC_API_KEY and DATABASE_URL
 
 # Generate interpretive report with client demographics
-python main.py --score-file test.csv --interpretive --client-info client.json --format html
+python main.py --instrument-config configs/mmpi_335_config.json \
+  --score-file test.csv --interpretive --client-info client.json --format html
 ```
 
 ## Project Structure
@@ -73,11 +70,13 @@ skeleton_assess/
 │   ├── report_generator.py      # DOCX report generation
 │   ├── html_report_generator.py # Interactive HTML report generation
 │   └── rag_interpreter.py       # RAG-based narrative generation
-├── rag_core/                    # RAG engine (document loading, vector store, query)
+├── db/                          # Database connection
+│   ├── __init__.py
+│   └── connection.py            # Neon Postgres connection manager
+├── rag_core/                    # RAG engine (vector search, query)
 │   ├── __init__.py
 │   ├── config.py                # RAG configuration
-│   ├── document_loader.py       # Document loading + chunking
-│   ├── vector_store.py          # ChromaDB vector store wrapper
+│   ├── vector_store.py          # Neon pgvector semantic search
 │   ├── query_engine.py          # RAG query orchestration
 │   ├── output_formatter.py      # Response formatting
 │   └── output_utils.py          # Output helpers
@@ -103,7 +102,7 @@ skeleton_assess/
 The project contains two Python packages:
 
 - **`psychometric_scoring/`** — the instrument-agnostic scoring, validation, and reporting engine
-- **`rag_core/`** — the RAG engine handling document loading, vector storage (ChromaDB), and query orchestration with the Anthropic Claude API
+- **`rag_core/`** — the RAG engine handling vector search (Neon pgvector) and query orchestration with the Anthropic Claude API
 
 Both are included locally with no external package installation beyond `requirements.txt`.
 
@@ -130,8 +129,7 @@ No Python changes needed. Create these data files:
 2. **`mapping.json`** — item-to-scale keying directions or scoring weights
 3. **`tscore_tables.json`** — raw-to-T-score normative conversion tables
 4. **`scales.json`** — scale names, abbreviations, descriptions
-5. **Interpretation worksheets** (`.md`) — clinical guidance per category (for RAG reports)
-6. **Prompt templates** — customized `interpretation.txt`, `integration.txt`, `treatment.txt`
+5. **Prompt templates** — customized `interpretation.txt`, `integration.txt`, `treatment.txt`
 
 See `example_data/` for working boolean and Likert sample instruments.
 
@@ -145,7 +143,7 @@ See `example_data/` for working boolean and Likert sample instruments.
 | python-dotenv | Environment variable management |
 | tiktoken | Text chunking for RAG |
 | anthropic | Claude API for narrative generation |
-| chromadb | Vector store for RAG retrieval |
+| psycopg2-binary | Neon Postgres connection |
 | playwright | PNG chart rendering for DOCX (optional) |
 
 ## CLI Reference
@@ -166,15 +164,6 @@ Interpretive Reports:
   --interpretive              Generate full interpretive report with RAG narratives
   --client-info PATH          Client demographics JSON file
   --cached-narratives PATH    Pre-generated narratives JSON (skip API calls)
-
-RAG Operations:
-  --ingest                    Ingest documents from data directory
-  --ingest-worksheets PATH    Ingest interpretation worksheets
-  --clear                     Clear document collection
-  --query TEXT                Query the document collection
-  --interactive               Start interactive query mode
-  --action {query,summarize,synthesize}
-  --top-k N                   Number of results to retrieve (default: 10)
 ```
 
 ## Smoke Test

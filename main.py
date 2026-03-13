@@ -12,7 +12,6 @@ import argparse
 import yaml
 import json
 from pathlib import Path
-from rag_core import DocumentLoader, VectorStore
 from psychometric_scoring import ScoreLoader, ScoreValidator, ScoreCalculator, ReportGenerator, HTMLReportGenerator
 from psychometric_scoring.client_info import ClientInfo, load_client_info_json, collect_client_info_interactive
 from psychometric_scoring.rag_interpreter import RAGInterpreter
@@ -22,46 +21,6 @@ def load_config():
     """Load configuration from config.yaml"""
     with open('config.yaml', 'r') as f:
         return yaml.safe_load(f)
-
-def ingest_documents(config):
-    """Ingest documents from data directory"""
-    print(f"Ingesting documents from {config['data_dir']}...")
-
-    loader = DocumentLoader()
-    documents = loader.load_directory(config['data_dir'])
-
-    if not documents:
-        print("No documents found to ingest!")
-        return
-
-    print(f"Loaded {len(documents)} document chunks")
-
-    vector_store = VectorStore(
-        collection_name=config['collection_name'],
-        persist_directory=config['chroma_db_dir']
-    )
-
-    vector_store.add_documents(documents)
-    print(f"Successfully added {len(documents)} chunks to vector store")
-    print(f"Total documents in collection: {vector_store.count()}")
-
-def clear_collection(config):
-    """Clear all documents from collection"""
-    vector_store = VectorStore(
-        collection_name=config['collection_name'],
-        persist_directory=config['chroma_db_dir']
-    )
-
-    count = vector_store.count()
-    if count > 0:
-        confirm = input(f"Delete {count} documents? (yes/no): ")
-        if confirm.lower() == 'yes':
-            vector_store.delete_collection()
-            print("Collection cleared")
-        else:
-            print("Cancelled")
-    else:
-        print("Collection is already empty")
 
 def process_score_file(csv_path, output_dir='output/reports', format='docx',
                        client_info=None, interpretive=False, instrument_config=None,
@@ -132,15 +91,14 @@ def process_score_file(csv_path, output_dir='output/reports', format='docx',
                 print("\nGenerating interpretive narratives via RAG...")
                 config = load_config()
                 interpreter = RAGInterpreter(
-                    chroma_dir=config.get('chroma_db_dir', './chroma_db'),
                     templates_dir='./templates',
                     instrument_config=instrument_config,
                     rag_settings=config.get('rag_settings', {}),
                 )
 
                 if not interpreter.is_ready():
-                    print("  ERROR: Interpretation worksheets not ingested.")
-                    print("  Run: python main.py --ingest-worksheets <worksheets_dir>")
+                    print("  ERROR: No interpretation data found in Neon database.")
+                    print("  Ensure the mmpi3 schema has been populated with chunks.")
                     return False
 
                 narratives = interpreter.generate_all_narratives(
@@ -255,9 +213,6 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Ingest interpretation worksheets
-  python main.py --ingest-worksheets worksheets/
-
   # Process score file (HTML format)
   python main.py --score-file data/scores/test_001.csv --format html
 
@@ -275,14 +230,6 @@ Examples:
     # Instrument config
     parser.add_argument('--instrument-config', type=str, default='instrument_config.json',
                        help='Path to instrument configuration JSON (default: instrument_config.json)')
-
-    # RAG document operations
-    parser.add_argument('--ingest', action='store_true',
-                       help='Ingest documents from data directory')
-    parser.add_argument('--clear', action='store_true',
-                       help='Clear all documents from collection')
-    parser.add_argument('--ingest-worksheets', type=str,
-                       help='Ingest interpretation worksheets from directory')
 
     # Score Processing Arguments
     parser.add_argument('--score-file', type=str,
@@ -308,29 +255,6 @@ Examples:
     # Two-stage config: instrument_config.json for instrument, config.yaml for RAG
     instrument_config = load_instrument_config(args.instrument_config)
     config = load_config()
-
-    if args.ingest:
-        if args.clear:
-            clear_collection(config)
-        ingest_documents(config)
-        return
-
-    if args.clear and not args.ingest:
-        clear_collection(config)
-        return
-
-    # Worksheet ingestion
-    if args.ingest_worksheets:
-        print(f"Ingesting interpretation worksheets from {args.ingest_worksheets}...")
-        interpreter = RAGInterpreter(
-            chroma_dir=config.get('chroma_db_dir', './chroma_db'),
-            templates_dir='./templates',
-            instrument_config=instrument_config,
-            rag_settings=config.get('rag_settings', {}),
-        )
-        count = interpreter.ingest_worksheets(args.ingest_worksheets)
-        print(f"Successfully ingested {count} interpretation chunks")
-        return
 
     # Score Processing
     if args.score_file:

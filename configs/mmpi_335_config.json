@@ -9,6 +9,7 @@
   "response_format": "",
   "administration_format": "",
   "norms": "Community Sample",
+  "db_schema": "mmpi3",
   "response_options": {
     "true_values": [
       "True",
@@ -24,10 +25,10 @@
     ]
   },
   "files": {
-    "mapping": "templates/mapping.json",
-    "scales": "templates/scales.json",
-    "tscore_tables": "templates/tscore_tables.json",
-    "formatting": "templates/formatting.json"
+    "mapping": "templates/mmpi3/mapping.json",
+    "scales": "templates/mmpi3/scales.json",
+    "tscore_tables": "templates/mmpi3/tscore_tables.json",
+    "formatting": "templates/mmpi3/formatting.json"
   },
   "interpretive_cutoffs": [
     {

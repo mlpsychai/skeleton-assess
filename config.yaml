@@ -1,7 +1,6 @@
 course_name: "psychometric"
 collection_name: psychometric_documents
 data_dir: ./data
-chroma_db_dir: ./chroma_db
 weeks: {}
 
 # RAG query settings
