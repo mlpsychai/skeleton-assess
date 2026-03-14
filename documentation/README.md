@@ -199,7 +199,7 @@ GIT_SSH_COMMAND="ssh -i C:/Users/sm4663/.ssh/id_ed25519" git push origin master
 These are excluded via `.gitignore`:
 - `venv/` — Python virtual environment
 - `.env` — API keys and database credentials
-- `output/` — generated reports
+- `output/*.png` — generated chart images (HTML reports are tracked)
 - `PAI docs/` — copyrighted reference materials
 - `archive/` — old diagnostic/validation scripts
 - `*.png`, `*.pdf` — scan images and Pearson reference PDFs
