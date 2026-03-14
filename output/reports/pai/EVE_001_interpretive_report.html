@@ -1,0 +1,4296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAI Interpretive Report - EVE_001</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.15;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1in;
+            background-color: #fff;
+            color: #000;
+        }
+
+        #report-content {
+            background-color: white;
+            padding: 0;
+        }
+
+        /* APA Level 1: Centered, Bold, Title Case */
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12pt;
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 12pt;
+        }
+
+        /* APA Level 2: Flush Left, Bold, Title Case */
+        h2 {
+            text-align: left;
+            font-weight: bold;
+            font-size: 12pt;
+            color: #000;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+        }
+
+        /* APA Level 3: Flush Left, Bold Italic, Title Case */
+        h3 {
+            text-align: left;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 12pt;
+            color: #000;
+            margin-top: 18pt;
+            margin-bottom: 12pt;
+        }
+
+        p {
+            margin: 0 0 12pt 0;
+        }
+
+        section {
+            margin-bottom: 24pt;
+        }
+
+        /* APA Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 6pt 0 12pt 0;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+            font-size: 10pt;
+        }
+
+        th, td {
+            padding: 4pt 10pt;
+            text-align: left;
+            border: none;
+            font-weight: normal;
+        }
+
+        thead {
+            border-bottom: 1px solid #000;
+        }
+
+        th {
+            font-weight: normal;
+            font-size: 11pt;
+            color: #000;
+            background-color: transparent;
+        }
+
+        .section-summary {
+            margin: 6pt 0 12pt 0;
+            font-size: 12pt;
+            line-height: 1.5;
+        }
+
+        .table-label {
+            margin-bottom: 2pt;
+            font-size: 12pt;
+        }
+
+        .figure-label {
+            margin-bottom: 4pt;
+            font-size: 12pt;
+        }
+
+        .elevated { }
+
+        .status-valid {
+            font-weight: bold;
+        }
+
+        .status-warning {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .status-invalid {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 700px;
+            margin: 18pt 0;
+        }
+
+        .graph-description {
+            font-style: italic;
+            margin-bottom: 12pt;
+        }
+
+        .print-button-container {
+            text-align: center;
+            margin: 24pt 0;
+        }
+
+        .print-button {
+            padding: 10pt 30pt;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .print-button:hover {
+            background-color: #333;
+        }
+
+        .print-note {
+            font-size: 10pt;
+            margin-top: 6pt;
+        }
+
+        .disclaimer-text {
+            white-space: pre-line;
+            font-size: 10pt;
+            padding: 12pt;
+            border: 1px solid #000;
+            margin: 12pt 0;
+        }
+
+        .appendix-tables {
+            display: flex;
+            gap: 24pt;
+        }
+        .appendix-tables table {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 10pt;
+            margin-top: 24pt;
+            padding-top: 12pt;
+            border-top: 1px solid #000;
+        }
+
+        ul {
+            margin: 6pt 0;
+            padding-left: 0.5in;
+        }
+
+        li {
+            margin: 3pt 0;
+        }
+
+        hr.section-divider {
+            border: none;
+            border-top: 2px solid #000;
+            margin: 24pt 0;
+        }
+
+        tr.row-divider td {
+            border-bottom: 1px solid #000;
+        }
+
+        .report-section {
+            margin-bottom: 12pt;
+        }
+
+        .interpretation-narrative {
+            padding: 0;
+            margin: 12pt 0 18pt 0;
+        }
+
+        .interpretation-narrative p {
+            text-indent: 0;
+            margin: 0 0 12pt 0;
+        }
+
+        .profile-integration {
+            padding: 0;
+            margin: 18pt 0;
+        }
+
+        .treatment-recommendations {
+            padding: 0;
+            margin: 18pt 0;
+        }
+
+        .treatment-recommendations ol {
+            padding-left: 0.5in;
+        }
+
+        .treatment-recommendations li {
+            margin: 6pt 0;
+        }
+
+        .signature-block {
+            margin-top: 48pt;
+            padding-top: 12pt;
+            border-top: 1px solid #000;
+        }
+
+        .signature-block .signature-line {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 36pt;
+        }
+
+        .signature-block .signature-entry {
+            text-align: center;
+            width: 45%;
+        }
+
+        .signature-block .signature-entry .line {
+            border-top: 1px solid #000;
+            margin-bottom: 4pt;
+            padding-top: 4pt;
+        }
+
+        .signature-block .signature-entry .name {
+            font-weight: bold;
+        }
+
+        .signature-block .signature-entry .credentials {
+            font-size: 10pt;
+        }
+
+        .elevation-badge {
+            display: inline;
+            font-size: 10pt;
+            font-weight: normal;
+        }
+
+        @media print {
+            body {
+                padding: 1in;
+            }
+
+            .print-button-container {
+                display: none;
+            }
+
+            .chart-container {
+                page-break-inside: avoid;
+                height: 450px;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            .interpretation-narrative {
+                page-break-inside: avoid;
+            }
+
+            .profile-integration,
+            .treatment-recommendations {
+                page-break-before: always;
+            }
+
+            .signature-block {
+                page-break-before: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12pt;
+            }
+
+            .chart-container {
+                height: 350px;
+            }
+
+            table {
+                font-size: 10pt;
+            }
+
+            th, td {
+                padding: 4pt 6pt;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="report-content">
+        <h1>PAI Interpretive Report</h1>
+
+        
+        <hr class="section-divider">
+        <section class="report-section">
+            <h2>Section I: Client Information</h2>
+            
+            <h3>Identifying Information</h3>
+            <table>
+                <tbody>
+                    <tr><td>Client Name</td><td>Sean Mapoles</td></tr>
+                    <tr><td>Date of Birth</td><td>10-29-1986</td></tr>
+                    <tr><td>Age</td><td>39</td></tr>
+                    <tr><td>Sex</td><td>male</td></tr>
+                    <tr><td>Education</td><td>graduate</td></tr>
+                    <tr class="row-divider"><td>Marital Status</td><td>single</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Reason for Referral</h3>
+            <p>practice</p>
+            
+            <h3>Background Information</h3>
+            <p>na</p>
+        </section>
+        <hr class="section-divider">
+        
+
+        
+        <section id="test-info">
+            <h2>Test Information</h2>
+            <table>
+                <tbody>
+                <tr><td>Assessment</td><td>PAI</td></tr>
+                <tr><td>Test Date</td><td>2026-03-01</td></tr>
+                <tr><td>Examinee ID</td><td>737-Eve</td></tr>
+                <tr><td>Completion Rate</td><td>100.0% (344/344 items)</td></tr>
+                <tr><td>Referral Source</td><td>EPS-737</td></tr>
+                <tr><td>Setting</td><td>online</td></tr>
+                </tbody>
+            </table>
+        </section>
+        
+
+        
+        <section id="test-administered">
+            <h3>Test Administered</h3>
+            <p><strong>Personality Assessment Inventory</strong></p>
+            <ul>
+                <li>Morey, L. C. (2007). Personality Assessment Inventory professional manual (2nd ed.). PAR.</li>
+                <li>344 items, 0-3 Likert scale (F=0, ST=1, MT=2, VT=3) format</li>
+                <li>Administered via standard paper-and-pencil format</li>
+                <li>Scoring referenced to Census-Matched Standardization Sample</li>
+            </ul>
+            <p>The PAI is a 344-item self-report measure of personality and psychopathology for adults aged 18 and older. It uses a 4-point Likert scale (False, Slightly True, Mainly True, Very True) and provides scores on 4 validity scales, 11 clinical scales (9 with subscales), 5 treatment consideration scales, and 2 interpersonal scales. Norms are based on a Census-Matched Standardization Sample (N=1,000).</p>
+        </section>
+        
+
+        
+        <section id="validity">
+            <h2>Protocol Validity</h2>
+            <p class="section-summary">All scales in this section fell within normal limits.</p>
+            <p><strong>Status:</strong> <span class="status-valid">VALID</span></p>
+            
+            
+            <h3>Validity Scale Scores</h3>
+            <p class="table-label"><strong>Table 1.</strong> <em>Validity Scale Scores</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>T-Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="">
+                    <td>INF - Infrequency</td>
+                    <td>5</td>
+                    <td>59</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge badge-within-normal-limits">Within Normal Limits</span></td>
+                </tr>
+                
+                <tr class="">
+                    <td>NIM - Negative Impression</td>
+                    <td>1</td>
+                    <td>47</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge badge-within-normal-limits">Within Normal Limits</span></td>
+                </tr>
+                
+                <tr class="">
+                    <td>PIM - Positive Impression</td>
+                    <td>13</td>
+                    <td>45</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge badge-within-normal-limits">Within Normal Limits</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+        </section>
+        
+        
+        <div class="interpretation-narrative">
+            
+            <p>The client's validity scale profile indicates that this protocol is valid and interpretable. The Infrequency scale (INF) score falls within normal limits, suggesting that the client responded to test items in a consistent and relevant manner without endorsing an unusual number of rare or atypical symptoms. The Negative Impression (NIM) and Positive Impression (PIM) scales are both within normal limits, indicating no evidence of symptom overreporting or underreporting. The client appears to have approached the assessment in a straightforward and cooperative manner, neither exaggerating difficulties nor presenting himself in an overly favorable light. The validity scale configuration suggests that the substantive scale scores are likely to provide an accurate representation of the client's current psychological functioning.</p>
+        </div>
+        
+
+        
+        <section id="pai-full-scale-profile" style="page-break-before:always;">
+            <h2>PAI Full Scale Profile</h2>
+            <p class="figure-label"><strong>Figure 1.</strong> <em>PAI Full Scale Profile</em></p>
+            <div id="chart-pai-full-scale" style="width:100%; height:800px;"></div>
+            <table class="pai-profile-table" style="font-size:9pt; text-align:center; margin-top:12pt;">
+                <thead>
+                    <tr><th style="text-align:left;">Scale</th><th>ICN</th><th>INF</th><th>NIM</th><th>PIM</th><th>SOM</th><th>ANX</th><th>ARD</th><th>DEP</th><th>MAN</th><th>PAR</th><th>SCZ</th><th>BOR</th><th>ANT</th><th>ALC</th><th>DRG</th><th>AGG</th><th>SUI</th><th>STR</th><th>NON</th><th>RXR</th><th>DOM</th><th>WRM</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align:left; font-weight:bold;">Raw</td><td>—</td><td>5</td><td>1</td><td>13</td><td>12</td><td>19</td><td>21</td><td>10</td><td>35</td><td>22</td><td>14</td><td>29</td><td>17</td><td>6</td><td>5</td><td>5</td><td>4</td><td>5</td><td>4</td><td>14</td><td>18</td><td>17</td></tr>
+                    <tr><td style="text-align:left; font-weight:bold;">T</td><td>—</td><td>59</td><td>47</td><td>45</td><td>51</td><td>52</td><td>51</td><td>45</td><td>63</td><td>54</td><td>50</td><td>61</td><td>54</td><td>52</td><td>52</td><td>38</td><td>51</td><td>48</td><td>48</td><td>51</td><td>45</td><td>38</td></tr>
+                    <tr><td style="text-align:left; font-weight:bold;">% complete</td><td>—</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:9pt; margin-top:6pt;">
+                <em>Note.</em> Plotted T scores are based on a U.S. Census-matched standardization sample of 1,000 normal adults.
+                Dashed red line indicates T = 70 (clinical significance threshold).
+            </p>
+        </section>
+        
+        
+        <section id="pai-subscale-profile" style="page-break-before:always;">
+            <h2>PAI Subscale Profile</h2>
+            <p class="figure-label"><strong>Figure 2.</strong> <em>PAI Subscale Profile</em></p>
+            <div id="chart-pai-subscale" style="width:100%; height:800px;"></div>
+            <p style="font-size:9pt; margin-top:6pt;">
+                <em>Note.</em> Plotted T scores are based on a U.S. Census-matched standardization sample of 1,000 normal adults.
+            </p>
+        </section>
+        
+
+        <section id="validity-graphs">
+            <h2>Validity Scale Visualization</h2>
+            <p class="graph-description">
+                Interactive visualization of validity scales organized by category.
+                Hover over data points for details.
+            </p>
+
+            <p class="figure-label"><strong>Figure 3.</strong> <em>Response Consistency Validity Scales</em></p>
+            <div id="chart-response-consistency" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 4.</strong> <em>Negative Distortion Validity Scales</em></p>
+            <div id="chart-negative-distortion" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 5.</strong> <em>Positive Distortion Validity Scales</em></p>
+            <div id="chart-positive-distortion" class="chart-container"></div>
+        </section>
+
+        
+        <section>
+            <h2>Clinical Scales</h2>
+            <p class="section-summary">Slightly Elevated elevations were observed on MAN (T=63) and BOR (T=61). The remaining 9 scales fell within normal limits.</p>
+            <p class="table-label"><strong>Table 2.</strong> <em>Clinical Scales</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>T-Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>SOM - Somatic Complaints</td>
+                    <td>12</td>
+                    <td>51</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANX - Anxiety</td>
+                    <td>19</td>
+                    <td>52</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ARD - Anxiety-Related Disorders</td>
+                    <td>21</td>
+                    <td>51</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>DEP - Depression</td>
+                    <td>10</td>
+                    <td>45</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>MAN - Mania</td>
+                    <td>35</td>
+                    <td>63</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Slightly Elevated</span></td>
+                </tr>
+            
+                <tr>
+                    <td>PAR - Paranoia</td>
+                    <td>22</td>
+                    <td>54</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SCZ - Schizophrenia</td>
+                    <td>14</td>
+                    <td>50</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>BOR - Borderline Features</td>
+                    <td>29</td>
+                    <td>61</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Slightly Elevated</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANT - Antisocial Features</td>
+                    <td>17</td>
+                    <td>54</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ALC - Alcohol Problems</td>
+                    <td>6</td>
+                    <td>52</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>DRG - Drug Problems</td>
+                    <td>5</td>
+                    <td>52</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <div class="interpretation-narrative">
+            
+            <p><strong>Clinical Profile</strong></p>
+<p>The client's responses to the Personality Assessment Inventory yielded a valid protocol with elevations primarily in the areas of mood regulation and impulse control. Scores on the majority of clinical scales fall within normal limits, suggesting that the client is not currently experiencing significant distress related to somatic concerns, anxiety, depression, psychotic processes, or substance use difficulties. The profile indicates relatively intact functioning across most domains of psychological adjustment.</p>
+<p>The client's most notable elevation occurs on the Mania scale, which suggests a tendency toward increased energy, activity level, and possibly impulsive decision-making. He may experience periods of elevated mood, racing thoughts, or heightened goal-directed activity that could interfere with sustained focus or follow-through on tasks. This elevation may reflect either trait-level characteristics of high energy and enthusiasm or episodic shifts in activation level that merit further clinical exploration.</p>
+<p>The Borderline Features scale is similarly elevated, indicating some difficulties with emotional regulation and interpersonal stability. The client may experience fluctuations in mood, identity, or self-concept, and relationships may be characterized by periods of intensity or conflict. This pattern, when considered alongside the elevation on Mania, suggests that the client may struggle with modulating emotional responses and maintaining consistent behavioral control, particularly during periods of stress or interpersonal challenge.</p>
+        </div>
+        
+
+        <section>
+            <h2>Clinical Subscales</h2>
+            <p class="section-summary">Slightly Elevated elevations were observed on MAN-I (T=67) and BOR-A (T=63). The remaining 29 scales fell within normal limits.</p>
+            <p class="table-label"><strong>Table 3.</strong> <em>Clinical Subscales</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>T-Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>SOM-C - Conversion</td>
+                    <td>1</td>
+                    <td>46</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SOM-S - Somatization</td>
+                    <td>4</td>
+                    <td>49</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SOM-H - Health Concerns</td>
+                    <td>7</td>
+                    <td>57</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANX-C - Cognitive</td>
+                    <td>7</td>
+                    <td>52</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANX-A - Affective</td>
+                    <td>6</td>
+                    <td>49</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANX-P - Physiological</td>
+                    <td>6</td>
+                    <td>55</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ARD-O - Obsessive-Compulsive</td>
+                    <td>12</td>
+                    <td>57</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ARD-P - Phobias</td>
+                    <td>5</td>
+                    <td>45</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ARD-T - Traumatic Stress</td>
+                    <td>4</td>
+                    <td>50</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>DEP-C - Cognitive</td>
+                    <td>1</td>
+                    <td>40</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>DEP-A - Affective</td>
+                    <td>2</td>
+                    <td>44</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>DEP-P - Physiological</td>
+                    <td>7</td>
+                    <td>53</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>MAN-A - Activity Level</td>
+                    <td>9</td>
+                    <td>57</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>MAN-G - Grandiosity</td>
+                    <td>11</td>
+                    <td>56</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>MAN-I - Irritability</td>
+                    <td>15</td>
+                    <td>67</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Slightly Elevated</span></td>
+                </tr>
+            
+                <tr>
+                    <td>PAR-H - Hypervigilance</td>
+                    <td>10</td>
+                    <td>57</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>PAR-P - Persecution</td>
+                    <td>2</td>
+                    <td>45</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>PAR-R - Resentment</td>
+                    <td>10</td>
+                    <td>58</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SCZ-P - Psychotic Experiences</td>
+                    <td>3</td>
+                    <td>46</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SCZ-S - Social Detachment</td>
+                    <td>6</td>
+                    <td>51</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SCZ-T - Thought Disorder</td>
+                    <td>5</td>
+                    <td>52</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>BOR-A - Affective Instability</td>
+                    <td>9</td>
+                    <td>63</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">Slightly Elevated</span></td>
+                </tr>
+            
+                <tr>
+                    <td>BOR-I - Identity Problems</td>
+                    <td>8</td>
+                    <td>59</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>BOR-N - Negative Relationships</td>
+                    <td>8</td>
+                    <td>59</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>BOR-S - Self-Harm</td>
+                    <td>4</td>
+                    <td>53</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANT-A - Antisocial Behaviors</td>
+                    <td>7</td>
+                    <td>55</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANT-E - Egocentricity</td>
+                    <td>3</td>
+                    <td>49</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>ANT-S - Stimulus-Seeking</td>
+                    <td>7</td>
+                    <td>56</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>AGG-A - Aggressive Attitude</td>
+                    <td>4</td>
+                    <td>45</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>AGG-V - Verbal Aggression</td>
+                    <td>1</td>
+                    <td>34</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>AGG-P - Physical Aggression</td>
+                    <td>0</td>
+                    <td>42</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <div class="interpretation-narrative">
+            
+            <p>The client's clinical subscales profile is largely within normal limits across most domains, suggesting generally adequate functioning in these areas. His responses on the somatic, anxiety, depression, and psychotic spectrum subscales all fall within expected ranges, indicating no significant concerns related to physical preoccupation, anxious distress, depressive symptoms, or thought disturbance at this time. Similarly, subscales assessing paranoid ideation, schizotypal features, antisocial tendencies, and aggressive behaviors yielded unremarkable scores.</p>
+<p>Two subscales warrant clinical attention due to mild elevation. The client's score on the Mania-Irritability subscale (MAN-I, T=67) suggests he may experience increased irritability, impatience, and a tendency toward frustration when things do not proceed as expected. This elevation indicates he may be prone to angry reactions and may struggle with tolerance for delays or obstacles. Such irritability could manifest in interpersonal tensions or difficulty maintaining composure under stress, and may contribute to relationship difficulties if not adequately managed.</p>
+<p>The client also produced a slightly elevated score on the Borderline-Affective Instability subscale (BOR-A, T=63), which suggests some variability in emotional experience and regulation. He may experience mood shifts that feel somewhat unpredictable or intense, though this does not reach a level consistent with severe affective dysregulation. This pattern of emotional reactivity may interact with the irritability noted above, potentially creating situations where frustration escalates more rapidly than would be typical. While other borderline features including identity disturbance, relationship problems, and self-harm behaviors were not endorsed, the affective instability warrants consideration in understanding his overall emotional functioning and may benefit from targeted intervention focused on emotion regulation skills.</p>
+        </div>
+        
+
+        <section>
+            <h2>Treatment Consideration Scales</h2>
+            <p class="section-summary">All scales in this section fell within normal limits.</p>
+            <p class="table-label"><strong>Table 4.</strong> <em>Treatment Consideration Scales</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>T-Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>AGG - Aggression</td>
+                    <td>5</td>
+                    <td>38</td>
+                    <td>18/18</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SUI - Suicidal Ideation</td>
+                    <td>4</td>
+                    <td>51</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>STR - Stress</td>
+                    <td>5</td>
+                    <td>48</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>NON - Nonsupport</td>
+                    <td>4</td>
+                    <td>48</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>RXR - Treatment Rejection</td>
+                    <td>14</td>
+                    <td>51</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <div class="interpretation-narrative">
+            
+            <p>Based on the MMPI-3 assessment profile, the following evidence-based treatment recommendations are provided, prioritizing psychodynamic and mindfulness-based approaches:</p>
+<p><strong>Rationale:</strong> The profile indicates elevated somatic/cognitive concerns that may reflect stress-related symptomatology and body-focused attention. MBSR is recommended to address the mind-body connection, reduce physiological arousal, and develop non-judgmental awareness of somatic experiences. This approach can help differentiate between physical sensations and catastrophic interpretations, reducing health anxiety and improving distress tolerance.</p>
+<p><strong>Implementation:</strong> Refer for an 8-week structured MBSR program with body scan meditation, sitting meditation, and gentle yoga practices, with emphasis on observing somatic sensations without reactivity.</p>
+<p><strong>Rationale:</strong> Given the assessment context and referral for practice evaluation, psychodynamic exploration can illuminate unconscious conflicts, defense mechanisms, and relational patterns that may be contributing to current difficulties. This modality is particularly indicated when cognitive and somatic presentations may serve defensive functions against underlying emotional distress.</p>
+<p><strong>Implementation:</strong> Weekly individual psychodynamic therapy (45-50 minutes) focusing on exploration of early attachment experiences, current interpersonal dynamics, transference patterns, and the symbolic meaning of somatic complaints.</p>
+<p><strong>Rationale:</strong> ACT integrates mindfulness principles with values-based action and is particularly effective for individuals presenting with cognitive preoccupation and potential experiential avoidance. This approach can address rigidity in thinking patterns while promoting valued living despite discomfort.</p>
+<p><strong>Implementation:</strong> 12-16 sessions of ACT focusing on acceptance, cognitive defusion, present-moment awareness, self-as-context, values clarification, and committed action, with particular attention to workability of current coping strategies.</p>
+        </div>
+        
+
+        <section>
+            <h2>Interpersonal Scales</h2>
+            <p class="section-summary">All scales in this section fell within normal limits.</p>
+            <p class="table-label"><strong>Table 5.</strong> <em>Interpersonal Scales</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>T-Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>DOM - Dominance</td>
+                    <td>18</td>
+                    <td>45</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                <tr>
+                    <td>WRM - Warmth</td>
+                    <td>17</td>
+                    <td>38</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">Within Normal Limits</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <div class="interpretation-narrative">
+            
+            <p>Mr. Mapoles's scores on the Interpersonal Functioning scales indicate some notable characteristics in his relational style, though neither scale reaches clinically significant elevation. His score on the Dominance scale falls within normal limits, suggesting an average level of assertiveness and leadership behavior in interpersonal contexts. More notably, his Warmth score falls in the low-average range, which may reflect a somewhat reserved interpersonal presentation. Individuals with scores in this range are less likely to report strong affiliative tendencies and may present as emotionally distant or detached in relationships. This pattern suggests that Mr. Mapoles may be perceived by others as somewhat aloof or difficult to connect with emotionally, though this tendency does not reach a level that would be considered clinically significant interpersonal dysfunction.</p>
+        </div>
+        
+
+        <section id="graphs">
+            <h2>Profile Visualization</h2>
+            <p class="graph-description">
+                Interactive visualization of score elevations across all scales.
+                Hover over data points for details. Click legend items to show/hide categories.
+                Use mouse wheel to zoom, drag to pan.
+            </p>
+            <p class="figure-label"><strong>Figure 6.</strong> <em>PAI Combined Profile Graph</em></p>
+            <div id="chart-combined" class="chart-container"></div>
+
+            <h2>Detailed Domain Graphs</h2>
+            <p class="graph-description">
+                The following graphs show scales organized by clinical dysfunction domains.
+                Each domain displays relevant scale hierarchy levels
+                with hierarchical styling (larger markers = higher-order scales).
+            </p>
+
+            <p class="figure-label"><strong>Figure 7.</strong> <em>Somatic/Anxiety Disorders Domain</em></p>
+            <div id="chart-somatic-anxiety-disorders" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 8.</strong> <em>Mood/Affective Disorders Domain</em></p>
+            <div id="chart-mood-affective-disorders" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 9.</strong> <em>Psychotic/Personality Features Domain</em></p>
+            <div id="chart-psychotic-personality-features" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 10.</strong> <em>Substance Use Domain</em></p>
+            <div id="chart-substance-use" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 11.</strong> <em>Treatment/Interpersonal Domain</em></p>
+            <div id="chart-treatment-interpersonal" class="chart-container"></div>
+        </section>
+
+        
+        <section class="profile-integration">
+            <h2>Profile Integration</h2>
+            <p>Sean Mapoles approached this assessment with a valid and consistent response pattern, as evidenced by scores on the validity indicators that fall within normal limits. There are no indications of overreporting, underreporting, or content non-responsiveness that would compromise interpretation. The substantive scale findings are therefore interpretable and provide a valid portrayal of his current psychological functioning.</p>
+<p>The clinical profile is characterized by a remarkably well-adjusted presentation across nearly all domains of functioning, with only minimal elevations suggesting subclinical features of affective instability and increased energy/activity. The primary clinical theme, though modest in magnitude, involves a pattern of mild emotional reactivity (BOR-A = T63) occurring in the context of elevated activation and goal-directed energy (MAN-I = T67). This configuration suggests an individual who experiences somewhat more emotional variability than average and may be prone to shifts in mood or affect, though not to a degree that would meet criteria for significant psychopathology. The slightly elevated MAN-I subscale, which is the primary driver of the modest MAN full scale elevation (T63), reflects increased energy, activity level, and possibly an accelerated pace of thinking or behavior, though this remains within a subclinical range. The broader MAN scale elevation is not accompanied by elevations on MAN-G (grandiosity) or other indicators of thought disturbance, suggesting that any increased activation is not associated with impaired reality testing or inflated self-perception.</p>
+<p>Across all other domains of psychological functioning, Sean presents with scores solidly in the normal range. Emotional functioning shows no evidence of depression, anxiety, trauma-related symptoms, or sustained distress, with scales assessing demoralization, low positive emotions, and dysfunctional negative emotions all unremarkable. Cognitive and perceptual functioning is intact, with no indications of thought disorder, paranoid ideation, or perceptual disturbances. Interpersonal functioning appears adaptive, with normal-range scores on dominance, warmth, and social engagement measures, suggesting capacity for balanced relationships without significant interpersonal dysfunction. Behavioral functioning reveals no concerns regarding impulse control, substance use, or aggressive tendencies, and the absence of antisocial features is notable. Risk assessment indicators for suicidal ideation, self-harm, and violence potential are all within normal limits, suggesting no acute safety concerns. Treatment-relevant scales suggest adequate stress tolerance and no particular barriers to engagement, though the absence of significant distress may limit internal motivation for intervention.</p>
+<p>The overall clinical picture is that of a psychologically well-functioning individual with minimal subclinical features that do not constitute significant impairment or warrant diagnostic consideration. The slight elevations observed may represent temperamental characteristics—a tendency toward emotional expressiveness and higher-than-average energy—rather than psychopathology. This profile is not consistent with any specific psychiatric diagnosis and suggests adaptive functioning across emotional, cognitive, interpersonal, and behavioral domains. Should Sean seek consultation, a focus on leveraging his apparent psychological strengths and addressing any specific situational stressors or goals would be more appropriate than symptom-focused intervention.</p>
+        </section>
+        
+        
+        <section class="treatment-recommendations">
+            <h2>Treatment Recommendations</h2>
+            <p>Based on the MMPI-3 assessment profile, the following evidence-based treatment recommendations are provided, prioritizing psychodynamic and mindfulness-based approaches:</p>
+<p><strong>Rationale:</strong> The profile indicates elevated somatic/cognitive concerns that may reflect stress-related symptomatology and body-focused attention. MBSR is recommended to address the mind-body connection, reduce physiological arousal, and develop non-judgmental awareness of somatic experiences. This approach can help differentiate between physical sensations and catastrophic interpretations, reducing health anxiety and improving distress tolerance.</p>
+<p><strong>Implementation:</strong> Refer for an 8-week structured MBSR program with body scan meditation, sitting meditation, and gentle yoga practices, with emphasis on observing somatic sensations without reactivity.</p>
+<p><strong>Rationale:</strong> Given the assessment context and referral for practice evaluation, psychodynamic exploration can illuminate unconscious conflicts, defense mechanisms, and relational patterns that may be contributing to current difficulties. This modality is particularly indicated when cognitive and somatic presentations may serve defensive functions against underlying emotional distress.</p>
+<p><strong>Implementation:</strong> Weekly individual psychodynamic therapy (45-50 minutes) focusing on exploration of early attachment experiences, current interpersonal dynamics, transference patterns, and the symbolic meaning of somatic complaints.</p>
+<p><strong>Rationale:</strong> ACT integrates mindfulness principles with values-based action and is particularly effective for individuals presenting with cognitive preoccupation and potential experiential avoidance. This approach can address rigidity in thinking patterns while promoting valued living despite discomfort.</p>
+<p><strong>Implementation:</strong> 12-16 sessions of ACT focusing on acceptance, cognitive defusion, present-moment awareness, self-as-context, values clarification, and committed action, with particular attention to workability of current coping strategies.</p>
+        </section>
+        
+        
+        <div class="interpretation-narrative">
+            
+            <p>Mr. Mapoles completed the MMPI-3 in a valid and cooperative manner, producing an interpretable protocol with no significant clinical elevations across validity or substantive scales. His response pattern suggests an individual who is currently functioning within normal limits across domains of emotional, behavioral, cognitive, and interpersonal functioning, with no indication of significant psychological distress or psychopathology at this time. The absence of elevations on somatic/cognitive, internalizing, externalizing, thought dysfunction, and interpersonal scales suggests adequate coping resources and psychological adjustment. While the client's profile does not indicate acute clinical concerns requiring immediate intervention, the assessment provides a useful baseline for monitoring future changes in functioning and may inform preventive or growth-oriented therapeutic work focused on stress management, mindfulness-based approaches, and continued development of adaptive coping strategies. This profile is consistent with an individual seeking psychological services for personal development or practice purposes rather than acute symptom management.</p>
+        </div>
+        
+
+        
+        <section id="summary">
+            <h2>Summary</h2>
+            <p><strong>Total scales:</strong> 52</p>
+            <p><strong>Elevated scales:</strong> 0</p>
+        </section>
+        
+
+        
+        <div class="signature-block">
+            <div class="signature-line">
+                <div class="signature-entry">
+                    <div class="line">&nbsp;</div>
+                    <div class="name">____________________</div>
+                    <div class="credentials"></div>
+                    <div>Examiner</div>
+                </div>
+                <div class="signature-entry">
+                    <div class="line">&nbsp;</div>
+                    <div class="name">____________________</div>
+                    <div class="credentials"></div>
+                    <div>Supervisor</div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="print-button-container">
+            <button onclick="window.print()" class="print-button">
+                Download as PDF
+            </button>
+            <p class="print-note">
+                Tip: Use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF"
+            </p>
+        </div>
+
+        <section id="disclaimer">
+            <h2>Disclaimer</h2>
+            <p class="disclaimer-text">IMPORTANT DISCLAIMER:
+This report was generated for educational and research purposes only. It is not a substitute for professional clinical judgment. All scores and interpretations should be reviewed by a qualified psychologist before use in clinical decision-making.</p>
+        </section>
+
+        
+        <section id="appendix-a">
+            <h2>Appendix A</h2>
+            <p><em>Scale Name Abbreviations</em></p>
+            <div class="appendix-tables">
+                <table>
+                    <thead><tr><th>Abbreviation</th><th>Scale</th></tr></thead>
+                    <tbody><tr><td>AGG-A</td><td>Aggressive Attitude</td></tr><tr><td>AGG-P</td><td>Physical Aggression</td></tr><tr><td>AGG-V</td><td>Verbal Aggression</td></tr><tr><td>ALC</td><td>Alcohol Problems</td></tr><tr><td>ANT-A</td><td>Antisocial Behaviors</td></tr><tr><td>ANT-E</td><td>Egocentricity</td></tr><tr><td>ANT-S</td><td>Stimulus-Seeking</td></tr><tr><td>ANX-A</td><td>Affective</td></tr><tr><td>ANX-C</td><td>Cognitive</td></tr><tr><td>ANX-P</td><td>Physiological</td></tr><tr><td>ARD-O</td><td>Obsessive-Compulsive</td></tr><tr><td>ARD-P</td><td>Phobias</td></tr><tr><td>ARD-T</td><td>Traumatic Stress</td></tr><tr><td>BOR-A</td><td>Affective Instability</td></tr><tr><td>BOR-I</td><td>Identity Problems</td></tr><tr><td>BOR-N</td><td>Negative Relationships</td></tr><tr><td>BOR-S</td><td>Self-Harm</td></tr><tr><td>DEP-A</td><td>Affective</td></tr><tr><td>DEP-C</td><td>Cognitive</td></tr><tr><td>DEP-P</td><td>Physiological</td></tr><tr><td>DOM</td><td>Dominance</td></tr><tr><td>DRG</td><td>Drug Problems</td></tr><tr><td>INF</td><td>Infrequency</td></tr><tr><td>MAN-A</td><td>Activity Level</td></tr><tr><td>MAN-G</td><td>Grandiosity</td></tr><tr><td>MAN-I</td><td>Irritability</td></tr></tbody>
+                </table>
+                <table>
+                    <thead><tr><th>Abbreviation</th><th>Scale</th></tr></thead>
+                    <tbody><tr><td>NIM</td><td>Negative Impression</td></tr><tr><td>NON</td><td>Nonsupport</td></tr><tr><td>PAR-H</td><td>Hypervigilance</td></tr><tr><td>PAR-P</td><td>Persecution</td></tr><tr><td>PAR-R</td><td>Resentment</td></tr><tr><td>PIM</td><td>Positive Impression</td></tr><tr><td>RXR</td><td>Treatment Rejection</td></tr><tr><td>SCZ-P</td><td>Psychotic Experiences</td></tr><tr><td>SCZ-S</td><td>Social Detachment</td></tr><tr><td>SCZ-T</td><td>Thought Disorder</td></tr><tr><td>SOM-C</td><td>Conversion</td></tr><tr><td>SOM-H</td><td>Health Concerns</td></tr><tr><td>SOM-S</td><td>Somatization</td></tr><tr><td>STR</td><td>Stress</td></tr><tr><td>SUI</td><td>Suicidal Ideation</td></tr><tr><td>WRM</td><td>Warmth</td></tr><tr><td>SOM</td><td>Somatic Complaints</td></tr><tr><td>ANX</td><td>Anxiety</td></tr><tr><td>ARD</td><td>Anxiety-Related Disorders</td></tr><tr><td>DEP</td><td>Depression</td></tr><tr><td>MAN</td><td>Mania</td></tr><tr><td>PAR</td><td>Paranoia</td></tr><tr><td>SCZ</td><td>Schizophrenia</td></tr><tr><td>BOR</td><td>Borderline Features</td></tr><tr><td>ANT</td><td>Antisocial Features</td></tr><tr><td>AGG</td><td>Aggression</td></tr></tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer>
+            <p>Report generated: 2026-03-13 16:14:08</p>
+        </footer>
+    </div>
+
+    <script>
+        // Embedded score data
+        const scoreData = {
+  "test_id": "EVE_001",
+  "test_date": "2026-03-01",
+  "examinee_id": "737-Eve",
+  "scale_scores": {
+    "AGG-A": {
+      "scale_name": "Aggressive Attitude",
+      "abbreviation": "AGG-A",
+      "raw_score": 4,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 45,
+      "t_score_display": "45"
+    },
+    "AGG-P": {
+      "scale_name": "Physical Aggression",
+      "abbreviation": "AGG-P",
+      "raw_score": 0,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 42,
+      "t_score_display": "42"
+    },
+    "AGG-V": {
+      "scale_name": "Verbal Aggression",
+      "abbreviation": "AGG-V",
+      "raw_score": 1,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 34,
+      "t_score_display": "34"
+    },
+    "ALC": {
+      "scale_name": "Alcohol Problems",
+      "abbreviation": "ALC",
+      "raw_score": 6,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 52,
+      "t_score_display": "52"
+    },
+    "ANT-A": {
+      "scale_name": "Antisocial Behaviors",
+      "abbreviation": "ANT-A",
+      "raw_score": 7,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 55,
+      "t_score_display": "55"
+    },
+    "ANT-E": {
+      "scale_name": "Egocentricity",
+      "abbreviation": "ANT-E",
+      "raw_score": 3,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 49,
+      "t_score_display": "49"
+    },
+    "ANT-S": {
+      "scale_name": "Stimulus-Seeking",
+      "abbreviation": "ANT-S",
+      "raw_score": 7,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 56,
+      "t_score_display": "56"
+    },
+    "ANX-A": {
+      "scale_name": "Affective",
+      "abbreviation": "ANX-A",
+      "raw_score": 6,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 49,
+      "t_score_display": "49"
+    },
+    "ANX-C": {
+      "scale_name": "Cognitive",
+      "abbreviation": "ANX-C",
+      "raw_score": 7,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 52,
+      "t_score_display": "52"
+    },
+    "ANX-P": {
+      "scale_name": "Physiological",
+      "abbreviation": "ANX-P",
+      "raw_score": 6,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 55,
+      "t_score_display": "55"
+    },
+    "ARD-O": {
+      "scale_name": "Obsessive-Compulsive",
+      "abbreviation": "ARD-O",
+      "raw_score": 12,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 57,
+      "t_score_display": "57"
+    },
+    "ARD-P": {
+      "scale_name": "Phobias",
+      "abbreviation": "ARD-P",
+      "raw_score": 5,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 45,
+      "t_score_display": "45"
+    },
+    "ARD-T": {
+      "scale_name": "Traumatic Stress",
+      "abbreviation": "ARD-T",
+      "raw_score": 4,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 50,
+      "t_score_display": "50"
+    },
+    "BOR-A": {
+      "scale_name": "Affective Instability",
+      "abbreviation": "BOR-A",
+      "raw_score": 9,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Slightly Elevated",
+      "t_score": 63,
+      "t_score_display": "63"
+    },
+    "BOR-I": {
+      "scale_name": "Identity Problems",
+      "abbreviation": "BOR-I",
+      "raw_score": 8,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 59,
+      "t_score_display": "59"
+    },
+    "BOR-N": {
+      "scale_name": "Negative Relationships",
+      "abbreviation": "BOR-N",
+      "raw_score": 8,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 59,
+      "t_score_display": "59"
+    },
+    "BOR-S": {
+      "scale_name": "Self-Harm",
+      "abbreviation": "BOR-S",
+      "raw_score": 4,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 53,
+      "t_score_display": "53"
+    },
+    "DEP-A": {
+      "scale_name": "Affective",
+      "abbreviation": "DEP-A",
+      "raw_score": 2,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 44,
+      "t_score_display": "44"
+    },
+    "DEP-C": {
+      "scale_name": "Cognitive",
+      "abbreviation": "DEP-C",
+      "raw_score": 1,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 40,
+      "t_score_display": "40"
+    },
+    "DEP-P": {
+      "scale_name": "Physiological",
+      "abbreviation": "DEP-P",
+      "raw_score": 7,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 53,
+      "t_score_display": "53"
+    },
+    "DOM": {
+      "scale_name": "Dominance",
+      "abbreviation": "DOM",
+      "raw_score": 18,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 45,
+      "t_score_display": "45"
+    },
+    "DRG": {
+      "scale_name": "Drug Problems",
+      "abbreviation": "DRG",
+      "raw_score": 5,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 52,
+      "t_score_display": "52"
+    },
+    "INF": {
+      "scale_name": "Infrequency",
+      "abbreviation": "INF",
+      "raw_score": 5,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 59,
+      "t_score_display": "59"
+    },
+    "MAN-A": {
+      "scale_name": "Activity Level",
+      "abbreviation": "MAN-A",
+      "raw_score": 9,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 57,
+      "t_score_display": "57"
+    },
+    "MAN-G": {
+      "scale_name": "Grandiosity",
+      "abbreviation": "MAN-G",
+      "raw_score": 11,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 56,
+      "t_score_display": "56"
+    },
+    "MAN-I": {
+      "scale_name": "Irritability",
+      "abbreviation": "MAN-I",
+      "raw_score": 15,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Slightly Elevated",
+      "t_score": 67,
+      "t_score_display": "67"
+    },
+    "NIM": {
+      "scale_name": "Negative Impression",
+      "abbreviation": "NIM",
+      "raw_score": 1,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 47,
+      "t_score_display": "47"
+    },
+    "NON": {
+      "scale_name": "Nonsupport",
+      "abbreviation": "NON",
+      "raw_score": 4,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 48,
+      "t_score_display": "48"
+    },
+    "PAR-H": {
+      "scale_name": "Hypervigilance",
+      "abbreviation": "PAR-H",
+      "raw_score": 10,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 57,
+      "t_score_display": "57"
+    },
+    "PAR-P": {
+      "scale_name": "Persecution",
+      "abbreviation": "PAR-P",
+      "raw_score": 2,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 45,
+      "t_score_display": "45"
+    },
+    "PAR-R": {
+      "scale_name": "Resentment",
+      "abbreviation": "PAR-R",
+      "raw_score": 10,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 58,
+      "t_score_display": "58"
+    },
+    "PIM": {
+      "scale_name": "Positive Impression",
+      "abbreviation": "PIM",
+      "raw_score": 13,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 45,
+      "t_score_display": "45"
+    },
+    "RXR": {
+      "scale_name": "Treatment Rejection",
+      "abbreviation": "RXR",
+      "raw_score": 14,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 51,
+      "t_score_display": "51"
+    },
+    "SCZ-P": {
+      "scale_name": "Psychotic Experiences",
+      "abbreviation": "SCZ-P",
+      "raw_score": 3,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 46,
+      "t_score_display": "46"
+    },
+    "SCZ-S": {
+      "scale_name": "Social Detachment",
+      "abbreviation": "SCZ-S",
+      "raw_score": 6,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 51,
+      "t_score_display": "51"
+    },
+    "SCZ-T": {
+      "scale_name": "Thought Disorder",
+      "abbreviation": "SCZ-T",
+      "raw_score": 5,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 52,
+      "t_score_display": "52"
+    },
+    "SOM-C": {
+      "scale_name": "Conversion",
+      "abbreviation": "SOM-C",
+      "raw_score": 1,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 46,
+      "t_score_display": "46"
+    },
+    "SOM-H": {
+      "scale_name": "Health Concerns",
+      "abbreviation": "SOM-H",
+      "raw_score": 7,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 57,
+      "t_score_display": "57"
+    },
+    "SOM-S": {
+      "scale_name": "Somatization",
+      "abbreviation": "SOM-S",
+      "raw_score": 4,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 49,
+      "t_score_display": "49"
+    },
+    "STR": {
+      "scale_name": "Stress",
+      "abbreviation": "STR",
+      "raw_score": 5,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 48,
+      "t_score_display": "48"
+    },
+    "SUI": {
+      "scale_name": "Suicidal Ideation",
+      "abbreviation": "SUI",
+      "raw_score": 4,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 51,
+      "t_score_display": "51"
+    },
+    "WRM": {
+      "scale_name": "Warmth",
+      "abbreviation": "WRM",
+      "raw_score": 17,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 38,
+      "t_score_display": "38"
+    },
+    "SOM": {
+      "scale_name": "Somatic Complaints",
+      "abbreviation": "SOM",
+      "raw_score": 12,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 51,
+      "t_score_display": "51"
+    },
+    "ANX": {
+      "scale_name": "Anxiety",
+      "abbreviation": "ANX",
+      "raw_score": 19,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 52,
+      "t_score_display": "52"
+    },
+    "ARD": {
+      "scale_name": "Anxiety-Related Disorders",
+      "abbreviation": "ARD",
+      "raw_score": 21,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 51,
+      "t_score_display": "51"
+    },
+    "DEP": {
+      "scale_name": "Depression",
+      "abbreviation": "DEP",
+      "raw_score": 10,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 45,
+      "t_score_display": "45"
+    },
+    "MAN": {
+      "scale_name": "Mania",
+      "abbreviation": "MAN",
+      "raw_score": 35,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Slightly Elevated",
+      "t_score": 63,
+      "t_score_display": "63"
+    },
+    "PAR": {
+      "scale_name": "Paranoia",
+      "abbreviation": "PAR",
+      "raw_score": 22,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 54,
+      "t_score_display": "54"
+    },
+    "SCZ": {
+      "scale_name": "Schizophrenia",
+      "abbreviation": "SCZ",
+      "raw_score": 14,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 50,
+      "t_score_display": "50"
+    },
+    "BOR": {
+      "scale_name": "Borderline Features",
+      "abbreviation": "BOR",
+      "raw_score": 29,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Slightly Elevated",
+      "t_score": 61,
+      "t_score_display": "61"
+    },
+    "ANT": {
+      "scale_name": "Antisocial Features",
+      "abbreviation": "ANT",
+      "raw_score": 17,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 54,
+      "t_score_display": "54"
+    },
+    "AGG": {
+      "scale_name": "Aggression",
+      "abbreviation": "AGG",
+      "raw_score": 5,
+      "total_items": 18,
+      "items_scored": 18,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Within Normal Limits",
+      "t_score": 38,
+      "t_score_display": "38"
+    }
+  }
+};
+
+        // Initialize validity charts
+        
+        const chart_response_consistency = echarts.init(document.getElementById('chart-response-consistency'));
+        const chart_response_consistency_config = {
+  "title": {
+    "text": "Response Consistency",
+    "left": "center",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 16,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "tooltip": {
+    "trigger": "item",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "grid": {
+    "left": "10%",
+    "right": "8%",
+    "bottom": "15%",
+    "top": "10%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "INF"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Estimated Score Position",
+    "nameLocation": "middle",
+    "nameGap": 45,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    },
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "min": 25,
+    "max": 120,
+    "interval": 10
+  },
+  "series": [
+    {
+      "name": "Response Consistency",
+      "type": "line",
+      "data": [
+        {
+          "value": 59,
+          "name": "INF",
+          "raw_score": 5,
+          "scale_name": "Infrequency",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        }
+      ],
+      "itemStyle": {
+        "color": "#555555"
+      },
+      "lineStyle": {
+        "width": 3.0
+      },
+      "symbol": "circle",
+      "smooth": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ],
+  "markLine": {
+    "data": [
+      {
+        "yAxis": 59,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "59T"
+        }
+      },
+      {
+        "yAxis": 69,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "69T"
+        }
+      }
+    ],
+    "lineStyle": {
+      "type": "dashed",
+      "color": "#999"
+    }
+  }
+};
+        chart_response_consistency_config.tooltip.formatter = function(params) {
+            return '<strong>' + params.seriesName + '</strong><br/>' +
+                   'Scale: ' + params.data.name + ' - ' + params.data.scale_name + '<br/>' +
+                   'Raw Score: ' + params.data.raw_score + '<br/>' +
+                   'Range: ' + params.data.interpretive_range;
+        };
+        chart_response_consistency.setOption(chart_response_consistency_config);
+
+        const chart_negative_distortion = echarts.init(document.getElementById('chart-negative-distortion'));
+        const chart_negative_distortion_config = {
+  "title": {
+    "text": "Negative Distortion",
+    "left": "center",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 16,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "tooltip": {
+    "trigger": "item",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "grid": {
+    "left": "10%",
+    "right": "8%",
+    "bottom": "15%",
+    "top": "10%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "NIM"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Estimated Score Position",
+    "nameLocation": "middle",
+    "nameGap": 45,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    },
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "min": 25,
+    "max": 120,
+    "interval": 10
+  },
+  "series": [
+    {
+      "name": "Negative Distortion",
+      "type": "line",
+      "data": [
+        {
+          "value": 47,
+          "name": "NIM",
+          "raw_score": 1,
+          "scale_name": "Negative Impression",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        }
+      ],
+      "itemStyle": {
+        "color": "#922B21"
+      },
+      "lineStyle": {
+        "width": 3.0
+      },
+      "symbol": "circle",
+      "smooth": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ],
+  "markLine": {
+    "data": [
+      {
+        "yAxis": 59,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "59T"
+        }
+      },
+      {
+        "yAxis": 69,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "69T"
+        }
+      }
+    ],
+    "lineStyle": {
+      "type": "dashed",
+      "color": "#999"
+    }
+  }
+};
+        chart_negative_distortion_config.tooltip.formatter = function(params) {
+            return '<strong>' + params.seriesName + '</strong><br/>' +
+                   'Scale: ' + params.data.name + ' - ' + params.data.scale_name + '<br/>' +
+                   'Raw Score: ' + params.data.raw_score + '<br/>' +
+                   'Range: ' + params.data.interpretive_range;
+        };
+        chart_negative_distortion.setOption(chart_negative_distortion_config);
+
+        const chart_positive_distortion = echarts.init(document.getElementById('chart-positive-distortion'));
+        const chart_positive_distortion_config = {
+  "title": {
+    "text": "Positive Distortion",
+    "left": "center",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 16,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "tooltip": {
+    "trigger": "item",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "grid": {
+    "left": "10%",
+    "right": "8%",
+    "bottom": "15%",
+    "top": "10%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "PIM"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Estimated Score Position",
+    "nameLocation": "middle",
+    "nameGap": 45,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    },
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "min": 25,
+    "max": 120,
+    "interval": 10
+  },
+  "series": [
+    {
+      "name": "Positive Distortion",
+      "type": "line",
+      "data": [
+        {
+          "value": 45,
+          "name": "PIM",
+          "raw_score": 13,
+          "scale_name": "Positive Impression",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        }
+      ],
+      "itemStyle": {
+        "color": "#1A5276"
+      },
+      "lineStyle": {
+        "width": 3.0
+      },
+      "symbol": "circle",
+      "smooth": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ],
+  "markLine": {
+    "data": [
+      {
+        "yAxis": 59,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "59T"
+        }
+      },
+      {
+        "yAxis": 69,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "69T"
+        }
+      }
+    ],
+    "lineStyle": {
+      "type": "dashed",
+      "color": "#999"
+    }
+  }
+};
+        chart_positive_distortion_config.tooltip.formatter = function(params) {
+            return '<strong>' + params.seriesName + '</strong><br/>' +
+                   'Scale: ' + params.data.name + ' - ' + params.data.scale_name + '<br/>' +
+                   'Raw Score: ' + params.data.raw_score + '<br/>' +
+                   'Range: ' + params.data.interpretive_range;
+        };
+        chart_positive_distortion.setOption(chart_positive_distortion_config);
+
+        // Initialize combined profile chart
+        const chartCombined = echarts.init(document.getElementById('chart-combined'));
+        const combinedConfig = {
+  "title": {
+    "text": "PAI Profile Graph",
+    "left": "center",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 16,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "tooltip": {
+    "trigger": "item",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "legend": {
+    "data": [
+      "Clinical Scales",
+      "Clinical Subscales",
+      "Treatment Consideration Scales",
+      "Interpersonal Scales"
+    ],
+    "top": 30,
+    "type": "scroll",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "grid": {
+    "left": "8%",
+    "right": "5%",
+    "bottom": "20%",
+    "top": "12%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "SOM",
+      "ANX",
+      "ARD",
+      "DEP",
+      "MAN",
+      "PAR",
+      "SCZ",
+      "BOR",
+      "ANT",
+      "ALC",
+      "DRG",
+      "SOM-C",
+      "SOM-S",
+      "SOM-H",
+      "ANX-C",
+      "ANX-A",
+      "ANX-P",
+      "ARD-O",
+      "ARD-P",
+      "ARD-T",
+      "DEP-C",
+      "DEP-A",
+      "DEP-P",
+      "MAN-A",
+      "MAN-G",
+      "MAN-I",
+      "PAR-H",
+      "PAR-P",
+      "PAR-R",
+      "SCZ-P",
+      "SCZ-S",
+      "SCZ-T",
+      "BOR-A",
+      "BOR-I",
+      "BOR-N",
+      "BOR-S",
+      "ANT-A",
+      "ANT-E",
+      "ANT-S",
+      "AGG-A",
+      "AGG-V",
+      "AGG-P",
+      "AGG",
+      "SUI",
+      "STR",
+      "NON",
+      "RXR",
+      "DOM",
+      "WRM"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "rotate": 45
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "name": "PAI Scales",
+    "nameLocation": "middle",
+    "nameGap": 50,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Estimated Score Position",
+    "nameLocation": "middle",
+    "nameGap": 50,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    },
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "min": 25,
+    "max": 120,
+    "interval": 10
+  },
+  "series": [
+    {
+      "name": "Clinical Scales",
+      "type": "line",
+      "data": [
+        {
+          "value": 51,
+          "name": "SOM",
+          "raw_score": 12,
+          "scale_name": "Somatic Complaints",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 52,
+          "name": "ANX",
+          "raw_score": 19,
+          "scale_name": "Anxiety",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 51,
+          "name": "ARD",
+          "raw_score": 21,
+          "scale_name": "Anxiety-Related Disorders",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 45,
+          "name": "DEP",
+          "raw_score": 10,
+          "scale_name": "Depression",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 63,
+          "name": "MAN",
+          "raw_score": 35,
+          "scale_name": "Mania",
+          "interpretive_range": "Slightly Elevated",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 54,
+          "name": "PAR",
+          "raw_score": 22,
+          "scale_name": "Paranoia",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 50,
+          "name": "SCZ",
+          "raw_score": 14,
+          "scale_name": "Schizophrenia",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 61,
+          "name": "BOR",
+          "raw_score": 29,
+          "scale_name": "Borderline Features",
+          "interpretive_range": "Slightly Elevated",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 54,
+          "name": "ANT",
+          "raw_score": 17,
+          "scale_name": "Antisocial Features",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 52,
+          "name": "ALC",
+          "raw_score": 6,
+          "scale_name": "Alcohol Problems",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 52,
+          "name": "DRG",
+          "raw_score": 5,
+          "scale_name": "Drug Problems",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#1A5276"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Clinical Subscales",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 46,
+          "name": "SOM-C",
+          "raw_score": 1,
+          "scale_name": "Conversion",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 49,
+          "name": "SOM-S",
+          "raw_score": 4,
+          "scale_name": "Somatization",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 57,
+          "name": "SOM-H",
+          "raw_score": 7,
+          "scale_name": "Health Concerns",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 52,
+          "name": "ANX-C",
+          "raw_score": 7,
+          "scale_name": "Cognitive",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 49,
+          "name": "ANX-A",
+          "raw_score": 6,
+          "scale_name": "Affective",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 55,
+          "name": "ANX-P",
+          "raw_score": 6,
+          "scale_name": "Physiological",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 57,
+          "name": "ARD-O",
+          "raw_score": 12,
+          "scale_name": "Obsessive-Compulsive",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 45,
+          "name": "ARD-P",
+          "raw_score": 5,
+          "scale_name": "Phobias",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 50,
+          "name": "ARD-T",
+          "raw_score": 4,
+          "scale_name": "Traumatic Stress",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 40,
+          "name": "DEP-C",
+          "raw_score": 1,
+          "scale_name": "Cognitive",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 44,
+          "name": "DEP-A",
+          "raw_score": 2,
+          "scale_name": "Affective",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 53,
+          "name": "DEP-P",
+          "raw_score": 7,
+          "scale_name": "Physiological",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 57,
+          "name": "MAN-A",
+          "raw_score": 9,
+          "scale_name": "Activity Level",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 56,
+          "name": "MAN-G",
+          "raw_score": 11,
+          "scale_name": "Grandiosity",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 67,
+          "name": "MAN-I",
+          "raw_score": 15,
+          "scale_name": "Irritability",
+          "interpretive_range": "Slightly Elevated",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 57,
+          "name": "PAR-H",
+          "raw_score": 10,
+          "scale_name": "Hypervigilance",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 45,
+          "name": "PAR-P",
+          "raw_score": 2,
+          "scale_name": "Persecution",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 58,
+          "name": "PAR-R",
+          "raw_score": 10,
+          "scale_name": "Resentment",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 46,
+          "name": "SCZ-P",
+          "raw_score": 3,
+          "scale_name": "Psychotic Experiences",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 51,
+          "name": "SCZ-S",
+          "raw_score": 6,
+          "scale_name": "Social Detachment",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 52,
+          "name": "SCZ-T",
+          "raw_score": 5,
+          "scale_name": "Thought Disorder",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 63,
+          "name": "BOR-A",
+          "raw_score": 9,
+          "scale_name": "Affective Instability",
+          "interpretive_range": "Slightly Elevated",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 59,
+          "name": "BOR-I",
+          "raw_score": 8,
+          "scale_name": "Identity Problems",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 59,
+          "name": "BOR-N",
+          "raw_score": 8,
+          "scale_name": "Negative Relationships",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 53,
+          "name": "BOR-S",
+          "raw_score": 4,
+          "scale_name": "Self-Harm",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 55,
+          "name": "ANT-A",
+          "raw_score": 7,
+          "scale_name": "Antisocial Behaviors",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 49,
+          "name": "ANT-E",
+          "raw_score": 3,
+          "scale_name": "Egocentricity",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 56,
+          "name": "ANT-S",
+          "raw_score": 7,
+          "scale_name": "Stimulus-Seeking",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 45,
+          "name": "AGG-A",
+          "raw_score": 4,
+          "scale_name": "Aggressive Attitude",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 34,
+          "name": "AGG-V",
+          "raw_score": 1,
+          "scale_name": "Verbal Aggression",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 42,
+          "name": "AGG-P",
+          "raw_score": 0,
+          "scale_name": "Physical Aggression",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#2E86C1"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Treatment Consideration Scales",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 38,
+          "name": "AGG",
+          "raw_score": 5,
+          "scale_name": "Aggression",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 51,
+          "name": "SUI",
+          "raw_score": 4,
+          "scale_name": "Suicidal Ideation",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 48,
+          "name": "STR",
+          "raw_score": 5,
+          "scale_name": "Stress",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 48,
+          "name": "NON",
+          "raw_score": 4,
+          "scale_name": "Nonsupport",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 51,
+          "name": "RXR",
+          "raw_score": 14,
+          "scale_name": "Treatment Rejection",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#922B21"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Interpersonal Scales",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 45,
+          "name": "DOM",
+          "raw_score": 18,
+          "scale_name": "Dominance",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 38,
+          "name": "WRM",
+          "raw_score": 17,
+          "scale_name": "Warmth",
+          "interpretive_range": "Within Normal Limits",
+          "is_elevated": false,
+          "symbolSize": 12
+        }
+      ],
+      "itemStyle": {
+        "color": "#117A65"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ],
+  "markLine": {
+    "data": [
+      {
+        "yAxis": 59,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "59T"
+        }
+      },
+      {
+        "yAxis": 69,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "69T"
+        }
+      }
+    ],
+    "lineStyle": {
+      "type": "dashed",
+      "color": "#999"
+    }
+  },
+  "toolbox": {
+    "feature": {
+      "dataZoom": {
+        "yAxisIndex": "none"
+      },
+      "restore": {},
+      "saveAsImage": {}
+    }
+  }
+};
+
+        // Add tooltip formatter
+        combinedConfig.tooltip.formatter = function(params) {
+            return '<strong>' + params.seriesName + '</strong><br/>' +
+                   'Scale: ' + params.data.name + ' - ' + params.data.scale_name + '<br/>' +
+                   'Raw Score: ' + params.data.raw_score + '<br/>' +
+                   'Range: ' + params.data.interpretive_range;
+        };
+
+        chartCombined.setOption(combinedConfig);
+
+        // Initialize domain charts
+        
+
+        // Initialize PAI profile charts (if present)
+        var paiFullScale = null;
+        var paiSubscale = null;
+        (function() {
+            var fsConfig = {
+  "animation": false,
+  "tooltip": {
+    "trigger": "item",
+    "formatter": ""
+  },
+  "grid": {
+    "left": "6%",
+    "right": "6%",
+    "bottom": "18%",
+    "top": "8%",
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "ICN",
+      "INF",
+      "NIM",
+      "PIM",
+      "SOM",
+      "ANX",
+      "ARD",
+      "DEP",
+      "MAN",
+      "PAR",
+      "SCZ",
+      "BOR",
+      "ANT",
+      "ALC",
+      "DRG",
+      "AGG",
+      "SUI",
+      "STR",
+      "NON",
+      "RXR",
+      "DOM",
+      "WRM"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 11,
+      "color": "#000",
+      "fontStyle": "italic",
+      "interval": 0
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "alignWithLabel": true
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "T score",
+    "nameLocation": "end",
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 11,
+      "color": "#000",
+      "fontStyle": "italic"
+    },
+    "min": 30,
+    "max": 110,
+    "interval": 10,
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 11,
+      "color": "#000"
+    },
+    "axisLine": {
+      "show": true,
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "splitLine": {
+      "show": true,
+      "lineStyle": {
+        "type": "solid",
+        "color": "#ddd"
+      }
+    }
+  },
+  "series": [
+    {
+      "type": "line",
+      "data": [
+        null,
+        {
+          "value": 59,
+          "name": "INF",
+          "scale_name": "Infrequency",
+          "raw_score": 5,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 47,
+          "name": "NIM",
+          "scale_name": "Negative Impression",
+          "raw_score": 1,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 45,
+          "name": "PIM",
+          "scale_name": "Positive Impression",
+          "raw_score": 13,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 51,
+          "name": "SOM",
+          "scale_name": "Somatic Complaints",
+          "raw_score": 12,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 52,
+          "name": "ANX",
+          "scale_name": "Anxiety",
+          "raw_score": 19,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 51,
+          "name": "ARD",
+          "scale_name": "Anxiety-Related Disorders",
+          "raw_score": 21,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 45,
+          "name": "DEP",
+          "scale_name": "Depression",
+          "raw_score": 10,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 63,
+          "name": "MAN",
+          "scale_name": "Mania",
+          "raw_score": 35,
+          "interpretive_range": "Slightly Elevated",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 54,
+          "name": "PAR",
+          "scale_name": "Paranoia",
+          "raw_score": 22,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 50,
+          "name": "SCZ",
+          "scale_name": "Schizophrenia",
+          "raw_score": 14,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 61,
+          "name": "BOR",
+          "scale_name": "Borderline Features",
+          "raw_score": 29,
+          "interpretive_range": "Slightly Elevated",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 54,
+          "name": "ANT",
+          "scale_name": "Antisocial Features",
+          "raw_score": 17,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 52,
+          "name": "ALC",
+          "scale_name": "Alcohol Problems",
+          "raw_score": 6,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 52,
+          "name": "DRG",
+          "scale_name": "Drug Problems",
+          "raw_score": 5,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 38,
+          "name": "AGG",
+          "scale_name": "Aggression",
+          "raw_score": 5,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 51,
+          "name": "SUI",
+          "scale_name": "Suicidal Ideation",
+          "raw_score": 4,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 48,
+          "name": "STR",
+          "scale_name": "Stress",
+          "raw_score": 5,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 48,
+          "name": "NON",
+          "scale_name": "Nonsupport",
+          "raw_score": 4,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 51,
+          "name": "RXR",
+          "scale_name": "Treatment Rejection",
+          "raw_score": 14,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 45,
+          "name": "DOM",
+          "scale_name": "Dominance",
+          "raw_score": 18,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "value": 38,
+          "name": "WRM",
+          "scale_name": "Warmth",
+          "raw_score": 17,
+          "interpretive_range": "Within Normal Limits",
+          "symbol": "circle",
+          "symbolSize": 10,
+          "label": {
+            "show": true,
+            "position": "top",
+            "formatter": "{b}",
+            "fontFamily": "Times New Roman",
+            "fontSize": 10,
+            "color": "#000",
+            "fontStyle": "italic"
+          }
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 2
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 10,
+      "label": {
+        "show": false
+      },
+      "markLine": {
+        "data": [
+          {
+            "yAxis": 70,
+            "label": {
+              "formatter": "70T",
+              "fontFamily": "Times New Roman",
+              "fontSize": 10,
+              "color": "#000"
+            },
+            "lineStyle": {
+              "type": "dashed",
+              "color": "#FF0000",
+              "width": 1.5
+            }
+          }
+        ],
+        "silent": true,
+        "symbol": "none"
+      },
+      "connectNulls": false
+    }
+  ]
+};
+            if (fsConfig && fsConfig !== null) {
+                var el = document.getElementById('chart-pai-full-scale');
+                if (el) {
+                    paiFullScale = echarts.init(el);
+                    fsConfig.tooltip.formatter = function(params) {
+                        return '<strong>' + params.data.name + '</strong> - ' + params.data.scale_name + '<br/>' +
+                               'Raw: ' + params.data.raw_score + '<br/>' +
+                               'T: ' + params.value + '<br/>' +
+                               params.data.interpretive_range;
+                    };
+                    paiFullScale.setOption(fsConfig);
+                }
+            }
+            var subConfig = {
+  "animation": false,
+  "tooltip": {
+    "trigger": "item",
+    "formatter": ""
+  },
+  "grid": {
+    "left": "3%",
+    "right": "5%",
+    "bottom": "5%",
+    "top": "3%",
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "value",
+    "name": "",
+    "min": 30,
+    "max": 110,
+    "interval": 10,
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 11,
+      "color": "#000"
+    },
+    "axisLine": {
+      "show": true,
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "splitLine": {
+      "show": true,
+      "lineStyle": {
+        "type": "solid",
+        "color": "#ddd"
+      }
+    },
+    "position": "bottom"
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "SOM-C   Conversion   1   46",
+      "SOM-S   Somatization   4   49",
+      "SOM-H   Health Concerns   7   57",
+      "",
+      "ANX-C   Cognitive   7   52",
+      "ANX-A   Affective   6   49",
+      "ANX-P   Physiological   6   55",
+      "",
+      "ARD-O   Obsessive-Compulsive   12   57",
+      "ARD-P   Phobias   5   45",
+      "ARD-T   Traumatic Stress   4   50",
+      "",
+      "DEP-C   Cognitive   1   40",
+      "DEP-A   Affective   2   44",
+      "DEP-P   Physiological   7   53",
+      "",
+      "MAN-A   Activity Level   9   57",
+      "MAN-G   Grandiosity   11   56",
+      "MAN-I   Irritability   15   67",
+      "",
+      "PAR-H   Hypervigilance   10   57",
+      "PAR-P   Persecution   2   45",
+      "PAR-R   Resentment   10   58",
+      "",
+      "SCZ-P   Psychotic Experiences   3   46",
+      "SCZ-S   Social Detachment   6   51",
+      "SCZ-T   Thought Disorder   5   52",
+      "",
+      "BOR-A   Affective Instability   9   63",
+      "BOR-I   Identity Problems   8   59",
+      "BOR-N   Negative Relationships   8   59",
+      "BOR-S   Self-Harm   4   53",
+      "",
+      "ANT-A   Antisocial Behaviors   7   55",
+      "ANT-E   Egocentricity   3   49",
+      "ANT-S   Stimulus-Seeking   7   56",
+      "",
+      "AGG-A   Aggressive Attitude   4   45",
+      "AGG-V   Verbal Aggression   1   34",
+      "AGG-P   Physical Aggression   0   42"
+    ],
+    "axisLabel": {
+      "fontFamily": "monospace",
+      "fontSize": 10,
+      "color": "#000"
+    },
+    "axisLine": {
+      "show": true,
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "show": false
+    },
+    "inverse": true
+  },
+  "series": [
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            46,
+            "SOM-C   Conversion   1   46"
+          ],
+          "name": "SOM-C",
+          "scale_name": "Conversion",
+          "raw_score": 1,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            49,
+            "SOM-S   Somatization   4   49"
+          ],
+          "name": "SOM-S",
+          "scale_name": "Somatization",
+          "raw_score": 4,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            57,
+            "SOM-H   Health Concerns   7   57"
+          ],
+          "name": "SOM-H",
+          "scale_name": "Health Concerns",
+          "raw_score": 7,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false,
+      "markLine": {
+        "data": [
+          {
+            "yAxis": 3,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 7,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 11,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 15,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 19,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 23,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 27,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 32,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          },
+          {
+            "yAxis": 36,
+            "lineStyle": {
+              "type": "solid",
+              "color": "#999",
+              "width": 1
+            },
+            "label": {
+              "show": false
+            }
+          }
+        ],
+        "silent": true,
+        "symbol": "none"
+      }
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            52,
+            "ANX-C   Cognitive   7   52"
+          ],
+          "name": "ANX-C",
+          "scale_name": "Cognitive",
+          "raw_score": 7,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            49,
+            "ANX-A   Affective   6   49"
+          ],
+          "name": "ANX-A",
+          "scale_name": "Affective",
+          "raw_score": 6,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            55,
+            "ANX-P   Physiological   6   55"
+          ],
+          "name": "ANX-P",
+          "scale_name": "Physiological",
+          "raw_score": 6,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            57,
+            "ARD-O   Obsessive-Compulsive   12   57"
+          ],
+          "name": "ARD-O",
+          "scale_name": "Obsessive-Compulsive",
+          "raw_score": 12,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            45,
+            "ARD-P   Phobias   5   45"
+          ],
+          "name": "ARD-P",
+          "scale_name": "Phobias",
+          "raw_score": 5,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            50,
+            "ARD-T   Traumatic Stress   4   50"
+          ],
+          "name": "ARD-T",
+          "scale_name": "Traumatic Stress",
+          "raw_score": 4,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            40,
+            "DEP-C   Cognitive   1   40"
+          ],
+          "name": "DEP-C",
+          "scale_name": "Cognitive",
+          "raw_score": 1,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            44,
+            "DEP-A   Affective   2   44"
+          ],
+          "name": "DEP-A",
+          "scale_name": "Affective",
+          "raw_score": 2,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            53,
+            "DEP-P   Physiological   7   53"
+          ],
+          "name": "DEP-P",
+          "scale_name": "Physiological",
+          "raw_score": 7,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            57,
+            "MAN-A   Activity Level   9   57"
+          ],
+          "name": "MAN-A",
+          "scale_name": "Activity Level",
+          "raw_score": 9,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            56,
+            "MAN-G   Grandiosity   11   56"
+          ],
+          "name": "MAN-G",
+          "scale_name": "Grandiosity",
+          "raw_score": 11,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            67,
+            "MAN-I   Irritability   15   67"
+          ],
+          "name": "MAN-I",
+          "scale_name": "Irritability",
+          "raw_score": 15,
+          "interpretive_range": "Slightly Elevated"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            57,
+            "PAR-H   Hypervigilance   10   57"
+          ],
+          "name": "PAR-H",
+          "scale_name": "Hypervigilance",
+          "raw_score": 10,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            45,
+            "PAR-P   Persecution   2   45"
+          ],
+          "name": "PAR-P",
+          "scale_name": "Persecution",
+          "raw_score": 2,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            58,
+            "PAR-R   Resentment   10   58"
+          ],
+          "name": "PAR-R",
+          "scale_name": "Resentment",
+          "raw_score": 10,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            46,
+            "SCZ-P   Psychotic Experiences   3   46"
+          ],
+          "name": "SCZ-P",
+          "scale_name": "Psychotic Experiences",
+          "raw_score": 3,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            51,
+            "SCZ-S   Social Detachment   6   51"
+          ],
+          "name": "SCZ-S",
+          "scale_name": "Social Detachment",
+          "raw_score": 6,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            52,
+            "SCZ-T   Thought Disorder   5   52"
+          ],
+          "name": "SCZ-T",
+          "scale_name": "Thought Disorder",
+          "raw_score": 5,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            63,
+            "BOR-A   Affective Instability   9   63"
+          ],
+          "name": "BOR-A",
+          "scale_name": "Affective Instability",
+          "raw_score": 9,
+          "interpretive_range": "Slightly Elevated"
+        },
+        {
+          "value": [
+            59,
+            "BOR-I   Identity Problems   8   59"
+          ],
+          "name": "BOR-I",
+          "scale_name": "Identity Problems",
+          "raw_score": 8,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            59,
+            "BOR-N   Negative Relationships   8   59"
+          ],
+          "name": "BOR-N",
+          "scale_name": "Negative Relationships",
+          "raw_score": 8,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            53,
+            "BOR-S   Self-Harm   4   53"
+          ],
+          "name": "BOR-S",
+          "scale_name": "Self-Harm",
+          "raw_score": 4,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            55,
+            "ANT-A   Antisocial Behaviors   7   55"
+          ],
+          "name": "ANT-A",
+          "scale_name": "Antisocial Behaviors",
+          "raw_score": 7,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            49,
+            "ANT-E   Egocentricity   3   49"
+          ],
+          "name": "ANT-E",
+          "scale_name": "Egocentricity",
+          "raw_score": 3,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            56,
+            "ANT-S   Stimulus-Seeking   7   56"
+          ],
+          "name": "ANT-S",
+          "scale_name": "Stimulus-Seeking",
+          "raw_score": 7,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    },
+    {
+      "type": "line",
+      "data": [
+        {
+          "value": [
+            45,
+            "AGG-A   Aggressive Attitude   4   45"
+          ],
+          "name": "AGG-A",
+          "scale_name": "Aggressive Attitude",
+          "raw_score": 4,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            34,
+            "AGG-V   Verbal Aggression   1   34"
+          ],
+          "name": "AGG-V",
+          "scale_name": "Verbal Aggression",
+          "raw_score": 1,
+          "interpretive_range": "Within Normal Limits"
+        },
+        {
+          "value": [
+            42,
+            "AGG-P   Physical Aggression   0   42"
+          ],
+          "name": "AGG-P",
+          "scale_name": "Physical Aggression",
+          "raw_score": 0,
+          "interpretive_range": "Within Normal Limits"
+        }
+      ],
+      "lineStyle": {
+        "color": "#000",
+        "width": 1.5
+      },
+      "itemStyle": {
+        "color": "#000"
+      },
+      "symbol": "circle",
+      "symbolSize": 8,
+      "label": {
+        "show": false
+      },
+      "connectNulls": false
+    }
+  ]
+};
+            if (subConfig && subConfig !== null) {
+                var el2 = document.getElementById('chart-pai-subscale');
+                if (el2) {
+                    paiSubscale = echarts.init(el2);
+                    subConfig.tooltip.formatter = function(params) {
+                        return '<strong>' + params.data.name + '</strong> - ' + params.data.scale_name + '<br/>' +
+                               'Raw: ' + params.data.raw_score + '<br/>' +
+                               'T: ' + params.value[0] + '<br/>' +
+                               params.data.interpretive_range;
+                    };
+                    paiSubscale.setOption(subConfig);
+                }
+            }
+        })();
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (typeof chart_response_consistency !== "undefined") chart_response_consistency.resize();
+            if (typeof chart_negative_distortion !== "undefined") chart_negative_distortion.resize();
+            if (typeof chart_positive_distortion !== "undefined") chart_positive_distortion.resize();
+            chartCombined.resize();
+            if (paiFullScale) paiFullScale.resize();
+            if (paiSubscale) paiSubscale.resize();
+            if (typeof chart_somatic_anxiety_disorders !== "undefined") chart_somatic_anxiety_disorders.resize();
+            if (typeof chart_mood_affective_disorders !== "undefined") chart_mood_affective_disorders.resize();
+            if (typeof chart_psychotic_personality_features !== "undefined") chart_psychotic_personality_features.resize();
+            if (typeof chart_substance_use !== "undefined") chart_substance_use.resize();
+            if (typeof chart_treatment_interpersonal !== "undefined") chart_treatment_interpersonal.resize();
+        });
+    </script>
+</body>
+</html>

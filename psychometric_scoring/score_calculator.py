@@ -126,13 +126,22 @@ class ScoreCalculator:
                     weight = item_info['scoring_weights'].get(str(response), 0)
                     raw_score += weight
                     items_scored += 1
-                # Boolean scoring: uses keyed direction
+                # Keyed scoring: boolean or Likert forward/reverse
                 elif 'keyed' in item_info:
                     keyed_direction = item_info['keyed']  # "True" or "False" string
-                    if keyed_direction == "True" and response is True:
-                        raw_score += 1
-                    elif keyed_direction == "False" and response is False:
-                        raw_score += 1
+                    if isinstance(response, (int, float)):
+                        # Likert: forward = raw value, reverse = max - value
+                        max_val = self.config.get('response_options', {}).get('max_value', 3)
+                        if keyed_direction == "True":
+                            raw_score += int(response)
+                        else:
+                            raw_score += max_val - int(response)
+                    else:
+                        # Boolean: keyed match scores 1
+                        if keyed_direction == "True" and response is True:
+                            raw_score += 1
+                        elif keyed_direction == "False" and response is False:
+                            raw_score += 1
                     items_scored += 1
                 else:
                     items_scored += 1

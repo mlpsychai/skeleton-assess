@@ -230,6 +230,293 @@ class ChartRenderer:
                 validity_configs[category_name] = config
         return validity_configs
 
+    def generate_pai_full_scale_config(self, scale_scores: Dict[str, Any]) -> Dict:
+        """Generate ECharts config for PAI Full Scale Profile chart.
+
+        Vertical line chart showing all 22 full/standalone scales with T-scores,
+        matching the PAR report layout: validity | clinical | treatment | interpersonal.
+        """
+        # PAI full scale order matching PAR report
+        scale_order = [
+            'ICN', 'INF', 'NIM', 'PIM',
+            'SOM', 'ANX', 'ARD', 'DEP', 'MAN', 'PAR', 'SCZ', 'BOR', 'ANT', 'ALC', 'DRG',
+            'AGG', 'SUI', 'STR', 'NON', 'RXR',
+            'DOM', 'WRM'
+        ]
+
+        # Group boundaries for vertical dividers
+        group_boundaries = [4, 15, 20]  # after PIM, after DRG, after RXR
+
+        x_labels = []
+        data_points = []
+        for abbr in scale_order:
+            x_labels.append(abbr)
+            if abbr in scale_scores:
+                s = scale_scores[abbr]
+                t = s.get('t_score')
+                data_points.append({
+                    'value': t if t is not None else None,
+                    'name': abbr,
+                    'scale_name': s.get('scale_name', ''),
+                    'raw_score': s.get('raw_score', ''),
+                    'interpretive_range': s.get('interpretive_range', ''),
+                    'symbol': 'circle',
+                    'symbolSize': 10,
+                    'label': {
+                        'show': True,
+                        'position': 'top',
+                        'formatter': '{b}',
+                        **self._apa_text_style(10),
+                        'fontStyle': 'italic',
+                    }
+                })
+            else:
+                data_points.append(None)
+
+        # Build raw/T/% complete rows for the data table (rendered in HTML, not ECharts)
+        raw_row = []
+        t_row = []
+        pct_row = []
+        for abbr in scale_order:
+            if abbr in scale_scores:
+                s = scale_scores[abbr]
+                raw_row.append(str(s.get('raw_score', '')))
+                t_val = s.get('t_score')
+                t_row.append(str(t_val) if t_val is not None else 'N/A')
+                prop = s.get('proportion_scored', 1.0)
+                pct_row.append(str(round(prop * 100)))
+            else:
+                raw_row.append('—')
+                t_row.append('—')
+                pct_row.append('—')
+
+        # Find max T for axis scaling
+        max_t = max((p['value'] for p in data_points if p and p.get('value')), default=110)
+
+        y_min = 30
+        y_max = 110
+        interval = 10
+        if max_t > y_max:
+            y_max = math.ceil((max_t + 5) / interval) * interval
+
+        # Mark lines for reference
+        mark_lines = {
+            'data': [
+                {'yAxis': 70, 'label': {'formatter': '70T', **self._apa_text_style(10)},
+                 'lineStyle': {'type': 'dashed', 'color': '#FF0000', 'width': 1.5}}
+            ],
+            'silent': True,
+            'symbol': 'none',
+        }
+
+        config = {
+            'animation': False,
+            'tooltip': {
+                'trigger': 'item',
+                'formatter': '',  # set by JS
+            },
+            'grid': {
+                'left': '6%', 'right': '6%', 'bottom': '18%', 'top': '8%',
+                'containLabel': True,
+            },
+            'xAxis': {
+                'type': 'category',
+                'data': x_labels,
+                'axisLabel': {**self._apa_text_style(11), 'fontStyle': 'italic', 'interval': 0},
+                'axisLine': {'lineStyle': {'color': '#000'}},
+                'axisTick': {'alignWithLabel': True},
+            },
+            'yAxis': {
+                'type': 'value',
+                'name': 'T score',
+                'nameLocation': 'end',
+                'nameTextStyle': {**self._apa_text_style(11), 'fontStyle': 'italic'},
+                'min': y_min,
+                'max': y_max,
+                'interval': interval,
+                'axisLabel': self._apa_text_style(11),
+                'axisLine': {'show': True, 'lineStyle': {'color': '#000'}},
+                'splitLine': {'show': True, 'lineStyle': {'type': 'solid', 'color': '#ddd'}},
+            },
+            'series': [{
+                'type': 'line',
+                'data': data_points,
+                'lineStyle': {'color': '#000', 'width': 2},
+                'itemStyle': {'color': '#000'},
+                'symbol': 'circle',
+                'symbolSize': 10,
+                'label': {'show': False},
+                'markLine': mark_lines,
+                'connectNulls': False,
+            }],
+        }
+
+        # Store table data as metadata for HTML rendering
+        config['_pai_table'] = {
+            'scale_order': scale_order,
+            'raw_row': raw_row,
+            't_row': t_row,
+            'pct_row': pct_row,
+            'group_boundaries': group_boundaries,
+        }
+
+        return config
+
+    def generate_pai_subscale_config(self, scale_scores: Dict[str, Any]) -> Dict:
+        """Generate ECharts config for PAI Subscale Profile chart.
+
+        Horizontal dot chart with subscales grouped by parent scale,
+        matching the PAR report layout.
+        """
+        # Subscale groups in PAR report order
+        subscale_groups = [
+            ('SOM', ['SOM-C', 'SOM-S', 'SOM-H']),
+            ('ANX', ['ANX-C', 'ANX-A', 'ANX-P']),
+            ('ARD', ['ARD-O', 'ARD-P', 'ARD-T']),
+            ('DEP', ['DEP-C', 'DEP-A', 'DEP-P']),
+            ('MAN', ['MAN-A', 'MAN-G', 'MAN-I']),
+            ('PAR', ['PAR-H', 'PAR-P', 'PAR-R']),
+            ('SCZ', ['SCZ-P', 'SCZ-S', 'SCZ-T']),
+            ('BOR', ['BOR-A', 'BOR-I', 'BOR-N', 'BOR-S']),
+            ('ANT', ['ANT-A', 'ANT-E', 'ANT-S']),
+            ('AGG', ['AGG-A', 'AGG-V', 'AGG-P']),
+        ]
+
+        # Build y-axis labels with integrated table info: "ABR   Name   Raw   T"
+        # Blank spacer entries between groups for separator lines
+        y_labels = []
+        series_data = []
+        spacer_indices = []
+
+        for gi, (parent, subs) in enumerate(subscale_groups):
+            group_points = []
+            for abbr in subs:
+                if abbr in scale_scores:
+                    s = scale_scores[abbr]
+                    t = s.get('t_score')
+                    raw = s.get('raw_score', '')
+                    name = s.get('scale_name', '')
+                    t_disp = t if t is not None else 'N/A'
+                    label = f"{abbr}   {name}   {raw}   {t_disp}"
+                    y_labels.append(label)
+                    group_points.append({
+                        'value': [t if t is not None else None, label],
+                        'name': abbr,
+                        'scale_name': name,
+                        'raw_score': raw,
+                        'interpretive_range': s.get('interpretive_range', ''),
+                    })
+                else:
+                    label = f"{abbr}   —   —"
+                    y_labels.append(label)
+                    group_points.append({'value': [None, label]})
+
+            # Add blank spacer after each group except the last
+            if gi < len(subscale_groups) - 1:
+                spacer_indices.append(len(y_labels))
+                y_labels.append('')
+
+            series_data.append({
+                'type': 'line',
+                'data': group_points,
+                'lineStyle': {'color': '#000', 'width': 1.5},
+                'itemStyle': {'color': '#000'},
+                'symbol': 'circle',
+                'symbolSize': 8,
+                'label': {'show': False},
+                'connectNulls': False,
+            })
+
+        # Find max T for axis
+        all_t = []
+        for parent, subs in subscale_groups:
+            for abbr in subs:
+                if abbr in scale_scores:
+                    t = scale_scores[abbr].get('t_score')
+                    if t is not None:
+                        all_t.append(t)
+        max_t = max(all_t) if all_t else 110
+
+        x_min = 30
+        x_max = 110
+        interval = 10
+        if max_t > x_max:
+            x_max = math.ceil((max_t + 5) / interval) * interval
+
+        # Draw horizontal separator lines on the spacer rows
+        separator_marks = []
+        for idx in spacer_indices:
+            separator_marks.append({
+                'yAxis': idx,
+                'lineStyle': {'type': 'solid', 'color': '#999', 'width': 1},
+                'label': {'show': False},
+            })
+
+        if series_data and separator_marks:
+            series_data[0]['markLine'] = {
+                'data': separator_marks,
+                'silent': True,
+                'symbol': 'none',
+            }
+
+        config = {
+            'animation': False,
+            'tooltip': {
+                'trigger': 'item',
+                'formatter': '',  # set by JS
+            },
+            'grid': {
+                'left': '3%', 'right': '5%', 'bottom': '5%', 'top': '3%',
+                'containLabel': True,
+            },
+            'xAxis': {
+                'type': 'value',
+                'name': '',
+                'min': x_min,
+                'max': x_max,
+                'interval': interval,
+                'axisLabel': self._apa_text_style(11),
+                'axisLine': {'show': True, 'lineStyle': {'color': '#000'}},
+                'splitLine': {'show': True, 'lineStyle': {'type': 'solid', 'color': '#ddd'}},
+                'position': 'bottom',
+            },
+            'yAxis': {
+                'type': 'category',
+                'data': y_labels,
+                'axisLabel': {**self._apa_text_style(10), 'fontFamily': 'monospace'},
+                'axisLine': {'show': True, 'lineStyle': {'color': '#000'}},
+                'axisTick': {'show': False},
+                'inverse': True,
+            },
+            'series': series_data,
+        }
+
+        # Store table data for HTML rendering (in correct top-to-bottom order)
+        table_rows_ordered = []
+        for parent, subs in subscale_groups:
+            for abbr in subs:
+                if abbr in scale_scores:
+                    s = scale_scores[abbr]
+                    t = s.get('t_score')
+                    table_rows_ordered.append({
+                        'abbr': abbr,
+                        'name': s.get('scale_name', ''),
+                        'raw': s.get('raw_score', ''),
+                        't': t if t is not None else 'N/A',
+                        'parent': parent,
+                    })
+                else:
+                    table_rows_ordered.append({
+                        'abbr': abbr, 'name': '', 'raw': '—', 't': '—', 'parent': parent,
+                    })
+
+        config['_pai_subscale_table'] = {
+            'rows': table_rows_ordered,
+            'subscale_groups': [(p, s) for p, s in subscale_groups],
+        }
+
+        return config
+
     def render_to_png(self, chart_config: Dict, output_path: str,
                       width: int = 900, height: int = 500) -> Optional[str]:
         """

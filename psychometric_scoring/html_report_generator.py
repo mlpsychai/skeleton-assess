@@ -154,6 +154,25 @@ class HTMLReportGenerator:
             for name, config in self._chart_renderer.generate_validity_chart_configs(scale_scores).items()
         }
 
+        # PAI-specific profile charts
+        pai_full_scale_html = ""
+        pai_subscale_html = ""
+        pai_full_scale_config = "null"
+        pai_subscale_config = "null"
+        if self.instrument_name == 'PAI':
+            pai_fs_raw = self._chart_renderer.generate_pai_full_scale_config(scale_scores)
+            pai_sub_raw = self._chart_renderer.generate_pai_subscale_config(scale_scores)
+
+            # Extract table metadata before JSON serialization
+            pai_fs_table = pai_fs_raw.pop('_pai_table', {})
+            pai_sub_table = pai_sub_raw.pop('_pai_subscale_table', {})
+
+            pai_full_scale_config = json.dumps(pai_fs_raw, indent=2)
+            pai_subscale_config = json.dumps(pai_sub_raw, indent=2)
+
+            pai_full_scale_html = self._generate_pai_full_scale_html(pai_fs_table)
+            pai_subscale_html = self._generate_pai_subscale_html(pai_sub_table)
+
         # Embed score data as JSON
         score_data_json = json.dumps({
             'test_id': calculation_results['test_id'],
@@ -181,6 +200,10 @@ class HTMLReportGenerator:
             narrative_summary_html=narrative_summary_html,
             signature_html=signature_html,
             appendix_a_html=appendix_a_html,
+            pai_full_scale_html=pai_full_scale_html,
+            pai_subscale_html=pai_subscale_html,
+            pai_full_scale_config=pai_full_scale_config,
+            pai_subscale_config=pai_subscale_config,
         )
 
         # Save to file
@@ -204,7 +227,11 @@ class HTMLReportGenerator:
                            treatment_html: str = "",
                            narrative_summary_html: str = "",
                            signature_html: str = "",
-                           appendix_a_html: str = "") -> str:
+                           appendix_a_html: str = "",
+                           pai_full_scale_html: str = "",
+                           pai_subscale_html: str = "",
+                           pai_full_scale_config: str = "null",
+                           pai_subscale_config: str = "null") -> str:
         """Build the complete HTML document."""
 
         test_id = calculation_results['test_id']
@@ -234,6 +261,9 @@ class HTMLReportGenerator:
 
         {validity_html}
         {validity_narrative_html}
+
+        {pai_full_scale_html}
+        {pai_subscale_html}
 
         <section id="validity-graphs">
             <h2>Validity Scale Visualization</h2>
@@ -320,10 +350,46 @@ class HTMLReportGenerator:
         // Initialize domain charts
         {self._generate_chart_initializers(domain_chart_configs)}
 
+        // Initialize PAI profile charts (if present)
+        var paiFullScale = null;
+        var paiSubscale = null;
+        (function() {{
+            var fsConfig = {pai_full_scale_config};
+            if (fsConfig && fsConfig !== null) {{
+                var el = document.getElementById('chart-pai-full-scale');
+                if (el) {{
+                    paiFullScale = echarts.init(el);
+                    fsConfig.tooltip.formatter = function(params) {{
+                        return '<strong>' + params.data.name + '</strong> - ' + params.data.scale_name + '<br/>' +
+                               'Raw: ' + params.data.raw_score + '<br/>' +
+                               'T: ' + params.value + '<br/>' +
+                               params.data.interpretive_range;
+                    }};
+                    paiFullScale.setOption(fsConfig);
+                }}
+            }}
+            var subConfig = {pai_subscale_config};
+            if (subConfig && subConfig !== null) {{
+                var el2 = document.getElementById('chart-pai-subscale');
+                if (el2) {{
+                    paiSubscale = echarts.init(el2);
+                    subConfig.tooltip.formatter = function(params) {{
+                        return '<strong>' + params.data.name + '</strong> - ' + params.data.scale_name + '<br/>' +
+                               'Raw: ' + params.data.raw_score + '<br/>' +
+                               'T: ' + params.value[0] + '<br/>' +
+                               params.data.interpretive_range;
+                    }};
+                    paiSubscale.setOption(subConfig);
+                }}
+            }}
+        }})();
+
         // Handle window resize
         window.addEventListener('resize', function() {{
             {self._generate_resize_code(self.validity_subcategories.keys())}
             chartCombined.resize();
+            if (paiFullScale) paiFullScale.resize();
+            if (paiSubscale) paiSubscale.resize();
             {self._generate_resize_code(self.domain_definitions.keys())}
         }});
     </script>
@@ -1095,6 +1161,64 @@ class HTMLReportGenerator:
             <h2>Summary</h2>
             <p><strong>Total scales:</strong> {summary['total_scales']}</p>
             <p><strong>Elevated scales:</strong> {summary['elevated_scales_count']}</p>
+        </section>
+        """
+
+    def _generate_pai_full_scale_html(self, table_data: Dict) -> str:
+        """Generate HTML section for PAI Full Scale Profile chart with data table."""
+        if not table_data:
+            return ""
+
+        scale_order = table_data['scale_order']
+        raw_row = table_data['raw_row']
+        t_row = table_data['t_row']
+        pct_row = table_data['pct_row']
+
+        # Build table header and rows
+        scale_cells = ''.join(f'<th>{s}</th>' for s in scale_order)
+        raw_cells = ''.join(f'<td>{v}</td>' for v in raw_row)
+        t_cells = ''.join(f'<td>{v}</td>' for v in t_row)
+        pct_cells = ''.join(f'<td>{v}</td>' for v in pct_row)
+
+        fig_num = self._next_figure()
+
+        return f"""
+        <section id="pai-full-scale-profile" style="page-break-before:always;">
+            <h2>PAI Full Scale Profile</h2>
+            <p class="figure-label"><strong>Figure {fig_num}.</strong> <em>PAI Full Scale Profile</em></p>
+            <div id="chart-pai-full-scale" style="width:100%; height:800px;"></div>
+            <table class="pai-profile-table" style="font-size:9pt; text-align:center; margin-top:12pt;">
+                <thead>
+                    <tr><th style="text-align:left;">Scale</th>{scale_cells}</tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align:left; font-weight:bold;">Raw</td>{raw_cells}</tr>
+                    <tr><td style="text-align:left; font-weight:bold;">T</td>{t_cells}</tr>
+                    <tr><td style="text-align:left; font-weight:bold;">% complete</td>{pct_cells}</tr>
+                </tbody>
+            </table>
+            <p style="font-size:9pt; margin-top:6pt;">
+                <em>Note.</em> Plotted T scores are based on a U.S. Census-matched standardization sample of 1,000 normal adults.
+                Dashed red line indicates T = 70 (clinical significance threshold).
+            </p>
+        </section>
+        """
+
+    def _generate_pai_subscale_html(self, table_data: Dict) -> str:
+        """Generate HTML section for PAI Subscale Profile — chart only, table in y-axis labels."""
+        if not table_data:
+            return ""
+
+        fig_num = self._next_figure()
+
+        return f"""
+        <section id="pai-subscale-profile" style="page-break-before:always;">
+            <h2>PAI Subscale Profile</h2>
+            <p class="figure-label"><strong>Figure {fig_num}.</strong> <em>PAI Subscale Profile</em></p>
+            <div id="chart-pai-subscale" style="width:100%; height:800px;"></div>
+            <p style="font-size:9pt; margin-top:6pt;">
+                <em>Note.</em> Plotted T scores are based on a U.S. Census-matched standardization sample of 1,000 normal adults.
+            </p>
         </section>
         """
 
