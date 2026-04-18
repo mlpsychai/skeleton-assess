@@ -24,7 +24,7 @@ def load_config():
 
 def process_score_file(csv_path, output_dir='output/reports', format='docx',
                        client_info=None, interpretive=False, instrument_config=None,
-                       cached_narratives=None):
+                       cached_narratives=None, model=None):
     """Process a single score CSV file."""
     print(f"\n{'='*60}")
     print(f"Processing: {Path(csv_path).name}")
@@ -94,6 +94,7 @@ def process_score_file(csv_path, output_dir='output/reports', format='docx',
                     templates_dir='./templates',
                     instrument_config=instrument_config,
                     rag_settings=config.get('rag_settings', {}),
+                    model=model,
                 )
 
                 if not interpreter.is_ready():
@@ -118,7 +119,8 @@ def process_score_file(csv_path, output_dir='output/reports', format='docx',
             report_path = generator.generate_report(
                 calc_results,
                 validation_report,
-                str(output_path)
+                str(output_path),
+                narratives=narratives,
             )
             report_paths.append(report_path)
             print(f"  DOCX report saved: {report_path}")

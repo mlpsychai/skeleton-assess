@@ -1,0 +1,4248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCMI-4 Score Report - GRINCH_001</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.15;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1in;
+            background-color: #fff;
+            color: #000;
+        }
+
+        #report-content {
+            background-color: white;
+            padding: 0;
+        }
+
+        /* APA Level 1: Centered, Bold, Title Case */
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12pt;
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 12pt;
+        }
+
+        /* APA Level 2: Flush Left, Bold, Title Case */
+        h2 {
+            text-align: left;
+            font-weight: bold;
+            font-size: 12pt;
+            color: #000;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+        }
+
+        /* APA Level 3: Flush Left, Bold Italic, Title Case */
+        h3 {
+            text-align: left;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 12pt;
+            color: #000;
+            margin-top: 18pt;
+            margin-bottom: 12pt;
+        }
+
+        p {
+            margin: 0 0 12pt 0;
+        }
+
+        section {
+            margin-bottom: 24pt;
+        }
+
+        /* APA Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 6pt 0 12pt 0;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+            font-size: 10pt;
+        }
+
+        th, td {
+            padding: 4pt 10pt;
+            text-align: left;
+            border: none;
+            font-weight: normal;
+        }
+
+        thead {
+            border-bottom: 1px solid #000;
+        }
+
+        th {
+            font-weight: normal;
+            font-size: 11pt;
+            color: #000;
+            background-color: transparent;
+        }
+
+        .section-summary {
+            margin: 6pt 0 12pt 0;
+            font-size: 12pt;
+            line-height: 1.5;
+        }
+
+        .table-label {
+            margin-bottom: 2pt;
+            font-size: 12pt;
+        }
+
+        .figure-label {
+            margin-bottom: 4pt;
+            font-size: 12pt;
+        }
+
+        .elevated { }
+
+        .status-valid {
+            font-weight: bold;
+        }
+
+        .status-warning {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .status-invalid {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 700px;
+            margin: 18pt 0;
+        }
+
+        .graph-description {
+            font-style: italic;
+            margin-bottom: 12pt;
+        }
+
+        .print-button-container {
+            text-align: center;
+            margin: 24pt 0;
+        }
+
+        .print-button {
+            padding: 10pt 30pt;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .print-button:hover {
+            background-color: #333;
+        }
+
+        .print-note {
+            font-size: 10pt;
+            margin-top: 6pt;
+        }
+
+        .disclaimer-text {
+            white-space: pre-line;
+            font-size: 10pt;
+            padding: 12pt;
+            border: 1px solid #000;
+            margin: 12pt 0;
+        }
+
+        .appendix-tables {
+            display: flex;
+            gap: 24pt;
+        }
+        .appendix-tables table {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 10pt;
+            margin-top: 24pt;
+            padding-top: 12pt;
+            border-top: 1px solid #000;
+        }
+
+        ul {
+            margin: 6pt 0;
+            padding-left: 0.5in;
+        }
+
+        li {
+            margin: 3pt 0;
+        }
+
+        hr.section-divider {
+            border: none;
+            border-top: 2px solid #000;
+            margin: 24pt 0;
+        }
+
+        tr.row-divider td {
+            border-bottom: 1px solid #000;
+        }
+
+        .report-section {
+            margin-bottom: 12pt;
+        }
+
+        .interpretation-narrative {
+            padding: 0;
+            margin: 12pt 0 18pt 0;
+        }
+
+        .interpretation-narrative p {
+            text-indent: 0;
+            margin: 0 0 12pt 0;
+        }
+
+        .profile-integration {
+            padding: 0;
+            margin: 18pt 0;
+        }
+
+        .treatment-recommendations {
+            padding: 0;
+            margin: 18pt 0;
+        }
+
+        .treatment-recommendations ol {
+            padding-left: 0.5in;
+        }
+
+        .treatment-recommendations li {
+            margin: 6pt 0;
+        }
+
+        .signature-block {
+            margin-top: 48pt;
+            padding-top: 12pt;
+            border-top: 1px solid #000;
+        }
+
+        .signature-block .signature-line {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 36pt;
+        }
+
+        .signature-block .signature-entry {
+            text-align: center;
+            width: 45%;
+        }
+
+        .signature-block .signature-entry .line {
+            border-top: 1px solid #000;
+            margin-bottom: 4pt;
+            padding-top: 4pt;
+        }
+
+        .signature-block .signature-entry .name {
+            font-weight: bold;
+        }
+
+        .signature-block .signature-entry .credentials {
+            font-size: 10pt;
+        }
+
+        .elevation-badge {
+            display: inline;
+            font-size: 10pt;
+            font-weight: normal;
+        }
+
+        @media print {
+            body {
+                padding: 1in;
+            }
+
+            .print-button-container {
+                display: none;
+            }
+
+            .chart-container {
+                page-break-inside: avoid;
+                height: 450px;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            .interpretation-narrative {
+                page-break-inside: avoid;
+            }
+
+            .profile-integration,
+            .treatment-recommendations {
+                page-break-before: always;
+            }
+
+            .signature-block {
+                page-break-before: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12pt;
+            }
+
+            .chart-container {
+                height: 350px;
+            }
+
+            table {
+                font-size: 10pt;
+            }
+
+            th, td {
+                padding: 4pt 6pt;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="report-content">
+        <h1>MCMI-4 Score Report</h1>
+
+        
+
+        
+        <section id="test-info">
+            <h2>Test Information</h2>
+            <table>
+                <tbody>
+                <tr><td>Assessment</td><td>MCMI-4</td></tr>
+                <tr><td>Test Date</td><td>2026-03-18</td></tr>
+                <tr><td>Examinee ID</td><td>737-1</td></tr>
+                <tr><td>Completion Rate</td><td>100.0% (195/195 items)</td></tr>
+                </tbody>
+            </table>
+        </section>
+        
+
+        
+        <section id="test-administered">
+            <h3>Test Administered</h3>
+            <p><strong>Millon Clinical Multiaxial Inventory-IV</strong></p>
+            <ul>
+                <li>Millon, T., Grossman, S., & Millon, C. (2015). MCMI-IV manual. NCS Pearson.</li>
+                <li>195 items, True/False format</li>
+                <li>Administered via standard paper-and-pencil or computer-administered format</li>
+                <li>Scoring referenced to Clinical Standardization Sample</li>
+            </ul>
+            <p>The MCMI-IV is a 195-item True/False self-report inventory designed to assess personality disorders and clinical syndromes in adults (18+) in clinical settings. It provides Base Rate (BR) scores derived from clinical prevalence data, with 5 Modifier Indices, 12 Clinical Personality Patterns, 3 Severe Personality Pathology scales, 7 Clinical Syndromes, and 3 Severe Clinical Syndromes. Norms are based on a clinical standardization sample.</p>
+        </section>
+        
+
+        
+        <section id="validity">
+            <h2>Protocol Validity</h2>
+            <p class="section-summary">Prominence elevations were observed on X (BR=86). Presence elevations were observed on Z (BR=79). V (BR=0), W (BR=0), and Y (BR=5) fell within normal limits.</p>
+            <p><strong>Status:</strong> <span class="status-valid">VALID</span></p>
+            
+            
+            <h3>Validity Scale Scores</h3>
+            <p class="table-label"><strong>Table 1.</strong> <em>Validity Scale Scores</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>BR Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="">
+                    <td>V - Validity</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>3/3</td>
+                    <td><span class="elevation-badge badge-no-significant-features">No Significant Features</span></td>
+                </tr>
+                
+                <tr class="">
+                    <td>W - Inconsistency</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>25/25</td>
+                    <td><span class="elevation-badge badge-no-significant-features">No Significant Features</span></td>
+                </tr>
+                
+                <tr class="elevated">
+                    <td>X - Disclosure</td>
+                    <td>69</td>
+                    <td>86</td>
+                    <td>121/121</td>
+                    <td><span class="elevation-badge badge-prominence">Prominence</span></td>
+                </tr>
+                
+                <tr class="">
+                    <td>Y - Desirability</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>24/24</td>
+                    <td><span class="elevation-badge badge-no-significant-features">No Significant Features</span></td>
+                </tr>
+                
+                <tr class="elevated">
+                    <td>Z - Debasement</td>
+                    <td>19</td>
+                    <td>79</td>
+                    <td>30/30</td>
+                    <td><span class="elevation-badge badge-presence">Presence</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+        </section>
+        
+        
+
+        
+        
+
+        <section id="validity-graphs">
+            <h2>Validity Scale Visualization</h2>
+            <p class="graph-description">
+                Interactive visualization of validity scales organized by category.
+                Hover over data points for details.
+            </p>
+
+            <p class="figure-label"><strong>Figure 1.</strong> <em>Response Validity Validity Scales</em></p>
+            <div id="chart-response-validity" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 2.</strong> <em>Response Bias Validity Scales</em></p>
+            <div id="chart-response-bias" class="chart-container"></div>
+        </section>
+
+        
+        <section>
+            <h2>Clinical Personality Patterns</h2>
+            <p class="section-summary">Prominence elevations were observed on 2A (BR=91), 2B (BR=91), 5 (BR=88), 6A (BR=100), and 6B (BR=99). Presence elevations were observed on 1 (BR=78), 8A (BR=83), and 8B (BR=80). The remaining 4 scales fell within normal limits.</p>
+            <p class="table-label"><strong>Table 2.</strong> <em>Clinical Personality Patterns</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>BR Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>1 - Schizoid</td>
+                    <td>16</td>
+                    <td>78</td>
+                    <td>15/15</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2A - Avoidant</td>
+                    <td>20</td>
+                    <td>91</td>
+                    <td>18/18</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2B - Melancholic</td>
+                    <td>23</td>
+                    <td>91</td>
+                    <td>19/19</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>3 - Dependent</td>
+                    <td>4</td>
+                    <td>40</td>
+                    <td>14/14</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4A - Histrionic</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>17/17</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4B - Turbulent</td>
+                    <td>3</td>
+                    <td>18</td>
+                    <td>17/17</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>5 - Narcissistic</td>
+                    <td>17</td>
+                    <td>88</td>
+                    <td>16/16</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6A - Antisocial</td>
+                    <td>18</td>
+                    <td>100</td>
+                    <td>14/14</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6B - Sadistic</td>
+                    <td>20</td>
+                    <td>99</td>
+                    <td>14/14</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>7 - Compulsive</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>13/13</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8A - Negativistic</td>
+                    <td>20</td>
+                    <td>83</td>
+                    <td>18/18</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8B - Masochistic</td>
+                    <td>17</td>
+                    <td>80</td>
+                    <td>18/18</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section>
+            <h2>Severe Personality Pathology</h2>
+            <p class="section-summary">Prominence elevations were observed on P (BR=115). Presence elevations were observed on S (BR=81) and C (BR=81).</p>
+            <p class="table-label"><strong>Table 3.</strong> <em>Severe Personality Pathology</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>BR Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>S - Schizotypal</td>
+                    <td>21</td>
+                    <td>81</td>
+                    <td>21/21</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>C - Borderline</td>
+                    <td>16</td>
+                    <td>81</td>
+                    <td>20/20</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>P - Paranoid</td>
+                    <td>24</td>
+                    <td>115</td>
+                    <td>16/16</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section>
+            <h2>Clinical Syndromes</h2>
+            <p class="section-summary">Prominence elevations were observed on A (BR=85). Presence elevations were observed on H (BR=75), D (BR=75), and B (BR=75). Suggestive elevations were observed on N (BR=60), T (BR=67), and R (BR=71).</p>
+            <p class="table-label"><strong>Table 4.</strong> <em>Clinical Syndromes</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>BR Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>A - Generalized Anxiety</td>
+                    <td>9</td>
+                    <td>85</td>
+                    <td>13/13</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>H - Somatic Symptom</td>
+                    <td>10</td>
+                    <td>75</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>N - Bipolar Spectrum</td>
+                    <td>5</td>
+                    <td>60</td>
+                    <td>13/13</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>D - Persistent Depression</td>
+                    <td>18</td>
+                    <td>75</td>
+                    <td>21/21</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>B - Alcohol Use</td>
+                    <td>3</td>
+                    <td>75</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>T - Drug Use</td>
+                    <td>4</td>
+                    <td>67</td>
+                    <td>11/11</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>R - Post-Traumatic Stress</td>
+                    <td>8</td>
+                    <td>71</td>
+                    <td>14/14</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section>
+            <h2>Severe Clinical Syndromes</h2>
+            <p class="section-summary">Prominence elevations were observed on CC (BR=92) and PP (BR=95). Suggestive elevations were observed on SS (BR=71).</p>
+            <p class="table-label"><strong>Table 5.</strong> <em>Severe Clinical Syndromes</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>BR Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>SS - Schizophrenic Spectrum</td>
+                    <td>16</td>
+                    <td>71</td>
+                    <td>21/21</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>CC - Major Depression</td>
+                    <td>17</td>
+                    <td>92</td>
+                    <td>17/17</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>PP - Delusional</td>
+                    <td>17</td>
+                    <td>95</td>
+                    <td>14/14</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section>
+            <h2>Grossman Facet Scales</h2>
+            <p class="section-summary">Prominence elevations were observed on 1.1 (BR=100), 1.2 (BR=85), 2A.3 (BR=85), 2B.1 (BR=85), 2B.2 (BR=85), 2B.3 (BR=100), 5.3 (BR=100), 6A.2 (BR=100), 6B.1 (BR=100), 6B.2 (BR=85), 8A.2 (BR=85), 8B.3 (BR=100), S.3 (BR=100), C.2 (BR=85), P.1 (BR=85), P.2 (BR=100), and P.3 (BR=100). Presence elevations were observed on 2A.1 (BR=80), 3.1 (BR=75), 5.1 (BR=75), 6A.1 (BR=75), 6B.3 (BR=80), 8A.1 (BR=78), 8A.3 (BR=75), 8B.1 (BR=75), S.2 (BR=75), and C.1 (BR=75). Suggestive elevations were observed on 1.3 (BR=72), 2A.2 (BR=70), 4A.1 (BR=70), 6A.3 (BR=68), 8B.2 (BR=69), S.1 (BR=66), and C.3 (BR=72). The remaining 11 scales fell within normal limits.</p>
+            <p class="table-label"><strong>Table 6.</strong> <em>Grossman Facet Scales</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>BR Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>1.1 - Interpersonally Unengaged</td>
+                    <td>9</td>
+                    <td>100</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>1.2 - Meager Content</td>
+                    <td>8</td>
+                    <td>85</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>1.3 - Temperamentally Apathetic</td>
+                    <td>5</td>
+                    <td>72</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2A.1 - Interpersonally Aversive</td>
+                    <td>7</td>
+                    <td>80</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2A.2 - Alienated Self-Image</td>
+                    <td>5</td>
+                    <td>70</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2A.3 - Vexatious Content</td>
+                    <td>8</td>
+                    <td>85</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2B.1 - Cognitively Fatalistic</td>
+                    <td>8</td>
+                    <td>85</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2B.2 - Worthless Self-Image</td>
+                    <td>7</td>
+                    <td>85</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>2B.3 - Temperamentally Woeful</td>
+                    <td>9</td>
+                    <td>100</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>3.1 - Expressively Puerile</td>
+                    <td>5</td>
+                    <td>75</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>3.2 - Interpersonally Submissive</td>
+                    <td>2</td>
+                    <td>40</td>
+                    <td>7/7</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>3.3 - Inept Self-Image</td>
+                    <td>4</td>
+                    <td>48</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4A.1 - Expressively Dramatic</td>
+                    <td>3</td>
+                    <td>70</td>
+                    <td>7/7</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4A.2 - Interpersonally Attention-Seeking</td>
+                    <td>1</td>
+                    <td>12</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4A.3 - Temperamentally Fickle</td>
+                    <td>1</td>
+                    <td>12</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4B.1 - Expressively Impetuous</td>
+                    <td>1</td>
+                    <td>20</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4B.2 - Interpersonally High-Spirited</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>4B.3 - Exalted Self-Image</td>
+                    <td>2</td>
+                    <td>30</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>5.1 - Interpersonally Exploitive</td>
+                    <td>5</td>
+                    <td>75</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>5.2 - Cognitively Expansive</td>
+                    <td>1</td>
+                    <td>12</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>5.3 - Admirable Self-Image</td>
+                    <td>7</td>
+                    <td>100</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6A.1 - Interpersonally Irresponsible</td>
+                    <td>5</td>
+                    <td>75</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6A.2 - Autonomous Self-Image</td>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6A.3 - Acting-Out Dynamics</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6B.1 - Expressively Precipitate</td>
+                    <td>11</td>
+                    <td>100</td>
+                    <td>11/11</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6B.2 - Interpersonally Abrasive</td>
+                    <td>6</td>
+                    <td>85</td>
+                    <td>7/7</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>6B.3 - Eruptive Architecture</td>
+                    <td>5</td>
+                    <td>80</td>
+                    <td>7/7</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>7.1 - Expressively Disciplined</td>
+                    <td>2</td>
+                    <td>30</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>7.2 - Cognitively Constricted</td>
+                    <td>4</td>
+                    <td>48</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>7.3 - Reliable Self-Image</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8A.1 - Expressively Embittered</td>
+                    <td>9</td>
+                    <td>78</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8A.2 - Discontented Self-Image</td>
+                    <td>10</td>
+                    <td>85</td>
+                    <td>11/11</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8A.3 - Temperamentally Irritable</td>
+                    <td>6</td>
+                    <td>75</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8B.1 - Undeserving Self-Image</td>
+                    <td>8</td>
+                    <td>75</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8B.2 - Inverted Architecture</td>
+                    <td>6</td>
+                    <td>69</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>8B.3 - Temperamentally Dysphoric</td>
+                    <td>8</td>
+                    <td>100</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>S.1 - Cognitively Circumstantial</td>
+                    <td>5</td>
+                    <td>66</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>S.2 - Estranged Self-Image</td>
+                    <td>9</td>
+                    <td>75</td>
+                    <td>11/11</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>S.3 - Chaotic Content</td>
+                    <td>11</td>
+                    <td>100</td>
+                    <td>11/11</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>C.1 - Uncertain Self-Image</td>
+                    <td>6</td>
+                    <td>75</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">Presence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>C.2 - Split Architecture</td>
+                    <td>8</td>
+                    <td>85</td>
+                    <td>11/11</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>C.3 - Temperamentally Labile</td>
+                    <td>5</td>
+                    <td>72</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">Suggestive</span></td>
+                </tr>
+            
+                <tr>
+                    <td>P.1 - Expressively Defensive</td>
+                    <td>9</td>
+                    <td>85</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>P.2 - Cognitively Mistrustful</td>
+                    <td>7</td>
+                    <td>100</td>
+                    <td>7/7</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                <tr>
+                    <td>P.3 - Projection Dynamics</td>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>10/10</td>
+                    <td><span class="elevation-badge">Prominence</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section>
+            <h2>Noteworthy Responses</h2>
+            <p class="section-summary">All scales in this section fell within normal limits.</p>
+            <p class="table-label"><strong>Table 7.</strong> <em>Noteworthy Responses</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Raw Score</th>
+                        <th>BR Score</th>
+                        <th>Items Scored</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>AD - Adult ADHD</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>AS - Autism Spectrum</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>7/7</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>CA - Childhood Abuse</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>2/2</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>EA - Eating Disorder</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>4/4</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>EM - Emotional Dyscontrol</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>8/8</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>EX - Explosively Angry</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>HP - Health Preoccupied</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>6/6</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>IA - Interpersonally Alienated</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4/4</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>PD - Prescription Drug Abuse</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2/2</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SP - Self-Destructive Potential</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>12/12</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>SB - Self-Injurious Behavior/Tendency</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2/2</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>TB - Traumatic Brain Injury</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2/2</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                <tr>
+                    <td>VP - Vengefully Prone</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>9/9</td>
+                    <td><span class="elevation-badge">No Significant Features</span></td>
+                </tr>
+            
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section id="graphs">
+            <h2>Profile Visualization</h2>
+            <p class="graph-description">
+                Interactive visualization of score elevations across all scales.
+                Hover over data points for details. Click legend items to show/hide categories.
+                Use mouse wheel to zoom, drag to pan.
+            </p>
+            <p class="figure-label"><strong>Figure 3.</strong> <em>MCMI-4 Combined Profile Graph</em></p>
+            <div id="chart-combined" class="chart-container"></div>
+
+            <h2>Detailed Domain Graphs</h2>
+            <p class="graph-description">
+                The following graphs show scales organized by clinical dysfunction domains.
+                Each domain displays relevant scale hierarchy levels
+                with hierarchical styling (larger markers = higher-order scales).
+            </p>
+
+            <p class="figure-label"><strong>Figure 4.</strong> <em>Personality Structure Domain</em></p>
+            <div id="chart-personality-structure" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 5.</strong> <em>Severe Personality Domain</em></p>
+            <div id="chart-severe-personality" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 6.</strong> <em>Clinical Syndromes Domain</em></p>
+            <div id="chart-clinical-syndromes" class="chart-container"></div>
+            <p class="figure-label"><strong>Figure 7.</strong> <em>Severe Clinical Syndromes Domain</em></p>
+            <div id="chart-severe-clinical-syndromes" class="chart-container"></div>
+        </section>
+
+        
+        
+        
+
+        
+        <section id="summary">
+            <h2>Summary</h2>
+            <p><strong>Total scales:</strong> 88</p>
+            <p><strong>Elevated scales:</strong> 46</p>
+        </section>
+        
+
+        
+
+        <div class="print-button-container">
+            <button onclick="window.print()" class="print-button">
+                Download as PDF
+            </button>
+            <p class="print-note">
+                Tip: Use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF"
+            </p>
+        </div>
+
+        <section id="disclaimer">
+            <h2>Disclaimer</h2>
+            <p class="disclaimer-text">IMPORTANT DISCLAIMER:
+This report was generated for educational and research purposes only. It is not a substitute for professional clinical judgment. All scores and interpretations should be reviewed by a qualified psychologist before use in clinical decision-making. The MCMI-IV is designed for use with clinical populations and should not be used with non-clinical samples.</p>
+        </section>
+
+        
+        <section id="appendix-a">
+            <h2>Appendix A</h2>
+            <p><em>Scale Name Abbreviations</em></p>
+            <div class="appendix-tables">
+                <table>
+                    <thead><tr><th>Abbreviation</th><th>Scale</th></tr></thead>
+                    <tbody><tr><td>V</td><td>Validity</td></tr><tr><td>W</td><td>Inconsistency</td></tr><tr><td>X</td><td>Disclosure</td></tr><tr><td>Y</td><td>Desirability</td></tr><tr><td>Z</td><td>Debasement</td></tr><tr><td>1</td><td>Schizoid</td></tr><tr><td>2A</td><td>Avoidant</td></tr><tr><td>2B</td><td>Melancholic</td></tr><tr><td>3</td><td>Dependent</td></tr><tr><td>4A</td><td>Histrionic</td></tr><tr><td>4B</td><td>Turbulent</td></tr><tr><td>5</td><td>Narcissistic</td></tr><tr><td>6A</td><td>Antisocial</td></tr><tr><td>6B</td><td>Sadistic</td></tr><tr><td>7</td><td>Compulsive</td></tr><tr><td>8A</td><td>Negativistic</td></tr><tr><td>8B</td><td>Masochistic</td></tr><tr><td>S</td><td>Schizotypal</td></tr><tr><td>C</td><td>Borderline</td></tr><tr><td>P</td><td>Paranoid</td></tr><tr><td>A</td><td>Generalized Anxiety</td></tr><tr><td>H</td><td>Somatic Symptom</td></tr><tr><td>N</td><td>Bipolar Spectrum</td></tr><tr><td>D</td><td>Persistent Depression</td></tr><tr><td>B</td><td>Alcohol Use</td></tr><tr><td>T</td><td>Drug Use</td></tr><tr><td>R</td><td>Post-Traumatic Stress</td></tr><tr><td>SS</td><td>Schizophrenic Spectrum</td></tr><tr><td>CC</td><td>Major Depression</td></tr><tr><td>PP</td><td>Delusional</td></tr><tr><td>1.1</td><td>Interpersonally Unengaged</td></tr><tr><td>1.2</td><td>Meager Content</td></tr><tr><td>1.3</td><td>Temperamentally Apathetic</td></tr><tr><td>2A.1</td><td>Interpersonally Aversive</td></tr><tr><td>2A.2</td><td>Alienated Self-Image</td></tr><tr><td>2A.3</td><td>Vexatious Content</td></tr><tr><td>2B.1</td><td>Cognitively Fatalistic</td></tr><tr><td>2B.2</td><td>Worthless Self-Image</td></tr><tr><td>2B.3</td><td>Temperamentally Woeful</td></tr><tr><td>3.1</td><td>Expressively Puerile</td></tr><tr><td>3.2</td><td>Interpersonally Submissive</td></tr><tr><td>3.3</td><td>Inept Self-Image</td></tr><tr><td>4A.1</td><td>Expressively Dramatic</td></tr><tr><td>4A.2</td><td>Interpersonally Attention-Seeking</td></tr></tbody>
+                </table>
+                <table>
+                    <thead><tr><th>Abbreviation</th><th>Scale</th></tr></thead>
+                    <tbody><tr><td>4A.3</td><td>Temperamentally Fickle</td></tr><tr><td>4B.1</td><td>Expressively Impetuous</td></tr><tr><td>4B.2</td><td>Interpersonally High-Spirited</td></tr><tr><td>4B.3</td><td>Exalted Self-Image</td></tr><tr><td>5.1</td><td>Interpersonally Exploitive</td></tr><tr><td>5.2</td><td>Cognitively Expansive</td></tr><tr><td>5.3</td><td>Admirable Self-Image</td></tr><tr><td>6A.1</td><td>Interpersonally Irresponsible</td></tr><tr><td>6A.2</td><td>Autonomous Self-Image</td></tr><tr><td>6A.3</td><td>Acting-Out Dynamics</td></tr><tr><td>6B.1</td><td>Expressively Precipitate</td></tr><tr><td>6B.2</td><td>Interpersonally Abrasive</td></tr><tr><td>6B.3</td><td>Eruptive Architecture</td></tr><tr><td>7.1</td><td>Expressively Disciplined</td></tr><tr><td>7.2</td><td>Cognitively Constricted</td></tr><tr><td>7.3</td><td>Reliable Self-Image</td></tr><tr><td>8A.1</td><td>Expressively Embittered</td></tr><tr><td>8A.2</td><td>Discontented Self-Image</td></tr><tr><td>8A.3</td><td>Temperamentally Irritable</td></tr><tr><td>8B.1</td><td>Undeserving Self-Image</td></tr><tr><td>8B.2</td><td>Inverted Architecture</td></tr><tr><td>8B.3</td><td>Temperamentally Dysphoric</td></tr><tr><td>S.1</td><td>Cognitively Circumstantial</td></tr><tr><td>S.2</td><td>Estranged Self-Image</td></tr><tr><td>S.3</td><td>Chaotic Content</td></tr><tr><td>C.1</td><td>Uncertain Self-Image</td></tr><tr><td>C.2</td><td>Split Architecture</td></tr><tr><td>C.3</td><td>Temperamentally Labile</td></tr><tr><td>P.1</td><td>Expressively Defensive</td></tr><tr><td>P.2</td><td>Cognitively Mistrustful</td></tr><tr><td>P.3</td><td>Projection Dynamics</td></tr><tr><td>AD</td><td>Adult ADHD</td></tr><tr><td>AS</td><td>Autism Spectrum</td></tr><tr><td>CA</td><td>Childhood Abuse</td></tr><tr><td>EA</td><td>Eating Disorder</td></tr><tr><td>EM</td><td>Emotional Dyscontrol</td></tr><tr><td>EX</td><td>Explosively Angry</td></tr><tr><td>HP</td><td>Health Preoccupied</td></tr><tr><td>IA</td><td>Interpersonally Alienated</td></tr><tr><td>PD</td><td>Prescription Drug Abuse</td></tr><tr><td>SP</td><td>Self-Destructive Potential</td></tr><tr><td>SB</td><td>Self-Injurious Behavior/Tendency</td></tr><tr><td>TB</td><td>Traumatic Brain Injury</td></tr><tr><td>VP</td><td>Vengefully Prone</td></tr></tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer>
+            <p>Report generated: 2026-03-26 06:40:18</p>
+        </footer>
+    </div>
+
+    <script>
+        // Embedded score data
+        const scoreData = {
+  "test_id": "GRINCH_001",
+  "test_date": "2026-03-18",
+  "examinee_id": "737-1",
+  "scale_scores": {
+    "V": {
+      "scale_name": "Validity",
+      "abbreviation": "V",
+      "raw_score": 1,
+      "total_items": 3,
+      "items_scored": 3,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 0,
+      "t_score_display": "0"
+    },
+    "W": {
+      "scale_name": "Inconsistency",
+      "abbreviation": "W",
+      "raw_score": 5,
+      "total_items": 25,
+      "items_scored": 25,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 0,
+      "t_score_display": "0"
+    },
+    "X": {
+      "scale_name": "Disclosure",
+      "abbreviation": "X",
+      "raw_score": 69,
+      "total_items": 121,
+      "items_scored": 121,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 86,
+      "t_score_display": "86"
+    },
+    "Y": {
+      "scale_name": "Desirability",
+      "abbreviation": "Y",
+      "raw_score": 1,
+      "total_items": 24,
+      "items_scored": 24,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 5,
+      "t_score_display": "5"
+    },
+    "Z": {
+      "scale_name": "Debasement",
+      "abbreviation": "Z",
+      "raw_score": 19,
+      "total_items": 30,
+      "items_scored": 30,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 79,
+      "t_score_display": "79"
+    },
+    "1": {
+      "scale_name": "Schizoid",
+      "abbreviation": "1",
+      "raw_score": 16,
+      "total_items": 15,
+      "items_scored": 15,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 78,
+      "t_score_display": "78"
+    },
+    "2A": {
+      "scale_name": "Avoidant",
+      "abbreviation": "2A",
+      "raw_score": 20,
+      "total_items": 18,
+      "items_scored": 18,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 91,
+      "t_score_display": "91"
+    },
+    "2B": {
+      "scale_name": "Melancholic",
+      "abbreviation": "2B",
+      "raw_score": 23,
+      "total_items": 19,
+      "items_scored": 19,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 91,
+      "t_score_display": "91"
+    },
+    "3": {
+      "scale_name": "Dependent",
+      "abbreviation": "3",
+      "raw_score": 4,
+      "total_items": 14,
+      "items_scored": 14,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 40,
+      "t_score_display": "40"
+    },
+    "4A": {
+      "scale_name": "Histrionic",
+      "abbreviation": "4A",
+      "raw_score": 1,
+      "total_items": 17,
+      "items_scored": 17,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 6,
+      "t_score_display": "6"
+    },
+    "4B": {
+      "scale_name": "Turbulent",
+      "abbreviation": "4B",
+      "raw_score": 3,
+      "total_items": 17,
+      "items_scored": 17,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 18,
+      "t_score_display": "18"
+    },
+    "5": {
+      "scale_name": "Narcissistic",
+      "abbreviation": "5",
+      "raw_score": 17,
+      "total_items": 16,
+      "items_scored": 16,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 88,
+      "t_score_display": "88"
+    },
+    "6A": {
+      "scale_name": "Antisocial",
+      "abbreviation": "6A",
+      "raw_score": 18,
+      "total_items": 14,
+      "items_scored": 14,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "6B": {
+      "scale_name": "Sadistic",
+      "abbreviation": "6B",
+      "raw_score": 20,
+      "total_items": 14,
+      "items_scored": 14,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 99,
+      "t_score_display": "99"
+    },
+    "7": {
+      "scale_name": "Compulsive",
+      "abbreviation": "7",
+      "raw_score": 2,
+      "total_items": 13,
+      "items_scored": 13,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 8,
+      "t_score_display": "8"
+    },
+    "8A": {
+      "scale_name": "Negativistic",
+      "abbreviation": "8A",
+      "raw_score": 20,
+      "total_items": 18,
+      "items_scored": 18,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 83,
+      "t_score_display": "83"
+    },
+    "8B": {
+      "scale_name": "Masochistic",
+      "abbreviation": "8B",
+      "raw_score": 17,
+      "total_items": 18,
+      "items_scored": 18,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 80,
+      "t_score_display": "80"
+    },
+    "S": {
+      "scale_name": "Schizotypal",
+      "abbreviation": "S",
+      "raw_score": 21,
+      "total_items": 21,
+      "items_scored": 21,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 81,
+      "t_score_display": "81"
+    },
+    "C": {
+      "scale_name": "Borderline",
+      "abbreviation": "C",
+      "raw_score": 16,
+      "total_items": 20,
+      "items_scored": 20,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 81,
+      "t_score_display": "81"
+    },
+    "P": {
+      "scale_name": "Paranoid",
+      "abbreviation": "P",
+      "raw_score": 24,
+      "total_items": 16,
+      "items_scored": 16,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 115,
+      "t_score_display": "115"
+    },
+    "A": {
+      "scale_name": "Generalized Anxiety",
+      "abbreviation": "A",
+      "raw_score": 9,
+      "total_items": 13,
+      "items_scored": 13,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "H": {
+      "scale_name": "Somatic Symptom",
+      "abbreviation": "H",
+      "raw_score": 10,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "N": {
+      "scale_name": "Bipolar Spectrum",
+      "abbreviation": "N",
+      "raw_score": 5,
+      "total_items": 13,
+      "items_scored": 13,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 60,
+      "t_score_display": "60"
+    },
+    "D": {
+      "scale_name": "Persistent Depression",
+      "abbreviation": "D",
+      "raw_score": 18,
+      "total_items": 21,
+      "items_scored": 21,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "B": {
+      "scale_name": "Alcohol Use",
+      "abbreviation": "B",
+      "raw_score": 3,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "T": {
+      "scale_name": "Drug Use",
+      "abbreviation": "T",
+      "raw_score": 4,
+      "total_items": 11,
+      "items_scored": 11,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 67,
+      "t_score_display": "67"
+    },
+    "R": {
+      "scale_name": "Post-Traumatic Stress",
+      "abbreviation": "R",
+      "raw_score": 8,
+      "total_items": 14,
+      "items_scored": 14,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 71,
+      "t_score_display": "71"
+    },
+    "SS": {
+      "scale_name": "Schizophrenic Spectrum",
+      "abbreviation": "SS",
+      "raw_score": 16,
+      "total_items": 21,
+      "items_scored": 21,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 71,
+      "t_score_display": "71"
+    },
+    "CC": {
+      "scale_name": "Major Depression",
+      "abbreviation": "CC",
+      "raw_score": 17,
+      "total_items": 17,
+      "items_scored": 17,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 92,
+      "t_score_display": "92"
+    },
+    "PP": {
+      "scale_name": "Delusional",
+      "abbreviation": "PP",
+      "raw_score": 17,
+      "total_items": 14,
+      "items_scored": 14,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 95,
+      "t_score_display": "95"
+    },
+    "1.1": {
+      "scale_name": "Interpersonally Unengaged",
+      "abbreviation": "1.1",
+      "raw_score": 9,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "1.2": {
+      "scale_name": "Meager Content",
+      "abbreviation": "1.2",
+      "raw_score": 8,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "1.3": {
+      "scale_name": "Temperamentally Apathetic",
+      "abbreviation": "1.3",
+      "raw_score": 5,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 72,
+      "t_score_display": "72"
+    },
+    "2A.1": {
+      "scale_name": "Interpersonally Aversive",
+      "abbreviation": "2A.1",
+      "raw_score": 7,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 80,
+      "t_score_display": "80"
+    },
+    "2A.2": {
+      "scale_name": "Alienated Self-Image",
+      "abbreviation": "2A.2",
+      "raw_score": 5,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 70,
+      "t_score_display": "70"
+    },
+    "2A.3": {
+      "scale_name": "Vexatious Content",
+      "abbreviation": "2A.3",
+      "raw_score": 8,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "2B.1": {
+      "scale_name": "Cognitively Fatalistic",
+      "abbreviation": "2B.1",
+      "raw_score": 8,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "2B.2": {
+      "scale_name": "Worthless Self-Image",
+      "abbreviation": "2B.2",
+      "raw_score": 7,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "2B.3": {
+      "scale_name": "Temperamentally Woeful",
+      "abbreviation": "2B.3",
+      "raw_score": 9,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "3.1": {
+      "scale_name": "Expressively Puerile",
+      "abbreviation": "3.1",
+      "raw_score": 5,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "3.2": {
+      "scale_name": "Interpersonally Submissive",
+      "abbreviation": "3.2",
+      "raw_score": 2,
+      "total_items": 7,
+      "items_scored": 7,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 40,
+      "t_score_display": "40"
+    },
+    "3.3": {
+      "scale_name": "Inept Self-Image",
+      "abbreviation": "3.3",
+      "raw_score": 4,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 48,
+      "t_score_display": "48"
+    },
+    "4A.1": {
+      "scale_name": "Expressively Dramatic",
+      "abbreviation": "4A.1",
+      "raw_score": 3,
+      "total_items": 7,
+      "items_scored": 7,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 70,
+      "t_score_display": "70"
+    },
+    "4A.2": {
+      "scale_name": "Interpersonally Attention-Seeking",
+      "abbreviation": "4A.2",
+      "raw_score": 1,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 12,
+      "t_score_display": "12"
+    },
+    "4A.3": {
+      "scale_name": "Temperamentally Fickle",
+      "abbreviation": "4A.3",
+      "raw_score": 1,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 12,
+      "t_score_display": "12"
+    },
+    "4B.1": {
+      "scale_name": "Expressively Impetuous",
+      "abbreviation": "4B.1",
+      "raw_score": 1,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 20,
+      "t_score_display": "20"
+    },
+    "4B.2": {
+      "scale_name": "Interpersonally High-Spirited",
+      "abbreviation": "4B.2",
+      "raw_score": 0,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 0,
+      "t_score_display": "0"
+    },
+    "4B.3": {
+      "scale_name": "Exalted Self-Image",
+      "abbreviation": "4B.3",
+      "raw_score": 2,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 30,
+      "t_score_display": "30"
+    },
+    "5.1": {
+      "scale_name": "Interpersonally Exploitive",
+      "abbreviation": "5.1",
+      "raw_score": 5,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "5.2": {
+      "scale_name": "Cognitively Expansive",
+      "abbreviation": "5.2",
+      "raw_score": 1,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 12,
+      "t_score_display": "12"
+    },
+    "5.3": {
+      "scale_name": "Admirable Self-Image",
+      "abbreviation": "5.3",
+      "raw_score": 7,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "6A.1": {
+      "scale_name": "Interpersonally Irresponsible",
+      "abbreviation": "6A.1",
+      "raw_score": 5,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "6A.2": {
+      "scale_name": "Autonomous Self-Image",
+      "abbreviation": "6A.2",
+      "raw_score": 10,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "6A.3": {
+      "scale_name": "Acting-Out Dynamics",
+      "abbreviation": "6A.3",
+      "raw_score": 3,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 68,
+      "t_score_display": "68"
+    },
+    "6B.1": {
+      "scale_name": "Expressively Precipitate",
+      "abbreviation": "6B.1",
+      "raw_score": 11,
+      "total_items": 11,
+      "items_scored": 11,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "6B.2": {
+      "scale_name": "Interpersonally Abrasive",
+      "abbreviation": "6B.2",
+      "raw_score": 6,
+      "total_items": 7,
+      "items_scored": 7,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "6B.3": {
+      "scale_name": "Eruptive Architecture",
+      "abbreviation": "6B.3",
+      "raw_score": 5,
+      "total_items": 7,
+      "items_scored": 7,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 80,
+      "t_score_display": "80"
+    },
+    "7.1": {
+      "scale_name": "Expressively Disciplined",
+      "abbreviation": "7.1",
+      "raw_score": 2,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 30,
+      "t_score_display": "30"
+    },
+    "7.2": {
+      "scale_name": "Cognitively Constricted",
+      "abbreviation": "7.2",
+      "raw_score": 4,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 48,
+      "t_score_display": "48"
+    },
+    "7.3": {
+      "scale_name": "Reliable Self-Image",
+      "abbreviation": "7.3",
+      "raw_score": 0,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 0,
+      "t_score_display": "0"
+    },
+    "8A.1": {
+      "scale_name": "Expressively Embittered",
+      "abbreviation": "8A.1",
+      "raw_score": 9,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 78,
+      "t_score_display": "78"
+    },
+    "8A.2": {
+      "scale_name": "Discontented Self-Image",
+      "abbreviation": "8A.2",
+      "raw_score": 10,
+      "total_items": 11,
+      "items_scored": 11,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "8A.3": {
+      "scale_name": "Temperamentally Irritable",
+      "abbreviation": "8A.3",
+      "raw_score": 6,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "8B.1": {
+      "scale_name": "Undeserving Self-Image",
+      "abbreviation": "8B.1",
+      "raw_score": 8,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "8B.2": {
+      "scale_name": "Inverted Architecture",
+      "abbreviation": "8B.2",
+      "raw_score": 6,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 69,
+      "t_score_display": "69"
+    },
+    "8B.3": {
+      "scale_name": "Temperamentally Dysphoric",
+      "abbreviation": "8B.3",
+      "raw_score": 8,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "S.1": {
+      "scale_name": "Cognitively Circumstantial",
+      "abbreviation": "S.1",
+      "raw_score": 5,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 66,
+      "t_score_display": "66"
+    },
+    "S.2": {
+      "scale_name": "Estranged Self-Image",
+      "abbreviation": "S.2",
+      "raw_score": 9,
+      "total_items": 11,
+      "items_scored": 11,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "S.3": {
+      "scale_name": "Chaotic Content",
+      "abbreviation": "S.3",
+      "raw_score": 11,
+      "total_items": 11,
+      "items_scored": 11,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "C.1": {
+      "scale_name": "Uncertain Self-Image",
+      "abbreviation": "C.1",
+      "raw_score": 6,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Presence",
+      "t_score": 75,
+      "t_score_display": "75"
+    },
+    "C.2": {
+      "scale_name": "Split Architecture",
+      "abbreviation": "C.2",
+      "raw_score": 8,
+      "total_items": 11,
+      "items_scored": 11,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "C.3": {
+      "scale_name": "Temperamentally Labile",
+      "abbreviation": "C.3",
+      "raw_score": 5,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Suggestive",
+      "t_score": 72,
+      "t_score_display": "72"
+    },
+    "P.1": {
+      "scale_name": "Expressively Defensive",
+      "abbreviation": "P.1",
+      "raw_score": 9,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 85,
+      "t_score_display": "85"
+    },
+    "P.2": {
+      "scale_name": "Cognitively Mistrustful",
+      "abbreviation": "P.2",
+      "raw_score": 7,
+      "total_items": 7,
+      "items_scored": 7,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "P.3": {
+      "scale_name": "Projection Dynamics",
+      "abbreviation": "P.3",
+      "raw_score": 10,
+      "total_items": 10,
+      "items_scored": 10,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "Prominence",
+      "t_score": 100,
+      "t_score_display": "100"
+    },
+    "AD": {
+      "scale_name": "Adult ADHD",
+      "abbreviation": "AD",
+      "raw_score": 1,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 1,
+      "t_score_display": "1"
+    },
+    "AS": {
+      "scale_name": "Autism Spectrum",
+      "abbreviation": "AS",
+      "raw_score": 5,
+      "total_items": 7,
+      "items_scored": 7,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 5,
+      "t_score_display": "5"
+    },
+    "CA": {
+      "scale_name": "Childhood Abuse",
+      "abbreviation": "CA",
+      "raw_score": 1,
+      "total_items": 2,
+      "items_scored": 2,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 1,
+      "t_score_display": "1"
+    },
+    "EA": {
+      "scale_name": "Eating Disorder",
+      "abbreviation": "EA",
+      "raw_score": 2,
+      "total_items": 4,
+      "items_scored": 4,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 2,
+      "t_score_display": "2"
+    },
+    "EM": {
+      "scale_name": "Emotional Dyscontrol",
+      "abbreviation": "EM",
+      "raw_score": 2,
+      "total_items": 8,
+      "items_scored": 8,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 2,
+      "t_score_display": "2"
+    },
+    "EX": {
+      "scale_name": "Explosively Angry",
+      "abbreviation": "EX",
+      "raw_score": 6,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 6,
+      "t_score_display": "6"
+    },
+    "HP": {
+      "scale_name": "Health Preoccupied",
+      "abbreviation": "HP",
+      "raw_score": 3,
+      "total_items": 6,
+      "items_scored": 6,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 3,
+      "t_score_display": "3"
+    },
+    "IA": {
+      "scale_name": "Interpersonally Alienated",
+      "abbreviation": "IA",
+      "raw_score": 3,
+      "total_items": 4,
+      "items_scored": 4,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 3,
+      "t_score_display": "3"
+    },
+    "PD": {
+      "scale_name": "Prescription Drug Abuse",
+      "abbreviation": "PD",
+      "raw_score": 0,
+      "total_items": 2,
+      "items_scored": 2,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 0,
+      "t_score_display": "0"
+    },
+    "SP": {
+      "scale_name": "Self-Destructive Potential",
+      "abbreviation": "SP",
+      "raw_score": 8,
+      "total_items": 12,
+      "items_scored": 12,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 8,
+      "t_score_display": "8"
+    },
+    "SB": {
+      "scale_name": "Self-Injurious Behavior/Tendency",
+      "abbreviation": "SB",
+      "raw_score": 0,
+      "total_items": 2,
+      "items_scored": 2,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 0,
+      "t_score_display": "0"
+    },
+    "TB": {
+      "scale_name": "Traumatic Brain Injury",
+      "abbreviation": "TB",
+      "raw_score": 0,
+      "total_items": 2,
+      "items_scored": 2,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 0,
+      "t_score_display": "0"
+    },
+    "VP": {
+      "scale_name": "Vengefully Prone",
+      "abbreviation": "VP",
+      "raw_score": 8,
+      "total_items": 9,
+      "items_scored": 9,
+      "proportion_scored": 1.0,
+      "missing_items": [],
+      "interpretive_range": "No Significant Features",
+      "t_score": 8,
+      "t_score_display": "8"
+    }
+  }
+};
+
+        // Initialize validity charts
+        
+        const chart_response_validity = echarts.init(document.getElementById('chart-response-validity'));
+        const chart_response_validity_config = {
+  "title": {
+    "text": "Response Validity",
+    "left": "center",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 16,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "tooltip": {
+    "trigger": "item",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "grid": {
+    "left": "10%",
+    "right": "8%",
+    "bottom": "15%",
+    "top": "10%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "V",
+      "W"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Estimated Score Position",
+    "nameLocation": "middle",
+    "nameGap": 45,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    },
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "min": 0,
+    "max": 120,
+    "interval": 10
+  },
+  "series": [
+    {
+      "name": "Response Validity",
+      "type": "line",
+      "data": [
+        {
+          "value": 0,
+          "name": "V",
+          "raw_score": 1,
+          "scale_name": "Validity",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 0,
+          "name": "W",
+          "raw_score": 5,
+          "scale_name": "Inconsistency",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        }
+      ],
+      "itemStyle": {
+        "color": "#555555"
+      },
+      "lineStyle": {
+        "width": 3.0
+      },
+      "symbol": "circle",
+      "smooth": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ],
+  "markLine": {
+    "data": [
+      {
+        "yAxis": 75,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "BR 75"
+        }
+      },
+      {
+        "yAxis": 85,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "BR 85"
+        }
+      }
+    ],
+    "lineStyle": {
+      "type": "dashed",
+      "color": "#999"
+    }
+  }
+};
+        chart_response_validity_config.tooltip.formatter = function(params) {
+            return '<strong>' + params.seriesName + '</strong><br/>' +
+                   'Scale: ' + params.data.name + ' - ' + params.data.scale_name + '<br/>' +
+                   'Raw Score: ' + params.data.raw_score + '<br/>' +
+                   'Range: ' + params.data.interpretive_range;
+        };
+        chart_response_validity.setOption(chart_response_validity_config);
+
+        const chart_response_bias = echarts.init(document.getElementById('chart-response-bias'));
+        const chart_response_bias_config = {
+  "title": {
+    "text": "Response Bias",
+    "left": "center",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 16,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "tooltip": {
+    "trigger": "item",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "grid": {
+    "left": "10%",
+    "right": "8%",
+    "bottom": "15%",
+    "top": "10%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Estimated Score Position",
+    "nameLocation": "middle",
+    "nameGap": 45,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    },
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "min": 0,
+    "max": 120,
+    "interval": 10
+  },
+  "series": [
+    {
+      "name": "Response Bias",
+      "type": "line",
+      "data": [
+        {
+          "value": 86,
+          "name": "X",
+          "raw_score": 69,
+          "scale_name": "Disclosure",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 5,
+          "name": "Y",
+          "raw_score": 1,
+          "scale_name": "Desirability",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 79,
+          "name": "Z",
+          "raw_score": 19,
+          "scale_name": "Debasement",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        }
+      ],
+      "itemStyle": {
+        "color": "#922B21"
+      },
+      "lineStyle": {
+        "width": 3.0
+      },
+      "symbol": "circle",
+      "smooth": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ],
+  "markLine": {
+    "data": [
+      {
+        "yAxis": 75,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "BR 75"
+        }
+      },
+      {
+        "yAxis": 85,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "BR 85"
+        }
+      }
+    ],
+    "lineStyle": {
+      "type": "dashed",
+      "color": "#999"
+    }
+  }
+};
+        chart_response_bias_config.tooltip.formatter = function(params) {
+            return '<strong>' + params.seriesName + '</strong><br/>' +
+                   'Scale: ' + params.data.name + ' - ' + params.data.scale_name + '<br/>' +
+                   'Raw Score: ' + params.data.raw_score + '<br/>' +
+                   'Range: ' + params.data.interpretive_range;
+        };
+        chart_response_bias.setOption(chart_response_bias_config);
+
+        // Initialize combined profile chart
+        const chartCombined = echarts.init(document.getElementById('chart-combined'));
+        const combinedConfig = {
+  "title": {
+    "text": "MCMI-4 Profile Graph",
+    "left": "center",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 16,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "tooltip": {
+    "trigger": "item",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "legend": {
+    "data": [
+      "Clinical Personality Patterns",
+      "Severe Personality Pathology",
+      "Clinical Syndromes",
+      "Severe Clinical Syndromes",
+      "Grossman Facet Scales",
+      "Noteworthy Responses"
+    ],
+    "top": 30,
+    "type": "scroll",
+    "textStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    }
+  },
+  "grid": {
+    "left": "8%",
+    "right": "5%",
+    "bottom": "20%",
+    "top": "12%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "1",
+      "2A",
+      "2B",
+      "3",
+      "4A",
+      "4B",
+      "5",
+      "6A",
+      "6B",
+      "7",
+      "8A",
+      "8B",
+      "S",
+      "C",
+      "P",
+      "A",
+      "H",
+      "N",
+      "D",
+      "B",
+      "T",
+      "R",
+      "SS",
+      "CC",
+      "PP",
+      "1.1",
+      "1.2",
+      "1.3",
+      "2A.1",
+      "2A.2",
+      "2A.3",
+      "2B.1",
+      "2B.2",
+      "2B.3",
+      "3.1",
+      "3.2",
+      "3.3",
+      "4A.1",
+      "4A.2",
+      "4A.3",
+      "4B.1",
+      "4B.2",
+      "4B.3",
+      "5.1",
+      "5.2",
+      "5.3",
+      "6A.1",
+      "6A.2",
+      "6A.3",
+      "6B.1",
+      "6B.2",
+      "6B.3",
+      "7.1",
+      "7.2",
+      "7.3",
+      "8A.1",
+      "8A.2",
+      "8A.3",
+      "8B.1",
+      "8B.2",
+      "8B.3",
+      "S.1",
+      "S.2",
+      "S.3",
+      "C.1",
+      "C.2",
+      "C.3",
+      "P.1",
+      "P.2",
+      "P.3",
+      "AD",
+      "AS",
+      "CA",
+      "EA",
+      "EM",
+      "EX",
+      "HP",
+      "IA",
+      "PD",
+      "SP",
+      "SB",
+      "TB",
+      "VP"
+    ],
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "rotate": 45
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "name": "MCMI-4 Scales",
+    "nameLocation": "middle",
+    "nameGap": 50,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Estimated Score Position",
+    "nameLocation": "middle",
+    "nameGap": 50,
+    "nameTextStyle": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000",
+      "fontWeight": "bold"
+    },
+    "axisLabel": {
+      "fontFamily": "Times New Roman",
+      "fontSize": 14,
+      "color": "#000"
+    },
+    "axisLine": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "axisTick": {
+      "lineStyle": {
+        "color": "#000"
+      }
+    },
+    "min": 0,
+    "max": 120,
+    "interval": 10
+  },
+  "series": [
+    {
+      "name": "Clinical Personality Patterns",
+      "type": "line",
+      "data": [
+        {
+          "value": 78,
+          "name": "1",
+          "raw_score": 16,
+          "scale_name": "Schizoid",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 91,
+          "name": "2A",
+          "raw_score": 20,
+          "scale_name": "Avoidant",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 91,
+          "name": "2B",
+          "raw_score": 23,
+          "scale_name": "Melancholic",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 40,
+          "name": "3",
+          "raw_score": 4,
+          "scale_name": "Dependent",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 6,
+          "name": "4A",
+          "raw_score": 1,
+          "scale_name": "Histrionic",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 18,
+          "name": "4B",
+          "raw_score": 3,
+          "scale_name": "Turbulent",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 88,
+          "name": "5",
+          "raw_score": 17,
+          "scale_name": "Narcissistic",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "6A",
+          "raw_score": 18,
+          "scale_name": "Antisocial",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 99,
+          "name": "6B",
+          "raw_score": 20,
+          "scale_name": "Sadistic",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 8,
+          "name": "7",
+          "raw_score": 2,
+          "scale_name": "Compulsive",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 83,
+          "name": "8A",
+          "raw_score": 20,
+          "scale_name": "Negativistic",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 80,
+          "name": "8B",
+          "raw_score": 17,
+          "scale_name": "Masochistic",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#1A5276"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Severe Personality Pathology",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 81,
+          "name": "S",
+          "raw_score": 21,
+          "scale_name": "Schizotypal",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 81,
+          "name": "C",
+          "raw_score": 16,
+          "scale_name": "Borderline",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 115,
+          "name": "P",
+          "raw_score": 24,
+          "scale_name": "Paranoid",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#4A235A"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Clinical Syndromes",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 85,
+          "name": "A",
+          "raw_score": 9,
+          "scale_name": "Generalized Anxiety",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "H",
+          "raw_score": 10,
+          "scale_name": "Somatic Symptom",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 60,
+          "name": "N",
+          "raw_score": 5,
+          "scale_name": "Bipolar Spectrum",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "D",
+          "raw_score": 18,
+          "scale_name": "Persistent Depression",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "B",
+          "raw_score": 3,
+          "scale_name": "Alcohol Use",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 67,
+          "name": "T",
+          "raw_score": 4,
+          "scale_name": "Drug Use",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 71,
+          "name": "R",
+          "raw_score": 8,
+          "scale_name": "Post-Traumatic Stress",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#922B21"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Severe Clinical Syndromes",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 71,
+          "name": "SS",
+          "raw_score": 16,
+          "scale_name": "Schizophrenic Spectrum",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 92,
+          "name": "CC",
+          "raw_score": 17,
+          "scale_name": "Major Depression",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 95,
+          "name": "PP",
+          "raw_score": 17,
+          "scale_name": "Delusional",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#7B241C"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Grossman Facet Scales",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 100,
+          "name": "1.1",
+          "raw_score": 9,
+          "scale_name": "Interpersonally Unengaged",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "1.2",
+          "raw_score": 8,
+          "scale_name": "Meager Content",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 72,
+          "name": "1.3",
+          "raw_score": 5,
+          "scale_name": "Temperamentally Apathetic",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 80,
+          "name": "2A.1",
+          "raw_score": 7,
+          "scale_name": "Interpersonally Aversive",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 70,
+          "name": "2A.2",
+          "raw_score": 5,
+          "scale_name": "Alienated Self-Image",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "2A.3",
+          "raw_score": 8,
+          "scale_name": "Vexatious Content",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "2B.1",
+          "raw_score": 8,
+          "scale_name": "Cognitively Fatalistic",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "2B.2",
+          "raw_score": 7,
+          "scale_name": "Worthless Self-Image",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "2B.3",
+          "raw_score": 9,
+          "scale_name": "Temperamentally Woeful",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "3.1",
+          "raw_score": 5,
+          "scale_name": "Expressively Puerile",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 40,
+          "name": "3.2",
+          "raw_score": 2,
+          "scale_name": "Interpersonally Submissive",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 48,
+          "name": "3.3",
+          "raw_score": 4,
+          "scale_name": "Inept Self-Image",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 70,
+          "name": "4A.1",
+          "raw_score": 3,
+          "scale_name": "Expressively Dramatic",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 12,
+          "name": "4A.2",
+          "raw_score": 1,
+          "scale_name": "Interpersonally Attention-Seeking",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 12,
+          "name": "4A.3",
+          "raw_score": 1,
+          "scale_name": "Temperamentally Fickle",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 20,
+          "name": "4B.1",
+          "raw_score": 1,
+          "scale_name": "Expressively Impetuous",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 0,
+          "name": "4B.2",
+          "raw_score": 0,
+          "scale_name": "Interpersonally High-Spirited",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 30,
+          "name": "4B.3",
+          "raw_score": 2,
+          "scale_name": "Exalted Self-Image",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "5.1",
+          "raw_score": 5,
+          "scale_name": "Interpersonally Exploitive",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 12,
+          "name": "5.2",
+          "raw_score": 1,
+          "scale_name": "Cognitively Expansive",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "5.3",
+          "raw_score": 7,
+          "scale_name": "Admirable Self-Image",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "6A.1",
+          "raw_score": 5,
+          "scale_name": "Interpersonally Irresponsible",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "6A.2",
+          "raw_score": 10,
+          "scale_name": "Autonomous Self-Image",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 68,
+          "name": "6A.3",
+          "raw_score": 3,
+          "scale_name": "Acting-Out Dynamics",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "6B.1",
+          "raw_score": 11,
+          "scale_name": "Expressively Precipitate",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "6B.2",
+          "raw_score": 6,
+          "scale_name": "Interpersonally Abrasive",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 80,
+          "name": "6B.3",
+          "raw_score": 5,
+          "scale_name": "Eruptive Architecture",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 30,
+          "name": "7.1",
+          "raw_score": 2,
+          "scale_name": "Expressively Disciplined",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 48,
+          "name": "7.2",
+          "raw_score": 4,
+          "scale_name": "Cognitively Constricted",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 0,
+          "name": "7.3",
+          "raw_score": 0,
+          "scale_name": "Reliable Self-Image",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 78,
+          "name": "8A.1",
+          "raw_score": 9,
+          "scale_name": "Expressively Embittered",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "8A.2",
+          "raw_score": 10,
+          "scale_name": "Discontented Self-Image",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "8A.3",
+          "raw_score": 6,
+          "scale_name": "Temperamentally Irritable",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "8B.1",
+          "raw_score": 8,
+          "scale_name": "Undeserving Self-Image",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 69,
+          "name": "8B.2",
+          "raw_score": 6,
+          "scale_name": "Inverted Architecture",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "8B.3",
+          "raw_score": 8,
+          "scale_name": "Temperamentally Dysphoric",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 66,
+          "name": "S.1",
+          "raw_score": 5,
+          "scale_name": "Cognitively Circumstantial",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "S.2",
+          "raw_score": 9,
+          "scale_name": "Estranged Self-Image",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "S.3",
+          "raw_score": 11,
+          "scale_name": "Chaotic Content",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 75,
+          "name": "C.1",
+          "raw_score": 6,
+          "scale_name": "Uncertain Self-Image",
+          "interpretive_range": "Presence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "C.2",
+          "raw_score": 8,
+          "scale_name": "Split Architecture",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 72,
+          "name": "C.3",
+          "raw_score": 5,
+          "scale_name": "Temperamentally Labile",
+          "interpretive_range": "Suggestive",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 85,
+          "name": "P.1",
+          "raw_score": 9,
+          "scale_name": "Expressively Defensive",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "P.2",
+          "raw_score": 7,
+          "scale_name": "Cognitively Mistrustful",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        {
+          "value": 100,
+          "name": "P.3",
+          "raw_score": 10,
+          "scale_name": "Projection Dynamics",
+          "interpretive_range": "Prominence",
+          "is_elevated": true,
+          "symbolSize": 12
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "itemStyle": {
+        "color": "#2E86C1"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Noteworthy Responses",
+      "type": "line",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "value": 1,
+          "name": "AD",
+          "raw_score": 1,
+          "scale_name": "Adult ADHD",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 5,
+          "name": "AS",
+          "raw_score": 5,
+          "scale_name": "Autism Spectrum",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 1,
+          "name": "CA",
+          "raw_score": 1,
+          "scale_name": "Childhood Abuse",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 2,
+          "name": "EA",
+          "raw_score": 2,
+          "scale_name": "Eating Disorder",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 2,
+          "name": "EM",
+          "raw_score": 2,
+          "scale_name": "Emotional Dyscontrol",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 6,
+          "name": "EX",
+          "raw_score": 6,
+          "scale_name": "Explosively Angry",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 3,
+          "name": "HP",
+          "raw_score": 3,
+          "scale_name": "Health Preoccupied",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 3,
+          "name": "IA",
+          "raw_score": 3,
+          "scale_name": "Interpersonally Alienated",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 0,
+          "name": "PD",
+          "raw_score": 0,
+          "scale_name": "Prescription Drug Abuse",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 8,
+          "name": "SP",
+          "raw_score": 8,
+          "scale_name": "Self-Destructive Potential",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 0,
+          "name": "SB",
+          "raw_score": 0,
+          "scale_name": "Self-Injurious Behavior/Tendency",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 0,
+          "name": "TB",
+          "raw_score": 0,
+          "scale_name": "Traumatic Brain Injury",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        },
+        {
+          "value": 8,
+          "name": "VP",
+          "raw_score": 8,
+          "scale_name": "Vengefully Prone",
+          "interpretive_range": "No Significant Features",
+          "is_elevated": false,
+          "symbolSize": 12
+        }
+      ],
+      "itemStyle": {
+        "color": "#797D7F"
+      },
+      "lineStyle": {
+        "width": 2.5
+      },
+      "symbol": "circle",
+      "connectNulls": false,
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ],
+  "markLine": {
+    "data": [
+      {
+        "yAxis": 75,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "BR 75"
+        }
+      },
+      {
+        "yAxis": 85,
+        "label": {
+          "fontFamily": "Times New Roman",
+          "fontSize": 12,
+          "color": "#000",
+          "formatter": "BR 85"
+        }
+      }
+    ],
+    "lineStyle": {
+      "type": "dashed",
+      "color": "#999"
+    }
+  },
+  "toolbox": {
+    "feature": {
+      "dataZoom": {
+        "yAxisIndex": "none"
+      },
+      "restore": {},
+      "saveAsImage": {}
+    }
+  }
+};
+
+        // Add tooltip formatter
+        combinedConfig.tooltip.formatter = function(params) {
+            return '<strong>' + params.seriesName + '</strong><br/>' +
+                   'Scale: ' + params.data.name + ' - ' + params.data.scale_name + '<br/>' +
+                   'Raw Score: ' + params.data.raw_score + '<br/>' +
+                   'Range: ' + params.data.interpretive_range;
+        };
+
+        chartCombined.setOption(combinedConfig);
+
+        // Initialize domain charts
+        
+
+        // Initialize PAI profile charts (if present)
+        var paiFullScale = null;
+        var paiSubscale = null;
+        (function() {
+            var fsConfig = null;
+            if (fsConfig && fsConfig !== null) {
+                var el = document.getElementById('chart-pai-full-scale');
+                if (el) {
+                    paiFullScale = echarts.init(el);
+                    fsConfig.tooltip.formatter = function(params) {
+                        return '<strong>' + params.data.name + '</strong> - ' + params.data.scale_name + '<br/>' +
+                               'Raw: ' + params.data.raw_score + '<br/>' +
+                               'T: ' + params.value + '<br/>' +
+                               params.data.interpretive_range;
+                    };
+                    paiFullScale.setOption(fsConfig);
+                }
+            }
+            var subConfig = null;
+            if (subConfig && subConfig !== null) {
+                var el2 = document.getElementById('chart-pai-subscale');
+                if (el2) {
+                    paiSubscale = echarts.init(el2);
+                    subConfig.tooltip.formatter = function(params) {
+                        return '<strong>' + params.data.name + '</strong> - ' + params.data.scale_name + '<br/>' +
+                               'Raw: ' + params.data.raw_score + '<br/>' +
+                               'T: ' + params.value[0] + '<br/>' +
+                               params.data.interpretive_range;
+                    };
+                    paiSubscale.setOption(subConfig);
+                }
+            }
+        })();
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (typeof chart_response_validity !== "undefined") chart_response_validity.resize();
+            if (typeof chart_response_bias !== "undefined") chart_response_bias.resize();
+            chartCombined.resize();
+            if (paiFullScale) paiFullScale.resize();
+            if (paiSubscale) paiSubscale.resize();
+            if (typeof chart_personality_structure !== "undefined") chart_personality_structure.resize();
+            if (typeof chart_severe_personality !== "undefined") chart_severe_personality.resize();
+            if (typeof chart_clinical_syndromes !== "undefined") chart_clinical_syndromes.resize();
+            if (typeof chart_severe_clinical_syndromes !== "undefined") chart_severe_clinical_syndromes.resize();
+        });
+    </script>
+</body>
+</html>

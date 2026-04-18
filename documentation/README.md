@@ -10,8 +10,8 @@ A fully instrument-agnostic Python package for psychometric assessment scoring, 
 - **Boolean instruments** (True/False) — e.g., MMPI-3, MMPI-2-RF, MMPI-A-RF
 - **Likert-scale instruments** (weighted scoring) — e.g., PAI, NEO-PI-3, BDI-II
 - **Interactive HTML reports** with ECharts profile graphs
-- **Formatted DOCX reports** with embedded PNG charts (via Playwright)
-- **RAG-based interpretive narratives** using Neon Postgres (pgvector) + Anthropic Claude API
+- **Formatted DOCX reports** with APA 7th edition tables, embedded PNG charts (via Playwright), and interpretive narratives
+- **RAG-based interpretive narratives** using Neon Postgres (pgvector) + Anthropic Claude API, with chained narrative architecture to minimize API token usage
 
 ## Quick Start
 
@@ -102,7 +102,7 @@ skeleton-assess/
 ## Architecture
 
 - **`psychometric_scoring/`** — instrument-agnostic scoring, validation, and reporting
-- **`rag_core/`** — vector search (Neon pgvector) and query orchestration (Anthropic Claude API)
+- **`rag_core/`** — vector search (Neon pgvector) and query orchestration (Anthropic Claude API). Only the interpretation step retrieves chunks; integration, treatment, and summary are chained from prior narrative outputs to minimize token usage
 - **`db/`** — Neon Postgres connection with per-instrument schema support
 
 Each instrument gets its own Neon schema (`mmpi3`, `personality_assessment_inventory`) containing embedded textbook chunks for RAG context.

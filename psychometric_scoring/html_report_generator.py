@@ -47,6 +47,7 @@ class HTMLReportGenerator:
         self.administration_format = self.config.get('administration_format', '')
         self.norms = self.config.get('norms', '')
         self.num_items = self.config['num_items']
+        self.score_label = self.config.get('score_label', 'T-Score')
         self.disclaimer_text = self.config.get('disclaimer_text', '')
         self.chart_font = fmt.get('font', 'Times New Roman')
         self.base_font_size = fmt.get('base_font_size', 12)
@@ -113,6 +114,7 @@ class HTMLReportGenerator:
         scales_html = self._generate_scales_html(calculation_results, narratives)
         summary_html = self._generate_summary_html(calculation_results)
         appendix_a_html = self._generate_appendix_a_html(calculation_results)
+        appendix_b_html = self._generate_appendix_b_html()
 
         # Narrative-specific sections
         integration_html = ""
@@ -200,6 +202,7 @@ class HTMLReportGenerator:
             narrative_summary_html=narrative_summary_html,
             signature_html=signature_html,
             appendix_a_html=appendix_a_html,
+            appendix_b_html=appendix_b_html,
             pai_full_scale_html=pai_full_scale_html,
             pai_subscale_html=pai_subscale_html,
             pai_full_scale_config=pai_full_scale_config,
@@ -228,6 +231,7 @@ class HTMLReportGenerator:
                            narrative_summary_html: str = "",
                            signature_html: str = "",
                            appendix_a_html: str = "",
+                           appendix_b_html: str = "",
                            pai_full_scale_html: str = "",
                            pai_subscale_html: str = "",
                            pai_full_scale_config: str = "null",
@@ -320,6 +324,8 @@ class HTMLReportGenerator:
         </section>
 
         {appendix_a_html}
+
+        {appendix_b_html}
 
         <footer>
             <p>Report generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
@@ -855,7 +861,7 @@ class HTMLReportGenerator:
                     <tr>
                         <th>Scale</th>
                         <th>Raw Score</th>
-                        <th>T-Score</th>
+                        <th>{self.score_label}</th>
                         <th>Items Scored</th>
                         <th>Interpretation</th>
                     </tr>
@@ -913,7 +919,8 @@ class HTMLReportGenerator:
             info = scale_scores[abbr]
             r = info['interpretive_range']
             t = info.get('t_score_display', '')
-            display = f"{abbr} (T={t})" if t else abbr
+            score_prefix = self.config.get('score_prefix', 'T')
+            display = f"{abbr} ({score_prefix}={t})" if t else abbr
             if r in buckets:
                 buckets[r].append(display)
             else:
@@ -1006,7 +1013,7 @@ class HTMLReportGenerator:
                     <tr>
                         <th>Scale</th>
                         <th>Raw Score</th>
-                        <th>T-Score</th>
+                        <th>{self.score_label}</th>
                         <th>Items Scored</th>
                         <th>Interpretation</th>
                     </tr>
@@ -1250,6 +1257,154 @@ class HTMLReportGenerator:
                     <tbody>{build_rows(right_items)}</tbody>
                 </table>
             </div>
+        </section>
+        """
+
+    def _generate_appendix_b_html(self) -> str:
+        """Generate Appendix B — Millon Evolutionary Theory Reference Tables.
+
+        Only generated for MCMI-IV instruments. Returns empty string for others.
+        Contains three tables:
+          1. Motivating Aims of the Evolutionary Model
+          2. Problematic Patterns in Motivating Aims
+          3. The Eight Structural and Functional Domains
+        """
+        instrument = self.config.get('instrument_name', '')
+        if 'MCMI' not in instrument.upper():
+            return ""
+
+        return """
+        <section id="appendix-b" style="page-break-before: always;">
+            <h2>Appendix B</h2>
+            <p><em>Millon Evolutionary Theory Reference Tables</em></p>
+
+            <h3>Table B.1: Motivating Aims of the Evolutionary Model</h3>
+            <p class="table-note">Each personality prototype is derived from a specific configuration across these three evolutionary polarities. The polarity positions listed reflect the <strong>prototypal</strong> orientation for each pattern.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Pattern</th>
+                        <th>Existence<br/>(Pleasure&ndash;Pain)</th>
+                        <th>Adaptation<br/>(Passive&ndash;Active)</th>
+                        <th>Replication<br/>(Self&ndash;Other)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Schizoid</td><td>Diminished (low Pleasure, low Pain)</td><td>Passive</td><td>Diminished (low Self, low Other)</td></tr>
+                    <tr><td>2A</td><td>Avoidant</td><td>Pain-oriented</td><td>Active (avoidance)</td><td>Conflicted withdrawal</td></tr>
+                    <tr><td>2B</td><td>Melancholic</td><td>Pain-oriented</td><td>Passive (resignation)</td><td>Other-oriented (lost)</td></tr>
+                    <tr><td>3</td><td>Dependent</td><td>Pleasure through others</td><td>Passive</td><td>Other-oriented</td></tr>
+                    <tr><td>4A</td><td>Histrionic</td><td>Pleasure-oriented</td><td>Active</td><td>Other-oriented</td></tr>
+                    <tr><td>4B</td><td>Turbulent</td><td>Pleasure-oriented (high intensity)</td><td>Active (high energy)</td><td>Self- and Other-oriented</td></tr>
+                    <tr><td>5</td><td>Narcissistic</td><td>Pleasure-oriented</td><td>Passive</td><td>Self-oriented</td></tr>
+                    <tr><td>6A</td><td>Antisocial</td><td>Pleasure-oriented (power)</td><td>Active</td><td>Self-oriented</td></tr>
+                    <tr><td>6B</td><td>Sadistic</td><td>Pleasure from Pain (others')</td><td>Active</td><td>Self-oriented</td></tr>
+                    <tr><td>7</td><td>Compulsive</td><td>Conflict (Pleasure suppressed)</td><td>Passive (conforming)</td><td>Conflicted (Self&ndash;Other)</td></tr>
+                    <tr><td>8A</td><td>Negativistic</td><td>Conflict (Pleasure&ndash;Pain vacillation)</td><td>Active&ndash;Passive vacillation</td><td>Conflicted (Self&ndash;Other)</td></tr>
+                    <tr><td>8B</td><td>Masochistic</td><td>Pain replaces Pleasure (reversal)</td><td>Passive (acceptance)</td><td>Other-oriented</td></tr>
+                    <tr style="border-top: 2px solid #333;"><td>S</td><td>Schizotypal</td><td>Diminished &amp; distorted</td><td>Passive (detachment)</td><td>Diminished</td></tr>
+                    <tr><td>C</td><td>Borderline</td><td>Conflict across all aims</td><td>Active&ndash;Passive instability</td><td>Conflicted (Self&ndash;Other)</td></tr>
+                    <tr><td>P</td><td>Paranoid</td><td>Pain-avoidant (vigilant)</td><td>Active (defensive)</td><td>Self-oriented (mistrustful)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 24pt;">Table B.2: Problematic Patterns in Motivating Aims</h3>
+            <p class="table-note">When motivating aims become rigid or imbalanced, they give rise to characteristic patterns of dysfunction. These processes impair personologic flexibility and the ability to meet situational demands.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pattern</th>
+                        <th>Description</th>
+                        <th>Prototypal Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Deficiency</strong></td>
+                        <td>Underdevelopment or absence of one or both poles of a motivating aim, resulting in a limited capacity to experience or pursue fundamental needs.</td>
+                        <td>Schizoid (diminished Pleasure and Pain), Avoidant (impoverished Pleasure capacity)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Imbalance</strong></td>
+                        <td>Pronounced reliance on one pole of a polarity at the expense of the other, creating rigidity and interpersonal one-sidedness.</td>
+                        <td>Dependent and Histrionic (excessive Other-orientation), Narcissistic and Antisocial (excessive Self-orientation)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conflict</strong></td>
+                        <td>Opposing desires within the same polarity that create intrapsychic tension. Unwanted thoughts and feelings are suppressed, only to re-emerge in less adaptive ways.</td>
+                        <td>Compulsive and Negativistic (Self&ndash;Other conflict, undercurrent of anger), Borderline (conflict across all three aims)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reversal</strong></td>
+                        <td>A motivating aim is expressed in the opposite direction from what is typically adaptive. A generally positive aim becomes inverted toward its counterpart.</td>
+                        <td>Masochistic (Pain replaces Pleasure as the primary motivating force), Sadistic (inflicting Pain becomes a source of Pleasure)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 24pt;">Table B.3: The Eight Structural and Functional Domains</h3>
+            <p class="table-note">Each personality prototype is expressed across these eight domains, which form the basis of the Grossman Facet Scales. Functional domains describe processes (what the person <em>does</em>); structural domains describe enduring features (what the person <em>is</em>).</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Type</th>
+                        <th>Level</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Expressive Emotion</strong></td>
+                        <td>Functional</td>
+                        <td>Behavioral</td>
+                        <td>Objectively observable behaviors inferring an emotional need. How the individual outwardly acts on and expresses feelings.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interpersonal Conduct</strong></td>
+                        <td>Functional</td>
+                        <td>Behavioral</td>
+                        <td>How the individual interacts with others relationally. Patterns of social engagement, withdrawal, or manipulation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cognitive Style</strong></td>
+                        <td>Functional</td>
+                        <td>Phenomenological</td>
+                        <td>How the individual allocates attention, processes information, and synthesizes experience. Characteristic thought patterns and perceptual focus.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Self-Image</strong></td>
+                        <td>Structural</td>
+                        <td>Phenomenological</td>
+                        <td>The individual's sense of self-as-object and reflection of sameness or differentness from others. Core identity and self-perception.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intrapsychic Content</strong></td>
+                        <td>Structural</td>
+                        <td>Phenomenological</td>
+                        <td>General expectations of others as imprinted from early experience. The internalized representations that shape how the person anticipates relationships.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intrapsychic Dynamics</strong></td>
+                        <td>Functional</td>
+                        <td>Intrapsychic</td>
+                        <td>Internal processes of conflict resolution, need gratification, and self-protection. Commonly known as defense mechanisms.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intrapsychic Architecture</strong></td>
+                        <td>Structural</td>
+                        <td>Intrapsychic</td>
+                        <td>The organizing principles and structures of the mind. Gives insight to the strength, cohesion, and integration of the personality.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mood/Temperament</strong></td>
+                        <td>Structural</td>
+                        <td>Biophysical</td>
+                        <td>The body's physical substrates tied to the workings of the psyche. Includes neuropsychological functioning, general energy, affect characteristics, and physical health effects on mental functioning.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
         """
 

@@ -1,0 +1,6 @@
+You are a helpful assistant that synthesizes information from multiple sources.
+
+Use the following sources to create a comprehensive synthesis:
+{context}
+
+Question or topic to synthesize: {query}

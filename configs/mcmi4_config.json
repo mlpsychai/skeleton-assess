@@ -1,0 +1,153 @@
+{
+  "instrument_name": "MCMI-4",
+  "instrument_full_name": "Millon Clinical Multiaxial Inventory-IV",
+  "instrument_reference": "Millon, T., Grossman, S., & Millon, C. (2015). MCMI-IV manual. NCS Pearson.",
+  "instrument_description": "The MCMI-IV is a 195-item True/False self-report inventory designed to assess personality disorders and clinical syndromes in adults (18+) in clinical settings. It provides Base Rate (BR) scores derived from clinical prevalence data, with 5 Modifier Indices, 12 Clinical Personality Patterns, 3 Severe Personality Pathology scales, 7 Clinical Syndromes, and 3 Severe Clinical Syndromes. Norms are based on a clinical standardization sample.",
+  "num_items": 195,
+  "response_type": "boolean",
+  "response_format": "True/False",
+  "administration_format": "standard paper-and-pencil or computer-administered format",
+  "norms": "Clinical Standardization Sample",
+  "db_schema": "mcmi4",
+  "score_label": "BR Score",
+  "score_prefix": "BR",
+  "response_options": {
+    "true_values": ["True", "1", "Yes", "T"],
+    "false_values": ["False", "0", "No", "F"]
+  },
+  "files": {
+    "mapping": "templates/mcmi4/mapping.json",
+    "scales": "templates/mcmi4/scales.json",
+    "tscore_tables": "templates/mcmi4/tscore_tables.json",
+    "formatting": "templates/mcmi4/formatting.json"
+  },
+  "interpretive_cutoffs": [
+    {
+      "label": "No Significant Features",
+      "max_t": 59,
+      "elevated": false
+    },
+    {
+      "label": "Suggestive",
+      "min_t": 60,
+      "max_t": 74,
+      "elevated": false
+    },
+    {
+      "label": "Presence",
+      "min_t": 75,
+      "max_t": 84,
+      "elevated": true
+    },
+    {
+      "label": "Prominence",
+      "min_t": 85,
+      "elevated": true
+    }
+  ],
+  "safety_scales": ["SS", "CC"],
+  "max_missing_threshold": 0.1,
+  "special_worksheets": {},
+  "categories": [
+    {
+      "key": "modifier",
+      "title": "Modifier Indices",
+      "scales": ["V", "W", "X", "Y", "Z"],
+      "is_validity": true
+    },
+    {
+      "key": "personality",
+      "title": "Clinical Personality Patterns",
+      "scales": ["1", "2A", "2B", "3", "4A", "4B", "5", "6A", "6B", "7", "8A", "8B"]
+    },
+    {
+      "key": "severe_personality",
+      "title": "Severe Personality Pathology",
+      "scales": ["S", "C", "P"]
+    },
+    {
+      "key": "clinical_syndromes",
+      "title": "Clinical Syndromes",
+      "scales": ["A", "H", "N", "D", "B", "T", "R"]
+    },
+    {
+      "key": "severe_syndromes",
+      "title": "Severe Clinical Syndromes",
+      "scales": ["SS", "CC", "PP"]
+    },
+    {
+      "key": "grossman_facets",
+      "title": "Grossman Facet Scales",
+      "scales": [
+        "1.1", "1.2", "1.3",
+        "2A.1", "2A.2", "2A.3",
+        "2B.1", "2B.2", "2B.3",
+        "3.1", "3.2", "3.3",
+        "4A.1", "4A.2", "4A.3",
+        "4B.1", "4B.2", "4B.3",
+        "5.1", "5.2", "5.3",
+        "6A.1", "6A.2", "6A.3",
+        "6B.1", "6B.2", "6B.3",
+        "7.1", "7.2", "7.3",
+        "8A.1", "8A.2", "8A.3",
+        "8B.1", "8B.2", "8B.3",
+        "S.1", "S.2", "S.3",
+        "C.1", "C.2", "C.3",
+        "P.1", "P.2", "P.3"
+      ]
+    },
+    {
+      "key": "noteworthy",
+      "title": "Noteworthy Responses",
+      "scales": ["AD", "AS", "CA", "EA", "EM", "EX", "HP", "IA", "PD", "SP", "SB", "TB", "VP"]
+    }
+  ],
+  "formatting": {
+    "chart_colors": {
+      "Modifier Indices": "#555555",
+      "Clinical Personality Patterns": "#1A5276",
+      "Severe Personality Pathology": "#4A235A",
+      "Clinical Syndromes": "#922B21",
+      "Severe Clinical Syndromes": "#7B241C",
+      "Grossman Facet Scales": "#2E86C1",
+      "Noteworthy Responses": "#797D7F"
+    },
+    "validity_chart_colors": {
+      "Response Validity": "#555555",
+      "Response Bias": "#922B21"
+    },
+    "domain_definitions": {
+      "Personality Structure": {
+        "scales": ["1", "2A", "2B", "3", "4A", "4B", "5", "6A", "6B", "7", "8A", "8B"],
+        "color": "#1A5276"
+      },
+      "Severe Personality": {
+        "scales": ["S", "C", "P"],
+        "color": "#4A235A"
+      },
+      "Clinical Syndromes": {
+        "scales": ["A", "H", "N", "D", "B", "T", "R"],
+        "color": "#922B21"
+      },
+      "Severe Clinical Syndromes": {
+        "scales": ["SS", "CC", "PP"],
+        "color": "#7B241C"
+      }
+    },
+    "chart": {
+      "y_min": 0,
+      "y_max": 120,
+      "y_interval": 10,
+      "reference_lines": [
+        {"value": 75, "label": "BR 75", "style": "dashed", "color": "#E67E22"},
+        {"value": 85, "label": "BR 85", "style": "solid", "color": "#C0392B"}
+      ],
+      "plot_bands": [0, 30, 60, 75, 85, 115]
+    }
+  },
+  "validity_subcategories": {
+    "Response Validity": ["V", "W"],
+    "Response Bias": ["X", "Y", "Z"]
+  },
+  "disclaimer_text": "IMPORTANT DISCLAIMER:\nThis report was generated for educational and research purposes only. It is not a substitute for professional clinical judgment. All scores and interpretations should be reviewed by a qualified psychologist before use in clinical decision-making. The MCMI-IV is designed for use with clinical populations and should not be used with non-clinical samples."
+}

@@ -1,0 +1,28 @@
+You are a clinical psychologist writing the Profile Integration section of an interpretive report for the Millon Clinical Multiaxial Inventory-IV (MCMI-IV). This is the most important section of the report, synthesizing findings across ALL scale categories into a unified clinical picture.
+
+IMPORTANT GUIDELINES:
+- Be as concise and direct as possible
+- Write in professional clinical narrative style, using third-person language
+- The MCMI-IV uses Base Rate (BR) scores: BR 75-84 = Presence, BR 85+ = Prominence
+- Organize the integration around these domains:
+  1. Response Style — address Modifier Indices (V, W, X, Y, Z) and their impact on profile interpretation. Note if Disclosure (X) is unusually high or low, or if Desirability (Y) or Debasement (Z) are elevated.
+  2. Personality Structure — the dominant personality pattern(s) from scales 1-8B, interpreted through Millon's evolutionary model. Identify the primary personality configuration (e.g., avoidant-dependent, narcissistic-antisocial) and how patterns interact.
+  3. Severe Personality Pathology — if S, C, or P are elevated, describe how they overlay and intensify the base personality patterns. Borderline (C) suggests structural deficiency; Schizotypal (S) suggests eccentric detachment; Paranoid (P) suggests rigid suspiciousness.
+  4. Clinical Syndromes — active Axis I conditions (A, H, N, D, B, T, R) and how they interact with the underlying personality structure. In Millon's model, clinical syndromes emerge from and are shaped by personality.
+  5. Severe Clinical Syndromes — if SS, CC, or PP are elevated, describe severity and immediate clinical implications.
+  6. Personality-Syndrome Interactions — this is central to the MCMI-IV: how personality patterns shape symptom expression. For example, anxiety (A) in a dependent personality manifests differently than in an antisocial personality.
+  7. Diagnostic Considerations — patterns consistent with specific diagnoses (use "consistent with" language, do NOT diagnose)
+  8. Risk and Treatment Planning — safety concerns from severe syndromes (SS, CC), treatment amenability considerations
+- Show how personality patterns and clinical syndromes converge to tell a coherent clinical story
+- Identify the 2-3 most salient clinical themes across the profile
+- Note configural patterns (e.g., elevated 2A + C + D convergence suggesting avoidant-borderline-depressive configuration)
+- Address inconsistencies or unexpected patterns if present
+- Do NOT simply repeat individual scale interpretations — synthesize them
+
+INTERPRETATION REFERENCE CONTEXT:
+{context}
+
+ALL SCALE SCORES AND INTERPRETATIONS:
+{query}
+
+Write a comprehensive profile integration section (approximately 2-4 paragraphs) that synthesizes all elevated scales into a unified clinical formulation grounded in Millon's integrative model.

@@ -56,6 +56,7 @@ def generate():
         Path(output_dir).mkdir(parents=True, exist_ok=True)
 
         interpretive = request.form.get("interpretive") == "true"
+        model = request.form.get("model", "").strip() or None
 
         # --- Client info JSON (optional) ---
         client_info = None
@@ -73,6 +74,7 @@ def generate():
             client_info=client_info,
             interpretive=interpretive,
             instrument_config=instrument_config,
+            model=model,
         )
 
         if not success:

@@ -1,0 +1,139 @@
+{
+  "instrument": "MCMI-IV",
+  "total_items": 195,
+  "response_format": "True/False",
+  "score_type": "Base Rate (BR)",
+  "source": "Millon, T., Grossman, S., & Millon, C. (2015). MCMI-IV manual. NCS Pearson.",
+  "scale_categories": [
+    {
+      "category": "Modifier Indices",
+      "description": "Scales assessing response validity and test-taking attitude",
+      "scales": [
+        {"abbreviation": "V", "scale_name": "Validity", "num_items": 3, "description": "Detects random, confused, or uncooperative responding. Two or more endorsements suggest invalid protocol."},
+        {"abbreviation": "W", "scale_name": "Inconsistency", "num_items": "item pairs", "description": "Detects inconsistent responding across item pairs measuring similar content."},
+        {"abbreviation": "X", "scale_name": "Disclosure", "num_items": 34, "description": "Measures overall degree of openness versus defensiveness. Low scores indicate guardedness; high scores indicate unusual frankness or exaggeration."},
+        {"abbreviation": "Y", "scale_name": "Desirability", "num_items": 21, "description": "Measures tendency to present self in a favorable light, emphasizing socially attractive traits."},
+        {"abbreviation": "Z", "scale_name": "Debasement", "num_items": 33, "description": "Measures tendency to deprecate self or present more pathology than warranted."}
+      ]
+    },
+    {
+      "category": "Clinical Personality Patterns",
+      "description": "Scales assessing enduring personality patterns corresponding to DSM-5 personality disorders and Millon's evolutionary model",
+      "scales": [
+        {"abbreviation": "1", "scale_name": "Schizoid", "num_items": 16, "description": "Emotionally flat, socially detached, indifferent to interpersonal relationships."},
+        {"abbreviation": "2A", "scale_name": "Avoidant", "num_items": 16, "description": "Socially inhibited, hypersensitive to rejection, desires relationships but fears humiliation."},
+        {"abbreviation": "2B", "scale_name": "Melancholic", "num_items": 15, "description": "Persistent sense of loss, resigned to suffering, chronically sad and guilt-ridden."},
+        {"abbreviation": "3", "scale_name": "Dependent", "num_items": 16, "description": "Submissive, clingy, fears abandonment, relies on others for emotional support and decisions."},
+        {"abbreviation": "4A", "scale_name": "Histrionic", "num_items": 16, "description": "Attention-seeking, emotionally expressive, superficial in relationships, dramatic."},
+        {"abbreviation": "4B", "scale_name": "Turbulent", "num_items": 16, "description": "Emotionally volatile, restless, impulsive, and unpredictable with shifting moods."},
+        {"abbreviation": "5", "scale_name": "Narcissistic", "num_items": 16, "description": "Grandiose self-image, entitled, exploitative, lacks empathy, requires admiration."},
+        {"abbreviation": "6A", "scale_name": "Antisocial", "num_items": 17, "description": "Disregards social norms, impulsive, exploitative, lacks remorse, conflict with authority."},
+        {"abbreviation": "6B", "scale_name": "Sadistic", "num_items": 16, "description": "Hostile, domineering, derives satisfaction from intimidating or humiliating others."},
+        {"abbreviation": "7", "scale_name": "Compulsive", "num_items": 16, "description": "Perfectionistic, rigid, rule-bound, suppresses emotions, overly conscientious."},
+        {"abbreviation": "8A", "scale_name": "Negativistic", "num_items": 16, "description": "Passive-aggressive, resentful, oscillates between compliance and oppositional behavior."},
+        {"abbreviation": "8B", "scale_name": "Masochistic", "num_items": 15, "description": "Self-defeating, undermines own success, tolerates exploitation, seeks suffering."}
+      ]
+    },
+    {
+      "category": "Severe Personality Pathology",
+      "description": "Scales assessing more severe and structurally deficient personality organizations",
+      "scales": [
+        {"abbreviation": "S", "scale_name": "Schizotypal", "num_items": 17, "description": "Eccentric behavior, cognitive-perceptual distortions, social isolation, magical thinking."},
+        {"abbreviation": "C", "scale_name": "Borderline", "num_items": 16, "description": "Identity diffusion, intense unstable relationships, affective dysregulation, self-harm."},
+        {"abbreviation": "P", "scale_name": "Paranoid", "num_items": 17, "description": "Pervasive distrust, suspiciousness, hypervigilance, attributes malevolent motives to others."}
+      ]
+    },
+    {
+      "category": "Clinical Syndromes",
+      "description": "Scales assessing Axis I clinical conditions that are typically more acute and state-dependent",
+      "scales": [
+        {"abbreviation": "A", "scale_name": "Generalized Anxiety", "num_items": 14, "description": "Persistent apprehension, tension, indecisiveness, somatic complaints related to anxiety."},
+        {"abbreviation": "H", "scale_name": "Somatic Symptom", "num_items": 12, "description": "Preoccupation with health concerns, vague somatic complaints, possible psychological expression through physical symptoms."},
+        {"abbreviation": "N", "scale_name": "Bipolar Spectrum", "num_items": 13, "description": "Elevated mood, pressured speech, impulsive behavior, grandiosity, decreased need for sleep."},
+        {"abbreviation": "D", "scale_name": "Persistent Depression", "num_items": 14, "description": "Chronic depressed mood, hopelessness, diminished interest, fatigue, cognitive slowing."},
+        {"abbreviation": "B", "scale_name": "Alcohol Use", "num_items": 9, "description": "Problematic alcohol use with adverse consequences on personal and social functioning."},
+        {"abbreviation": "T", "scale_name": "Drug Use", "num_items": 9, "description": "Problematic drug use with adverse consequences on personal and social functioning."},
+        {"abbreviation": "R", "scale_name": "Post-Traumatic Stress", "num_items": 12, "description": "Trauma-related intrusions, avoidance, hyperarousal, emotional numbing following traumatic events."}
+      ]
+    },
+    {
+      "category": "Severe Clinical Syndromes",
+      "description": "Scales assessing more severe clinical conditions requiring immediate clinical attention",
+      "scales": [
+        {"abbreviation": "SS", "scale_name": "Schizophrenic Spectrum", "num_items": 17, "description": "Disorganized thinking, hallucinations, delusions, social withdrawal, bizarre behavior."},
+        {"abbreviation": "CC", "scale_name": "Major Depression", "num_items": 17, "description": "Severe depressive episode with vegetative symptoms, suicidal ideation, psychomotor changes."},
+        {"abbreviation": "PP", "scale_name": "Delusional", "num_items": 13, "description": "Systematized delusions, paranoid ideation, irrational but organized belief systems."}
+      ]
+    },
+    {
+      "category": "Grossman Facet Scales",
+      "description": "Three facets per personality scale capturing specific functional domains: expressive behavior, interpersonal conduct, cognitive style, self-image, regulatory mechanisms, and morphologic organization",
+      "scales": [
+        {"abbreviation": "1.1", "scale_name": "Interpersonally Unengaged", "num_items": 9, "description": "Social detachment and minimal interpersonal involvement."},
+        {"abbreviation": "1.2", "scale_name": "Meager Content", "num_items": 9, "description": "Impoverished inner mental life with few elaborated thoughts or fantasies."},
+        {"abbreviation": "1.3", "scale_name": "Temperamentally Apathetic", "num_items": 9, "description": "Emotional flatness and absence of strong affective responses."},
+        {"abbreviation": "2A.1", "scale_name": "Interpersonally Aversive", "num_items": 8, "description": "Active avoidance of social engagement due to fear of rejection or ridicule."},
+        {"abbreviation": "2A.2", "scale_name": "Alienated Self-Image", "num_items": 9, "description": "Pervasive sense of being fundamentally flawed, inadequate, or unworthy."},
+        {"abbreviation": "2A.3", "scale_name": "Vexatious Content", "num_items": 9, "description": "Intrusive, ruminative cognitive preoccupations about social rejection and perceived slights."},
+        {"abbreviation": "2B.1", "scale_name": "Cognitively Fatalistic", "num_items": 9, "description": "Pessimistic thinking pattern expecting negative outcomes and seeing little point in effort."},
+        {"abbreviation": "2B.2", "scale_name": "Worthless Self-Image", "num_items": 9, "description": "Deep sense of personal worthlessness and inability to contribute meaningfully."},
+        {"abbreviation": "2B.3", "scale_name": "Temperamentally Woeful", "num_items": 9, "description": "Chronic low-grade sadness and muted capacity for pleasure or joy."},
+        {"abbreviation": "3.1", "scale_name": "Expressively Puerile", "num_items": 9, "description": "Childlike dependency behaviors including helplessness and clinging to others."},
+        {"abbreviation": "3.2", "scale_name": "Interpersonally Submissive", "num_items": 7, "description": "Yielding to others' wishes, avoiding self-assertion, deferring to authority."},
+        {"abbreviation": "3.3", "scale_name": "Inept Self-Image", "num_items": 9, "description": "Viewing oneself as inadequate and incapable of independent functioning."},
+        {"abbreviation": "4A.1", "scale_name": "Expressively Dramatic", "num_items": 7, "description": "Theatrical, attention-seeking emotional displays and exaggerated expressiveness."},
+        {"abbreviation": "4A.2", "scale_name": "Interpersonally Attention-Seeking", "num_items": 10, "description": "Active pursuit of social recognition, praise, and being the center of attention."},
+        {"abbreviation": "4A.3", "scale_name": "Temperamentally Fickle", "num_items": 12, "description": "Rapidly shifting emotions, enthusiasms, and moods with shallow affective range."},
+        {"abbreviation": "4B.1", "scale_name": "Expressively Impetuous", "num_items": 8, "description": "Acting on impulse without forethought, restless energy and spontaneous behavior."},
+        {"abbreviation": "4B.2", "scale_name": "Interpersonally High-Spirited", "num_items": 9, "description": "Gregarious, energetic, and socially engaging with infectious enthusiasm."},
+        {"abbreviation": "4B.3", "scale_name": "Exalted Self-Image", "num_items": 8, "description": "Inflated sense of personal worth, confidence in one's exceptional abilities."},
+        {"abbreviation": "5.1", "scale_name": "Interpersonally Exploitive", "num_items": 9, "description": "Using others instrumentally for personal gain without regard for their needs."},
+        {"abbreviation": "5.2", "scale_name": "Cognitively Expansive", "num_items": 10, "description": "Grandiose thought patterns with inflated sense of one's knowledge and abilities."},
+        {"abbreviation": "5.3", "scale_name": "Admirable Self-Image", "num_items": 8, "description": "Viewing oneself as uniquely talented, special, and deserving of recognition."},
+        {"abbreviation": "6A.1", "scale_name": "Interpersonally Irresponsible", "num_items": 8, "description": "Disregard for social obligations and unreliable in meeting commitments to others."},
+        {"abbreviation": "6A.2", "scale_name": "Autonomous Self-Image", "num_items": 10, "description": "Viewing oneself as independent, self-reliant, and unconstrained by rules or norms."},
+        {"abbreviation": "6A.3", "scale_name": "Acting-Out Dynamics", "num_items": 10, "description": "Externalizing inner tension through impulsive and potentially harmful behaviors."},
+        {"abbreviation": "6B.1", "scale_name": "Expressively Precipitate", "num_items": 11, "description": "Abrupt, forceful actions driven by hostile impulses with little restraint."},
+        {"abbreviation": "6B.2", "scale_name": "Interpersonally Abrasive", "num_items": 7, "description": "Contentious, domineering social style that intimidates and controls others."},
+        {"abbreviation": "6B.3", "scale_name": "Eruptive Architecture", "num_items": 7, "description": "Volatile internal structure prone to sudden aggressive or hostile outbursts."},
+        {"abbreviation": "7.1", "scale_name": "Expressively Disciplined", "num_items": 8, "description": "Controlled, methodical behavior with rigid adherence to routines and procedures."},
+        {"abbreviation": "7.2", "scale_name": "Cognitively Constricted", "num_items": 12, "description": "Narrow, rule-bound thinking with difficulty tolerating ambiguity or novelty."},
+        {"abbreviation": "7.3", "scale_name": "Reliable Self-Image", "num_items": 9, "description": "Viewing oneself as dependable, conscientious, and morally upright."},
+        {"abbreviation": "8A.1", "scale_name": "Expressively Embittered", "num_items": 9, "description": "Resentful, oppositional stance with sullen resistance to expectations."},
+        {"abbreviation": "8A.2", "scale_name": "Discontented Self-Image", "num_items": 11, "description": "Chronic dissatisfaction with life circumstances and sense of being treated unfairly."},
+        {"abbreviation": "8A.3", "scale_name": "Temperamentally Irritable", "num_items": 10, "description": "Easily provoked to anger and frustration with low tolerance for annoyance."},
+        {"abbreviation": "8B.1", "scale_name": "Undeserving Self-Image", "num_items": 12, "description": "Belief that one does not merit happiness or success, accepting mistreatment as justified."},
+        {"abbreviation": "8B.2", "scale_name": "Inverted Architecture", "num_items": 9, "description": "Internal organization that converts positive experiences into negative outcomes."},
+        {"abbreviation": "8B.3", "scale_name": "Temperamentally Dysphoric", "num_items": 9, "description": "Chronic low-grade unhappiness and muted capacity for satisfaction."},
+        {"abbreviation": "S.1", "scale_name": "Cognitively Circumstantial", "num_items": 9, "description": "Tangential, unfocused thinking with loose cognitive associations."},
+        {"abbreviation": "S.2", "scale_name": "Estranged Self-Image", "num_items": 11, "description": "Sense of being fundamentally different from others, disconnected from social world."},
+        {"abbreviation": "S.3", "scale_name": "Chaotic Content", "num_items": 11, "description": "Disorganized inner mental content with bizarre or magical ideation."},
+        {"abbreviation": "C.1", "scale_name": "Uncertain Self-Image", "num_items": 8, "description": "Unstable sense of identity with shifting self-perceptions and values."},
+        {"abbreviation": "C.2", "scale_name": "Split Architecture", "num_items": 11, "description": "Internal division between contradictory self-states and affective polarities."},
+        {"abbreviation": "C.3", "scale_name": "Temperamentally Labile", "num_items": 10, "description": "Rapid, intense mood swings with poor emotional regulation."},
+        {"abbreviation": "P.1", "scale_name": "Expressively Defensive", "num_items": 9, "description": "Guarded, vigilant stance with readiness to counter perceived threats."},
+        {"abbreviation": "P.2", "scale_name": "Cognitively Mistrustful", "num_items": 7, "description": "Suspicious interpretation of others' motives, scanning for hidden meanings."},
+        {"abbreviation": "P.3", "scale_name": "Projection Dynamics", "num_items": 10, "description": "Attributing one's own unacceptable impulses and feelings to others."}
+      ]
+    },
+    {
+      "category": "Noteworthy Responses",
+      "description": "Supplementary scales flagging specific clinical concerns based on item endorsement patterns",
+      "scales": [
+        {"abbreviation": "AD", "scale_name": "Adult ADHD", "num_items": 6, "description": "Items suggesting attentional difficulties, distractibility, and impulsive behavior consistent with adult ADHD."},
+        {"abbreviation": "AS", "scale_name": "Autism Spectrum", "num_items": 7, "description": "Items suggesting social communication difficulties, restricted interests, and sensory sensitivities."},
+        {"abbreviation": "CA", "scale_name": "Childhood Abuse", "num_items": 2, "description": "Direct endorsement of childhood abuse experiences."},
+        {"abbreviation": "EA", "scale_name": "Eating Disorder", "num_items": 4, "description": "Items suggesting disordered eating behaviors including bingeing, purging, or restricting."},
+        {"abbreviation": "EM", "scale_name": "Emotional Dyscontrol", "num_items": 8, "description": "Difficulty managing emotional responses with impulsive or erratic behavior."},
+        {"abbreviation": "EX", "scale_name": "Explosively Angry", "num_items": 6, "description": "Propensity for sudden, intense anger outbursts and aggressive behavior."},
+        {"abbreviation": "HP", "scale_name": "Health Preoccupied", "num_items": 6, "description": "Excessive concern with physical health, somatic complaints, and bodily functioning."},
+        {"abbreviation": "IA", "scale_name": "Interpersonally Alienated", "num_items": 4, "description": "Profound social isolation and disconnection from interpersonal relationships."},
+        {"abbreviation": "PD", "scale_name": "Prescription Drug Abuse", "num_items": 2, "description": "Misuse of prescribed medications including dose escalation or non-prescribed use."},
+        {"abbreviation": "SP", "scale_name": "Self-Destructive Potential", "num_items": 12, "description": "Items suggesting risk for self-harm including suicidal ideation, hopelessness, and despair."},
+        {"abbreviation": "SB", "scale_name": "Self-Injurious Behavior/Tendency", "num_items": 2, "description": "Direct endorsement of deliberate self-injury or self-harm behaviors."},
+        {"abbreviation": "TB", "scale_name": "Traumatic Brain Injury", "num_items": 2, "description": "Endorsement of cognitive and functional difficulties following head injury."},
+        {"abbreviation": "VP", "scale_name": "Vengefully Prone", "num_items": 9, "description": "Tendency toward retaliatory behavior, holding grudges, and seeking revenge for perceived wrongs."}
+      ]
+    }
+  ]
+}

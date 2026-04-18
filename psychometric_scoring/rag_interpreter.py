@@ -19,7 +19,8 @@ class RAGInterpreter:
 
     def __init__(self, templates_dir: str = "./templates",
                  instrument_config: Optional[Dict[str, Any]] = None,
-                 rag_settings: Optional[Dict[str, Any]] = None):
+                 rag_settings: Optional[Dict[str, Any]] = None,
+                 model: Optional[str] = None):
         if instrument_config is None:
             instrument_config = load_instrument_config()
 
@@ -37,6 +38,8 @@ class RAGInterpreter:
         self.instrument_name = self.config['instrument_name']
         self.safety_scales = self.config.get('safety_scales', [])
         self.db_schema = self.config.get('db_schema', 'mmpi3')
+        self.score_prefix = self.config.get('score_prefix', 'T')
+        self.model = model
 
         # Config-driven elevation labels
         self.elevated_labels = get_elevated_labels(self.config)
@@ -48,10 +51,10 @@ class RAGInterpreter:
 
         # RAG query settings (from config.yaml rag_settings)
         rag = rag_settings or {}
-        self.top_k_category = rag.get('top_k_category', 15)
-        self.top_k_integration = rag.get('top_k_integration', 20)
-        self.top_k_treatment = rag.get('top_k_treatment', 20)
-        self.top_k_summary = rag.get('top_k_summary', 10)
+        self.top_k_category = rag.get('top_k_category', 3)
+        # top_k_integration removed — integration uses prior narratives, not RAG
+        # top_k_treatment removed — treatment uses prior narratives, not RAG
+        # top_k_summary removed — summary uses prior narratives, not RAG
 
         # Build categories from config
         self.categories = {}
@@ -93,10 +96,13 @@ class RAGInterpreter:
                 "Ensure the mmpi3 schema has been populated with chunks."
             )
 
-        query_engine = QueryEngine(
+        qe_kwargs = dict(
             vector_store=vector_store,
             templates_dir=self.templates_dir,
         )
+        if self.model:
+            qe_kwargs["model"] = self.model
+        query_engine = QueryEngine(**qe_kwargs)
 
         scale_scores = calc_results["scale_scores"]
 
@@ -122,44 +128,56 @@ class RAGInterpreter:
             )
             narratives[cat_key] = result["answer"]
 
-        # Generate integration narrative
+        # Generate integration narrative (uses prior narratives as context, no RAG retrieval)
         print("  Generating Profile Integration narrative...")
         integration_query = self._build_integration_query(
             scale_scores, client_context
         )
-        result = query_engine.query(
-            query_text=integration_query,
-            action="integrate",
-            template="integration",
-            top_k=self.top_k_integration,
+        prior_context = self._build_prior_narratives_context(narratives)
+        integration_prompt = query_engine._build_prompt(
+            integration_query, prior_context, "integrate", "integration"
         )
-        narratives["integration"] = result["answer"]
+        integration_response = query_engine.client.messages.create(
+            model=query_engine.model,
+            max_tokens=1024,
+            temperature=query_engine.temperature,
+            messages=[{"role": "user", "content": integration_prompt}],
+        )
+        narratives["integration"] = integration_response.content[0].text
 
-        # Generate treatment recommendations
+        # Generate treatment recommendations (uses prior narratives as context, no RAG retrieval)
         print("  Generating Treatment Recommendations...")
         treatment_query = self._build_treatment_query(
             scale_scores, client_context
         )
-        result = query_engine.query(
-            query_text=treatment_query,
-            action="treat",
-            template="treatment",
-            top_k=self.top_k_treatment,
+        treatment_context = self._build_prior_narratives_context(narratives)
+        treatment_prompt = query_engine._build_prompt(
+            treatment_query, treatment_context, "treat", "treatment"
         )
-        narratives["treatment"] = result["answer"]
+        treatment_response = query_engine.client.messages.create(
+            model=query_engine.model,
+            max_tokens=1024,
+            temperature=query_engine.temperature,
+            messages=[{"role": "user", "content": treatment_prompt}],
+        )
+        narratives["treatment"] = treatment_response.content[0].text
 
-        # Generate summary
+        # Generate summary (uses prior narratives as context, no RAG retrieval)
         print("  Generating Summary...")
         summary_query = self._build_summary_query(
             scale_scores, client_context, narratives
         )
-        result = query_engine.query(
-            query_text=summary_query,
-            action="interpret",
-            template="interpretation",
-            top_k=self.top_k_summary,
+        summary_context = self._build_prior_narratives_context(narratives)
+        summary_prompt = query_engine._build_prompt(
+            summary_query, summary_context, "interpret", "interpretation"
         )
-        narratives["summary"] = result["answer"]
+        summary_response = query_engine.client.messages.create(
+            model=query_engine.model,
+            max_tokens=1024,
+            temperature=query_engine.temperature,
+            messages=[{"role": "user", "content": summary_prompt}],
+        )
+        narratives["summary"] = summary_response.content[0].text
 
         return narratives
 
@@ -184,7 +202,7 @@ class RAGInterpreter:
                 lines.append(
                     f"  {scale_abbr} ({s['scale_name']}): "
                     f"Raw={s['raw_score']}/{s['total_items']}, "
-                    f"T={t}, "
+                    f"{self.score_prefix}={t}, "
                     f"Range={s['interpretive_range']}"
                 )
             else:
@@ -207,6 +225,14 @@ class RAGInterpreter:
 
         return "\n".join(lines)
 
+    def _build_prior_narratives_context(self, narratives: Dict[str, str]) -> str:
+        """Build context string from already-generated interpretation narratives."""
+        parts = []
+        for key, text in narratives.items():
+            title = self.categories[key]['title'] if key in self.categories else key.title()
+            parts.append(f"[{title} Interpretation]\n{text}")
+        return "\n\n".join(parts)
+
     def _build_integration_query(
         self,
         scale_scores: Dict[str, Any],
@@ -225,7 +251,7 @@ class RAGInterpreter:
 
         for abbr, s in scale_scores.items():
             t = s.get("t_score_display", s.get("t_score", "N/A"))
-            entry = f"{abbr} (T={t}, {s['interpretive_range']})"
+            entry = f"{abbr} ({self.score_prefix}={t}, {s['interpretive_range']})"
             if s["interpretive_range"] in self.elevated_labels:
                 clinically_elevated.append(entry)
             elif s["interpretive_range"] in self.low_range_labels:
@@ -253,7 +279,7 @@ class RAGInterpreter:
             ]
             if cat_elevated:
                 scores_str = ", ".join(
-                    f"{a}=T{scale_scores[a].get('t_score_display', scale_scores[a].get('t_score', '?'))}"
+                    f"{a}={self.score_prefix}{scale_scores[a].get('t_score_display', scale_scores[a].get('t_score', '?'))}"
                     for a in cat_elevated
                 )
                 lines.append(f"  {cat_info['title']}: {scores_str}")
@@ -277,7 +303,7 @@ class RAGInterpreter:
             if s["interpretive_range"] in self.elevated_labels:
                 t = s.get("t_score_display", s.get("t_score", "N/A"))
                 lines.append(
-                    f"  {abbr} ({s['scale_name']}): T={t}, {s['interpretive_range']}"
+                    f"  {abbr} ({s['scale_name']}): {self.score_prefix}={t}, {s['interpretive_range']}"
                 )
 
         # Flag safety concerns from config-driven safety scales
@@ -286,7 +312,7 @@ class RAGInterpreter:
             if safety_data and safety_data.get("interpretive_range") != self.baseline_label:
                 t = safety_data.get('t_score_display', safety_data.get('t_score', '?'))
                 lines.append(
-                    f"\n** SAFETY NOTE: {safety_abbr} is elevated (T={t}). "
+                    f"\n** SAFETY NOTE: {safety_abbr} is elevated ({self.score_prefix}={t}). "
                     f"Prioritize safety assessment for {safety_data.get('scale_name', safety_abbr)}. **"
                 )
 

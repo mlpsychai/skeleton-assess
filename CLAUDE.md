@@ -1,5 +1,12 @@
 # CLAUDE.md - Project Instructions
 
+## IMPORTANT: External API and Database Calls
+
+- **NEVER** run commands that hit the Anthropic API (e.g., `--interpretive`, RAG queries) without explicitly asking the user for permission first. These cost real money.
+- **NEVER** run commands that write to Neon Postgres (INSERT, DELETE, CREATE) without asking first.
+- Read-only Neon queries (SELECT, COUNT) are OK for verification.
+- Scoring-only runs (without `--interpretive`) are OK — they don't hit external APIs.
+
 ## Git Workflow
 
 - **Remote:** `git@github.com:mlpsychai/skeleton-assess.git`
@@ -31,3 +38,7 @@
 - Known discrepancy: WRM Greg T=8 (ours) vs T=30 (PAR display floor) — not a bug
 - ICN (Inconsistency) not implemented — needs item-pair data from manual
 - Run `python validate_pai.py` to verify scoring against PAR references
+
+## Scribe
+
+At the **start and end of every session**, update `docs/scribe.md` with what you did, what changed, and what's next. Format: date header, bullet points, keep it factual. This log is read by the workspace manager (Janelle) to maintain cross-project awareness. If you made no changes, don't write a fake entry — just skip it.

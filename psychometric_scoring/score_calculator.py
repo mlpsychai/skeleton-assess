@@ -129,19 +129,19 @@ class ScoreCalculator:
                 # Keyed scoring: boolean or Likert forward/reverse
                 elif 'keyed' in item_info:
                     keyed_direction = item_info['keyed']  # "True" or "False" string
-                    if isinstance(response, (int, float)):
+                    if isinstance(response, bool):
+                        # Boolean: keyed match scores 1
+                        if keyed_direction == "True" and response is True:
+                            raw_score += 1
+                        elif keyed_direction == "False" and response is False:
+                            raw_score += 1
+                    elif isinstance(response, (int, float)):
                         # Likert: forward = raw value, reverse = max - value
                         max_val = self.config.get('response_options', {}).get('max_value', 3)
                         if keyed_direction == "True":
                             raw_score += int(response)
                         else:
                             raw_score += max_val - int(response)
-                    else:
-                        # Boolean: keyed match scores 1
-                        if keyed_direction == "True" and response is True:
-                            raw_score += 1
-                        elif keyed_direction == "False" and response is False:
-                            raw_score += 1
                     items_scored += 1
                 else:
                     items_scored += 1
@@ -230,6 +230,19 @@ class ScoreCalculator:
             pairs_scored += 1
             if resp1 is False and resp2 is False:
                 raw_score += -1 if is_bidirectional else 1
+
+        # Inconsistency pairs (MCMI-IV W): +1 when items have different responses
+        for pair in scale_info.get('inconsistency_pairs', []):
+            resp1 = responses.get(pair['item1'])
+            resp2 = responses.get(pair['item2'])
+
+            if resp1 is None or resp2 is None:
+                pairs_missing += 1
+                continue
+
+            pairs_scored += 1
+            if resp1 != resp2:
+                raw_score += 1
 
         total_pairs = pairs_scored + pairs_missing
 

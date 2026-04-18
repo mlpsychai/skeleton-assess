@@ -98,7 +98,7 @@ class QueryEngine:
         # Call Claude API
         response = self.client.messages.create(
             model=self.model,
-            max_tokens=4096,
+            max_tokens=512,
             temperature=self.temperature,
             messages=[
                 {

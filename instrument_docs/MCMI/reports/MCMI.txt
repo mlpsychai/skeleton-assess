@@ -1,0 +1,234 @@
+Prediction of Clinician Ratings
+As discussed in chapter 5, clinicians completed a rating form for each patient participating in the study as part of the MCMI-IV tryout and standardization development phases. On the rating form, clinicians were given a description of the corresponding MCMI-IV personality patterns and clinical syndromes, and were asked to identify whether the patient had been diagnosed with a corresponding DSM diagnosis (when applicable). If the patient did not have a DSM diagnosis in that area, then the clinician was asked to provide a level of dysfunction rating:
+
+None
+Minor — patient presents with only a few traits/symptoms, but none that lead to dysfunction
+Moderate — patient presents with several traits/symptoms, likely affecting daily routines/activities
+Severe — patient presents with many traits/symptoms, likely justifying the formal diagnosis of a clinical disorder
+
+These ratings, in addition to establishing the prevalence rates used for creating BR scores (see chapter 5), were also used to evaluate the diagnostic efficiency of the MCMI-IV scale scores.
+Sensitivity and specificity are two diagnostic validity statistics that describe how a test performs. Figure 6.1 represents the possible outcomes of comparing predictor/test results (represented by columns) and diagnostic/classification results (represented by rows). Sensitivity is computed as a ÷ (a + b) and specificity is computed as d ÷ (c + d). Sensitivity tells us the probability that someone who has the condition will test positive for it. Specificity tells us the probability that someone who does not have the condition will test negative.
++–DiagnosisabNo Diagnosiscd
+Figure 6.1 Possible Test Outcomes of Positive Predictive Power (+) and Negative Predictive Power (–)
+Two additional diagnostic validity statistics are positive predictive power (PPP) and negative predictive power (NPP). PPP is calculated using the formula:
+PPP = (a × br) ÷ [(a × br) + (1 – br) × c]
+where a and c represent the frequencies indicated in Figure 6.1, and br = base rate. PPP is interpreted as the likelihood that a person with a positive test result actually has the disorder.
+NPP is calculated using the formula:
+NPP = [d × (1 – br)] ÷ [(d × (1 – br)) + (b × br)]
+and is interpreted as the likelihood that someone with a negative test result actually does not have the disorder. A PPP = 1 indicates no false positives, while PPP = 0.5 indicates a 50% false positive rate. Similarly, an NPP = 1 indicates no false negatives, whereas an NPP = 0.5 indicates a 50% false negative rate.
+Sensitivity and specificity values are independent of the base rate of an underlying disorder; however, PPP and NPP are not. This means sensitivity and specificity provide overall summary statistics of how well the test can classify, even though this overall summary can be misleading for specific base rates. For example, a test might have both high sensitivity and specificity, yet still have a large false positive rate for conditions with high base rates. As such, it can be helpful to present PPP and NPP for varying prevalence rates of disorders given differences that can occur across different clinical settings (e.g., a general mental health facility, a specialized clinic for depressive disorders).
+Table 6.8 presents diagnostic validity statistics for the MCMI-IV Personality Pattern and Clinical Syndrome scales, using the 934 ratings obtained for establishing the prevalence rates discussed in chapter 5. For purposes of this analysis, patients were identified as positive if they had a DSM–5 diagnosis for the corresponding personality pattern or clinical syndrome, or received a Severe dysfunction rating by the clinician. The MCMI-IV scale cut score used in the analysis was a BR of 75 or higher, which is consistent with MCMI-IV interpretation rules for establishing a disorder based on dysfunctional personality traits.
+MCMI-IV ■ Chapter 6 ■ Reliability and Validity
+
+
+Table 6.8 Diagnostic Validity Statistics of the MCMI-IV Personality Pattern and Clinical Syndrome Scales
+MCMI-IV ScaleSensitivitySpecificityPredictive Power5%10%15%20%30%50%Clinical Personality Patterns1 Schizoid.50.84PPP.14.26.35.44.57.75NPP.97.94.90.87.80.632A Avoidant.68.65PPP.09.18.26.33.46.66NPP.98.95.92.89.83.672B Melancholic.70.72PPP.12.22.30.38.52.71NPP.98.96.93.91.85.713 Dependent.56.75PPP.11.20.29.36.49.69NPP.97.94.91.87.80.634A Histrionic.33.81PPP.08.16.23.30.42.63NPP.96.92.87.83.74.554B Turbulent.63.87PPP.21.36.47.55.68.83NPP.98.95.93.90.84.705 Narcissistic.50.83PPP.13.25.34.42.56.75NPP.97.94.90.87.79.626A Antisocial.49.87PPP.17.30.40.49.62.79NPP.97.94.91.87.80.636B Sadistic.43.89PPP.18.31.42.50.64.80NPP.97.94.91.87.80.637 Compulsive.30.84PPP.09.17.24.31.44.65NPP.97.93.90.86.79.618A Negativistic.58.71PPP.10.18.26.34.46.67NPP.97.94.91.87.80.638B Masochistic.22.85PPP.07.14.20.26.38.59NPP.95.91.86.81.72.52Severe Personality PathologyS Schizotypal.31.91PPP.15.27.37.45.59.77NPP.96.92.88.84.75.57C Borderline.46.82PPP.12.22.31.39.52.72NPP.97.93.90.86.78.60P Paranoid.40.80PPP.09.18.26.33.46.66NPP.96.92.88.84.76.57Clinical SyndromesA Generalized Anxiety.72.48PPP.07.13.19.26.37.58NPP.97.94.91.87.80.63H Somatic Symptom.51.75PPP.10.18.26.34.47.67NPP.97.93.90.86.78.60N Bipolar Spectrum.58.79PPP.13.24.33.41.55.74NPP.97.94.91.88.81.65D Persistent Depression.44.82PPP.12.22.31.39.52.72NPP.97.93.89.86.78.60B Alcohol Use.68.83PPP.17.30.41.49.63.80NPP.98.96.94.91.86.72T Drug Use.72.90PPP.27.44.55.64.75.87NPP.98.97.95.93.88.76R Post-Traumatic Stress.62.83PPP.16.29.39.47.61.78NPP.98.95.93.90.84.69
+MCMI-IV ■ Chapter 6 ■ Reliability and Validity
+
+Table 6.8 Diagnostic Validity Statistics of the MCMI-IV Personality Pattern and Clinical Syndrome Scales (continued)
+MCMI-IV ScaleSensitivitySpecificityPredictive Power5%10%15%20%30%50%Severe Clinical SyndromesSS Schizophrenic Spectrum.33.95PPP.24.40.52.60.72.86NPP.96.93.89.85.77.59CC Major Depression.83.67PPP.12.22.31.39.52.72NPP.99.97.96.94.90.80PP Delusional.50.94PPP.31.48.60.68.78.89NPP.97.94.91.88.81.65
+PPP and NPP values for six different prevalence rates (5%, 10%, 15%, 20%, 30%, and 50%) are provided in the table, encompassing the variability in the prevalence rates across the personality patterns and clinical syndromes reported by the MCMI-IV scales. Sensitivity values are above .50 for 15 of 25 scales (the threshold for having a 50% or greater probability that a person with an elevated score will test positive for the underlying condition). Specificity values are all acceptable, and are higher than sensitivity values. As evidenced in the table, PPP values increase as the prevalence rate increases, while NPP values decrease as the prevalence rate increases (see Glaros & Kline, 1988, for a further discussion of this relationship).
+
+Appendix A: Item Content:
+
+
+1. Lately, my strength seems to be draining out of me, even in the morning.
+I always make sure that my work is well planned and organized.
+I enjoy doing so many different things that I can't make up my mind what to do first.
+I'm concerned that people I depend on will leave me.
+Although I'm afraid to make friendships, I wish I had more than I do.
+What few feelings I seem to have, I rarely show to the outside world.
+I have a hard time keeping my balance when walking.
+I'm always looking for opportunities that are exciting and new for me.
+Sometimes I can be pretty rough and mean in my relations with my family.
+I like being the center of attention.
+As a teenager, I got into lots of trouble because of bad school behavior.
+I'm afraid to get really close to another person because it may end up with my being ridiculed or shamed.
+I can tell that people are talking about me when I pass by them.
+I began to feel like a failure some years ago.
+When I have a choice, I prefer to do things alone.
+Lately, I have begun to feel like smashing things.
+Things that are going well today won't last very long.
+I sometimes feel crazy-like or unreal when things start to go badly in my life.
+I do what I want without worrying about its effect on others.
+I approach my daily activities with lots of energy and persistence.
+I never forgive an insult or forget an embarrassment someone has caused me.
+I feel terribly depressed and sad much of the time now.
+I tend to always blame myself when things go wrong.
+A long time ago, I decided it's best to have little to do with people.
+I have an alcohol problem that has made difficulties for me and my family.
+I'm a very socially inhibited and shy person.
+There are many times when, for no reason, I feel very cheerful and full of excitement.
+In recent weeks, I feel worn out for no special reason.
+My time is more valuable than others'.
+I am always looking to make new friends and meet new people.
+I've become very jumpy in the last few weeks.
+I just haven't had the luck in life that others have had.
+Ideas keep turning over and over in my mind and they won't go away.
+I've become quite discouraged and sad about life in the past year or two.
+I try to make everything I do as perfect as possible.
+My habit of abusing drugs has caused me to miss work in the past.
+My moods seem to change a great deal from one day to the next.
+I use my charm to get my way.
+I often think that I don't deserve the good things that happen to me.
+I have cut or hurt myself in the past on purpose.
+I can't seem to sleep, and wake just as tired as when I went to bed.
+I often let others make important decisions for me.
+Nothing much that happens seems to make me either sad or happy.
+I keep having strange thoughts that I wish I could get rid of.
+I have a great deal of trouble trying to control an impulse to drink in excess.
+I make friends much more easily than most people I know.
+I'm ashamed of some of the abuses I suffered when I was young.
+I think highly of rules because they are a good guide to follow.
+I was on the front cover of several magazines last year.
+I often get angry with people who do things slowly.
+I spend my life worrying over one thing or another.
+I always wonder what the real reason is when someone is acting especially nice to me.
+I'm animated and inspired by my daily activities.
+I have many ideas that are ahead of the times.
+I can no longer concentrate on anything since I experienced serious concussions.
+People have said in the past that I became too interested and too excited about too many things.
+I have completely lost my appetite and have trouble sleeping most nights.
+Ever since I was a child, I have been losing touch with the real world.
+I can't experience much pleasure because I don't feel I deserve it.
+I prefer being told what to do rather than having to decide for myself.
+My use of so-called "illegal" drugs has led to family arguments.
+The memory of a very upsetting experience in my past keeps coming back to haunt my thoughts.
+I'm considered by most to be a prudent and careful person.
+I seem to have lost interest in most things that I used to find pleasurable, such as sex.
+I've gotten into trouble with the law a couple of times.
+I have had to be really rough with some people to keep them in line.
+I am very confident.
+People are trying to make me believe that I'm crazy.
+I go on eating binges a couple of times a week.
+I frequently feel there's nothing inside me, like I'm empty and hollow.
+I've always had a hard time stopping myself from feeling blue and unhappy.
+When I'm alone and away from home, I often begin to feel tense and panicky.
+People tell me that I'm a very proper and moral person.
+I have difficulty controlling my anger.
+I'm a very optimistic person.
+Years later, I still have nightmares about an event that was a real threat to my life.
+I seem to need a lot of advice to get things done.
+I have given serious thought recently to doing away with myself.
+Sneaky people try to get credit for things I've done or thought of.
+Lately, I've gone all to pieces.
+Taking so-called "illegal" drugs may be unwise, but in the past I've found I needed them.
+I'm a very erratic person, changing my mind and feelings all the time.
+I'm very good at making up excuses when I get into trouble.
+I never sit on the sidelines when I'm at a party.
+I seem to make a mess of good opportunities that come my way.
+I sometimes force myself to vomit after eating.
+I'm a special person, so I don't care what others think.
+I watch my family closely so I'll know who can and who can't be trusted.
+There are certain thoughts that keep coming back again and again in my mind.
+Few things in life give me pleasure.
+I feel shaky and have difficulty falling asleep because painful memories of a past event keep running through my mind.
+I often get lost in my thoughts and forget what's going on around me.
+I've never been able to shake the feeling that I'm worthless to others.
+I have a drinking problem that I've tried unsuccessfully to end.
+95. Someone has been trying to control my mind.
+All four columns clear. Here's PDF Page 4 (Book pages 88–89) — Appendix A: Item Content (continued):
+
+
+Most successful people have either been lucky or dishonest.
+I often make people angry by bossing them.
+I have not seen a car in the last 10 years.
+I always feel self-conscious and tense at social gatherings.
+I seem to create situations in which I get hurt or feel rejected.
+I feel deeply depressed for no reason I can figure out.
+People say I'm a thin person, but I feel that my thighs and backside are much too big.
+I often enjoy starting an argument or a fight.
+I take great care to keep my life private so no one can take advantage of me.
+My drug habits have often gotten me into a good deal of trouble in the past.
+I often get blamed for things I am not responsible for.
+Looking ahead as each day begins makes me feel terribly depressed.
+People sometimes get annoyed with me because they say I talk too much or too fast for them.
+I could never handle the world on my own.
+My brain just hasn't functioned properly since injuries it received in recent years.
+I feel lonely and empty most of the time.
+People make fun of me behind my back.
+Lately, I've been sweating a great deal and feel very tense.
+In recent weeks, my mood has become increasingly sad.
+I blow up angrily very fast at people who bother me.
+There are times when I couldn't get through the day without some street drugs.
+I like to flirt a lot.
+I don't have the energy to concentrate on my everyday responsibilities anymore.
+My emotions don't seem to be as strong as other people's.
+I feel weak and tired much of the time.
+Strange ideas from outside keep turning over in my mind and they won't go away.
+Others get breaks that I don't.
+I repeat certain behaviors again and again, sometimes to reduce my anxiety and sometimes to stop something bad from happening.
+I have taken prescription medication that was not meant for me.
+My current life is still upset by flashbacks of something terrible that happened to me.
+I often ruin the good things that happen to me.
+Evil voices are trying to take over my mind.
+I feel very guilty when I lose my temper.
+My enthusiasm for the work I do never really diminishes.
+I guess I'm no different from my parents in becoming somewhat of an alcoholic.
+Lately, I have had to think things over and over again for no good reason.
+I encourage people to admire the things I say or do.
+I give up doing things when I have to do them alone.
+I have tried to commit suicide.
+I am a fearful and inhibited person.
+People who are supposed to be my friends would like to do me harm.
+I often let my angry feelings out and then feel very guilty about it.
+I very often hear things so well that it bothers me.
+Other than my family, I have very few close relationships.
+Disorganization makes me feel very uncomfortable.
+I often criticize people strongly if they annoy me.
+I have many talents that others wish they had.
+There are terrible events from my past that come back repeatedly to haunt my thoughts and dreams.
+I know I've spent more money than I should buying illegal drugs.
+Before I know it, I often start shouting angrily at friends and family.
+It bothers me that my body gets worn out very quickly.
+It's all right to get around the law if you're not likely to get caught.
+I believe I'm being plotted against.
+I'm a loner and I don't mind it.
+I still feel terrified when I think of a traumatic experience I had years ago.
+For some time now, I've been feeling very guilty because I can't do things right anymore.
+Punishment never stopped me from doing what I wanted.
+I rarely believe what people tell me.
+I'm a very sociable and outgoing person.
+I've become enthusiastic about almost anything I do.
+I am confused about who I am.
+I hate to think about some of the ways I was abused as a child.
+I would never break the law, even if I could get away with it.
+There are members of my family who say I'm selfish and think only of myself.
+I flew across the Atlantic 30 times last year.
+Drinking alcohol helps when I'm feeling down.
+I would much rather follow someone than be the leader.
+Ideas often race through my mind much faster than I can speak them.
+I often get so upset that I want to hurt myself seriously.
+Some people say I'm a strange or odd person.
+Sometimes I find comfort in my misery.
+I often find that I've been treated unfairly.
+I quickly show my anger at people who disagree with me.
+I feel guilty much of the time and often don't know why.
+I've been feeling sad and blue and can't seem to snap out of it.
+I know how to charm people.
+I have always had to watch out for people who are trying to cheat me.
+I'm always willing to go along with what others would like to do.
+I approach all of life's challenges with a bold and vigorous attitude.
+I never feel like I have anything worthwhile to contribute to a conversation.
+If a medication is not helping me, I may take it more frequently or increase the dose.
+I've had many periods in my life when I was so cheerful and used up so much energy that I fell into a low mood.
+I often feel very unhappy with who I am.
+I don't like to change my routine.
+I don't need to have close friendships like other people do.
+Physically hurting myself has sometimes brought me comfort.
+Many people have been spying into my private life for years.
+I'm pretty good at deceiving people when I want to.
+Even in good times, I've always been afraid that things would soon go bad.
+I am very good at inspiring and energizing others.
+I'm willing to starve myself to be even thinner than I am.
+I am often irritable and short-tempered.
+I always try to finish my work before taking time out for leisure activities.
+People would have to be exceptional themselves to understand my abilities.
+I really don't understand human feelings like other people do.
+Too many rules get in the way of doing what I want.
+I sometimes feel I deserve to be unhappy.
+I've been downhearted and sad much of my life.
+I tend to go along with others' opinions.
+195. I avoid most social situations because I expect people will reject me.
+
+

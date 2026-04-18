@@ -28,7 +28,7 @@ DEFAULT_TOP_K = 10
 DEFAULT_TEMPERATURE = 0.7
 
 # Claude model
-DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-5"
+DEFAULT_CLAUDE_MODEL = "claude-haiku-4-5-20251001"
 
 # Document types
 DOCUMENT_TYPES = {

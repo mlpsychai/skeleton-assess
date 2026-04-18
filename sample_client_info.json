@@ -1,0 +1,22 @@
+{
+  "client_info": {
+    "client_name": "Gregory Grinch",
+    "dob": "1982-04-12",
+    "age": 46,
+    "sex": "Male",
+    "education": "N.A.",
+    "marital_status": "Single",
+    "referral_source": "Court Referred",
+    "referral_question": "Evaluate current personality functioning and emotional adjustment following criminal charges for breaking and entering and vandalism.",
+    "background": "Client is a 46-year-old single male referred by the Whoville superior court for client evaluation following criminal charges for breaking and entering as well as vandalism.",
+    "examiner_name": "Sean Mapoles",
+    "examiner_credentials": "MA, Doctoral Student in Clinical Psychology",
+    "supervisor_name": "Dr. Melanie Whetstine",
+    "supervisor_credentials": "PhD, Licensed Clinical Psychologist",
+    "setting": "University training clinic"
+  },
+  "test_info": {
+    "test_id": "MMPI3",
+    "test_date": "2026-02-18"
+  }
+}

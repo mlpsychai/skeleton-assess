@@ -6,6 +6,8 @@
   "num_items": 344,
   "response_type": "likert",
   "response_format": "0-3 Likert scale (F=0, ST=1, MT=2, VT=3)",
+  "score_label": "T-Score",
+  "score_prefix": "T",
   "administration_format": "standard paper-and-pencil format",
   "norms": "Census-Matched Standardization Sample",
   "db_schema": "personality_assessment_inventory",

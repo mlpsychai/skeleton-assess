@@ -43,7 +43,7 @@ The project includes two local packages (no external installation needed beyond 
 ### Two Configuration Layers
 
 1. **`instrument_config.json`** — defines the instrument (scales, items, cutoffs, formatting)
-2. **`config.yaml`** — defines the RAG system (query settings like top_k values)
+2. **`config.yaml`** — defines the RAG system (embedding model, connection settings). Token optimization settings (`top_k`, `max_tokens`) are in `rag_interpreter.py` and `query_engine.py`
 
 ---
 
@@ -440,10 +440,11 @@ Interactive standalone HTML files with:
 ### DOCX Reports
 
 Microsoft Word documents with:
-- APA-formatted tables
+- APA 7th edition formatted tables (horizontal rules only, no vertical borders, no cell shading)
 - Embedded PNG chart images (requires Playwright + Chromium)
 - Validity assessment with color-coded status
 - Scale tables with highlighted elevations
+- Interpretive narratives (per-category, integration, treatment, summary) when `--interpretive` is used
 - Summary section with elevated scale listing
 
 If Playwright is not installed, DOCX reports generate without charts and include a note suggesting the HTML format for visualizations.
@@ -483,13 +484,24 @@ Narrative generation uses API calls. To avoid repeated calls during development:
 python main.py --score-file test.csv --interpretive --cached-narratives narratives.json --format html
 ```
 
+### Narrative Generation Architecture
+
+The interpretive report generates narratives in a chained sequence to minimize API token usage:
+
+1. **Interpretation** (per-category) — the only step that retrieves chunks from Neon pgvector (`top_k=3`). Generates clinical narratives grounded in textbook context.
+2. **Integration** — synthesizes the already-generated interpretation narratives into a unified clinical picture. No vector retrieval; uses prior narratives as context.
+3. **Treatment** — generates evidence-based recommendations from prior narratives. No vector retrieval.
+4. **Summary** — condenses all prior narratives into a concise closing paragraph. No vector retrieval.
+
+Output tokens are capped at 512 for interpretation and 1024 for integration/treatment/summary.
+
 ### Customizing Prompt Templates
 
-Edit the templates in `templates/actions/`:
+Edit the templates in `templates/<instrument>/actions/`:
 
-- **`interpretation.txt`** — per-category clinical narrative generation
-- **`integration.txt`** — cross-scale profile integration
-- **`treatment.txt`** — treatment recommendations
+- **`interpretation.txt`** — per-category clinical narrative generation (uses RAG context from Neon)
+- **`integration.txt`** — cross-scale profile integration (uses prior narratives as context)
+- **`treatment.txt`** — treatment recommendations (uses prior narratives as context)
 - **`query.txt`** — general RAG queries
 - **`summarize.txt`** — document summarization
 - **`synthesize.txt`** — cross-document synthesis
@@ -630,7 +642,7 @@ Item columns must be numbered sequentially starting from `item_1` up to `item_N`
 
 - Ensure the Neon `mmpi3.chunks` table contains relevant clinical content with embeddings
 - Check that `DATABASE_URL` in `.env` points to the correct Neon instance
-- Try adjusting `top_k_category` / `top_k_integration` values in `config.yaml`
+- The `top_k_category` default (3) can be adjusted in `psychometric_scoring/rag_interpreter.py` if more or fewer chunks are needed for interpretation context
 
 ### Import errors for `rag_core`
 

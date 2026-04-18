@@ -7,10 +7,13 @@ Embeds ECharts-rendered PNGs via chart_renderer + Playwright.
 All instrument-specific values are read from instrument_config.json.
 """
 
+import re
 import tempfile
 from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml.ns import qn, nsdecls
+from docx.oxml import parse_xml
 from pathlib import Path
 from typing import Dict, Any, Optional
 from datetime import datetime
@@ -62,9 +65,51 @@ class ReportGenerator:
         except Exception:
             pass
 
+    def _apply_apa_table_style(self, table):
+        """Apply APA 7th edition table formatting: horizontal rules only."""
+        # Remove all existing borders
+        tbl = table._tbl
+        tbl_pr = tbl.tblPr if tbl.tblPr is not None else parse_xml(f'<w:tblPr {nsdecls("w")}/>')
+
+        # Set table-level borders: no vertical, horizontal only at top/bottom
+        borders_xml = f'''
+            <w:tblBorders {nsdecls("w")}>
+                <w:top w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                <w:bottom w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                <w:left w:val="none" w:sz="0" w:space="0" w:color="000000"/>
+                <w:right w:val="none" w:sz="0" w:space="0" w:color="000000"/>
+                <w:insideH w:val="none" w:sz="0" w:space="0" w:color="000000"/>
+                <w:insideV w:val="none" w:sz="0" w:space="0" w:color="000000"/>
+            </w:tblBorders>
+        '''
+        tbl_pr.append(parse_xml(borders_xml))
+
+        # Add bottom border to header row (row 0)
+        if len(table.rows) > 0:
+            for cell in table.rows[0].cells:
+                tc_pr = cell._tc.get_or_add_tcPr()
+                cell_borders = parse_xml(f'''
+                    <w:tcBorders {nsdecls("w")}>
+                        <w:bottom w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+                    </w:tcBorders>
+                ''')
+                tc_pr.append(cell_borders)
+                # Bold header text
+                for paragraph in cell.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.bold = True
+
+        # Remove all cell shading
+        for row in table.rows:
+            for cell in row.cells:
+                tc_pr = cell._tc.get_or_add_tcPr()
+                shading = parse_xml(f'<w:shd {nsdecls("w")} w:fill="FFFFFF" w:val="clear"/>')
+                tc_pr.append(shading)
+
     def generate_report(self, calculation_results: Dict[str, Any],
                        validation_report: Dict[str, Any],
-                       output_path: str) -> str:
+                       output_path: str,
+                       narratives: Optional[Dict[str, str]] = None) -> str:
         """
         Generate a formatted .docx report.
 
@@ -72,11 +117,13 @@ class ReportGenerator:
             calculation_results: Results from ScoreCalculator
             validation_report: Results from ScoreValidator
             output_path: Path for output .docx file
+            narratives: Optional dict of narrative strings keyed by category
 
         Returns:
             Path to generated report
         """
         doc = Document()
+        is_interpretive = narratives and any(narratives.values())
 
         # Set default font
         style = doc.styles['Normal']
@@ -85,7 +132,8 @@ class ReportGenerator:
         font.size = Pt(11)
 
         # Title
-        title = doc.add_heading(f'{self.instrument_name} Score Report', 0)
+        report_type = "Interpretive Report" if is_interpretive else "Score Report"
+        title = doc.add_heading(f'{self.instrument_name} {report_type}', 0)
         title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
         # Test Information Section
@@ -100,9 +148,24 @@ class ReportGenerator:
         # Data-driven loop over substantive categories
         for category in self.substantive_categories:
             self._add_scale_section(doc, calculation_results, category['title'], category['scales'])
+            # Add per-category narrative after the table
+            if narratives and category.get('key') in narratives:
+                self._add_narrative(doc, narratives[category['key']])
+
+        # Profile Integration
+        if narratives and 'integration' in narratives:
+            self._add_narrative_section(doc, 'Profile Integration', narratives['integration'])
+
+        # Treatment Recommendations
+        if narratives and 'treatment' in narratives:
+            self._add_narrative_section(doc, 'Treatment Recommendations', narratives['treatment'])
 
         # Summary Section
         self._add_summary(doc, calculation_results)
+
+        # Narrative Summary
+        if narratives and 'summary' in narratives:
+            self._add_narrative(doc, narratives['summary'])
 
         # Profile Graphs (ECharts via Playwright)
         self._add_profile_graphs(doc, calculation_results)
@@ -125,7 +188,7 @@ class ReportGenerator:
         doc.add_heading('Test Information', 1)
 
         table = doc.add_table(rows=4, cols=2)
-        table.style = self.docx_table_style
+        self._apply_apa_table_style(table)
 
         cells = table.rows[0].cells
         cells[0].text = 'Test ID'
@@ -198,13 +261,13 @@ class ReportGenerator:
             return
 
         table = doc.add_table(rows=len(available_scales) + 1, cols=5)
-        table.style = self.docx_table_style
+        self._apply_apa_table_style(table)
 
         # Header row
         header = table.rows[0].cells
         header[0].text = 'Scale'
         header[1].text = 'Raw Score'
-        header[2].text = 'T-Score'
+        header[2].text = self.config.get('score_label', 'T-Score')
         header[3].text = 'Items Scored'
         header[4].text = 'Interpretation'
 
@@ -243,6 +306,38 @@ class ReportGenerator:
         p.add_run(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).italic = True
 
         doc.add_paragraph()
+
+    def _clean_narrative_text(self, text: str) -> str:
+        """Clean markdown artifacts from LLM-generated narrative text."""
+        lines = text.strip().split('\n')
+        cleaned = []
+        for line in lines:
+            stripped = line.strip()
+            # Skip markdown headings
+            if re.match(r'^#{1,3}\s', stripped):
+                continue
+            # Strip bold markers
+            stripped = re.sub(r'\*\*(.+?)\*\*', r'\1', stripped)
+            # Strip bullet markers
+            stripped = re.sub(r'^\s*-\s+', '', stripped)
+            cleaned.append(stripped)
+        return '\n'.join(cleaned)
+
+    def _add_narrative(self, doc, narrative_text: str):
+        """Add narrative paragraphs to the document."""
+        cleaned = self._clean_narrative_text(narrative_text)
+        paragraphs = cleaned.strip().split('\n\n')
+        for para_text in paragraphs:
+            text = para_text.strip().replace('\n', ' ')
+            if text:
+                p = doc.add_paragraph(text)
+                p.paragraph_format.space_after = Pt(6)
+        doc.add_paragraph()
+
+    def _add_narrative_section(self, doc, heading: str, narrative_text: str):
+        """Add a headed narrative section (integration, treatment, etc.)."""
+        doc.add_heading(heading, 1)
+        self._add_narrative(doc, narrative_text)
 
     def _add_profile_graphs(self, doc, calc_results):
         """Add profile graphs using ECharts PNGs rendered via Playwright."""
@@ -319,7 +414,7 @@ class ReportGenerator:
 
         num_rows = max(len(left), len(right)) + 1
         table = doc.add_table(rows=num_rows, cols=4)
-        table.style = self.docx_table_style
+        self._apply_apa_table_style(table)
 
         # Header row
         header = table.rows[0].cells

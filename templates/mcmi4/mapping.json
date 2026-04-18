@@ -1,0 +1,6025 @@
+{
+  "scales": {
+    "V": {
+      "scale_name": "Validity",
+      "items": [
+        {
+          "item": 49,
+          "keyed": "True"
+        },
+        {
+          "item": 98,
+          "keyed": "True"
+        },
+        {
+          "item": 160,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 3
+    },
+    "W": {
+      "scale_name": "Inconsistency",
+      "scale_type": "item_pairs",
+      "inconsistency_pairs": [
+        {
+          "item1": 22,
+          "item2": 170
+        },
+        {
+          "item1": 125,
+          "item2": 143
+        },
+        {
+          "item1": 47,
+          "item2": 157
+        },
+        {
+          "item1": 40,
+          "item2": 181
+        },
+        {
+          "item1": 81,
+          "item2": 116
+        },
+        {
+          "item1": 85,
+          "item2": 126
+        },
+        {
+          "item1": 76,
+          "item2": 150
+        },
+        {
+          "item1": 25,
+          "item2": 94
+        },
+        {
+          "item1": 44,
+          "item2": 121
+        },
+        {
+          "item1": 39,
+          "item2": 59
+        },
+        {
+          "item1": 17,
+          "item2": 184
+        },
+        {
+          "item1": 33,
+          "item2": 89
+        },
+        {
+          "item1": 78,
+          "item2": 164
+        },
+        {
+          "item1": 38,
+          "item2": 171
+        },
+        {
+          "item1": 74,
+          "item2": 115
+        },
+        {
+          "item1": 46,
+          "item2": 154
+        },
+        {
+          "item1": 26,
+          "item2": 99
+        },
+        {
+          "item1": 20,
+          "item2": 174
+        },
+        {
+          "item1": 32,
+          "item2": 122
+        },
+        {
+          "item1": 13,
+          "item2": 112
+        },
+        {
+          "item1": 55,
+          "item2": 110
+        },
+        {
+          "item1": 173,
+          "item2": 194
+        },
+        {
+          "item1": 95,
+          "item2": 127
+        },
+        {
+          "item1": 60,
+          "item2": 162
+        },
+        {
+          "item1": 15,
+          "item2": 149
+        }
+      ],
+      "item_count": 25
+    },
+    "X": {
+      "scale_name": "Disclosure",
+      "items": [
+        {
+          "item": 2,
+          "keyed": "True"
+        },
+        {
+          "item": 4,
+          "keyed": "True"
+        },
+        {
+          "item": 5,
+          "keyed": "True"
+        },
+        {
+          "item": 6,
+          "keyed": "True"
+        },
+        {
+          "item": 8,
+          "keyed": "True"
+        },
+        {
+          "item": 9,
+          "keyed": "True"
+        },
+        {
+          "item": 10,
+          "keyed": "True"
+        },
+        {
+          "item": 11,
+          "keyed": "True"
+        },
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 15,
+          "keyed": "True"
+        },
+        {
+          "item": 16,
+          "keyed": "True"
+        },
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 19,
+          "keyed": "True"
+        },
+        {
+          "item": 20,
+          "keyed": "True"
+        },
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 22,
+          "keyed": "True"
+        },
+        {
+          "item": 23,
+          "keyed": "True"
+        },
+        {
+          "item": 24,
+          "keyed": "True"
+        },
+        {
+          "item": 26,
+          "keyed": "True"
+        },
+        {
+          "item": 29,
+          "keyed": "True"
+        },
+        {
+          "item": 30,
+          "keyed": "True"
+        },
+        {
+          "item": 32,
+          "keyed": "True"
+        },
+        {
+          "item": 35,
+          "keyed": "True"
+        },
+        {
+          "item": 36,
+          "keyed": "True"
+        },
+        {
+          "item": 37,
+          "keyed": "True"
+        },
+        {
+          "item": 38,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 42,
+          "keyed": "True"
+        },
+        {
+          "item": 43,
+          "keyed": "True"
+        },
+        {
+          "item": 46,
+          "keyed": "True"
+        },
+        {
+          "item": 48,
+          "keyed": "True"
+        },
+        {
+          "item": 50,
+          "keyed": "True"
+        },
+        {
+          "item": 51,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 53,
+          "keyed": "True"
+        },
+        {
+          "item": 54,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "True"
+        },
+        {
+          "item": 60,
+          "keyed": "True"
+        },
+        {
+          "item": 63,
+          "keyed": "True"
+        },
+        {
+          "item": 65,
+          "keyed": "True"
+        },
+        {
+          "item": 66,
+          "keyed": "True"
+        },
+        {
+          "item": 67,
+          "keyed": "True"
+        },
+        {
+          "item": 70,
+          "keyed": "True"
+        },
+        {
+          "item": 71,
+          "keyed": "True"
+        },
+        {
+          "item": 72,
+          "keyed": "True"
+        },
+        {
+          "item": 73,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 75,
+          "keyed": "True"
+        },
+        {
+          "item": 77,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "True"
+        },
+        {
+          "item": 87,
+          "keyed": "True"
+        },
+        {
+          "item": 88,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 96,
+          "keyed": "True"
+        },
+        {
+          "item": 97,
+          "keyed": "True"
+        },
+        {
+          "item": 99,
+          "keyed": "True"
+        },
+        {
+          "item": 100,
+          "keyed": "True"
+        },
+        {
+          "item": 103,
+          "keyed": "True"
+        },
+        {
+          "item": 105,
+          "keyed": "True"
+        },
+        {
+          "item": 106,
+          "keyed": "True"
+        },
+        {
+          "item": 109,
+          "keyed": "True"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 112,
+          "keyed": "True"
+        },
+        {
+          "item": 115,
+          "keyed": "True"
+        },
+        {
+          "item": 117,
+          "keyed": "True"
+        },
+        {
+          "item": 119,
+          "keyed": "True"
+        },
+        {
+          "item": 120,
+          "keyed": "True"
+        },
+        {
+          "item": 122,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 128,
+          "keyed": "True"
+        },
+        {
+          "item": 129,
+          "keyed": "True"
+        },
+        {
+          "item": 132,
+          "keyed": "True"
+        },
+        {
+          "item": 133,
+          "keyed": "True"
+        },
+        {
+          "item": 135,
+          "keyed": "True"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "True"
+        },
+        {
+          "item": 140,
+          "keyed": "True"
+        },
+        {
+          "item": 141,
+          "keyed": "True"
+        },
+        {
+          "item": 142,
+          "keyed": "True"
+        },
+        {
+          "item": 145,
+          "keyed": "True"
+        },
+        {
+          "item": 147,
+          "keyed": "True"
+        },
+        {
+          "item": 149,
+          "keyed": "True"
+        },
+        {
+          "item": 152,
+          "keyed": "True"
+        },
+        {
+          "item": 154,
+          "keyed": "True"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "True"
+        },
+        {
+          "item": 158,
+          "keyed": "True"
+        },
+        {
+          "item": 159,
+          "keyed": "True"
+        },
+        {
+          "item": 162,
+          "keyed": "True"
+        },
+        {
+          "item": 164,
+          "keyed": "True"
+        },
+        {
+          "item": 166,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 169,
+          "keyed": "True"
+        },
+        {
+          "item": 170,
+          "keyed": "True"
+        },
+        {
+          "item": 171,
+          "keyed": "True"
+        },
+        {
+          "item": 172,
+          "keyed": "True"
+        },
+        {
+          "item": 173,
+          "keyed": "True"
+        },
+        {
+          "item": 174,
+          "keyed": "True"
+        },
+        {
+          "item": 175,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 179,
+          "keyed": "True"
+        },
+        {
+          "item": 180,
+          "keyed": "True"
+        },
+        {
+          "item": 183,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        },
+        {
+          "item": 185,
+          "keyed": "True"
+        },
+        {
+          "item": 187,
+          "keyed": "True"
+        },
+        {
+          "item": 188,
+          "keyed": "True"
+        },
+        {
+          "item": 189,
+          "keyed": "True"
+        },
+        {
+          "item": 190,
+          "keyed": "True"
+        },
+        {
+          "item": 191,
+          "keyed": "True"
+        },
+        {
+          "item": 192,
+          "keyed": "True"
+        },
+        {
+          "item": 193,
+          "keyed": "True"
+        },
+        {
+          "item": 194,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 121
+    },
+    "Y": {
+      "scale_name": "Desirability",
+      "items": [
+        {
+          "item": 2,
+          "keyed": "True"
+        },
+        {
+          "item": 3,
+          "keyed": "True"
+        },
+        {
+          "item": 8,
+          "keyed": "True"
+        },
+        {
+          "item": 20,
+          "keyed": "True"
+        },
+        {
+          "item": 30,
+          "keyed": "True"
+        },
+        {
+          "item": 46,
+          "keyed": "True"
+        },
+        {
+          "item": 65,
+          "keyed": "False"
+        },
+        {
+          "item": 67,
+          "keyed": "True"
+        },
+        {
+          "item": 71,
+          "keyed": "False"
+        },
+        {
+          "item": 73,
+          "keyed": "True"
+        },
+        {
+          "item": 75,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "False"
+        },
+        {
+          "item": 99,
+          "keyed": "False"
+        },
+        {
+          "item": 154,
+          "keyed": "True"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 158,
+          "keyed": "True"
+        },
+        {
+          "item": 159,
+          "keyed": "False"
+        },
+        {
+          "item": 162,
+          "keyed": "False"
+        },
+        {
+          "item": 173,
+          "keyed": "True"
+        },
+        {
+          "item": 174,
+          "keyed": "True"
+        },
+        {
+          "item": 185,
+          "keyed": "True"
+        },
+        {
+          "item": 187,
+          "keyed": "False"
+        },
+        {
+          "item": 188,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 24
+    },
+    "Z": {
+      "scale_name": "Debasement",
+      "items": [
+        {
+          "item": 1,
+          "keyed": "True"
+        },
+        {
+          "item": 14,
+          "keyed": "True"
+        },
+        {
+          "item": 16,
+          "keyed": "True"
+        },
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 18,
+          "keyed": "True"
+        },
+        {
+          "item": 22,
+          "keyed": "True"
+        },
+        {
+          "item": 28,
+          "keyed": "True"
+        },
+        {
+          "item": 31,
+          "keyed": "True"
+        },
+        {
+          "item": 32,
+          "keyed": "True"
+        },
+        {
+          "item": 34,
+          "keyed": "True"
+        },
+        {
+          "item": 37,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 41,
+          "keyed": "True"
+        },
+        {
+          "item": 44,
+          "keyed": "True"
+        },
+        {
+          "item": 51,
+          "keyed": "True"
+        },
+        {
+          "item": 64,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 78,
+          "keyed": "True"
+        },
+        {
+          "item": 80,
+          "keyed": "True"
+        },
+        {
+          "item": 101,
+          "keyed": "True"
+        },
+        {
+          "item": 107,
+          "keyed": "True"
+        },
+        {
+          "item": 109,
+          "keyed": "True"
+        },
+        {
+          "item": 112,
+          "keyed": "True"
+        },
+        {
+          "item": 113,
+          "keyed": "True"
+        },
+        {
+          "item": 120,
+          "keyed": "True"
+        },
+        {
+          "item": 151,
+          "keyed": "True"
+        },
+        {
+          "item": 164,
+          "keyed": "True"
+        },
+        {
+          "item": 170,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 193,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 30
+    },
+    "1": {
+      "scale_name": "Schizoid",
+      "items": [
+        {
+          "item": 6,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 15,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 17,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 24,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 30,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 43,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 70,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 90,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 92,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 119,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 139,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 149,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 154,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 180,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 190,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 15
+    },
+    "2A": {
+      "scale_name": "Avoidant",
+      "items": [
+        {
+          "item": 5,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 12,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 23,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 24,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 26,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 46,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 52,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 67,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 92,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 93,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 99,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 112,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 135,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 154,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 178,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 184,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 193,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 195,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 18
+    },
+    "2B": {
+      "scale_name": "Melancholic",
+      "items": [
+        {
+          "item": 17,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 22,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 23,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 39,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 51,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 53,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 59,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 70,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 71,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 90,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 93,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 111,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 126,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 169,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 170,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 175,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 178,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 184,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 193,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 19
+    },
+    "3": {
+      "scale_name": "Dependent",
+      "items": [
+        {
+          "item": 4,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 5,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 23,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 42,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 60,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 67,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 72,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 77,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 109,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 133,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 162,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 173,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 175,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 194,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 14
+    },
+    "4A": {
+      "scale_name": "Histrionic",
+      "items": [
+        {
+          "item": 6,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 8,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 10,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 15,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 24,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 26,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 30,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 46,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 75,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 84,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 117,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 139,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 154,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 155,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 171,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 178,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 195,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        }
+      ],
+      "item_count": 17
+    },
+    "4B": {
+      "scale_name": "Turbulent",
+      "items": [
+        {
+          "item": 8,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 20,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 26,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 30,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 46,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 53,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 67,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 75,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 84,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 120,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 129,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 142,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 154,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 155,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 174,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 178,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 185,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 17
+    },
+    "5": {
+      "scale_name": "Narcissistic",
+      "items": [
+        {
+          "item": 10,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 19,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 29,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 38,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 54,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 67,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 83,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 87,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 106,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 117,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 132,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 142,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 159,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 171,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 189,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 191,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 16
+    },
+    "6A": {
+      "scale_name": "Antisocial",
+      "items": [
+        {
+          "item": 11,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 19,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 36,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 38,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 48,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 65,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 83,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 105,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 147,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 152,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 158,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 159,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 183,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 191,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 14
+    },
+    "6B": {
+      "scale_name": "Sadistic",
+      "items": [
+        {
+          "item": 9,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 11,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 16,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 21,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 50,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 66,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 74,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 97,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 103,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 115,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 141,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 145,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 152,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 172,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 14
+    },
+    "7": {
+      "scale_name": "Compulsive",
+      "items": [
+        {
+          "item": 2,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 35,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 48,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 63,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 73,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 83,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 128,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 140,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 147,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 152,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 158,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 179,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 188,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 13
+    },
+    "8A": {
+      "scale_name": "Negativistic",
+      "items": [
+        {
+          "item": 17,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 21,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 32,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 37,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 52,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 79,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 82,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 88,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 96,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 97,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 100,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 122,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 137,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 167,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 168,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 172,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 184,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 187,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 18
+    },
+    "8B": {
+      "scale_name": "Masochistic",
+      "items": [
+        {
+          "item": 4,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 12,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 20,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 23,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 39,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 59,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 70,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 75,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 85,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 93,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 100,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 126,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 156,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 164,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 166,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 178,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 192,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 195,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 18
+    },
+    "S": {
+      "scale_name": "Schizotypal",
+      "items": [
+        {
+          "item": 13,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 18,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 24,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 44,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 58,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 70,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 90,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 92,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 93,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 112,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 121,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 123,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 126,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 148,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 156,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 163,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 165,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 167,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 172,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 190,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 195,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 21
+    },
+    "C": {
+      "scale_name": "Borderline",
+      "items": [
+        {
+          "item": 4,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 16,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 18,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 37,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 59,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 70,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 80,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 82,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 93,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 100,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 111,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 126,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 134,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 137,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 156,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 164,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 166,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 178,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 192,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 193,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 20
+    },
+    "P": {
+      "scale_name": "Paranoid",
+      "items": [
+        {
+          "item": 13,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 21,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 24,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 52,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 68,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 79,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 88,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 96,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 104,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 136,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 148,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 153,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 167,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 172,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 180,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 195,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 16
+    },
+    "A": {
+      "scale_name": "Generalized Anxiety",
+      "items": [
+        {
+          "item": 31,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 33,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 41,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 44,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 51,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 72,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 89,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 91,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 108,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 109,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 113,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 123,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 143,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 13
+    },
+    "H": {
+      "scale_name": "Somatic Symptom",
+      "items": [
+        {
+          "item": 1,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 7,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 20,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 28,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 41,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 57,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 113,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 118,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 120,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 146,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 10
+    },
+    "N": {
+      "scale_name": "Bipolar Spectrum",
+      "items": [
+        {
+          "item": 3,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 27,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 37,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 50,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 54,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 56,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 82,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 83,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 105,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 108,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 155,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 163,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 177,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 13
+    },
+    "D": {
+      "scale_name": "Persistent Depression",
+      "items": [
+        {
+          "item": 14,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 17,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 28,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 34,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 39,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 51,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 64,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 71,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 75,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        },
+        {
+          "item": 77,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 85,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 93,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 101,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 111,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 114,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 118,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 120,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 151,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 170,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 178,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 193,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 21
+    },
+    "B": {
+      "scale_name": "Alcohol Use",
+      "items": [
+        {
+          "item": 25,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 45,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 65,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 83,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 94,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 126,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 130,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 161,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 8
+    },
+    "T": {
+      "scale_name": "Drug Use",
+      "items": [
+        {
+          "item": 11,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 36,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 61,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 65,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 81,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 105,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 116,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 124,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 144,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 152,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 158,
+          "scoring_weights": {
+            "True": 0,
+            "False": 1
+          }
+        }
+      ],
+      "item_count": 11
+    },
+    "R": {
+      "scale_name": "Post-Traumatic Stress",
+      "items": [
+        {
+          "item": 44,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 47,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 57,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 62,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 74,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 76,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 89,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 91,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 110,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 113,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 125,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 143,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 150,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 157,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 14
+    },
+    "SS": {
+      "scale_name": "Schizophrenic Spectrum",
+      "items": [
+        {
+          "item": 18,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 24,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 33,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 52,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 58,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 80,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 82,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 89,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 92,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 95,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 104,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 121,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 123,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 131,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 136,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 138,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 148,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 156,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 165,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 172,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 182,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 21
+    },
+    "CC": {
+      "scale_name": "Major Depression",
+      "items": [
+        {
+          "item": 1,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 22,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 28,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 41,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 57,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 59,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 64,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 70,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 78,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 80,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 101,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 107,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 111,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 114,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 118,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 120,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 170,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 17
+    },
+    "PP": {
+      "scale_name": "Delusional",
+      "items": [
+        {
+          "item": 13,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 54,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 68,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 79,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 88,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 95,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 112,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 121,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 127,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 136,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 148,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 172,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        },
+        {
+          "item": 182,
+          "scoring_weights": {
+            "True": 2,
+            "False": 0
+          }
+        },
+        {
+          "item": 189,
+          "scoring_weights": {
+            "True": 1,
+            "False": 0
+          }
+        }
+      ],
+      "item_count": 14
+    },
+    "1.1": {
+      "scale_name": "Interpersonally Unengaged",
+      "items": [
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 15,
+          "keyed": "True"
+        },
+        {
+          "item": 24,
+          "keyed": "True"
+        },
+        {
+          "item": 104,
+          "keyed": "True"
+        },
+        {
+          "item": 149,
+          "keyed": "True"
+        },
+        {
+          "item": 154,
+          "keyed": "False"
+        },
+        {
+          "item": 180,
+          "keyed": "True"
+        },
+        {
+          "item": 185,
+          "keyed": "False"
+        },
+        {
+          "item": 190,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "1.2": {
+      "scale_name": "Meager Content",
+      "items": [
+        {
+          "item": 26,
+          "keyed": "True"
+        },
+        {
+          "item": 30,
+          "keyed": "False"
+        },
+        {
+          "item": 46,
+          "keyed": "False"
+        },
+        {
+          "item": 67,
+          "keyed": "False"
+        },
+        {
+          "item": 99,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "True"
+        },
+        {
+          "item": 175,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "1.3": {
+      "scale_name": "Temperamentally Apathetic",
+      "items": [
+        {
+          "item": 6,
+          "keyed": "True"
+        },
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 43,
+          "keyed": "True"
+        },
+        {
+          "item": 70,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 118,
+          "keyed": "True"
+        },
+        {
+          "item": 119,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "2A.1": {
+      "scale_name": "Interpersonally Aversive",
+      "items": [
+        {
+          "item": 15,
+          "keyed": "True"
+        },
+        {
+          "item": 26,
+          "keyed": "True"
+        },
+        {
+          "item": 30,
+          "keyed": "False"
+        },
+        {
+          "item": 46,
+          "keyed": "False"
+        },
+        {
+          "item": 84,
+          "keyed": "False"
+        },
+        {
+          "item": 99,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "True"
+        },
+        {
+          "item": 154,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 8
+    },
+    "2A.2": {
+      "scale_name": "Alienated Self-Image",
+      "items": [
+        {
+          "item": 23,
+          "keyed": "True"
+        },
+        {
+          "item": 58,
+          "keyed": "True"
+        },
+        {
+          "item": 67,
+          "keyed": "False"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 135,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 192,
+          "keyed": "True"
+        },
+        {
+          "item": 193,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "2A.3": {
+      "scale_name": "Vexatious Content",
+      "items": [
+        {
+          "item": 5,
+          "keyed": "True"
+        },
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 24,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 112,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "2B.1": {
+      "scale_name": "Cognitively Fatalistic",
+      "items": [
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 23,
+          "keyed": "True"
+        },
+        {
+          "item": 33,
+          "keyed": "True"
+        },
+        {
+          "item": 51,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 71,
+          "keyed": "True"
+        },
+        {
+          "item": 89,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "2B.2": {
+      "scale_name": "Worthless Self-Image",
+      "items": [
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 112,
+          "keyed": "True"
+        },
+        {
+          "item": 169,
+          "keyed": "True"
+        },
+        {
+          "item": 175,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 192,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "2B.3": {
+      "scale_name": "Temperamentally Woeful",
+      "items": [
+        {
+          "item": 22,
+          "keyed": "True"
+        },
+        {
+          "item": 53,
+          "keyed": "False"
+        },
+        {
+          "item": 70,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "True"
+        },
+        {
+          "item": 101,
+          "keyed": "True"
+        },
+        {
+          "item": 107,
+          "keyed": "True"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 170,
+          "keyed": "True"
+        },
+        {
+          "item": 193,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "3.1": {
+      "scale_name": "Expressively Puerile",
+      "items": [
+        {
+          "item": 4,
+          "keyed": "True"
+        },
+        {
+          "item": 5,
+          "keyed": "True"
+        },
+        {
+          "item": 23,
+          "keyed": "True"
+        },
+        {
+          "item": 51,
+          "keyed": "True"
+        },
+        {
+          "item": 72,
+          "keyed": "True"
+        },
+        {
+          "item": 99,
+          "keyed": "True"
+        },
+        {
+          "item": 109,
+          "keyed": "True"
+        },
+        {
+          "item": 135,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "3.2": {
+      "scale_name": "Interpersonally Submissive",
+      "items": [
+        {
+          "item": 26,
+          "keyed": "True"
+        },
+        {
+          "item": 60,
+          "keyed": "True"
+        },
+        {
+          "item": 162,
+          "keyed": "True"
+        },
+        {
+          "item": 169,
+          "keyed": "True"
+        },
+        {
+          "item": 173,
+          "keyed": "True"
+        },
+        {
+          "item": 185,
+          "keyed": "False"
+        },
+        {
+          "item": 194,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "3.3": {
+      "scale_name": "Inept Self-Image",
+      "items": [
+        {
+          "item": 42,
+          "keyed": "True"
+        },
+        {
+          "item": 53,
+          "keyed": "False"
+        },
+        {
+          "item": 67,
+          "keyed": "False"
+        },
+        {
+          "item": 77,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 133,
+          "keyed": "True"
+        },
+        {
+          "item": 151,
+          "keyed": "True"
+        },
+        {
+          "item": 175,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "4A.1": {
+      "scale_name": "Expressively Dramatic",
+      "items": [
+        {
+          "item": 10,
+          "keyed": "True"
+        },
+        {
+          "item": 38,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "True"
+        },
+        {
+          "item": 117,
+          "keyed": "True"
+        },
+        {
+          "item": 132,
+          "keyed": "True"
+        },
+        {
+          "item": 142,
+          "keyed": "True"
+        },
+        {
+          "item": 171,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "4A.2": {
+      "scale_name": "Interpersonally Attention-Seeking",
+      "items": [
+        {
+          "item": 6,
+          "keyed": "False"
+        },
+        {
+          "item": 15,
+          "keyed": "False"
+        },
+        {
+          "item": 24,
+          "keyed": "False"
+        },
+        {
+          "item": 26,
+          "keyed": "False"
+        },
+        {
+          "item": 30,
+          "keyed": "True"
+        },
+        {
+          "item": 46,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 139,
+          "keyed": "False"
+        },
+        {
+          "item": 154,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 10
+    },
+    "4A.3": {
+      "scale_name": "Temperamentally Fickle",
+      "items": [
+        {
+          "item": 8,
+          "keyed": "True"
+        },
+        {
+          "item": 20,
+          "keyed": "True"
+        },
+        {
+          "item": 27,
+          "keyed": "True"
+        },
+        {
+          "item": 53,
+          "keyed": "True"
+        },
+        {
+          "item": 67,
+          "keyed": "True"
+        },
+        {
+          "item": 75,
+          "keyed": "True"
+        },
+        {
+          "item": 135,
+          "keyed": "False"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 170,
+          "keyed": "False"
+        },
+        {
+          "item": 174,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "False"
+        },
+        {
+          "item": 185,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 12
+    },
+    "4B.1": {
+      "scale_name": "Expressively Impetuous",
+      "items": [
+        {
+          "item": 8,
+          "keyed": "True"
+        },
+        {
+          "item": 20,
+          "keyed": "True"
+        },
+        {
+          "item": 53,
+          "keyed": "True"
+        },
+        {
+          "item": 75,
+          "keyed": "True"
+        },
+        {
+          "item": 129,
+          "keyed": "True"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 174,
+          "keyed": "True"
+        },
+        {
+          "item": 185,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 8
+    },
+    "4B.2": {
+      "scale_name": "Interpersonally High-Spirited",
+      "items": [
+        {
+          "item": 5,
+          "keyed": "False"
+        },
+        {
+          "item": 10,
+          "keyed": "True"
+        },
+        {
+          "item": 26,
+          "keyed": "False"
+        },
+        {
+          "item": 30,
+          "keyed": "True"
+        },
+        {
+          "item": 46,
+          "keyed": "True"
+        },
+        {
+          "item": 84,
+          "keyed": "True"
+        },
+        {
+          "item": 117,
+          "keyed": "True"
+        },
+        {
+          "item": 149,
+          "keyed": "False"
+        },
+        {
+          "item": 154,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "4B.3": {
+      "scale_name": "Exalted Self-Image",
+      "items": [
+        {
+          "item": 14,
+          "keyed": "False"
+        },
+        {
+          "item": 67,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "False"
+        },
+        {
+          "item": 120,
+          "keyed": "False"
+        },
+        {
+          "item": 142,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "False"
+        },
+        {
+          "item": 175,
+          "keyed": "False"
+        },
+        {
+          "item": 178,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 8
+    },
+    "5.1": {
+      "scale_name": "Interpersonally Exploitive",
+      "items": [
+        {
+          "item": 10,
+          "keyed": "True"
+        },
+        {
+          "item": 19,
+          "keyed": "True"
+        },
+        {
+          "item": 38,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "True"
+        },
+        {
+          "item": 117,
+          "keyed": "True"
+        },
+        {
+          "item": 132,
+          "keyed": "True"
+        },
+        {
+          "item": 159,
+          "keyed": "True"
+        },
+        {
+          "item": 171,
+          "keyed": "True"
+        },
+        {
+          "item": 183,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "5.2": {
+      "scale_name": "Cognitively Expansive",
+      "items": [
+        {
+          "item": 8,
+          "keyed": "True"
+        },
+        {
+          "item": 67,
+          "keyed": "True"
+        },
+        {
+          "item": 75,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "False"
+        },
+        {
+          "item": 142,
+          "keyed": "True"
+        },
+        {
+          "item": 154,
+          "keyed": "True"
+        },
+        {
+          "item": 155,
+          "keyed": "True"
+        },
+        {
+          "item": 174,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "False"
+        },
+        {
+          "item": 185,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "5.3": {
+      "scale_name": "Admirable Self-Image",
+      "items": [
+        {
+          "item": 29,
+          "keyed": "True"
+        },
+        {
+          "item": 54,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 87,
+          "keyed": "True"
+        },
+        {
+          "item": 106,
+          "keyed": "True"
+        },
+        {
+          "item": 180,
+          "keyed": "True"
+        },
+        {
+          "item": 189,
+          "keyed": "True"
+        },
+        {
+          "item": 191,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 8
+    },
+    "6A.1": {
+      "scale_name": "Interpersonally Irresponsible",
+      "items": [
+        {
+          "item": 10,
+          "keyed": "True"
+        },
+        {
+          "item": 38,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "True"
+        },
+        {
+          "item": 103,
+          "keyed": "True"
+        },
+        {
+          "item": 159,
+          "keyed": "True"
+        },
+        {
+          "item": 171,
+          "keyed": "True"
+        },
+        {
+          "item": 183,
+          "keyed": "True"
+        },
+        {
+          "item": 188,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 8
+    },
+    "6A.2": {
+      "scale_name": "Autonomous Self-Image",
+      "items": [
+        {
+          "item": 11,
+          "keyed": "True"
+        },
+        {
+          "item": 19,
+          "keyed": "True"
+        },
+        {
+          "item": 48,
+          "keyed": "False"
+        },
+        {
+          "item": 73,
+          "keyed": "False"
+        },
+        {
+          "item": 147,
+          "keyed": "True"
+        },
+        {
+          "item": 152,
+          "keyed": "True"
+        },
+        {
+          "item": 153,
+          "keyed": "True"
+        },
+        {
+          "item": 158,
+          "keyed": "False"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 191,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "6A.3": {
+      "scale_name": "Acting-Out Dynamics",
+      "items": [
+        {
+          "item": 25,
+          "keyed": "True"
+        },
+        {
+          "item": 36,
+          "keyed": "True"
+        },
+        {
+          "item": 61,
+          "keyed": "True"
+        },
+        {
+          "item": 63,
+          "keyed": "False"
+        },
+        {
+          "item": 65,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "True"
+        },
+        {
+          "item": 105,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 130,
+          "keyed": "True"
+        },
+        {
+          "item": 144,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "6B.1": {
+      "scale_name": "Expressively Precipitate",
+      "items": [
+        {
+          "item": 9,
+          "keyed": "True"
+        },
+        {
+          "item": 11,
+          "keyed": "True"
+        },
+        {
+          "item": 65,
+          "keyed": "True"
+        },
+        {
+          "item": 66,
+          "keyed": "True"
+        },
+        {
+          "item": 88,
+          "keyed": "True"
+        },
+        {
+          "item": 103,
+          "keyed": "True"
+        },
+        {
+          "item": 152,
+          "keyed": "True"
+        },
+        {
+          "item": 153,
+          "keyed": "True"
+        },
+        {
+          "item": 159,
+          "keyed": "True"
+        },
+        {
+          "item": 172,
+          "keyed": "True"
+        },
+        {
+          "item": 191,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 11
+    },
+    "6B.2": {
+      "scale_name": "Interpersonally Abrasive",
+      "items": [
+        {
+          "item": 19,
+          "keyed": "True"
+        },
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 50,
+          "keyed": "True"
+        },
+        {
+          "item": 97,
+          "keyed": "True"
+        },
+        {
+          "item": 141,
+          "keyed": "True"
+        },
+        {
+          "item": 166,
+          "keyed": "True"
+        },
+        {
+          "item": 187,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "6B.3": {
+      "scale_name": "Eruptive Architecture",
+      "items": [
+        {
+          "item": 16,
+          "keyed": "True"
+        },
+        {
+          "item": 37,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 115,
+          "keyed": "True"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 145,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "7.1": {
+      "scale_name": "Expressively Disciplined",
+      "items": [
+        {
+          "item": 2,
+          "keyed": "True"
+        },
+        {
+          "item": 20,
+          "keyed": "True"
+        },
+        {
+          "item": 35,
+          "keyed": "True"
+        },
+        {
+          "item": 63,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "False"
+        },
+        {
+          "item": 118,
+          "keyed": "False"
+        },
+        {
+          "item": 174,
+          "keyed": "True"
+        },
+        {
+          "item": 188,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 8
+    },
+    "7.2": {
+      "scale_name": "Cognitively Constricted",
+      "items": [
+        {
+          "item": 23,
+          "keyed": "True"
+        },
+        {
+          "item": 44,
+          "keyed": "True"
+        },
+        {
+          "item": 51,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 99,
+          "keyed": "True"
+        },
+        {
+          "item": 128,
+          "keyed": "True"
+        },
+        {
+          "item": 131,
+          "keyed": "True"
+        },
+        {
+          "item": 135,
+          "keyed": "True"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 140,
+          "keyed": "True"
+        },
+        {
+          "item": 169,
+          "keyed": "True"
+        },
+        {
+          "item": 179,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 12
+    },
+    "7.3": {
+      "scale_name": "Reliable Self-Image",
+      "items": [
+        {
+          "item": 19,
+          "keyed": "False"
+        },
+        {
+          "item": 48,
+          "keyed": "True"
+        },
+        {
+          "item": 73,
+          "keyed": "True"
+        },
+        {
+          "item": 83,
+          "keyed": "False"
+        },
+        {
+          "item": 147,
+          "keyed": "False"
+        },
+        {
+          "item": 152,
+          "keyed": "False"
+        },
+        {
+          "item": 158,
+          "keyed": "True"
+        },
+        {
+          "item": 183,
+          "keyed": "False"
+        },
+        {
+          "item": 191,
+          "keyed": "False"
+        }
+      ],
+      "item_count": 9
+    },
+    "8A.1": {
+      "scale_name": "Expressively Embittered",
+      "items": [
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 32,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 88,
+          "keyed": "True"
+        },
+        {
+          "item": 96,
+          "keyed": "True"
+        },
+        {
+          "item": 100,
+          "keyed": "True"
+        },
+        {
+          "item": 122,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 172,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "8A.2": {
+      "scale_name": "Discontented Self-Image",
+      "items": [
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 24,
+          "keyed": "True"
+        },
+        {
+          "item": 34,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 51,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "True"
+        },
+        {
+          "item": 75,
+          "keyed": "False"
+        },
+        {
+          "item": 153,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 11
+    },
+    "8A.3": {
+      "scale_name": "Temperamentally Irritable",
+      "items": [
+        {
+          "item": 9,
+          "keyed": "True"
+        },
+        {
+          "item": 37,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 97,
+          "keyed": "True"
+        },
+        {
+          "item": 115,
+          "keyed": "True"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 145,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 187,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "8B.1": {
+      "scale_name": "Undeserving Self-Image",
+      "items": [
+        {
+          "item": 4,
+          "keyed": "True"
+        },
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 23,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "True"
+        },
+        {
+          "item": 70,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 164,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 192,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 12
+    },
+    "8B.2": {
+      "scale_name": "Inverted Architecture",
+      "items": [
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 40,
+          "keyed": "True"
+        },
+        {
+          "item": 85,
+          "keyed": "True"
+        },
+        {
+          "item": 100,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "True"
+        },
+        {
+          "item": 166,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "8B.3": {
+      "scale_name": "Temperamentally Dysphoric",
+      "items": [
+        {
+          "item": 20,
+          "keyed": "False"
+        },
+        {
+          "item": 53,
+          "keyed": "False"
+        },
+        {
+          "item": 67,
+          "keyed": "False"
+        },
+        {
+          "item": 75,
+          "keyed": "False"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 107,
+          "keyed": "True"
+        },
+        {
+          "item": 154,
+          "keyed": "False"
+        },
+        {
+          "item": 155,
+          "keyed": "False"
+        },
+        {
+          "item": 170,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "S.1": {
+      "scale_name": "Cognitively Circumstantial",
+      "items": [
+        {
+          "item": 18,
+          "keyed": "True"
+        },
+        {
+          "item": 33,
+          "keyed": "True"
+        },
+        {
+          "item": 44,
+          "keyed": "True"
+        },
+        {
+          "item": 89,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 121,
+          "keyed": "True"
+        },
+        {
+          "item": 123,
+          "keyed": "True"
+        },
+        {
+          "item": 131,
+          "keyed": "True"
+        },
+        {
+          "item": 163,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "S.2": {
+      "scale_name": "Estranged Self-Image",
+      "items": [
+        {
+          "item": 5,
+          "keyed": "True"
+        },
+        {
+          "item": 58,
+          "keyed": "True"
+        },
+        {
+          "item": 70,
+          "keyed": "True"
+        },
+        {
+          "item": 90,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 154,
+          "keyed": "False"
+        },
+        {
+          "item": 156,
+          "keyed": "True"
+        },
+        {
+          "item": 165,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 11
+    },
+    "S.3": {
+      "scale_name": "Chaotic Content",
+      "items": [
+        {
+          "item": 13,
+          "keyed": "True"
+        },
+        {
+          "item": 24,
+          "keyed": "True"
+        },
+        {
+          "item": 68,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 88,
+          "keyed": "True"
+        },
+        {
+          "item": 106,
+          "keyed": "True"
+        },
+        {
+          "item": 112,
+          "keyed": "True"
+        },
+        {
+          "item": 148,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 172,
+          "keyed": "True"
+        },
+        {
+          "item": 190,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 11
+    },
+    "C.1": {
+      "scale_name": "Uncertain Self-Image",
+      "items": [
+        {
+          "item": 14,
+          "keyed": "True"
+        },
+        {
+          "item": 70,
+          "keyed": "True"
+        },
+        {
+          "item": 101,
+          "keyed": "True"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 151,
+          "keyed": "True"
+        },
+        {
+          "item": 156,
+          "keyed": "True"
+        },
+        {
+          "item": 170,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 8
+    },
+    "C.2": {
+      "scale_name": "Split Architecture",
+      "items": [
+        {
+          "item": 4,
+          "keyed": "True"
+        },
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "True"
+        },
+        {
+          "item": 93,
+          "keyed": "True"
+        },
+        {
+          "item": 100,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 134,
+          "keyed": "True"
+        },
+        {
+          "item": 166,
+          "keyed": "True"
+        },
+        {
+          "item": 192,
+          "keyed": "True"
+        },
+        {
+          "item": 193,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 11
+    },
+    "C.3": {
+      "scale_name": "Temperamentally Labile",
+      "items": [
+        {
+          "item": 16,
+          "keyed": "True"
+        },
+        {
+          "item": 18,
+          "keyed": "True"
+        },
+        {
+          "item": 37,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 80,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 115,
+          "keyed": "True"
+        },
+        {
+          "item": 137,
+          "keyed": "True"
+        },
+        {
+          "item": 164,
+          "keyed": "True"
+        },
+        {
+          "item": 187,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "P.1": {
+      "scale_name": "Expressively Defensive",
+      "items": [
+        {
+          "item": 12,
+          "keyed": "True"
+        },
+        {
+          "item": 15,
+          "keyed": "True"
+        },
+        {
+          "item": 21,
+          "keyed": "True"
+        },
+        {
+          "item": 24,
+          "keyed": "True"
+        },
+        {
+          "item": 104,
+          "keyed": "True"
+        },
+        {
+          "item": 149,
+          "keyed": "True"
+        },
+        {
+          "item": 153,
+          "keyed": "True"
+        },
+        {
+          "item": 180,
+          "keyed": "True"
+        },
+        {
+          "item": 195,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    },
+    "P.2": {
+      "scale_name": "Cognitively Mistrustful",
+      "items": [
+        {
+          "item": 17,
+          "keyed": "True"
+        },
+        {
+          "item": 52,
+          "keyed": "True"
+        },
+        {
+          "item": 79,
+          "keyed": "True"
+        },
+        {
+          "item": 88,
+          "keyed": "True"
+        },
+        {
+          "item": 172,
+          "keyed": "True"
+        },
+        {
+          "item": 182,
+          "keyed": "True"
+        },
+        {
+          "item": 184,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "P.3": {
+      "scale_name": "Projection Dynamics",
+      "items": [
+        {
+          "item": 13,
+          "keyed": "True"
+        },
+        {
+          "item": 32,
+          "keyed": "True"
+        },
+        {
+          "item": 68,
+          "keyed": "True"
+        },
+        {
+          "item": 96,
+          "keyed": "True"
+        },
+        {
+          "item": 106,
+          "keyed": "True"
+        },
+        {
+          "item": 112,
+          "keyed": "True"
+        },
+        {
+          "item": 122,
+          "keyed": "True"
+        },
+        {
+          "item": 136,
+          "keyed": "True"
+        },
+        {
+          "item": 148,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 10
+    },
+    "AD": {
+      "scale_name": "Adult ADHD",
+      "items": [
+        {
+          "item": 56,
+          "keyed": "True"
+        },
+        {
+          "item": 63,
+          "keyed": "False"
+        },
+        {
+          "item": 77,
+          "keyed": "True"
+        },
+        {
+          "item": 82,
+          "keyed": "True"
+        },
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 108,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 6
+    },
+    "AS": {
+      "scale_name": "Autism Spectrum",
+      "items": [
+        {
+          "item": 92,
+          "keyed": "True"
+        },
+        {
+          "item": 119,
+          "keyed": "True"
+        },
+        {
+          "item": 138,
+          "keyed": "True"
+        },
+        {
+          "item": 163,
+          "keyed": "True"
+        },
+        {
+          "item": 165,
+          "keyed": "True"
+        },
+        {
+          "item": 179,
+          "keyed": "True"
+        },
+        {
+          "item": 190,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 7
+    },
+    "CA": {
+      "scale_name": "Childhood Abuse",
+      "items": [
+        {
+          "item": 47,
+          "keyed": "True"
+        },
+        {
+          "item": 157,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 2
+    },
+    "EA": {
+      "scale_name": "Eating Disorder",
+      "items": [
+        {
+          "item": 69,
+          "keyed": "True"
+        },
+        {
+          "item": 86,
+          "keyed": "True"
+        },
+        {
+          "item": 102,
+          "keyed": "True"
+        },
+        {
+          "item": 186,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 4
+    },
+    "EM": {
+      "scale_name": "Emotional Dyscontrol",
+      "items": [
+        {
+          "item": 27,
+          "keyed": "True"
+        },
+        {
+          "item": 36,
+          "keyed": "True"
+        },
+        {
+          "item": 45,
+          "keyed": "True"
+        },
+        {
+          "item": 56,
+          "keyed": "True"
+        },
+        {
+          "item": 72,
+          "keyed": "True"
+        },
+        {
+          "item": 80,
+          "keyed": "True"
+        },
+        {
+          "item": 127,
+          "keyed": "True"
+        },
+        {
+          "item": 177,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 8
+    },
+    "EX": {
+      "scale_name": "Explosively Angry",
+      "items": [
+        {
+          "item": 11,
+          "keyed": "True"
+        },
+        {
+          "item": 74,
+          "keyed": "True"
+        },
+        {
+          "item": 115,
+          "keyed": "True"
+        },
+        {
+          "item": 145,
+          "keyed": "True"
+        },
+        {
+          "item": 168,
+          "keyed": "True"
+        },
+        {
+          "item": 191,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 6
+    },
+    "HP": {
+      "scale_name": "Health Preoccupied",
+      "items": [
+        {
+          "item": 7,
+          "keyed": "True"
+        },
+        {
+          "item": 41,
+          "keyed": "True"
+        },
+        {
+          "item": 57,
+          "keyed": "True"
+        },
+        {
+          "item": 113,
+          "keyed": "True"
+        },
+        {
+          "item": 120,
+          "keyed": "True"
+        },
+        {
+          "item": 146,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 6
+    },
+    "IA": {
+      "scale_name": "Interpersonally Alienated",
+      "items": [
+        {
+          "item": 4,
+          "keyed": "True"
+        },
+        {
+          "item": 104,
+          "keyed": "True"
+        },
+        {
+          "item": 182,
+          "keyed": "True"
+        },
+        {
+          "item": 190,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 4
+    },
+    "PD": {
+      "scale_name": "Prescription Drug Abuse",
+      "items": [
+        {
+          "item": 124,
+          "keyed": "True"
+        },
+        {
+          "item": 176,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 2
+    },
+    "SP": {
+      "scale_name": "Self-Destructive Potential",
+      "items": [
+        {
+          "item": 14,
+          "keyed": "True"
+        },
+        {
+          "item": 32,
+          "keyed": "True"
+        },
+        {
+          "item": 34,
+          "keyed": "True"
+        },
+        {
+          "item": 39,
+          "keyed": "True"
+        },
+        {
+          "item": 59,
+          "keyed": "True"
+        },
+        {
+          "item": 78,
+          "keyed": "True"
+        },
+        {
+          "item": 101,
+          "keyed": "True"
+        },
+        {
+          "item": 107,
+          "keyed": "True"
+        },
+        {
+          "item": 114,
+          "keyed": "True"
+        },
+        {
+          "item": 126,
+          "keyed": "True"
+        },
+        {
+          "item": 151,
+          "keyed": "True"
+        },
+        {
+          "item": 164,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 12
+    },
+    "SB": {
+      "scale_name": "Self-Injurious Behavior/Tendency",
+      "items": [
+        {
+          "item": 40,
+          "keyed": "True"
+        },
+        {
+          "item": 181,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 2
+    },
+    "TB": {
+      "scale_name": "Traumatic Brain Injury",
+      "items": [
+        {
+          "item": 55,
+          "keyed": "True"
+        },
+        {
+          "item": 110,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 2
+    },
+    "VP": {
+      "scale_name": "Vengefully Prone",
+      "items": [
+        {
+          "item": 22,
+          "keyed": "True"
+        },
+        {
+          "item": 37,
+          "keyed": "True"
+        },
+        {
+          "item": 100,
+          "keyed": "True"
+        },
+        {
+          "item": 103,
+          "keyed": "True"
+        },
+        {
+          "item": 111,
+          "keyed": "True"
+        },
+        {
+          "item": 136,
+          "keyed": "True"
+        },
+        {
+          "item": 167,
+          "keyed": "True"
+        },
+        {
+          "item": 178,
+          "keyed": "True"
+        },
+        {
+          "item": 192,
+          "keyed": "True"
+        }
+      ],
+      "item_count": 9
+    }
+  }
+}

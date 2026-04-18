@@ -7,6 +7,8 @@
   "num_items": 335,
   "response_type": "boolean",
   "response_format": "",
+  "score_label": "T-Score",
+  "score_prefix": "T",
   "administration_format": "",
   "norms": "Community Sample",
   "db_schema": "mmpi3",

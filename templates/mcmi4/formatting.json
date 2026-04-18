@@ -1,0 +1,64 @@
+{
+  "font": "Times New Roman",
+  "base_font_size": 12,
+  "docx_font": "Calibri",
+  "docx_table_style": "Light Grid Accent 1",
+  "html_max_width": "1280px",
+  "status_colors": {
+    "valid": "#008000",
+    "warning": "#FFA500",
+    "invalid": "#FF0000"
+  },
+  "hierarchy_levels": ["Full Scales"],
+  "chart_colors": {
+    "Modifier Indices": "#555555",
+    "Clinical Personality Patterns": "#1A5276",
+    "Severe Personality Pathology": "#4A235A",
+    "Clinical Syndromes": "#922B21",
+    "Severe Clinical Syndromes": "#7B241C"
+  },
+  "validity_chart_colors": {
+    "Response Validity": "#555555",
+    "Response Bias": "#922B21"
+  },
+  "domain_definitions": {
+    "Personality Structure": {
+      "scales": ["1", "2A", "2B", "3", "4A", "4B", "5", "6A", "6B", "7", "8A", "8B"],
+      "color": "#1A5276"
+    },
+    "Severe Personality": {
+      "scales": ["S", "C", "P"],
+      "color": "#4A235A"
+    },
+    "Clinical Syndromes": {
+      "scales": ["A", "H", "N", "D", "B", "T", "R"],
+      "color": "#922B21"
+    },
+    "Severe Clinical Syndromes": {
+      "scales": ["SS", "CC", "PP"],
+      "color": "#7B241C"
+    }
+  },
+  "chart": {
+    "chart_png_font_scale": 1.3,
+    "y_min": 0,
+    "y_max": 120,
+    "y_interval": 10,
+    "symbol_size_normal": 8,
+    "symbol_size_elevated": 12,
+    "line_width": 2.5,
+    "validity_line_width": 3.0,
+    "height": "700px",
+    "line_styles": {},
+    "grid": {
+      "combined": {"left": "8%", "right": "5%", "bottom": "20%", "top": "10%"},
+      "domain": {"left": "8%", "right": "5%", "bottom": "15%", "top": "10%"},
+      "validity": {"left": "10%", "right": "8%", "bottom": "15%", "top": "10%"}
+    },
+    "reference_lines": [
+      {"value": 75, "label": "BR 75", "style": "dashed", "color": "#E67E22"},
+      {"value": 85, "label": "BR 85", "style": "solid", "color": "#C0392B"}
+    ],
+    "plot_bands": [0, 30, 60, 75, 85, 115]
+  }
+}

@@ -1,0 +1,325 @@
+/* APA 7th Edition Report Styles */
+/* Dynamic placeholders: __FONT__, __FSIZE__, __CHART_HEIGHT__, __MAXWIDTH__ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: '__FONT__', serif;
+    font-size: __FSIZE__pt;
+    line-height: 1.15;
+    max-width: __MAXWIDTH__;
+    margin: 0 auto;
+    padding: 1in;
+    background-color: #fff;
+    color: #000;
+}
+
+#report-content {
+    background-color: white;
+    padding: 0;
+}
+
+/* APA Level 1: Centered, Bold, Title Case */
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16pt;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 12pt;
+}
+
+/* Section heading — full-width grey banner */
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: __FSIZE__pt;
+    color: #000;
+    background-color: #c8c8c8;
+    padding: 10pt 16pt;
+    margin-left: -1in;
+    margin-right: -1in;
+    padding-left: 1in;
+    padding-right: 1in;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    letter-spacing: 1px;
+}
+
+/* Auto-number sections with Roman numerals */
+body {
+    counter-reset: section-counter;
+}
+
+h2::before {
+    counter-increment: section-counter;
+    content: 'Section ' counter(section-counter, upper-roman) ': ';
+}
+
+/* APA Level 3: Flush Left, Bold Italic, Title Case */
+h3 {
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+    font-size: __FSIZE__pt;
+    color: #000;
+    margin-top: 18pt;
+    margin-bottom: 12pt;
+}
+
+p {
+    margin: 0 0 12pt 0;
+}
+
+section {
+    margin-bottom: 24pt;
+}
+
+/* APA Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6pt 0 12pt 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    font-size: 10pt;
+}
+
+th, td {
+    padding: 4pt 10pt;
+    text-align: left;
+    border: none;
+    font-weight: normal;
+}
+
+thead {
+    border-bottom: 1px solid #000;
+}
+
+th {
+    font-weight: normal;
+    font-size: 11pt;
+    color: #000;
+    background-color: transparent;
+}
+
+.section-summary {
+    margin: 6pt 0 12pt 0;
+    font-size: __FSIZE__pt;
+    line-height: 1.5;
+}
+
+.table-label {
+    margin-bottom: 2pt;
+    font-size: __FSIZE__pt;
+}
+
+.figure-label {
+    margin-bottom: 4pt;
+    font-size: __FSIZE__pt;
+}
+
+.elevated { }
+
+.chart-container {
+    width: 100%;
+    height: __CHART_HEIGHT__;
+    margin: 18pt 0;
+}
+
+.graph-description {
+    font-style: italic;
+    margin-bottom: 12pt;
+}
+
+.print-button-container {
+    text-align: center;
+    margin: 24pt 0;
+}
+
+.print-button {
+    padding: 10pt 30pt;
+    font-family: '__FONT__', serif;
+    font-size: __FSIZE__pt;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.print-button:hover {
+    background-color: #333;
+}
+
+.print-note {
+    font-size: 10pt;
+    margin-top: 6pt;
+}
+
+.disclaimer-text {
+    white-space: pre-line;
+    font-size: 10pt;
+    padding: 12pt;
+    border: 1px solid #000;
+    margin: 12pt 0;
+}
+
+.appendix-tables {
+    display: flex;
+    gap: 24pt;
+}
+.appendix-tables table {
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    font-size: 10pt;
+    margin-top: 24pt;
+    padding-top: 12pt;
+    border-top: 1px solid #000;
+}
+
+ul {
+    margin: 6pt 0;
+    padding-left: 0.5in;
+}
+
+li {
+    margin: 3pt 0;
+}
+
+hr.section-divider {
+    border: none;
+    border-top: 2px solid #000;
+    margin: 24pt 0;
+}
+
+tr.row-divider td {
+    border-bottom: 1px solid #000;
+}
+
+.report-section {
+    margin-bottom: 12pt;
+}
+
+.interpretation-narrative {
+    padding: 0;
+    margin: 12pt 0 18pt 0;
+}
+
+.interpretation-narrative p {
+    text-indent: 0;
+    margin: 0 0 12pt 0;
+}
+
+.profile-integration {
+    padding: 0;
+    margin: 18pt 0;
+}
+
+.treatment-recommendations {
+    padding: 0;
+    margin: 18pt 0;
+}
+
+.treatment-recommendations ol {
+    padding-left: 0.5in;
+}
+
+.treatment-recommendations li {
+    margin: 6pt 0;
+}
+
+.signature-block {
+    margin-top: 48pt;
+    padding-top: 12pt;
+    border-top: 1px solid #000;
+}
+
+.signature-block .signature-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36pt;
+}
+
+.signature-block .signature-entry {
+    text-align: center;
+    width: 45%;
+}
+
+.signature-block .signature-entry .line {
+    border-top: 1px solid #000;
+    margin-bottom: 4pt;
+    padding-top: 4pt;
+}
+
+.signature-block .signature-entry .name {
+    font-weight: bold;
+}
+
+.signature-block .signature-entry .credentials {
+    font-size: 10pt;
+}
+
+.elevation-badge {
+    display: inline;
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+@media print {
+    body {
+        padding: 1in;
+    }
+
+    .print-button-container {
+        display: none;
+    }
+
+    .chart-container {
+        page-break-inside: avoid;
+        height: 450px;
+    }
+
+    h2 {
+        page-break-after: avoid;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    .interpretation-narrative {
+        page-break-inside: avoid;
+    }
+
+    .profile-integration,
+    .treatment-recommendations {
+        page-break-before: always;
+    }
+
+    .signature-block {
+        page-break-before: always;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 12pt;
+    }
+
+    .chart-container {
+        height: 350px;
+    }
+
+    table {
+        font-size: 10pt;
+    }
+
+    th, td {
+        padding: 4pt 6pt;
+    }
+}

@@ -1,0 +1,43 @@
+You are a clinical psychologist completing the final sections of an interpretive report for a psychometric assessment. You have already written per-category narratives. Now you must synthesize them into three final sections.
+
+IMPORTANT GUIDELINES:
+- Write in professional clinical narrative style, using third-person language
+- Be as concise and direct as possible
+- Do NOT simply repeat individual scale interpretations — synthesize them
+- Do NOT diagnose — use language like "is consistent with" or "suggests features of"
+- Do NOT invent correlates not supported by the data
+
+PER-CATEGORY NARRATIVES ALREADY WRITTEN:
+{context}
+
+FULL SCALE SCORES AND CLINICAL DATA:
+{query}
+
+OUTPUT FORMAT:
+Write exactly three sections, each wrapped in XML tags as shown below.
+
+<section key="integration">
+Write a Profile Integration section (2-4 paragraphs) that synthesizes findings across ALL scale categories into a unified clinical picture. Organize around these domains where relevant:
+1. Primary Clinical Picture — the dominant pattern of dysfunction
+2. Emotional Functioning — mood, anxiety, distress regulation
+3. Cognitive Functioning — thought processes, concentration, reality testing
+4. Interpersonal Functioning — relationship patterns, social behavior
+5. Personality Dimensions — enduring traits from personality scales
+6. Diagnostic Considerations — patterns consistent with specific conditions (do NOT diagnose)
+7. Risk Assessment — safety concerns if any scales suggest risk
+Show how scales from different categories converge to tell a coherent clinical story. Identify the 2-3 most salient clinical themes. Address inconsistencies or unexpected patterns if present.
+</section>
+
+<section key="treatment">
+Write 3-5 numbered treatment recommendations. Prioritize psychodynamic and mindfulness treatment modalities. Each recommendation should:
+1. Name the specific intervention or approach
+2. Explain briefly WHY it is recommended (linking to specific scale elevations)
+3. Be actionable and specific enough for a treating clinician
+Prioritize by clinical urgency — if safety-related scales are elevated, address safety planning FIRST. Match treatment intensity to scale elevation severity.
+</section>
+
+<section key="summary">
+Write a concise summary paragraph (4-6 sentences) capturing the essence of the entire profile in a way that a referring clinician can quickly understand. Include the number of elevated scales, dominant clinical themes, and key treatment priorities.
+</section>
+
+Write all three sections in the exact order shown above.

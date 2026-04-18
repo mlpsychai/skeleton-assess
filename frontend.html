@@ -177,10 +177,19 @@
     <label for="interpretive">Generate interpretive report (requires ingested worksheets)</label>
   </div>
 
-  <div id="clientInfoSection" class="client-info-section" style="display:none;">
-    <label for="client_info_file">Client Info JSON</label>
-    <input type="file" id="client_info_file" name="client_info_file" accept=".json">
-    <p class="hint">Optional — provides client demographics for the narrative</p>
+  <div id="interpretiveOptions" style="display:none;">
+    <div class="client-info-section">
+      <label for="model">Claude Model</label>
+      <select id="model" name="model" style="width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:4px; font-size:0.9rem;">
+        <option value="claude-haiku-4-5-20251001" selected>Haiku 4.5 (fast, economical)</option>
+        <option value="claude-sonnet-4-6">Sonnet 4.6 (balanced)</option>
+        <option value="claude-opus-4-6">Opus 4.6 (high performing)</option>
+      </select>
+
+      <label for="client_info_file">Client Info JSON</label>
+      <input type="file" id="client_info_file" name="client_info_file" accept=".json">
+      <p class="hint">Optional — provides client demographics for the narrative</p>
+    </div>
   </div>
 
   <label for="output_dir">Output Directory</label>
@@ -274,13 +283,13 @@
   // --- Score Processing Form ---
   const form = document.getElementById("scoreForm");
   const interpCheckbox = document.getElementById("interpretive");
-  const clientSection = document.getElementById("clientInfoSection");
   const spinner = document.getElementById("spinner");
   const result = document.getElementById("result");
   const submitBtn = document.getElementById("submitBtn");
 
+  const interpretiveOptions = document.getElementById("interpretiveOptions");
   interpCheckbox.addEventListener("change", () => {
-    clientSection.style.display = interpCheckbox.checked ? "block" : "none";
+    interpretiveOptions.style.display = interpCheckbox.checked ? "block" : "none";
   });
 
   form.addEventListener("submit", async (e) => {
